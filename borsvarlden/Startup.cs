@@ -30,7 +30,7 @@ namespace borsvarlden
         {
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("borsvarlden")));
+                options.UseSqlServer(Configuration.GetConnectionString(_databaseConnectionStringName)));
 
             services.AddHangfire(configuration => configuration
                 .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
