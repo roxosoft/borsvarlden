@@ -9,12 +9,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using borsvarlden.Models;
+using Hangfire;
 using Microsoft.EntityFrameworkCore;
 
 namespace borsvarlden
 {
     public class Startup
     {
+        private static readonly string _databaseConnectionStringName = "borsvarlden";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,6 +31,23 @@ namespace borsvarlden
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("borsvarlden")));
+
+            services.AddHangfire(configuration => configuration
+                .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+                .UseSimpleAssemblyNameTypeSerializer()
+                .UseRecommendedSerializerSettings()
+                .UseSqlServerStorage(Configuration.GetConnectionString(_databaseConnectionStringName),
+                    new Hangfire.SqlServer.SqlServerStorageOptions
+                    {
+                        CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
+                        SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
+                        QueuePollInterval = TimeSpan.Zero,
+                        UseRecommendedIsolationLevel = true,
+                        UsePageLocksOnDequeue = true,
+                        DisableGlobalLocks = true
+                    }));
+            services.AddHangfireServer();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +65,8 @@ namespace borsvarlden
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseHangfireDashboard();
+            RecurringJob.AddOrUpdate(() => Console.WriteLine("Hello world from Hagfire!"), Cron.Minutely);
 
             app.UseRouting();
 
