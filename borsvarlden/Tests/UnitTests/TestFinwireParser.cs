@@ -14,7 +14,7 @@ namespace borsvarlden.Tests.UnitTests
         public void TestParseAllFiles()
         {
             //TODO use realative
-            var path = @"f:\cs_proj\roxosoft_borsvarlden\finwire_files\test\";
+            //var path = @"f:\cs_proj\roxosoft_borsvarlden\finwire_files\test\";
             var file = @"f:\cs_proj\roxosoft_borsvarlden\finwire_files\test\FWM00427B9.xml";
             TestOneFile(file);
         }

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using borsvarlden.Models;
 
-namespace borsvarlden.Models
+namespace borsvarlden.Db
 {
     
     public class ApplicationContext :DbContext
@@ -13,9 +14,6 @@ namespace borsvarlden.Models
         public DbSet <FinwireCompany> FinwireCompanies { get; set; }
         public DbSet <FinwireSocialTag> FinwireSocialTags { get; set; }
 
-        /*public DbSet <FinwireNews2FinwireCompanies> FinwireNews2FinwireCompanies { get; set; }
-        public DbSet <FinwireNews2FirnwireSocialTags> FinwireNews2FirnwireSocialTags { get; set; }
-        */
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
          

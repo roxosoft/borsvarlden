@@ -2,15 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using borsvarlden.Db;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using borsvarlden.Models;
 using Hangfire;
 using Microsoft.EntityFrameworkCore;
+using borsvarlden.Models;
+using borsvarlden.Finwire;
 
 namespace borsvarlden
 {
@@ -66,7 +68,8 @@ namespace borsvarlden
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseHangfireDashboard();
-            RecurringJob.AddOrUpdate(() => Console.WriteLine("Hello world from Hagfire!"), Cron.Minutely);
+            RecurringJob.AddOrUpdate<FinwireUpdater>(x => x.Execute(), Cron.MinuteInterval(5));
+         
 
             app.UseRouting();
 

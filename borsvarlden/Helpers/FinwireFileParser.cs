@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
-
 using System.Xml.XPath;
+using borsvarlden.Db;
 
 
 namespace borsvarlden.Helpers
@@ -13,13 +13,7 @@ namespace borsvarlden.Helpers
    
     public class FinwireFileParser
     {
-     
-        public FinwireFileParser()
-        {
 
-        }
-
-        
         public FinWireData Parse(string pathToFile)
         {
             var content =  File.ReadAllText(pathToFile);
