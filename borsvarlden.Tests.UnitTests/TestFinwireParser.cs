@@ -26,10 +26,20 @@ namespace borsvarlden.Tests.UnitTests
                     continue;
 
                 var path = $@"{pathBase}{i.ToString("D2")}";
-                var res = TestOneFile(Directory.GetFiles(path)[0]);
-                Assert.IsTrue(res.IsValid);
-                Assert.IsNotNull(res.Guid);
+
+                foreach (var file in Directory.GetFiles(path))
+                {
+                    var res = TestOneFile(file);
+                    Assert.IsTrue(res.IsValid);
+                    Assert.IsNotNull(res.Guid);
+                }
             }
+        }
+
+        [TestCase]
+        public void TestSpecificFile()
+        {
+            TestOneFile(@"f:\cs_proj\roxosoft_borsvarlden\finwire_files\test\08\FWM0042BB5.xml");
         }
 
         public FinWireData TestOneFile(string file)

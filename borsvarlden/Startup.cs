@@ -13,6 +13,7 @@ using Hangfire;
 using Microsoft.EntityFrameworkCore;
 using borsvarlden.Models;
 using borsvarlden.Finwire;
+using borsvarlden.Helpers;
 
 namespace borsvarlden
 {
@@ -48,8 +49,9 @@ namespace borsvarlden
                         UsePageLocksOnDequeue = true,
                         DisableGlobalLocks = true
                     }));
-            services.AddHangfireServer();
+            services.AddHangfireServer(options => options.WorkerCount=1);
             services.AddMvc();
+            services.AddSingleton<IFinwireParser, FinwireFileParser>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,7 +70,7 @@ namespace borsvarlden
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseHangfireDashboard();
-            RecurringJob.AddOrUpdate<FinwireUpdater>(x => x.Execute(), Cron.MinuteInterval(5));
+            RecurringJob.AddOrUpdate<FinwireUpdater>(x => x.Execute(), Cron.Minutely);
          
 
             app.UseRouting();

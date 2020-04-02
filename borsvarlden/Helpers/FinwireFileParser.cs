@@ -11,8 +11,13 @@ using borsvarlden.Db;
 namespace borsvarlden.Helpers
 {
    
-    public class FinwireFileParser
+    public class FinwireFileParser : IFinwireParser
     {
+
+        public FinwireFileParser()
+        {
+
+        }
 
         public FinWireData Parse(string pathToFile)
         {
@@ -22,9 +27,8 @@ namespace borsvarlden.Helpers
              xmlDocument.LoadXml(content);
 
              var item = xmlDocument.SelectSingleNode("item");
-           
 
-            var finWireDate = new FinWireData
+             var finWireDate = new FinWireData
             {
                 Title = item.SelectSingleNode("type")?.InnerText,
                 Guid = item.SelectSingleNode("guid")?.InnerText,
@@ -34,19 +38,24 @@ namespace borsvarlden.Helpers
                 Agency = item.SelectSingleNode("agency")?.InnerText
             };
 
-
-            var socialTags = new List<string>();
+            //todo Concat these all to methods with the delegate
+            var socialTagsList = new List<string>();
 
             foreach (XmlElement el in item.SelectNodes("socialtags"))
-                 socialTags.Add(el.InnerText);
+                foreach (var singleSocialTag in el.SelectNodes("socialtag"))
+                    socialTagsList.Add(((XmlNode)singleSocialTag).InnerText);
 
-            if (socialTags.Count > 0)
-                 finWireDate.SocialTags = socialTags;
+            if (socialTagsList.Count > 0)
+                 finWireDate.SocialTags = socialTagsList;
 
             var companies = new List<string>();
 
             foreach (XmlElement el in item.SelectNodes("companies"))
-                 companies.Add(el.InnerText);
+                foreach (var singleCompany in el.SelectNodes("company"))
+                    companies.Add(((XmlElement) singleCompany).GetAttribute("name"));
+            
+          //  if (companies.Count > 0)
+            //    System.Threading.Thread.Sleep(0);
 
             if (companies.Count > 0)
                  finWireDate.Companies = companies;
