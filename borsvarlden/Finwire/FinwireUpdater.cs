@@ -80,9 +80,11 @@ namespace borsvarlden.Finwire
                 finwireCompaniesFound.Add(finwireCompany);
             });
 
+              
+
             finwireCompaniesFound.ForEach(el => _dbContext.Add(new FinwireNew2FinwireCompany
             {
-                FinwireNew = newsEntity,
+                FinwireNew = newsEntityAdded,
                 FinwireCompany = el
             }));
 

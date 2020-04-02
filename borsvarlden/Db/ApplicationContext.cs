@@ -32,7 +32,7 @@ namespace borsvarlden.Db
             modelBuilder.Entity<FinwireNew2FinwireCompany>()
                 .HasOne(c => c.FinwireNew)
                 .WithMany(p => p.FinwireNew2FinwireCompanies)
-                .HasForeignKey(p => p.FinwareCompanyId);
+                .HasForeignKey(p => p.FinwireNewId);
 
             modelBuilder.Entity<FinwireNew2FirnwireSocialTag>()
                 .HasKey(t => new {t.FinwireSocialTagId, t.FinwireNewId});
