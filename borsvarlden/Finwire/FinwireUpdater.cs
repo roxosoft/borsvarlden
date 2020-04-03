@@ -32,8 +32,13 @@ namespace borsvarlden.Finwire
                     continue;
 
                 var path = $@"{pathBase}{i.ToString("D2")}";
-                var finwireData = _parser.Parse(Directory.GetFiles(path)[0]);
-                AddSingleNews(finwireData);
+
+                foreach (var file in Directory.GetFiles(path))
+                {
+                    var finwireData = _parser.Parse(file);
+                    AddSingleNews(finwireData);
+                }
+               
             }
         }
 
@@ -57,7 +62,7 @@ namespace borsvarlden.Finwire
             var newsEntityAdded = _dbContext.Add(newsEntity).Entity;
 
             //todo make generic method in helper etc, find better solution using EF Core
-            finwireData.SocialTags.ForEach(x =>
+            finwireData.SocialTags?.ForEach(x =>
                 _dbContext.Add(new FinwireNew2FirnwireSocialTag
                 {
                     FinwireNew = newsEntityAdded,
