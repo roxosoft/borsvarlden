@@ -42,8 +42,8 @@ namespace borsvarlden.Finwire
 
         public void AddSingleNews(FinWireData finwireData)
         {
-           // if (_dbContext.FinwireNews.Any(x => finwireData.Guid == x.Guid))
-             //   return;
+            if (_dbContext.FinwireNews.Any(x => finwireData.Guid == x.Guid))
+                return;
 
             var newsEntity = new FinwireNew()
             {
@@ -51,8 +51,11 @@ namespace borsvarlden.Finwire
                 Title = finwireData.Title,
                 Date = finwireData.Date,
                 NewsText = finwireData.NewsText,
-                Agency = finwireData.Agency
+                FinwireAgency = _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)
+                                ?? _dbContext.Add(new FinwireAgency { Agency = finwireData.Agency }).Entity
+
             };
+
 
             var socialTagsFound = new List<FinwireSocialTag>();
 

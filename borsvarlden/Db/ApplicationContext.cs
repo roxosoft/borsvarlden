@@ -13,6 +13,7 @@ namespace borsvarlden.Db
         public DbSet <FinwireNew> FinwireNews { get;set; }
         public DbSet <FinwireCompany> FinwireCompanies { get; set; }
         public DbSet <FinwireSocialTag> FinwireSocialTags { get; set; }
+        public DbSet <FinwireAgency> FinwireAgencies { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
