@@ -35,19 +35,29 @@ namespace borsvarlden.Finwire
 
                 var path = $@"{pathBase}{i.ToString("D2")}";
                 var finwireData = _parser.Parse(Directory.GetFiles(path)[0]);
-                UpdateSingleNews(finwireData);
+                AddSingleNews(finwireData);
                
             }
         }
 
-        public void UpdateSingleNews(FinWireData finwireData)
+        public void AddSingleNews(FinWireData finwireData)
         {
-            var newsEntity = new FinwireNew();
+           // if (_dbContext.FinwireNews.Any(x => finwireData.Guid == x.Guid))
+             //   return;
+
+            var newsEntity = new FinwireNew()
+            {
+                Guid = finwireData.Guid,
+                Title = finwireData.Title,
+                Date = finwireData.Date,
+                NewsText = finwireData.NewsText,
+                Agency = finwireData.Agency
+            };
 
             var socialTagsFound = new List<FinwireSocialTag>();
 
-            if (finwireData.SocialTags.Count > 1)
-                System.Threading.Thread.Sleep(100);
+           // if (finwireData.SocialTags.Count > 1)
+              //eading.Thread.Sleep(100);
 
             //todo make generic method in helper etc, find better solution using EF Core
             finwireData.SocialTags.ForEach(x =>
@@ -88,8 +98,8 @@ namespace borsvarlden.Finwire
                 FinwireCompany = el
             }));
 
-            if (finwireCompaniesFound.Count > 0)
-                System.Threading.Thread.Sleep(1000);
+           // if (finwireCompaniesFound.Count > 0)
+              //  System.Threading.Thread.Sleep(1000);
 
             _dbContext.SaveChanges();
         }
