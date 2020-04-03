@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Daimler och Geely bildar kinesisk samriskbolag för elbilsproduktion under varumärket Smart</title>
+	<guid>FWM0042BF6</guid>
+	<pubDate>Wed, 08 Jan 2020 11:18:02 GMT</pubDate>
+	<isoDate>2020-01-08T11:18:02+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://media.daimler.com/marsMediaSite/en/instance/ko.xhtml?viewType=list&amp;oid=45340879</link>
+	</links>
+	<newstext><![CDATA[Zhejiang Geely Holding och Mercedes-Benz har på onsdagen formellt bildat ett likaägt kinesiskt  samriskbolag med namnet &quot;smart Automobile Co&quot; där vardera part investerar nästan 389 miljoner dollar. Samriskbolaget kommer bygga nästa generations elbilar under varumärket Smart.<br/><br/>Det nya  bolaget kommer att ha produktionskapacitet i Kina och försäljningsverksamhet i både Kina och Tyskland.<br/><br/>Geely kommer ta hand om driften av bilarna, medan Mercedes-Benz tar hand om designen. <br/><br/>Samarbetet presenterades i mars förra året.]]></newstext>
+	<htmltext><![CDATA[Zhejiang Geely Holding och Mercedes-Benz har på onsdagen formellt bildat ett likaägt kinesiskt  samriskbolag med namnet "smart Automobile Co" där vardera part investerar nästan 389 miljoner dollar. Samriskbolaget kommer bygga nästa generations elbilar under varumärket Smart.<br><br>Det nya  bolaget kommer att ha produktionskapacitet i Kina och försäljningsverksamhet i både Kina och Tyskland.<br><br>Geely kommer ta hand om driften av bilarna, medan Mercedes-Benz tar hand om designen. <br><br>Samarbetet presenterades i mars förra året.]]></htmltext>
+	<signature><![CDATA[Lars Johansson<br/>lars.johansson@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Daimler">
+			<instrument isin="DE000A1YDAJ1" market="DBAG">DAIN</instrument>
+			<instrument isin="DE0007100000" market="DBAG">DAI</instrument>
+		</company>
+		<company name="Geely Automobile">
+			<instrument isin="US36847Q1031" market="HK">GEELY</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+	</socialtags>
+</item>

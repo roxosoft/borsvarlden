@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Ryanair förväntar sig att leverans av Boeing 737 Max kan dröja till oktober</title>
+	<guid>FWM0042973</guid>
+	<pubDate>Fri, 03 Jan 2020 16:23:48 GMT</pubDate>
+	<isoDate>2020-01-03T16:23:48+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/us-boeing-737max-ryanair-hldgs/ryanair-ceo-says-group-may-not-get-737-max-until-october-report-idUSKBN1Z20GB</link>
+	</links>
+	<newstext><![CDATA[Lågprisflygbolaget Ryanair förväntar sig inte att få leverans av Boeings olycksdrabbade 737 Max-flygplan förrän i oktober. Det säger vd Michael O'Leary i en intervju med tyska Wirtschaftswoche, rapporterar Reuters. <br/><br/>Ryanair har beställt 135 flygplan av denna modell, men har inga i dagsläget. Den ursprungliga planen var att Boeing skulle ha levererat 58 flygplan fram till sommaren 2020, vilken successivt har minskat till bara fem flygplan. <br/><br/>- Det är möjligt att vi får de första flygplanen i oktober 2020, säger Michael O'Leary i intervjun. <br/><br/>Ryanair vill i motsats till andra flygbolag bara diskutera kompensationsfrågan med Boeing efter att flygplanen har levererats.]]></newstext>
+	<htmltext><![CDATA[Lågprisflygbolaget Ryanair förväntar sig inte att få leverans av Boeings olycksdrabbade 737 Max-flygplan förrän i oktober. Det säger vd Michael O'Leary i en intervju med tyska Wirtschaftswoche, rapporterar Reuters. <br><br>Ryanair har beställt 135 flygplan av denna modell, men har inga i dagsläget. Den ursprungliga planen var att Boeing skulle ha levererat 58 flygplan fram till sommaren 2020, vilken successivt har minskat till bara fem flygplan. <br><br>- Det är möjligt att vi får de första flygplanen i oktober 2020, säger Michael O'Leary i intervjun. <br><br>Ryanair vill i motsats till andra flygbolag bara diskutera kompensationsfrågan med Boeing efter att flygplanen har levererats. ]]></htmltext>
+	<signature><![CDATA[Henrik Öhlin<br/>henrik.ohlin@finwire.se, 0703-21 06 99<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Boeing">
+			<instrument isin="US0970231058" market="NYSE">BA</instrument>
+		</company>
+		<company name="Ryanair">
+			<instrument isin="IE00BYTBXV33" market="LSE">RYA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>airlines</socialtag>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>leisure</socialtag>
+	</socialtags>
+</item>

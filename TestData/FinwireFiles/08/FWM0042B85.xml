@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Boeing 737 har kraschat i Iran, samtliga 176 ombord döda (uppdatering)</title>
+	<guid>FWM0042B85</guid>
+	<pubDate>Wed, 08 Jan 2020 07:18:34 GMT</pubDate>
+	<isoDate>2020-01-08T07:18:34+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.cnbc.com/2020/01/08/boeing-737-passenger-plane-crashes-in-iran-state-news-agencies-report.html</link>
+	</links>
+	<newstext><![CDATA[(Uppdatering gäller antalet personer ombord och att samtliga omkommit)<br/><br/>Ett Boeing 737-flygplan med 176 personer ombord har kraschat bara minuter efter starten från Teherans flygplats, rapporterar CNBC med hänvisning till iranska nyhetsmedier. En majoritet av passagerarna var iranier.<br/><br/>Det är oklart vad som fick flygplanet att krascha. Enligt iranska nyhetsbyrån Fars ska det röra sig om tekniska problem. Flygplanet, som tillhör Ukraine International Airlines, var på väg till Ukrainas huvudstad Kiev.<br/><br/>Det kraschade Boeing-flygplanet är en 737-800 modell, en tidigare variant av nya 737 Max som är markbunden sedan i våras efter två dödsolyckor under fjolåret.]]></newstext>
+	<htmltext><![CDATA[(Uppdatering gäller antalet personer ombord och att samtliga omkommit)<br><br>Ett Boeing 737-flygplan med 176 personer ombord har kraschat bara minuter efter starten från Teherans flygplats, rapporterar CNBC med hänvisning till iranska nyhetsmedier. En majoritet av passagerarna var iranier.<br><br>Det är oklart vad som fick flygplanet att krascha. Enligt iranska nyhetsbyrån Fars ska det röra sig om tekniska problem. Flygplanet, som tillhör Ukraine International Airlines, var på väg till Ukrainas huvudstad Kiev.<br><br>Det kraschade Boeing-flygplanet är en 737-800 modell, en tidigare variant av nya 737 Max som är markbunden sedan i våras efter två dödsolyckor under fjolåret.]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Boeing">
+			<instrument isin="US0970231058" market="NYSE">BA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>airlines</socialtag>
+		<socialtag>aviation</socialtag>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>leisure</socialtag>
+	</socialtags>
+</item>

@@ -15,9 +15,12 @@ namespace borsvarlden.Tests.UnitTests
 
         [TestCase]
         public void TestParseAllFiles()
-        { 
-            //TODO use realative path 
-            var pathBase = @"f:\cs_proj\roxosoft_borsvarlden\finwire_files\test\";
+        {
+            
+
+        //TODO use realative path 
+        var pathBase = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\..\TestData\FinwireFiles");
+            //var pathBase = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\TestData\Finwi
 
             for (int i = 1; i <= 8; i++)
             {

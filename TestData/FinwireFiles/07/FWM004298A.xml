@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Amerikanska fordonsförsäljningen lägre än väntat i december</title>
+	<guid>FWM004298A</guid>
+	<pubDate>Tue, 07 Jan 2020 04:41:01 GMT</pubDate>
+	<isoDate>2020-01-07T04:41:01+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Den amerikanska fordonsförsäljningen uppgick till 16,7 miljoner fordon i årstakt under december. Det var lägre än väntade 17,0 miljoner fordon, enligt Bloomberg. <br/><br/>Månaden innan var nivån 17,09 miljoner.]]></newstext>
+	<htmltext><![CDATA[Den amerikanska fordonsförsäljningen uppgick till 16,7 miljoner fordon i årstakt under december. Det var lägre än väntade 17,0 miljoner fordon, enligt Bloomberg. <br><br>Månaden innan var nivån 17,09 miljoner.]]></htmltext>
+	<signature><![CDATA[Lars Johansson<br/>lars.johansson@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Fiat Chrysler">
+			<instrument isin="NL0010877643" market="MILAN">FCHA</instrument>
+		</company>
+		<company name="Ford">
+			<instrument isin="US3453708600" market="NYSE">FX</instrument>
+		</company>
+		<company name="General Motors">
+			<instrument isin="US37045V1008" market="NYSE">GM</instrument>
+		</company>
+		<company name="Honda Motor">
+			<instrument isin="JP3854600008" market="TSE">7267</instrument>
+			<instrument isin="US4381283088" market="NASDAQ">HMC</instrument>
+		</company>
+		<company name="Hyundai Motor">
+			<instrument isin="USY384721251" market="LSE">HYU</instrument>
+		</company>
+		<company name="Nissan Motor">
+			<instrument isin="JP3672400003" market="TSE">7201</instrument>
+		</company>
+		<company name="Toyota">
+			<instrument isin="JP3633400001" market="TSE">690064</instrument>
+		</company>
+		<company name="USA">
+		</company>
+		<company name="Volvo Cars">
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>fx</socialtag>
+		<socialtag>industrials</socialtag>
+		<socialtag>macro</socialtag>
+	</socialtags>
+</item>

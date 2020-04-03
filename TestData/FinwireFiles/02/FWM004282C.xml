@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Tesla-kollision ska utredas av myndigheter</title>
+	<guid>FWM004282C</guid>
+	<pubDate>Thu, 02 Jan 2020 09:11:44 GMT</pubDate>
+	<isoDate>2020-01-02T09:11:44+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/us-tesla-crash/u-s-auto-safety-agency-to-probe-fatal-tesla-crash-in-los-angeles-idUSKBN1Z01GF</link>
+	</links>
+	<newstext><![CDATA[USA:s trafiksäkerhetsmyndighet, NHTSA, ska utreda den senaste dödliga kraschen med en Tesla-bil och förarassistanssystemet Autopilot inuti. Det rapporterar Reuters.<br/><br/>Det handlar om olyckan från den 29 december i södra Kalifornien. Då ska en Tesla ha åkt genom rött ljus och kört på en Honda-bil med två personer inuti. Personerna omkom medan de två sittandes i Tesla-bilen hamnade på sjukhuset utan livshotande skador.<br/><br/>NHTSA har inte velat säga om det misstänker Autopilot att ha legat bakom kollisionen. Utredningen blir hursomhelst myndighetens tolfte med en Tesla involverad. <br/><br/>Autopilot har varit inblandad i minst tre amerikanska dödskrascher sedan 2016.]]></newstext>
+	<htmltext><![CDATA[USA:s trafiksäkerhetsmyndighet, NHTSA, ska utreda den senaste dödliga kraschen med en Tesla-bil och förarassistanssystemet Autopilot inuti. Det rapporterar Reuters.<br><br>Det handlar om olyckan från den 29 december i södra Kalifornien. Då ska en Tesla ha åkt genom rött ljus och kört på en Honda-bil med två personer inuti. Personerna omkom medan de två sittandes i Tesla-bilen hamnade på sjukhuset utan livshotande skador.<br><br>NHTSA har inte velat säga om det misstänker Autopilot att ha legat bakom kollisionen. Utredningen blir hursomhelst myndighetens tolfte med en Tesla involverad. <br><br>Autopilot har varit inblandad i minst tre amerikanska dödskrascher sedan 2016.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Tesla">
+			<instrument isin="US88160R1014" market="NASDAQ">TSLA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

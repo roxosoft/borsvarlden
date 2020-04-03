@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Nybilsförsäljningen i USA väntas ha gått ned under 2019</title>
+	<guid>FWM0042915</guid>
+	<pubDate>Fri, 03 Jan 2020 09:18:57 GMT</pubDate>
+	<isoDate>2020-01-03T09:18:57+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.cnbc.com/2020/01/02/americans-bought-fewer-new-vehicles-in-2019-but-spending-to-hit-record.html</link>
+	</links>
+	<newstext><![CDATA[Amerikaner tros ha köpt färre nya bilar under 2019 men spenderat en rekordsumma på de som köpts in, enligt analysfirmor. Det rapporterar CNBC.<br/><br/>Prognosen är att försäljningen föll på årsbasis med cirka en procent till cirka 17 miljoner bilar. Det motsvarar den lägsta försäljningen sedan 2014 när 16,5 miljoner nya bilar såldes.<br/><br/>J.D. Power spår att de totala intäkterna för nya bilar kommer att uppgå till 462 miljarder dollar under 2019. Det är 8,4 miljarder dollar mer än vad som lades på nya bilar under året innan.<br/><br/>Under fredagen väntas bland annat General Motors, Fiat Chrysler och Toyota släppa sina decembersiffror för försäljningen i USA. Ford väntas komma med samma på måndag.]]></newstext>
+	<htmltext><![CDATA[Amerikaner tros ha köpt färre nya bilar under 2019 men spenderat en rekordsumma på de som köpts in, enligt analysfirmor. Det rapporterar CNBC.<br><br>Prognosen är att försäljningen föll på årsbasis med cirka en procent till cirka 17 miljoner bilar. Det motsvarar den lägsta försäljningen sedan 2014 när 16,5 miljoner nya bilar såldes.<br><br>J.D. Power spår att de totala intäkterna för nya bilar kommer att uppgå till 462 miljarder dollar under 2019. Det är 8,4 miljarder dollar mer än vad som lades på nya bilar under året innan.<br><br>Under fredagen väntas bland annat General Motors, Fiat Chrysler och Toyota släppa sina decembersiffror för försäljningen i USA. Ford väntas komma med samma på måndag. 
+
+]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Fiat Chrysler">
+			<instrument isin="NL0010877643" market="MILAN">FCHA</instrument>
+		</company>
+		<company name="Ford">
+			<instrument isin="US3453708600" market="NYSE">FX</instrument>
+		</company>
+		<company name="General Motors">
+			<instrument isin="US37045V1008" market="NYSE">GM</instrument>
+		</company>
+		<company name="Toyota">
+			<instrument isin="JP3633400001" market="TSE">690064</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+	</socialtags>
+</item>

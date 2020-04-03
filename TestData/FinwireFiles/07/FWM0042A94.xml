@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Aktieägarna i Fitbit röstar för Google-affär</title>
+	<guid>FWM0042A94</guid>
+	<pubDate>Tue, 07 Jan 2020 08:47:31 GMT</pubDate>
+	<isoDate>2020-01-07T08:47:31+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Aktieägarna i Fitbit har med en överväldigande majoritet röstat för budet från Google, rapporterar Seeking Alpha.<br/><br/>Budet är på 7,35 dollar per aktie i kontanter vilket värderar Fitbit till 2,1 miljarder dollar. Affären ska dock granskas av myndigheterna i USA enligt en rapport i media från mitten av december.<br/><br/>Fitbit har över 28 miljoner aktiva användare runt om i världen.]]></newstext>
+	<htmltext><![CDATA[Aktieägarna i Fitbit har med en överväldigande majoritet röstat för budet från Google, rapporterar Seeking Alpha.<br><br>Budet är på 7,35 dollar per aktie i kontanter vilket värderar Fitbit till 2,1 miljarder dollar. Affären ska dock granskas av myndigheterna i USA enligt en rapport i media från mitten av december.<br><br>Fitbit har över 28 miljoner aktiva användare runt om i världen.]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Alphabet">
+			<instrument isin="US02079K3059" market="NASDAQ">GOOGL</instrument>
+			<instrument isin="US02079K1079" market="NASDAQ">GOOG</instrument>
+		</company>
+		<company name="Fitbit">
+			<instrument isin="US33812L1026" market="NYSE">FIT</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>ma</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

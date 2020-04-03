@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Lannebo Fonder flaggar ned i Midsona</title>
+	<guid>FWM0042912</guid>
+	<pubDate>Fri, 03 Jan 2020 09:07:48 GMT</pubDate>
+	<isoDate>2020-01-03T09:07:48+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Lannebo Fonder har minskat sitt innehav i Midsona till 4,67 procent av kapitalet och 4,23 procent av rösterna i bolaget. Det framgår av ett flaggningsmeddelande.]]></newstext>
+	<htmltext><![CDATA[Lannebo Fonder har minskat sitt innehav i Midsona till 4,67 procent av kapitalet och 4,23 procent av rösterna i bolaget. Det framgår av ett flaggningsmeddelande. ]]></htmltext>
+	<signature><![CDATA[Henrik Öhlin<br/>henrik.ohlin@finwire.se, 0703-21 06 99<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Midsona">
+			<instrument isin="SE0000565228" market="SSE">MSON B</instrument>
+			<instrument isin="SE0000565210" market="SSE">MSON A</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>consumergoods</socialtag>
+		<socialtag>foods</socialtag>
+		<socialtag>healthcare</socialtag>
+		<socialtag>retail</socialtag>
+	</socialtags>
+</item>

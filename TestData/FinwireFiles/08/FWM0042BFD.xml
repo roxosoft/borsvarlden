@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Rekordförsäljning för BMW under 2019</title>
+	<guid>FWM0042BFD</guid>
+	<pubDate>Wed, 08 Jan 2020 11:39:09 GMT</pubDate>
+	<isoDate>2020-01-08T11:39:09+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Tyska fordonstillverkaren BMW nådde en rekordförsäljning om 2,5 miljoner bilar under 2019. Det uppgav försäljningschefen Pieter Nota på onsdagen till Reuters.<br/><br/>&quot;Vi ser på det kommande året med självförtroende och siktar på att öka försäljningen igen under 2020&quot;, uppgav Nota.]]></newstext>
+	<htmltext><![CDATA[Tyska fordonstillverkaren BMW nådde en rekordförsäljning om 2,5 miljoner bilar under 2019. Det uppgav försäljningschefen Pieter Nota på onsdagen till Reuters.<br><br>"Vi ser på det kommande året med självförtroende och siktar på att öka försäljningen igen under 2020", uppgav Nota.]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="BMW">
+			<instrument isin="DE0005190037" market="DBAG">BMW3</instrument>
+			<instrument isin="DE0005190003" market="DBAG">BMW</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+	</socialtags>
+</item>

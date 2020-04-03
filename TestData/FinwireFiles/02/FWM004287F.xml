@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Blankningarna på Stockholmsbörsen upp 19 procent på ett år</title>
+	<guid>FWM004287F</guid>
+	<pubDate>Thu, 02 Jan 2020 12:39:21 GMT</pubDate>
+	<isoDate>2020-01-02T12:39:21+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.avanza.se/placera/redaktionellt/2020/01/02/de-mest-blankade-aktierna.html</link>
+	</links>
+	<newstext><![CDATA[Blankningarna på Stockholmsbörsen har ökat med 19 procent på årsbasis. Deras sammanlagda värde uppgår nu till 42,1 miljarder kronor, skriver Placera med hänvisning till färsk statistik från Holdings. <br/><br/>H&amp;M toppar listan med blankade aktier för nära 8,4 miljarder kronor, motsvarande 2,6 procent av alla aktier i bolaget. Bara tre aktörer ligger bakom blankningarna varav två är back på investeringen.<br/><br/>Sett till procent toppar Fingerprint med 10,5 procent blankade aktier. Värdet på dem uppgår till 627 miljoner kronor.<br/><br/>Andra företag som också är hårt blankade är Intrum, JM, Mycronic, Billerud Korsnäs, NCC, Ica Gruppen, SCA, MQ och Elekta.]]></newstext>
+	<htmltext><![CDATA[Blankningarna på Stockholmsbörsen har ökat med 19 procent på årsbasis. Deras sammanlagda värde uppgår nu till 42,1 miljarder kronor, skriver Placera med hänvisning till färsk statistik från Holdings. <br><br>H&amp;M toppar listan med blankade aktier för nära 8,4 miljarder kronor, motsvarande 2,6 procent av alla aktier i bolaget. Bara tre aktörer ligger bakom blankningarna varav två är back på investeringen.<br><br>Sett till procent toppar Fingerprint med 10,5 procent blankade aktier. Värdet på dem uppgår till 627 miljoner kronor.<br><br>Andra företag som också är hårt blankade är Intrum, JM, Mycronic, Billerud Korsnäs, NCC, Ica Gruppen, SCA, MQ och Elekta. 
+]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Billerud Korsnäs">
+			<instrument isin="SE0000862997" market="SSE">BILL</instrument>
+		</company>
+		<company name="Elekta" orgnr="556170-4015" url="http://www.elekta.com/">
+			<instrument isin="SE0000163628" market="SSE">EKTA B</instrument>
+		</company>
+		<company name="Fingerprint Cards" orgnr="556154-2381">
+			<instrument isin="SE0008374250" market="SSE">FING</instrument>
+		</company>
+		<company name="H&amp;M">
+			<instrument isin="SE0000106270" market="SSE">HM B</instrument>
+		</company>
+		<company name="ICA">
+			<instrument isin="SE0000652216" market="SSE">ICA</instrument>
+		</company>
+		<company name="JM">
+			<instrument isin="SE0000806994" market="SSE">JM</instrument>
+		</company>
+		<company name="MQ">
+			<instrument isin="SE0003303460" market="SSE">MQ</instrument>
+		</company>
+		<company name="Mycronic">
+			<instrument isin="SE0000375115" market="SSE">MICR</instrument>
+		</company>
+		<company name="NCC">
+			<instrument isin="SE0000117970" market="SSE">NCC B</instrument>
+			<instrument isin="SE0000118952" market="SSE">NCC A</instrument>
+		</company>
+		<company name="SCA">
+			<instrument isin="SE0000112724" market="SSE">SCA B</instrument>
+			<instrument isin="SE0000171886" market="SSE">SCA A</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>financials</socialtag>
+		<socialtag>stocks</socialtag>
+	</socialtags>
+</item>

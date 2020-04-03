@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Airbus överträffar leveransmålet för 2019, knuffar åt sidan Boeing som branschetta</title>
+	<guid>FWM00427ED</guid>
+	<pubDate>Thu, 02 Jan 2020 06:15:06 GMT</pubDate>
+	<isoDate>2020-01-02T06:15:06+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/us-airbus-deliveries-exclusive/exclusive-airbus-beats-goal-with-863-deliveries-in-2019-up-8-idUSKBN1Z01Q8</link>
+	</links>
+	<newstext><![CDATA[Europeiska flygplanstillverkaren Airbus är åter störst i världen efter att ha slagit egna målet med 863 leveranser under 2019, rapporterar Reuters med hänvisning till källor.<br/><br/>Senast bolaget var i topp var 2011. Bolaget har kunnat överta tronen från Boeing efter att den senare fått populära modellen 737 Max markbunden efter två dödsolyckor i våras.<br/><br/>Airbus leveranser i fjol var 7,9 procent högre från de 800 flygplan som levererades under 2018.<br/><br/>Målet för 2019 var 860 leveranser, ett mål som fick revideras ned med 2-3 procent i oktober på egna bolagsproblem.<br/><br/>Airbus har avböjt att kommentera.]]></newstext>
+	<htmltext><![CDATA[Europeiska flygplanstillverkaren Airbus är åter störst i världen efter att ha slagit egna målet med 863 leveranser under 2019, rapporterar Reuters med hänvisning till källor.<br><br>Senast bolaget var i topp var 2011. Bolaget har kunnat överta tronen från Boeing efter att den senare fått populära modellen 737 Max markbunden efter två dödsolyckor i våras.<br><br>Airbus leveranser i fjol var 7,9 procent högre från de 800 flygplan som levererades under 2018.<br><br>Målet för 2019 var 860 leveranser, ett mål som fick revideras ned med 2-3 procent i oktober på egna bolagsproblem.<br><br>Airbus har avböjt att kommentera.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Airbus">
+			<instrument isin="NL0000235190" market="ENEXT">AIR</instrument>
+		</company>
+		<company name="Boeing">
+			<instrument isin="US0970231058" market="NYSE">BA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>airlines</socialtag>
+		<socialtag>aviation</socialtag>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>leisure</socialtag>
+	</socialtags>
+</item>

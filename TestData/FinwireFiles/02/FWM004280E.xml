@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Vivendi säljer 10 procent i Universal Music Group till Tencent-konsortium</title>
+	<guid>FWM004280E</guid>
+	<pubDate>Thu, 02 Jan 2020 07:54:43 GMT</pubDate>
+	<isoDate>2020-01-02T07:54:43+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.vivendi.com/en/press/press-releases/vivendi-signing-of-the-agreement-with-a-tencent-led-consortium-regarding-umg-and-the-evolution-of-its-capital/</link>
+	</links>
+	<newstext><![CDATA[Franska mediajätten Vivendi har sålt en andel på tio procent i skivbolaget Universal Music Group, UMG, till ett Tencent-lett konsortium. Affären värderar UMG till 30 miljarder euro, motsvarande 314 miljarder kronor, enligt ett pressmeddelande.<br/><br/>Under avtalet har konsortiet möjligheten att köpa på sig ytterligare upp emot tio procent i UMG fram till den 15 januari nästa år.<br/><br/>Vivendi uppger sig vara nöjda med de nya investerarna som ska hjälpa UMG att vidare utvecklas i Asien.<br/><br/>Transaktionen förväntas stänga vid slutet av det första halvåret 2020.<br/><br/>Enligt källor till Reuters ingår i konsortiet även Singapores statliga företag GIC och förmögenhetsfonden Qatar Investment Authority.]]></newstext>
+	<htmltext><![CDATA[Franska mediajätten Vivendi har sålt en andel på tio procent i skivbolaget Universal Music Group, UMG, till ett Tencent-lett konsortium. Affären värderar UMG till 30 miljarder euro, motsvarande 314 miljarder kronor, enligt ett pressmeddelande.<br><br>Under avtalet har konsortiet möjligheten att köpa på sig ytterligare upp emot tio procent i UMG fram till den 15 januari nästa år.<br><br>Vivendi uppger sig vara nöjda med de nya investerarna som ska hjälpa UMG att vidare utvecklas i Asien.<br><br>Transaktionen förväntas stänga vid slutet av det första halvåret 2020.<br><br>Enligt källor till Reuters ingår i konsortiet även Singapores statliga företag GIC och förmögenhetsfonden Qatar Investment Authority.
+]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Tencent">
+			<instrument isin="KYG875721634" market="DBAG">0700</instrument>
+		</company>
+		<company name="Vivendi">
+			<instrument isin="FR0000127771" market="ENEXT">VIV</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>consumergoods</socialtag>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>gaming</socialtag>
+		<socialtag>media</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

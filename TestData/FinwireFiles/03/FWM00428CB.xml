@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Tesla sänker priserna på Kina-tillverkade Model 3</title>
+	<guid>FWM00428CB</guid>
+	<pubDate>Fri, 03 Jan 2020 06:38:57 GMT</pubDate>
+	<isoDate>2020-01-03T06:38:57+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/tesla-china-price/tesla-cuts-starting-price-for-china-made-model-3-vehicles-idUSB9N290009</link>
+	</links>
+	<newstext><![CDATA[Tesla har sänkt priset på sina Kina-tillverkade Model 3 efter att ha mottagit subventioner, enligt kinesiska hemsidan. Det skriver Reuters.<br/><br/>Startpriset är nu på 299 050 yuan (402 800 kronor), att jämföra med tidigare 355 800 yuan.<br/><br/>Teslas besked kommer veckan innan de första Model 3-bilarna börjar lämna fabriken i Shanghai för kunder.]]></newstext>
+	<htmltext><![CDATA[Tesla har sänkt priset på sina Kina-tillverkade Model 3 efter att ha mottagit subventioner, enligt kinesiska hemsidan. Det skriver Reuters.<br><br>Startpriset är nu på 299 050 yuan (402 800 kronor), att jämföra med tidigare 355 800 yuan.<br><br>Teslas besked kommer veckan innan de första Model 3-bilarna börjar lämna fabriken i Shanghai för kunder. ]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Tesla">
+			<instrument isin="US88160R1014" market="NASDAQ">TSLA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

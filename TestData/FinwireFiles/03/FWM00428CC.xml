@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Buffett tackade nej till att köpa Tiffany</title>
+	<guid>FWM00428CC</guid>
+	<pubDate>Fri, 03 Jan 2020 06:50:42 GMT</pubDate>
+	<isoDate>2020-01-03T06:50:42+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.cnbc.com/2020/01/02/warren-buffett-reportedly-passed-on-buying-tiffany-as-berkshire-sits-on-a-mountain-of-cash.html</link>
+	</links>
+	<newstext><![CDATA[Finansmannen Warren Buffetts investeringsjätte Berkshire Hathaway avstod i fjol ett uppköp av juvelerarföretaget Tiffany &amp; Co. Det rapporterar Financial Times, enligt CNBC.<br/><br/>Det var Tiffany som tog upp kontakten med Buffett efter att ha mottagit ett bud från LVMH. Men Buffett, som tidigare genom Berkshire köpt obligationer i Tiffany för 250 miljoner dollar, valde att avstå en affär. Buffett har bekräftat till FT att samtalet ägde rum.<br/><br/>Tiffany kom i slutändan att bli uppköpta av LVMH för 16,2 miljarder dollar i november.<br/><br/>Berkshire, som sitter på en rekordstor kassa på 128,2 miljarder dollar, gjorde senast ett företagsförvärv 2015 med Precision Castparts. <br/><br/>Buffett skrev i årsredovisningen 2018 att Berkshire på senare år föredrar investeringar framför företagsförvärv då de förra erbjuder en bättre avkastning.]]></newstext>
+	<htmltext><![CDATA[Finansmannen Warren Buffetts investeringsjätte Berkshire Hathaway avstod i fjol ett uppköp av juvelerarföretaget Tiffany &amp; Co. Det rapporterar Financial Times, enligt CNBC.<br><br>Det var Tiffany som tog upp kontakten med Buffett efter att ha mottagit ett bud från LVMH. Men Buffett, som tidigare genom Berkshire köpt obligationer i Tiffany för 250 miljoner dollar, valde att avstå en affär. Buffett har bekräftat till FT att samtalet ägde rum.<br><br>Tiffany kom i slutändan att bli uppköpta av LVMH för 16,2 miljarder dollar i november.<br><br>Berkshire, som sitter på en rekordstor kassa på 128,2 miljarder dollar, gjorde senast ett företagsförvärv 2015 med Precision Castparts. <br><br>Buffett skrev i årsredovisningen 2018 att Berkshire på senare år föredrar investeringar framför företagsförvärv då de förra erbjuder en bättre avkastning.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Berkshire Hathaway">
+			<instrument isin="US0846707026" market="NYSE">BRK B</instrument>
+			<instrument isin="US0846701086" market="NYSE">BRK A</instrument>
+		</company>
+		<company name="LVMH">
+			<instrument isin="FR0000121014" market="ENEXT">MC</instrument>
+		</company>
+		<company name="Tiffany">
+			<instrument isin="US8865471085" market="NYSE">TIF</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>financials</socialtag>
+		<socialtag>ma</socialtag>
+	</socialtags>
+</item>

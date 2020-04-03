@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>MVV får order från Precomp Solutions på 0,5 miljoner kronor</title>
+	<guid>FWS0042B7F</guid>
+	<pubDate>Wed, 08 Jan 2020 07:10:28 GMT</pubDate>
+	<isoDate>2020-01-08T07:10:28+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[MVV Holdings dotterbolag, MVV Industry, har fått en order från Precomp Solutions för automatisering av pressverktyg gällande förmontering av bilsäkerhetskomponent. Ordervärdet är cirka 0,5 miljoner kronor, enligt ett pressmeddelande.<br/><br/>MVV Industry får 10-12 veckor på sig att automatisera verktyget med styrsystem, HMI och säkerhetslösning, står det.<br/><br/>Precomp har tidigare låtit MVV Industry utföra automatiseringslösningar och ser ”återigen fram emot en bra leverans”, enligt Stefan Inhammar, vice vd på Precomp.]]></newstext>
+	<htmltext><![CDATA[MVV Holdings dotterbolag, MVV Industry, har fått en order från Precomp Solutions för automatisering av pressverktyg gällande förmontering av bilsäkerhetskomponent. Ordervärdet är cirka 0,5 miljoner kronor, enligt ett pressmeddelande.<br><br>MVV Industry får 10-12 veckor på sig att automatisera verktyget med styrsystem, HMI och säkerhetslösning, står det.<br><br>Precomp har tidigare låtit MVV Industry utföra automatiseringslösningar och ser ”återigen fram emot en bra leverans”, enligt Stefan Inhammar, vice vd på Precomp.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWS</agency>
+	<companies>
+		<company name="MVV">
+			<instrument isin="SE0001999442" market="NGM">MVV MTF B</instrument>
+		</company>
+		<company name="Precomp Solutions">
+			<instrument isin="SE0006091724" market="SSEFN">PCOM B</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>industrials</socialtag>
+		<socialtag>ngmexchange</socialtag>
+	</socialtags>
+</item>

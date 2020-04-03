@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Zordix marknadschef köper 5 300 aktier</title>
+	<guid>FWS0042ABE</guid>
+	<pubDate>Tue, 07 Jan 2020 10:32:36 GMT</pubDate>
+	<isoDate>2020-01-07T10:32:36+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Axel Danielsson har den 7 januari köpt 5 300 aktier i Zordix där han är Marknadschef. Aktierna köptes till kursen 9,30 kronor per aktie, till ett totalt pris av 49 290 kronor. <br/>Affären gjordes på Nordic MTF. Det framgår av Finansinspektionens insynsregister.<br/><br/>Zordix har mer än dubblats på NGM-börsen sedan oktober.]]></newstext>
+	<htmltext><![CDATA[Axel Danielsson har den 7 januari köpt 5 300 aktier i Zordix där han är Marknadschef. Aktierna köptes till kursen 9,30 kronor per aktie, till ett totalt pris av 49 290 kronor. <br>Affären gjordes på Nordic MTF. Det framgår av Finansinspektionens insynsregister.<br><br>Zordix har mer än dubblats på NGM-börsen sedan oktober.]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWS</agency>
+	<companies>
+		<company name="Zordix" orgnr="556778-7691">
+			<instrument isin="SE0011725506" market="NGM">ZORDIXMTFB</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>consumergoods</socialtag>
+		<socialtag>gaming</socialtag>
+		<socialtag>insider</socialtag>
+		<socialtag>ngmexchange</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Nyvald styrelseledamot köper aktier i Quickbit för 0,6 miljoner kronor</title>
+	<guid>FWS0042ACE</guid>
+	<pubDate>Tue, 07 Jan 2020 11:10:13 GMT</pubDate>
+	<isoDate>2020-01-07T11:10:13+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Lars Melander har den 7 januari köpt 50 000 aktier i fintechbolaget Quickbit som utvecklar tekniklösningar där han är nyvald styrelseledamot. Aktierna köptes till kursen 12,10 kronor per aktie, en affär på 605 000 kronor. Affären gjordes på Nordic Growth Market. Det framgår av Finansinspektionens insynsregister.]]></newstext>
+	<htmltext><![CDATA[Lars Melander har den 7 januari köpt 50 000 aktier i fintechbolaget Quickbit som utvecklar tekniklösningar där han är nyvald styrelseledamot. Aktierna köptes till kursen 12,10 kronor per aktie, en affär på 605 000 kronor. Affären gjordes på Nordic Growth Market. Det framgår av Finansinspektionens insynsregister.]]></htmltext>
+	<signature><![CDATA[Henrik Öhlin<br/>henrik.ohlin@finwire.se, 0703-21 06 99<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWS</agency>
+	<companies>
+		<company name="Quickbit" orgnr="559066-2093">
+			<instrument isin="SE0010662585" market="NGM">QBIT</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>cryptocurrency</socialtag>
+		<socialtag>fintech</socialtag>
+		<socialtag>fx</socialtag>
+		<socialtag>insider</socialtag>
+		<socialtag>macro</socialtag>
+		<socialtag>ngmexchange</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

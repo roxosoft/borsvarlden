@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Prishöjningar väntar mer än 200 läkemedel i USA</title>
+	<guid>FWM0042831</guid>
+	<pubDate>Thu, 02 Jan 2020 09:12:24 GMT</pubDate>
+	<isoDate>2020-01-02T09:12:24+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/us-usa-healthcare-drugpricing/exclusive-drugmakers-from-pfizer-to-gsk-to-hike-u-s-prices-on-over-200-drugs-idUSKBN1YZ1C4</link>
+	</links>
+	<newstext><![CDATA[Läkemedelsjättarna Pfizer, Glaxosmithkline och Sanofi ska höja priserna på mer än 200 läkemedel i USA, enligt uttalanden och data från hälsoanalysfirman 3 Axis Advisors. Det skriver Reuters.<br/><br/>I princip kommer samtliga prishöjningar att understiga tio procent. Hälften av produkterna väntas få höjda priser med 4-6 procent och medianpriset väntas öka med cirka 5 procent, enligt Eric Pachman på 3 Axis.<br/><br/>Han sade att fler prishöjningar väntas bli tillkännagivna under veckan vilket kan påverka medianpriset.<br/><br/>Läkemedelsbolagen har på grund av stor politisk press lovat att inte vidta prishöjningar över tio procent per år. USA:s president Donald Trump, som siktar på att bli omvald i år, hade under sin senaste valkampanj som kärnfråga att sänka läkemedelspriserna.]]></newstext>
+	<htmltext><![CDATA[Läkemedelsjättarna Pfizer, Glaxosmithkline och Sanofi ska höja priserna på mer än 200 läkemedel i USA, enligt uttalanden och data från hälsoanalysfirman 3 Axis Advisors. Det skriver Reuters.<br><br>I princip kommer samtliga prishöjningar att understiga tio procent. Hälften av produkterna väntas få höjda priser med 4-6 procent och medianpriset väntas öka med cirka 5 procent, enligt Eric Pachman på 3 Axis.<br><br>Han sade att fler prishöjningar väntas bli tillkännagivna under veckan vilket kan påverka medianpriset.<br><br>Läkemedelsbolagen har på grund av stor politisk press lovat att inte vidta prishöjningar över tio procent per år. USA:s president Donald Trump, som siktar på att bli omvald i år, hade under sin senaste valkampanj som kärnfråga att sänka läkemedelspriserna.
+
+]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Glaxosmithkline">
+			<instrument isin="GB0009252882" market="LSE">GSK</instrument>
+		</company>
+		<company name="Pfizer">
+			<instrument isin="US7170811035" market="NYSE">PFE</instrument>
+		</company>
+		<company name="Sanofi">
+			<instrument isin="FR0000120578" market="ENEXT">SAN</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>healthcare</socialtag>
+		<socialtag>lifescience</socialtag>
+		<socialtag>pharmaceuticals</socialtag>
+	</socialtags>
+</item>

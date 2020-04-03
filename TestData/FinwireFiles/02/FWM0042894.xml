@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>CNBC listar Wall Streets favoriter för 2020</title>
+	<guid>FWM0042894</guid>
+	<pubDate>Thu, 02 Jan 2020 13:48:22 GMT</pubDate>
+	<isoDate>2020-01-02T13:48:22+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.cnbc.com/2019/12/30/here-are-wall-streets-favorite-stocks-for-2020.html</link>
+	</links>
+	<newstext><![CDATA[CNBC har tagit fram en lista på tio företag inom S&amp;P 500-index som har en köprekommendation på minst 80 procent av analytikerna som följer dem. Samtliga av bolagen har en uppsida på minst tio procent.<br/><br/>I toppen återfinns Diamondback Energy med en uppsida på 34,8 procent och där 89,2 procent av analytikerna har en köpstämpel på bolaget.<br/><br/>Därefter följer Marathon Petroleum, Quanta Services och Salesforce med uppsidor på 32,4, 20,4 och 17,5 procent. Största köpandelen har Quanta med 92,9 procent.<br/><br/>Övriga bolag på listan är följande (procenttalen avser uppsida):<br/>- Amazon (17,5 procent)<br/>- Facebook (16,6 procent)<br/>- Synopsys (15,7 procent)<br/>- Jacobs Engineering (15,5 procent)<br/>- Assurant (12,1 procent)<br/>- Norwegian Cruise Line (10,5 procent)<br/><br/>CNBC har framställt listan genomsökning i Factset.]]></newstext>
+	<htmltext><![CDATA[CNBC har tagit fram en lista på tio företag inom S&amp;P 500-index som har en köprekommendation på minst 80 procent av analytikerna som följer dem. Samtliga av bolagen har en uppsida på minst tio procent.<br><br>I toppen återfinns Diamondback Energy med en uppsida på 34,8 procent och där 89,2 procent av analytikerna har en köpstämpel på bolaget.<br><br>Därefter följer Marathon Petroleum, Quanta Services och Salesforce med uppsidor på 32,4, 20,4 och 17,5 procent. Största köpandelen har Quanta med 92,9 procent.<br><br>Övriga bolag på listan är följande (procenttalen avser uppsida):<br>- Amazon (17,5 procent)<br>- Facebook (16,6 procent)<br>- Synopsys (15,7 procent)<br>- Jacobs Engineering (15,5 procent)<br>- Assurant (12,1 procent)<br>- Norwegian Cruise Line (10,5 procent)<br><br>CNBC har framställt listan genomsökning i Factset. ]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Amazon">
+			<instrument isin="US0231351067" market="NASDAQ">AMZN</instrument>
+		</company>
+		<company name="Facebook">
+			<instrument isin="US30303M1027" market="NASDAQ">FB</instrument>
+		</company>
+		<company name="Salesforce">
+			<instrument isin="US79466L3024" market="NYSE">CRM</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>analytics</socialtag>
+		<socialtag>stocks</socialtag>
+	</socialtags>
+</item>

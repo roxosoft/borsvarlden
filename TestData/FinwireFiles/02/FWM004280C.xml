@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Pareto plockar in två nya aktier i sin modellportfölj - två får stryka på foten efter stark utveckling</title>
+	<guid>FWM004280C</guid>
+	<pubDate>Thu, 02 Jan 2020 07:39:04 GMT</pubDate>
+	<isoDate>2020-01-02T07:39:04+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Mäklarfirman Pareto möblerar om i sin svenska modellportfölj inför januari. <br/><br/>Medicinteknikbolaget Arjo och Byggpartner adderas medan Mips och Irras plockas bort efter en stark utveckling.]]></newstext>
+	<htmltext><![CDATA[Mäklarfirman Pareto möblerar om i sin svenska modellportfölj inför januari. <br><br>Medicinteknikbolaget Arjo och Byggpartner adderas medan Mips och Irras plockas bort efter en stark utveckling. ]]></htmltext>
+	<signature><![CDATA[newsroom@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Arjo" orgnr="559092-8064">
+			<instrument isin="SE0010468116" market="SSE">ARJO B</instrument>
+		</company>
+		<company name="Byggpartner" orgnr="556710-9243">
+			<instrument isin="SE0009242324" market="SSEFN">BYGGP</instrument>
+		</company>
+		<company name="Irras">
+			<instrument isin="SE0008321202" market="SSEFN">IRRAS</instrument>
+		</company>
+		<company name="Mips" orgnr="556609-0162">
+			<instrument isin="SE0009216278" market="SSE">MIPS</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>analytics</socialtag>
+		<socialtag>healthcare</socialtag>
+		<socialtag>lifescience</socialtag>
+		<socialtag>medtech</socialtag>
+		<socialtag>stocks</socialtag>
+	</socialtags>
+</item>

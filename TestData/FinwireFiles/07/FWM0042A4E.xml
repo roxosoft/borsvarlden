@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Swedbank tar in Nobia bland sina sektorfavoriter - Kambi åker ut</title>
+	<guid>FWM0042A4E</guid>
+	<pubDate>Tue, 07 Jan 2020 07:10:40 GMT</pubDate>
+	<isoDate>2020-01-07T07:10:40+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Swedbank tar in Nobia bland sina sektorfavoriter inom konsumentsegmentet. Samtidigt får Kambi lämna, enligt en uppdatering på tisdagen.]]></newstext>
+	<htmltext><![CDATA[Swedbank tar in Nobia bland sina sektorfavoriter inom konsumentsegmentet. Samtidigt får Kambi lämna, enligt en uppdatering på tisdagen.]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Kambi">
+			<instrument isin="MT0000780107" market="SSEFN">KAMBI</instrument>
+		</company>
+		<company name="Nobia">
+			<instrument isin="SE0000949331" market="SSE">NOBI</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>analytics</socialtag>
+		<socialtag>stocks</socialtag>
+	</socialtags>
+</item>

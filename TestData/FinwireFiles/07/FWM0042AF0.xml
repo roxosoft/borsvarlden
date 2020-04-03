@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>BP säljer tillgångar i Nordsjön till Premier Oil</title>
+	<guid>FWM0042AF0</guid>
+	<pubDate>Tue, 07 Jan 2020 12:32:43 GMT</pubDate>
+	<isoDate>2020-01-07T12:32:43+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.bbc.com/news/uk-scotland-scotland-business-51019218</link>
+		<link type="html" mime="text/html">https://www.londonstockexchange.com/exchange/news/market-news/market-news-detail/PMO/14373443.html</link>
+	</links>
+	<newstext><![CDATA[Oljejätten BP säljer flera tillgångar i Nordsjön till Premier Oil för 625 miljoner dollar, motsvarande 5,9 miljarder kronor. Det framgår av ett pressmeddelande.<br/><br/>Tillgångarna är borriggen Andrew och fem närliggande fält med koppling till den, så väl som en andel på 27,5 procent i Shearwater-fältet. Den senare har Shell som operatör.<br/><br/>BP beskriver affären som en omstöpning av portföljen i Nordsjön.<br/><br/>Under transaktionen förväntas 69 anställda på Andrew-tillgångarna att övergå till Premier Oil, rapporterar BBC.<br/><br/>Försäljningen väntas bli slutförd under det tredje kvartalet i år.]]></newstext>
+	<htmltext><![CDATA[Oljejätten BP säljer flera tillgångar i Nordsjön till Premier Oil för 625 miljoner dollar, motsvarande 5,9 miljarder kronor. Det framgår av ett pressmeddelande.<br><br>Tillgångarna är borriggen Andrew och fem närliggande fält med koppling till den, så väl som en andel på 27,5 procent i Shearwater-fältet. Den senare har Shell som operatör.<br><br>BP beskriver affären som en omstöpning av portföljen i Nordsjön.<br><br>Under transaktionen förväntas 69 anställda på Andrew-tillgångarna att övergå till Premier Oil, rapporterar BBC.<br><br>Försäljningen väntas bli slutförd under det tredje kvartalet i år. ]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="BP">
+			<instrument isin="GB0007980591" market="LSE">BP.</instrument>
+		</company>
+		<company name="Premier Oil">
+			<instrument isin="GB00B43G0577" market="LSE">PMO</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>commodities</socialtag>
+		<socialtag>energy</socialtag>
+		<socialtag>ma</socialtag>
+		<socialtag>oil</socialtag>
+	</socialtags>
+</item>

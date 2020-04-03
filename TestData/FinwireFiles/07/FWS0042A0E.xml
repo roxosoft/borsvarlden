@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Red Reserve handlas idag med sitt nya namn Ngage Group</title>
+	<guid>FWS0042A0E</guid>
+	<pubDate>Tue, 07 Jan 2020 06:01:00 GMT</pubDate>
+	<isoDate>2020-01-07T06:01:00+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Red Reserve handlas idag den 7 januari på Spotlight Stock Market med sitt nya namn Ngage Group. Aktiens nya kortnamn är NGAGE]]></newstext>
+	<htmltext><![CDATA[Red Reserve handlas idag den 7 januari på Spotlight Stock Market med sitt nya namn Ngage Group. Aktiens nya kortnamn är NGAGE]]></htmltext>
+	<signature><![CDATA[Henrik Öhlin<br/>henrik.ohlin@finwire.se, 0703-21 06 99<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWS</agency>
+	<companies>
+		<company name="Ngage Group" orgnr="556588-3229">
+			<instrument isin="SE0007158902" market="ATORG">NGAGE</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>consumergoods</socialtag>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>corporateactions</socialtag>
+		<socialtag>gaming</socialtag>
+		<socialtag>media</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Amerikanska teknikbolag ska satsa mer på finans i år</title>
+	<guid>FWM004293D</guid>
+	<pubDate>Fri, 03 Jan 2020 10:55:36 GMT</pubDate>
+	<isoDate>2020-01-03T10:55:36+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.cnbc.com/2020/01/03/big-tech-will-push-into-finance-in-2020-while-avoiding-bank-regulation.html</link>
+	</links>
+	<newstext><![CDATA[De amerikanska teknikjättarna kommer i år att satsa mer på finanstjänster men undvika att bli banker. Det bedömer branschexperter, rapporterar CNBC.<br/><br/>”De stora teknikföretagen kommer att fortsätta lägga till tjänster som är perifera till bankernas befintliga erbjudanden”, sade Sarah Kocianski, analyschef på fintechkonsultbolaget 11:FS.<br/><br/>Hon tillade att erbjudandena kommer att hålla sig inom ramar som innebär att teknikbolagen själva slipper att räknas som banker. <br/><br/>”Huvudvärken med att få och behålla en banklicens skulle troligtvis betraktas som en stor risk för dessa företag. De kommer istället att fortsätta arbeta med licensierade partners,” sade hon.<br/><br/>Även Accentures chef för globala betalningar, Sulabh Agrawal, tror att techföretagen förblir främst kvar inom teknikområdet trots sina investeringar inom finans. Bakgrunden är att techsektorn erbjuder en större avkastning jämfört med banker. <br/><br/>Förra året debuterade Apple med ett kreditkort ihop med Goldman Sachs och i år ska Google lansera ett bankkonto för privatkunder i samarbete med Citibank.]]></newstext>
+	<htmltext><![CDATA[De amerikanska teknikjättarna kommer i år att satsa mer på finanstjänster men undvika att bli banker. Det bedömer branschexperter, rapporterar CNBC.<br><br>”De stora teknikföretagen kommer att fortsätta lägga till tjänster som är perifera till bankernas befintliga erbjudanden”, sade Sarah Kocianski, analyschef på fintechkonsultbolaget 11:FS.<br><br>Hon tillade att erbjudandena kommer att hålla sig inom ramar som innebär att teknikbolagen själva slipper att räknas som banker. <br><br>”Huvudvärken med att få och behålla en banklicens skulle troligtvis betraktas som en stor risk för dessa företag. De kommer istället att fortsätta arbeta med licensierade partners,” sade hon.<br><br>Även Accentures chef för globala betalningar, Sulabh Agrawal, tror att techföretagen förblir främst kvar inom teknikområdet trots sina investeringar inom finans. Bakgrunden är att techsektorn erbjuder en större avkastning jämfört med banker. <br><br>Förra året debuterade Apple med ett kreditkort ihop med Goldman Sachs och i år ska Google lansera ett bankkonto för privatkunder i samarbete med Citibank. ]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Alphabet">
+			<instrument isin="US02079K3059" market="NASDAQ">GOOGL</instrument>
+			<instrument isin="US02079K1079" market="NASDAQ">GOOG</instrument>
+		</company>
+		<company name="Amazon">
+			<instrument isin="US0231351067" market="NASDAQ">AMZN</instrument>
+		</company>
+		<company name="Apple">
+			<instrument isin="US0378331005" market="NASDAQ">AAPL</instrument>
+		</company>
+		<company name="Facebook">
+			<instrument isin="US30303M1027" market="NASDAQ">FB</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>bank</socialtag>
+		<socialtag>financials</socialtag>
+		<socialtag>fintech</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

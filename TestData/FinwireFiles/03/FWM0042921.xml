@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Lannebo Fonder flaggar ned i Bulten</title>
+	<guid>FWM0042921</guid>
+	<pubDate>Fri, 03 Jan 2020 09:20:45 GMT</pubDate>
+	<isoDate>2020-01-03T09:20:45+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Lannebo Fonder har minskat sitt innehav i verkstadsbolaget Bulten till 8,79 procent av kapitalet och rösterna i bolaget. Det framgår av ett flaggningsmeddelande.]]></newstext>
+	<htmltext><![CDATA[Lannebo Fonder har minskat sitt innehav i verkstadsbolaget Bulten till 8,79 procent av kapitalet och rösterna i bolaget. Det framgår av ett flaggningsmeddelande.]]></htmltext>
+	<signature><![CDATA[Henrik Öhlin<br/>henrik.ohlin@finwire.se, 0703-21 06 99<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Bulten">
+			<instrument isin="SE0003849223" market="SSE">BULTEN</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>industrials</socialtag>
+	</socialtags>
+</item>

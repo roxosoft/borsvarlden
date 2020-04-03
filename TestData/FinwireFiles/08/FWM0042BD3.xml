@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Lufthansa ställer in flyg mellan Frankfurt och Teheran</title>
+	<guid>FWM0042BD3</guid>
+	<pubDate>Wed, 08 Jan 2020 09:47:23 GMT</pubDate>
+	<isoDate>2020-01-08T09:47:23+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/iraq-security-lufthansa/lufthansa-cancels-daily-flight-between-frankfurt-and-tehran-idUSS8N29B00N</link>
+	</links>
+	<newstext><![CDATA[Tyska Lufthansa ställer in sina dagliga flyg mellan Frankfurt och Teheran på grund av situationen i Iran. Det har en talesperson meddelat, rapporterar Reuters.<br/><br/>Talespersonen sade också att lördagsflyget till irakiska Erbil blir inställt.<br/><br/>Flera flygbolag har fått göra om sina flygrutter för att slippa Iraks och Irans luftterritorium. Det kommer sedan luftfartsmyndigheten, FAA, förbjudit amerikanska flygbolag över dessa länder efter att iranska missiler träffat USA:s militärbaser i Irak.]]></newstext>
+	<htmltext><![CDATA[Tyska Lufthansa ställer in sina dagliga flyg mellan Frankfurt och Teheran på grund av situationen i Iran. Det har en talesperson meddelat, rapporterar Reuters.<br><br>Talespersonen sade också att lördagsflyget till irakiska Erbil blir inställt.<br><br>Flera flygbolag har fått göra om sina flygrutter för att slippa Iraks och Irans luftterritorium. Det kommer sedan luftfartsmyndigheten, FAA, förbjudit amerikanska flygbolag över dessa länder efter att iranska missiler träffat USA:s militärbaser i Irak.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Lufthansa">
+			<instrument isin="DE0008232125" market="DBAG">LHA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>airlines</socialtag>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>leisure</socialtag>
+		<socialtag>macro</socialtag>
+		<socialtag>politics</socialtag>
+	</socialtags>
+</item>

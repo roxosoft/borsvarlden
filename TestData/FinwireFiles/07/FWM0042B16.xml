@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>MTG i samarbete med Blizzard Entertainment</title>
+	<guid>FWM0042B16</guid>
+	<pubDate>Tue, 07 Jan 2020 14:09:03 GMT</pubDate>
+	<isoDate>2020-01-07T14:09:03+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[MTG:s portföljbolag ESL och Dreamhack ingår ett treårigt avtal med Blizzard Entertainment. Inom ramen för avtalet ska ESL och Dreamhack skapa nya ESL Pro Tour-format för både Starcraft II och Warcraft III: Reforged.<br/><br/>Det uppges i MTG:s pressmeddelande att Blizzard kommer att bidra med prispengar på mer än 1,8 miljoner dollar respektive över 0,2 miljoner dollar bara för den första säsongen.<br/><br/>I höstas introducerades Counter-Strike: Global Offensive som den första speltiteln för ESL Pro Tour.]]></newstext>
+	<htmltext><![CDATA[MTG:s portföljbolag ESL och Dreamhack ingår ett treårigt avtal med Blizzard Entertainment. Inom ramen för avtalet ska ESL och Dreamhack skapa nya ESL Pro Tour-format för både Starcraft II och Warcraft III: Reforged.<br><br>Det uppges i MTG:s pressmeddelande att Blizzard kommer att bidra med prispengar på mer än 1,8 miljoner dollar respektive över 0,2 miljoner dollar bara för den första säsongen.<br><br>I höstas introducerades Counter-Strike: Global Offensive som den första speltiteln för ESL Pro Tour.]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Activision Blizzard">
+			<instrument isin="US00507V1098" market="NASDAQ">ATVI</instrument>
+		</company>
+		<company name="MTG">
+			<instrument isin="SE0000412371" market="SSE">MTG B</instrument>
+			<instrument isin="SE0000412363" market="SSE">MTG A</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>consumergoods</socialtag>
+		<socialtag>esport</socialtag>
+		<socialtag>gaming</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

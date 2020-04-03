@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Pareto gör flera ändringar i norska portföljen, Equinor nytt innehav medan DNO får lämna</title>
+	<guid>FWM0042802</guid>
+	<pubDate>Thu, 02 Jan 2020 07:43:23 GMT</pubDate>
+	<isoDate>2020-01-02T07:43:23+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Pareto Securities möblerar om även i den norska portföljen i inledningen av 2020.<br/><br/>Totalt tillkommer sex nya bolag: Equinor, Hafnia, Kid, Leroy Seafood Group, Sparebank 1 SMN och Northern Drilling.<br/><br/>Dessa tar plats från DNO, Flex LNG, Sparebank 1 Nord-Norge, Odfjell Drilling, Salmones Camanchaca och Stolt-Nielsen som samtliga får tacka för sig.<br/><br/>Pareto behåller kvar i portföljen kvartetten Aker, Bonheur, Frontline och Yara i en till månad.<br/><br/>Den norska portföljen gav i fjol en avkastning på 46,4 procent att jämföra med Oslobörsens 16,5 procent.]]></newstext>
+	<htmltext><![CDATA[Pareto Securities möblerar om även i den norska portföljen i inledningen av 2020.<br><br>Totalt tillkommer sex nya bolag: Equinor, Hafnia, Kid, Leroy Seafood Group, Sparebank 1 SMN och Northern Drilling.<br><br>Dessa tar plats från DNO, Flex LNG, Sparebank 1 Nord-Norge, Odfjell Drilling, Salmones Camanchaca och Stolt-Nielsen som samtliga får tacka för sig.<br><br>Pareto behåller kvar i portföljen kvartetten Aker, Bonheur, Frontline och Yara i en till månad.<br><br>Den norska portföljen gav i fjol en avkastning på 46,4 procent att jämföra med Oslobörsens 16,5 procent.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Aker">
+			<instrument isin="NO0010234552" market="OSE">AKER</instrument>
+		</company>
+		<company name="Bonheur">
+			<instrument isin="NO0003110603" market="OSE">BON</instrument>
+		</company>
+		<company name="DNO">
+			<instrument isin="NO0003921009" market="OSE">DNO</instrument>
+		</company>
+		<company name="Equinor">
+			<instrument isin="NO0010096985" market="OSE">EQNR</instrument>
+		</company>
+		<company name="FLEX LNG">
+			<instrument isin="BMG359472021" market="OSE">FLNG</instrument>
+		</company>
+		<company name="Frontline">
+			<instrument isin="BMG3682E1921" market="OSE">FRO</instrument>
+		</company>
+		<company name="Hafnia">
+			<instrument isin="BMG4233B1090" market="OSEAX">HAFNIA</instrument>
+		</company>
+		<company name="Kid">
+			<instrument isin="NO0010743545" market="OSE">KID</instrument>
+		</company>
+		<company name="Lerøy Seafood">
+			<instrument isin="NO0003096208" market="OSE">LSG</instrument>
+		</company>
+		<company name="Northern Drilling">
+			<instrument isin="BMG6624L1090" market="OSE">NODL</instrument>
+		</company>
+		<company name="Odfjell Drilling">
+			<instrument isin="BMG671801022" market="OSE">ODL</instrument>
+		</company>
+		<company name="Salmones Camanchaca">
+			<instrument isin="CL0002409135" market="OSE">SALMON</instrument>
+		</company>
+		<company name="SpareBank 1 Nord-Norge">
+			<instrument isin="NO0006000801" market="OSE">NONG</instrument>
+		</company>
+		<company name="SpareBank 1 SMN">
+			<instrument isin="NO0006390301" market="OSE">MING</instrument>
+		</company>
+		<company name="Stolt-Nielsen">
+			<instrument isin="BMG850801025" market="OSE">SNI</instrument>
+		</company>
+		<company name="Yara">
+			<instrument isin="NO0010208051" market="OSE">YAR</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>financials</socialtag>
+		<socialtag>stocks</socialtag>
+	</socialtags>
+</item>

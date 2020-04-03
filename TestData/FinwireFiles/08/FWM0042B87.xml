@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Luca de Meo avgår som Seat-chef, potentiell ny vd för Renault</title>
+	<guid>FWM0042B87</guid>
+	<pubDate>Wed, 08 Jan 2020 07:34:20 GMT</pubDate>
+	<isoDate>2020-01-08T07:34:20+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/us-renault-seat-demeo/head-of-vws-seat-car-brand-to-step-down-source-idUSKBN1Z61V9</link>
+	</links>
+	<newstext><![CDATA[Luca de Meo har avgått som vd för den spanska biltillverkaren Seat som är en del av Volkswagen-koncernen. Hans avhopp öppnar nu för möjligheten att han tar över som vd på Renault, rapporterar Reuters.<br/><br/>Källor till nyhetsbyrån uppger dock att övergången kan försvåras av en klausul under vilken de Meo inte direkt tillåts gå över till en rival. På grund av hans kunskap om Volkswagens strategi måste först en viss tid ha gått innan han kan börja det nya jobbet.<br/><br/>En annan källa sade att Luca de Meo slutar men blir kvar inom Volkswagen. Han har styrt Seat sedan 2015.<br/><br/>Renault är på jakt efter en vd efter att Carlos Ghosn i höstas greps misstänkt för ekonomiska oegentligheter. Hans ersättare Thierry Bollore fick kort efteråt gå och företaget leds numera av Clotilde Delbos på temporär basis. Enligt källor är det inte uteslutet att Clotilde Delbos erbjuds jobbet permanent.]]></newstext>
+	<htmltext><![CDATA[Luca de Meo har avgått som vd för den spanska biltillverkaren Seat som är en del av Volkswagen-koncernen. Hans avhopp öppnar nu för möjligheten att han tar över som vd på Renault, rapporterar Reuters.<br><br>Källor till nyhetsbyrån uppger dock att övergången kan försvåras av en klausul under vilken de Meo inte direkt tillåts gå över till en rival. På grund av hans kunskap om Volkswagens strategi måste först en viss tid ha gått innan han kan börja det nya jobbet.<br><br>En annan källa sade att Luca de Meo slutar men blir kvar inom Volkswagen. Han har styrt Seat sedan 2015.<br><br>Renault är på jakt efter en vd efter att Carlos Ghosn i höstas greps misstänkt för ekonomiska oegentligheter. Hans ersättare Thierry Bollore fick kort efteråt gå och företaget leds numera av Clotilde Delbos på temporär basis. Enligt källor är det inte uteslutet att Clotilde Delbos erbjuds jobbet permanent.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Renault">
+			<instrument isin="FR0000131906" market="ENEXT">RNO</instrument>
+		</company>
+		<company name="Volkswagen">
+			<instrument isin="DE000A1YDAH5" market="DBAG">VOWN</instrument>
+			<instrument isin="DE0007664039" market="DBAG">VOW3</instrument>
+			<instrument isin="DE0007664005" market="DBAG">VOW</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+	</socialtags>
+</item>

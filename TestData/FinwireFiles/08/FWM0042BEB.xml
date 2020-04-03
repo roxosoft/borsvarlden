@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Analytikerkonsensus inför dagens USA-rapporter - Factset</title>
+	<guid>FWM0042BEB</guid>
+	<pubDate>Wed, 08 Jan 2020 10:44:08 GMT</pubDate>
+	<isoDate>2020-01-08T10:44:08+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">http://media.finwire.com/media/FWM0042BEB-table-1</link>
+	</links>
+	<newstext><![CDATA[Sammanställningen nedan avser det globala börsinformationsföretaget Factsets<br/>analytikerkonsensus för amerikanska bolag som senare i dag lämnar delårsrapport.<br/> <br/>Om bolaget har lämnat egen guidning anges det på specifik rad i tabellen.<br/><br/>* Vinstprognosen för Lennar är enligt GAAP.<br/><br/><br/>Rapportbolag               Försäljning,<br/>  prognos (MUSD) Försäljning i<br/>  fjol Res ex<br/>  eo/aktie, prognos (USD) Res ex eo/aktie<br/>  i fjol Res ex eo/aktie<br/>  innevarande kvartal, prognos Res ex eo/aktie<br/>  innevarande helår, prognos Räkenskapsår <br/>                                                                                                                                                                                                                                                 <br/>Lennar*                    6 508                         6 459                1,90                             2,42                     0,86                                           6,06                                         Brutet       <br/>- Bolagets guidning (låg)                                                     1,81                                                                                                                                                               <br/>- Bolagets guidning  (hög)                                                    1,94                                                                                                                                                               <br/>                                                                                                                                                                                                                                                 <br/>Walgreens Boots Allicance  34 582                        33 793               1,41                             1,46                     1,58                                           5,93                                         Brutet       <br/>                                                                                                                                                                                                                                                 <br/>Källa: Factset]]></newstext>
+	<htmltext><![CDATA[Sammanställningen nedan avser det globala börsinformationsföretaget Factsets<br>analytikerkonsensus för amerikanska bolag som senare i dag lämnar delårsrapport.<br> <br>Om bolaget har lämnat egen guidning anges det på specifik rad i tabellen.<br><br>* Vinstprognosen för Lennar är enligt GAAP.<br><br><table><tbody><tr><td>Rapportbolag</td><td>Försäljning,
+  prognos (MUSD)</td><td>Försäljning i
+  fjol</td><td>Res ex
+  eo/aktie, prognos (USD)</td><td>Res ex eo/aktie
+  i fjol</td><td>Res ex eo/aktie
+  innevarande kvartal, prognos</td><td>Res ex eo/aktie
+  innevarande helår, prognos</td><td>Räkenskapsår</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Lennar*</td><td>6 508</td><td>6 459</td><td>1,90</td><td>2,42</td><td>0,86</td><td>6,06</td><td>Brutet</td></tr><tr><td>- Bolagets guidning (låg)</td><td></td><td></td><td>1,81</td><td></td><td></td><td></td><td></td></tr><tr><td>- Bolagets guidning  (hög)</td><td></td><td></td><td>1,94</td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Walgreens Boots Allicance</td><td>34 582</td><td>33 793</td><td>1,41</td><td>1,46</td><td>1,58</td><td>5,93</td><td>Brutet</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Källa: Factset</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>]]></htmltext>
+	<signature><![CDATA[Lars Johansson<br/>lars.johansson@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Lennar">
+			<instrument isin="US5260571048" market="NYSE">LEN</instrument>
+		</company>
+		<company name="Walgreens Boots Alliance">
+			<instrument isin="US9314221097" market="NYSE">WBA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>estimates</socialtag>
+	</socialtags>
+</item>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Amazon överväger butiker i Tyskland</title>
+	<guid>FWM0042AFC</guid>
+	<pubDate>Tue, 07 Jan 2020 13:41:34 GMT</pubDate>
+	<isoDate>2020-01-07T13:41:34+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/us-amazon-com-germany/amazon-considers-opening-stores-in-germany-report-idUSKBN1Z30G3</link>
+	</links>
+	<newstext><![CDATA[Amerikanska e-handelsjätten Amazon överväger att öppna butiker i Tyskland, enligt landschefen. Det skriver Reuters.<br/><br/>Ralf Kleber uppgav i en intervju med Welt am Sonntag att butikssatsningen kan bli av på grund av att man vet att ”kunder shoppar offline och att de gillar variation”. Han ville däremot inte ge en tidsram för när butikerna kan bli en realitet.<br/><br/>Amazon driver butiker i USA och Storbritannien men saknar alltså butiker i Tyskland som är den näst största marknaden efter den amerikanska.]]></newstext>
+	<htmltext><![CDATA[Amerikanska e-handelsjätten Amazon överväger att öppna butiker i Tyskland, enligt landschefen. Det skriver Reuters.<br><br>Ralf Kleber uppgav i en intervju med Welt am Sonntag att butikssatsningen kan bli av på grund av att man vet att ”kunder shoppar offline och att de gillar variation”. Han ville däremot inte ge en tidsram för när butikerna kan bli en realitet.<br><br>Amazon driver butiker i USA och Storbritannien men saknar alltså butiker i Tyskland som är den näst största marknaden efter den amerikanska.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Amazon">
+			<instrument isin="US0231351067" market="NASDAQ">AMZN</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>consumergoods</socialtag>
+		<socialtag>ecommerce</socialtag>
+		<socialtag>realestate</socialtag>
+		<socialtag>retail</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

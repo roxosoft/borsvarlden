@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Goldman Sachs pekar ut tyska energibolaget RWE som möjligt uppköpsobjekt</title>
+	<guid>FWM0042C4F</guid>
+	<pubDate>Wed, 08 Jan 2020 15:02:17 GMT</pubDate>
+	<isoDate>2020-01-08T15:02:17+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Tyska energibolaget RWE kan bli ett möjligt uppköpsobjekt när större spelare försöker expandera inom förnybar energi. Det skriver Goldman Sachs i en analys.<br/><br/>RWE blev i samband med ett tillgångsbyte med E.On i fjol Europas tredje största spelare inom detta segment efter spanska Iberdrola och italienska Enel, samt nummer två i världen inom vindkraft efter danska Ørsted.<br/><br/>Enligt Goldman Sachs ser RWE billigare ut än dess större konkurrenter. <br/><br/>Goldman Sachs pekar också ut brittiska SSE och portugisiska EDP som andra möjliga uppköpsobjekt.]]></newstext>
+	<htmltext><![CDATA[Tyska energibolaget RWE kan bli ett möjligt uppköpsobjekt när större spelare försöker expandera inom förnybar energi. Det skriver Goldman Sachs i en analys.<br><br>RWE blev i samband med ett tillgångsbyte med E.On i fjol Europas tredje största spelare inom detta segment efter spanska Iberdrola och italienska Enel, samt nummer två i världen inom vindkraft efter danska Ørsted.<br><br>Enligt Goldman Sachs ser RWE billigare ut än dess större konkurrenter. <br><br>Goldman Sachs pekar också ut brittiska SSE och portugisiska EDP som andra möjliga uppköpsobjekt.]]></htmltext>
+	<signature><![CDATA[Lars Johansson<br/>lars.johansson@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="RWE">
+			<instrument isin="DE0007037145" market="DBAG">RWE3</instrument>
+			<instrument isin="DE0007037129" market="DBAG">RWE</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>analytics</socialtag>
+		<socialtag>stocks</socialtag>
+	</socialtags>
+</item>

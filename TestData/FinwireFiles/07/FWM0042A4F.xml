@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>SCA får böter i Chile för kartellbildning</title>
+	<guid>FWM0042A4F</guid>
+	<pubDate>Tue, 07 Jan 2020 07:14:38 GMT</pubDate>
+	<isoDate>2020-01-07T07:14:38+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/us-chile-forestry-cmpc/chilean-court-fines-cmpc-and-swedens-sca-for-collusion-scheme-idUSKBN1Z605H</link>
+	</links>
+	<newstext><![CDATA[SCA:s dotterbolag i Chile och konkurrenten CMPC får böter på 15 miljoner dollar, motsvarande 141 miljoner kronor, vardera för att ha bedrivit en kartell på toapappersmarknaden i landet. Det rapporterar Reuters.<br/><br/>Kartellen existerade mellan 2010 och 2011. SCA-dotterbolaget och CMPC ska under den perioden tillsammans ha bestämt kvoter och försäljningspriser på toapappersprodukterna. <br/><br/>Chilenska regulatorer uppgav 2015 att företagen ska ha samarbetat i minst ett årtionde för att kontrollera marknaden. Upplägget gav företagen vinster på upp emot 460 miljoner dollar.<br/><br/>SCA har beskyllt CMPC för kartellen och sagt att man tvingats in i den.]]></newstext>
+	<htmltext><![CDATA[SCA:s dotterbolag i Chile och konkurrenten CMPC får böter på 15 miljoner dollar, motsvarande 141 miljoner kronor, vardera för att ha bedrivit en kartell på toapappersmarknaden i landet. Det rapporterar Reuters.<br><br>Kartellen existerade mellan 2010 och 2011. SCA-dotterbolaget och CMPC ska under den perioden tillsammans ha bestämt kvoter och försäljningspriser på toapappersprodukterna. <br><br>Chilenska regulatorer uppgav 2015 att företagen ska ha samarbetat i minst ett årtionde för att kontrollera marknaden. Upplägget gav företagen vinster på upp emot 460 miljoner dollar.<br><br>SCA har beskyllt CMPC för kartellen och sagt att man tvingats in i den. ]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="SCA">
+			<instrument isin="SE0000112724" market="SSE">SCA B</instrument>
+			<instrument isin="SE0000171886" market="SSE">SCA A</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>commodities</socialtag>
+		<socialtag>forestrypaper</socialtag>
+	</socialtags>
+</item>

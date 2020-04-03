@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Riskkapitalbolaget Silver Lake äger nästan 29 procent i Dell</title>
+	<guid>FWM004288B</guid>
+	<pubDate>Thu, 02 Jan 2020 13:23:06 GMT</pubDate>
+	<isoDate>2020-01-02T13:23:06+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.sec.gov/Archives/edgar/data/1418226/000119312520000083/d835574dsc13da.htm</link>
+	</links>
+	<newstext><![CDATA[Riskkapitalbolaget Silver Lake uppger i inlämnade dokument att det äger 101,7 miljoner B-aktier i datorjätten Dell. Det motsvarar 28,6 procent av aktierna vid en konvertering till C-aktier. En B-aktie ger rätt till en C-aktie. <br/><br/>Silver Lake hjälpte till att köpa ut Dell från börsen 2013 i en affär värd 24,9 miljarder dollar.<br/><br/>Dell-aktien handlas oförändrad i förhandeln på torsdagen.]]></newstext>
+	<htmltext><![CDATA[Riskkapitalbolaget Silver Lake uppger i inlämnade dokument att det äger 101,7 miljoner B-aktier i datorjätten Dell. Det motsvarar 28,6 procent av aktierna vid en konvertering till C-aktier. En B-aktie ger rätt till en C-aktie. <br><br>Silver Lake hjälpte till att köpa ut Dell från börsen 2013 i en affär värd 24,9 miljarder dollar.<br><br>Dell-aktien handlas oförändrad i förhandeln på torsdagen.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Dell">
+			<instrument isin="US24703L2025" market="NYSE">DELL</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>financials</socialtag>
+		<socialtag>stocks</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

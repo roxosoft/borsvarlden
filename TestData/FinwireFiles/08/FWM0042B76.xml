@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Google stäms av Sonos för patentintrång</title>
+	<guid>FWM0042B76</guid>
+	<pubDate>Wed, 08 Jan 2020 07:44:21 GMT</pubDate>
+	<isoDate>2020-01-08T07:44:21+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.cnbc.com/2020/01/07/sonos-sues-google-for-stealing-its-wireless-speaker-technology.html</link>
+	</links>
+	<newstext><![CDATA[Google stäms av Sonos för patentintrång kring trådlös ljudteknik, rapporterar CNBC.<br/><br/>Det handlar om att Google ska ha använt Sonos teknik som tillåter smarta högtalare att spela upp musik trådlöst.<br/><br/>Google fick insyn i tekniken under ett samarbete 2013 när man ville få sin streamingmusiktjänst tillgänglig på Sonos högtalare.<br/><br/>Sonos anklagar bolaget för att ha kopierat den patenterade tekniken när man skapat egna högtalare.<br/><br/>”Trots våra upprepade och omfattande ansträngningar under de senaste åren har Google inte visat någon villighet att arbeta med oss kring en ömsesidig fördelaktig lösning”, skriver Sonos i stämningen.]]></newstext>
+	<htmltext><![CDATA[Google stäms av Sonos för patentintrång kring trådlös ljudteknik, rapporterar CNBC.<br><br>Det handlar om att Google ska ha använt Sonos teknik som tillåter smarta högtalare att spela upp musik trådlöst.<br><br>Google fick insyn i tekniken under ett samarbete 2013 när man ville få sin streamingmusiktjänst tillgänglig på Sonos högtalare.<br><br>Sonos anklagar bolaget för att ha kopierat den patenterade tekniken när man skapat egna högtalare.<br><br>”Trots våra upprepade och omfattande ansträngningar under de senaste åren har Google inte visat någon villighet att arbeta med oss kring en ömsesidig fördelaktig lösning”, skriver Sonos i stämningen.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Alphabet">
+			<instrument isin="US02079K3059" market="NASDAQ">GOOGL</instrument>
+			<instrument isin="US02079K1079" market="NASDAQ">GOOG</instrument>
+		</company>
+		<company name="Sonos">
+			<instrument isin="US83570H1086" market="NASDAQ">SONO</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

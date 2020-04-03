@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Swedbank ratat av amerikansk storbank efter penningtvättsskandalen - Di (förtydligande)</title>
+	<guid>FWM0042A54</guid>
+	<pubDate>Tue, 07 Jan 2020 08:31:45 GMT</pubDate>
+	<isoDate>2020-01-07T08:31:45+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.di.se/nyheter/di-erfar-amerikansk-storbank-ratar-swedbank-efter-skandalen/</link>
+	</links>
+	<newstext><![CDATA[Bank of New York Mellons avslutade samarbete med Swedbank som Dagens industri skrev om den 3 januari har fått ett förtydligande.<br/><br/>Jämfört med vad som angavs i artikeln om att så kallade cash management-tjänster lagts ned, förtydligar BNY Mellon att inte allt samarbete är avslutat med Swedbank, skriver Di.<br/><br/>Banken har exempelvis ett fortsatt samarbete med Swedbank kring ett så kallat ADR-program avseende Swedbanks amerikanska depåbevis.<br/><br/>Enligt Di hade BNY Mellon avslutat samarbetet på grund av penningtvättsanklagelserna mot Swedbank som började med Uppdrag Granskning-programmet i februari i fjol.]]></newstext>
+	<htmltext><![CDATA[Bank of New York Mellons avslutade samarbete med Swedbank som Dagens industri skrev om den 3 januari har fått ett förtydligande.<br><br>Jämfört med vad som angavs i artikeln om att så kallade cash management-tjänster lagts ned, förtydligar BNY Mellon att inte allt samarbete är avslutat med Swedbank, skriver Di.<br><br>Banken har exempelvis ett fortsatt samarbete med Swedbank kring ett så kallat ADR-program avseende Swedbanks amerikanska depåbevis.<br><br>Enligt Di hade BNY Mellon avslutat samarbetet på grund av penningtvättsanklagelserna mot Swedbank som började med Uppdrag Granskning-programmet i februari i fjol.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Bank of New York Mellon">
+			<instrument isin="US0640581007" market="NYSE">BK</instrument>
+		</company>
+		<company name="Swedbank">
+			<instrument isin="SE0000242455" market="SSE">SWED A</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>bank</socialtag>
+		<socialtag>financials</socialtag>
+	</socialtags>
+</item>

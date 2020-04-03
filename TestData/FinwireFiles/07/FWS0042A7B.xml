@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>EQT</title>
+	<guid>FWS0042A7B</guid>
+	<pubDate>Tue, 07 Jan 2020 08:07:03 GMT</pubDate>
+	<isoDate>2020-01-07T08:07:03+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Riskkapitalbolaget EQT]]></newstext>
+	<htmltext><![CDATA[Riskkapitalbolaget EQT ]]></htmltext>
+	<signature><![CDATA[Henrik Öhlin<br/>henrik.ohlin@finwire.se, 0703-21 06 99<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWS</agency>
+	<companies>
+		<company name="EQT" orgnr="556849-4180">
+			<instrument isin="SE0012853455" market="SSE">EQT</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>financials</socialtag>
+		<socialtag>ma</socialtag>
+		<socialtag>privateequity</socialtag>
+	</socialtags>
+</item>

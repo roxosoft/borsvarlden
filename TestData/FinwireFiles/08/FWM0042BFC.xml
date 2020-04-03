@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>McDonalds expanderar Beyond Meat-testerna i Kanada</title>
+	<guid>FWM0042BFC</guid>
+	<pubDate>Wed, 08 Jan 2020 11:43:03 GMT</pubDate>
+	<isoDate>2020-01-08T11:43:03+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/us-mcdonald-s-beyond-meat/mcdonalds-expands-beyond-meat-burger-trial-to-52-more-outlets-in-canada-idUSKBN1Z71F7</link>
+	</links>
+	<newstext><![CDATA[McDonalds ska expandera sina tester med Beyond Meats vegetariska hamburgare till ytterligare 52 restauranger i Kanada. Det skriver Reuters med hänvisning till ett uttalande från bolaget.<br/><br/>Sedan oktober förekommer det tester med hamburgarna vid 28 kanadensiska restauranger.<br/><br/>Under tisdagen framkom att Beyond Meat-rivalen Impossible Foods inte längre tänker jaga ett partnerskap med McDonalds. Problemet är otillräcklig skala hos Impossible Foods i dagsläget.]]></newstext>
+	<htmltext><![CDATA[McDonalds ska expandera sina tester med Beyond Meats vegetariska hamburgare till ytterligare 52 restauranger i Kanada. Det skriver Reuters med hänvisning till ett uttalande från bolaget.<br><br>Sedan oktober förekommer det tester med hamburgarna vid 28 kanadensiska restauranger.<br><br>Under tisdagen framkom att Beyond Meat-rivalen Impossible Foods inte längre tänker jaga ett partnerskap med McDonalds. Problemet är otillräcklig skala hos Impossible Foods i dagsläget.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Beyond Meat">
+			<instrument isin="US08862E1091" market="NASDAQ">BYND</instrument>
+		</company>
+		<company name="McDonalds">
+			<instrument isin="US5801351017" market="NYSE">MCD</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>consumergoods</socialtag>
+		<socialtag>foods</socialtag>
+		<socialtag>retail</socialtag>
+	</socialtags>
+</item>

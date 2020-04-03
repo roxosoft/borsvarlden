@@ -23,22 +23,21 @@ namespace borsvarlden.Finwire
 
         public  void Execute()
         {
-            var pathBase = @"f:\cs_proj\roxosoft_borsvarlden\finwire_files\test\";
+            var pathBase = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\TestData\FinwireFiles");
 
             for (int i = 1; i <= 8; i++)
             {
                 //there is no data
                 if (i == 4 || i == 5)
                     continue;
-
-                var path = $@"{pathBase}{i.ToString("D2")}";
+               
+                var path = $@"{pathBase}\{i.ToString("D2")}";
 
                 foreach (var file in Directory.GetFiles(path))
                 {
                     var finwireData = _parser.Parse(file);
                     AddSingleNews(finwireData);
                 }
-               
             }
         }
 

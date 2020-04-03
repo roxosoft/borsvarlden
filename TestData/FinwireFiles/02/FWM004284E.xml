@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Volkswagen diskuterar tysk förlikning för dieselskandalen</title>
+	<guid>FWM004284E</guid>
+	<pubDate>Thu, 02 Jan 2020 10:02:01 GMT</pubDate>
+	<isoDate>2020-01-02T10:02:01+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/us-volkswagen-emissions/volkswagen-starts-settlement-talks-with-german-consumer-groups-over-diesel-scandal-idUSKBN1Z10IV</link>
+	</links>
+	<newstext><![CDATA[Volkswagen diskuterar en potentiell förlikning med den tyska konsumentföreningen, vzbv, om att ersätta kunder för dieselskandalen. Det har bolaget uppgett, rapporterar Reuters.<br/><br/>Volkswagen sade att samtalen befinner sig i ett tidigt skede och att det inte går att garantera några resultat.<br/><br/>Tyska bilägare har inte haft samma tur som amerikanska med att få kompensation för Volkswagens dieselfusk. Bakgrunden är att bilarna i Tyskland inte kom att förlora sin så kallade ”vägvärdighets”-certifikation under skandalen.<br/><br/>Certifikationen blev intakt genom att kunderna accepterade en mjukvaruuppdatering för information om utsläppen. Det föranledde Volkswagen att ta till ett annat sätt att kompensera kunderna.]]></newstext>
+	<htmltext><![CDATA[Volkswagen diskuterar en potentiell förlikning med den tyska konsumentföreningen, vzbv, om att ersätta kunder för dieselskandalen. Det har bolaget uppgett, rapporterar Reuters.<br><br>Volkswagen sade att samtalen befinner sig i ett tidigt skede och att det inte går att garantera några resultat.<br><br>Tyska bilägare har inte haft samma tur som amerikanska med att få kompensation för Volkswagens dieselfusk. Bakgrunden är att bilarna i Tyskland inte kom att förlora sin så kallade ”vägvärdighets”-certifikation under skandalen.<br><br>Certifikationen blev intakt genom att kunderna accepterade en mjukvaruuppdatering för information om utsläppen. Det föranledde Volkswagen att ta till ett annat sätt att kompensera kunderna.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Volkswagen">
+			<instrument isin="DE000A1YDAH5" market="DBAG">VOWN</instrument>
+			<instrument isin="DE0007664039" market="DBAG">VOW3</instrument>
+			<instrument isin="DE0007664005" market="DBAG">VOW</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+	</socialtags>
+</item>

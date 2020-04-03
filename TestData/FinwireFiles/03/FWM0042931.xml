@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Credit Suisse ska återköpa aktier för 1 miljard schweizerfranc under 2020</title>
+	<guid>FWM0042931</guid>
+	<pubDate>Fri, 03 Jan 2020 09:50:51 GMT</pubDate>
+	<isoDate>2020-01-03T09:50:51+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/us-credit-suisse-gp-buyback/credit-suisse-announces-1-billion-2020-share-buyback-program-idUSKBN1Z20CY</link>
+	</links>
+	<newstext><![CDATA[Investmentbanken Credit Suisse planerar att återköpa egna aktier för minst en miljard schweizerfranc, motsvarande 9,7 miljarder kronor, fram till slutet av 2020. Det rapporterar Reuters.<br/><br/>Återköpen kommer att styras av marknads- och makroförhållanden under året, sade banken efter att ha slutfört ett liknande återköpsprogram i fjol.<br/><br/>Banken köpte under 2019 nästan 80 miljoner aktier för strax över en miljard schweizerfranc.]]></newstext>
+	<htmltext><![CDATA[Investmentbanken Credit Suisse planerar att återköpa egna aktier för minst en miljard schweizerfranc, motsvarande 9,7 miljarder kronor, fram till slutet av 2020. Det rapporterar Reuters.<br><br>Återköpen kommer att styras av marknads- och makroförhållanden under året, sade banken efter att ha slutfört ett liknande återköpsprogram i fjol.<br><br>Banken köpte under 2019 nästan 80 miljoner aktier för strax över en miljard schweizerfranc. ]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Credit Suisse">
+			<instrument isin="CH0012138530" market="SWX">CSGN</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>buybacks</socialtag>
+		<socialtag>corporateactions</socialtag>
+		<socialtag>dividend</socialtag>
+		<socialtag>financials</socialtag>
+		<socialtag>stocks</socialtag>
+	</socialtags>
+</item>

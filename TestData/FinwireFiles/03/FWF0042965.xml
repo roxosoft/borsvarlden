@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Atlant Pacific Multi Asset och Pacific Precious fusioneras</title>
+	<guid>FWF0042965</guid>
+	<pubDate>Fri, 03 Jan 2020 15:05:33 GMT</pubDate>
+	<isoDate>2020-01-03T15:05:33+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Atlant fonder meddelar att man fusionerar de två fonderna Pacific Multi Asset och Pacific Precious.<br/><br/>&quot;Fonderna Pacific Multi Asset och Pacific Precious är båda av karaktären absolutavkastande värdepappersfonder. I syfte att renodla vårt utbud och minska de administrativa kostnaderna har vi beslutat att slå samman fonden Pacific Multi Asset med fonden Pacific Precious på så sätt att tillgångarna och skulderna i Pacific Multi Asset överförs till Pacific Precious på fusionsdagen&quot;, skriver bolaget.<br/><br/>Fusionen genomförs 16 mars 2020, då kvarvarande andelar i Pacific Multi Asset överförs till Pacific Precious.]]></newstext>
+	<htmltext><![CDATA[Atlant fonder meddelar att man fusionerar de två fonderna Pacific Multi Asset och Pacific Precious.<br><br>"Fonderna Pacific Multi Asset och Pacific Precious är båda av karaktären absolutavkastande värdepappersfonder. I syfte att renodla vårt utbud och minska de administrativa kostnaderna har vi beslutat att slå samman fonden Pacific Multi Asset med fonden Pacific Precious på så sätt att tillgångarna och skulderna i Pacific Multi Asset överförs till Pacific Precious på fusionsdagen", skriver bolaget.<br><br>Fusionen genomförs 16 mars 2020, då kvarvarande andelar i Pacific Multi Asset överförs till Pacific Precious.]]></htmltext>
+	<signature><![CDATA[Love Josefsson<br/>love@finwire.com, 0708-97 44 06<br/>Nyhetsbyrån Finwire<br/><br/>Läsaren av innehållet kan anta att Finwire har erhållit eller kommer att erhålla betalning för utförandet av finansiella företagstjänster från bolaget. Ersättningen är på förhand avtalad och är inte beroende av innehållet.]]></signature>
+	<language>sv</language>
+	<agency>FWF</agency>
+	<companies>
+		<company name="Atlant fonder">
+			<instrument isin="SE0007603899" market="FUNDS">ATL-SHE</instrument>
+			<instrument isin="SE0002623553" market="FUNDS">ATL-STA</instrument>
+			<instrument isin="SE0002090621" market="FUNDS">ATLS</instrument>
+			<instrument isin="SE0001007535" market="FUNDS">ATLE</instrument>
+			<instrument isin="SE0001007527" market="FUNDS">ATL-EDG</instrument>
+			<instrument isin="SE0004550184" market="FUNDS">ATL-MUL</instrument>
+			<instrument isin="SE0007871694" market="FUNDS">ATLP</instrument>
+			<instrument isin="SE0007871488" market="FUNDS">ATLO</instrument>
+		</company>
+		<company name="Pacific Multi Asset">
+			<instrument isin="SE0008015069" market="FUNDS">PAR</instrument>
+		</company>
+		<company name="Pacific Precious" url="http://www.pacificfonder.se">
+			<instrument isin="SE0008015077" market="FUNDS">PACP</instrument>
+		</company>
+		<company name="Pacific Precious B">
+			<instrument isin="SE0009161151" market="FUNDS">PPB</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>mutualfunds</socialtag>
+	</socialtags>
+</item>

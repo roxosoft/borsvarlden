@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Samsungs chipproduktion i Sydkorea delvis utslagen efter strömavbrott</title>
+	<guid>FWM004286A</guid>
+	<pubDate>Thu, 02 Jan 2020 11:56:47 GMT</pubDate>
+	<isoDate>2020-01-02T11:56:47+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/us-samsung-elec-plant/samsung-electronics-chip-output-at-south-korea-plant-partly-halted-due-to-short-blackout-idUSKBN1Z01K3</link>
+	</links>
+	<newstext><![CDATA[Samsung Electronics har stoppat en del av halvledarproduktionen vid sin sydkoreanska fabrik i Hwaseong efter ett strömavbrott. Det framgår av ett uttalande, rapporterar Reuters.<br/><br/>Det är problem med en regional kraftledningskabel som ligger bakom och full återhämtning i fabriken väntas inom två till tre dagar, enligt källor till Yonhap News.<br/><br/>Samsung uppger sig inspektera produktionslinjer men kan ännu inte avgöra hur stora förlusterna väntas bli på grund av avbrottet.<br/><br/>En tidigare strömavbrott vid en annan sydkoreansk fabrik kostade företaget lite över 43 miljoner dollar. <br/><br/>Samsung är världens största chipproducent.]]></newstext>
+	<htmltext><![CDATA[Samsung Electronics har stoppat en del av halvledarproduktionen vid sin sydkoreanska fabrik i Hwaseong efter ett strömavbrott. Det framgår av ett uttalande, rapporterar Reuters.<br><br>Det är problem med en regional kraftledningskabel som ligger bakom och full återhämtning i fabriken väntas inom två till tre dagar, enligt källor till Yonhap News.<br><br>Samsung uppger sig inspektera produktionslinjer men kan ännu inte avgöra hur stora förlusterna väntas bli på grund av avbrottet.<br><br>En tidigare strömavbrott vid en annan sydkoreansk fabrik kostade företaget lite över 43 miljoner dollar. <br><br>Samsung är världens största chipproducent.
+
+]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Samsung">
+			<instrument isin="KR7005930003" market="KRX">SSNLF</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

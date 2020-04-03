@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Rolls-Royce satte nytt försäljningsrekord 2019</title>
+	<guid>FWM0042B00</guid>
+	<pubDate>Tue, 07 Jan 2020 13:30:05 GMT</pubDate>
+	<isoDate>2020-01-07T13:30:05+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.cnbc.com/2020/01/06/rolls-royces-400000-suv-helps-carmaker-set-sales-record-in-2019.html</link>
+		<link type="html" mime="text/html">https://www.prnewswire.com/news-releases/rolls-royce-motor-cars-delivers-historic-record-result-in-2019-300982317.html</link>
+	</links>
+	<newstext><![CDATA[Rolls-Royce sålde 5 152 bilar under 2019, ett nytt rekord och en ökning på 25 procent från 2018 års nivå om 4 107 bilar.<br/><br/>Försäljningen var upp inom samtliga regioner och fick draghjälp av SUV-modellen Cullinan vars startpris är på 330 000 dollar. Bilen brukar dock ofta säljas för över 400 000 dollar, motsvarande 3,8 miljoner kronor, rapporterar CNBC.<br/><br/>Rolls-Royce ingår i tyska BMW-koncernen.]]></newstext>
+	<htmltext><![CDATA[Rolls-Royce sålde 5 152 bilar under 2019, ett nytt rekord och en ökning på 25 procent från 2018 års nivå om 4 107 bilar.<br><br>Försäljningen var upp inom samtliga regioner och fick draghjälp av SUV-modellen Cullinan vars startpris är på 330 000 dollar. Bilen brukar dock ofta säljas för över 400 000 dollar, motsvarande 3,8 miljoner kronor, rapporterar CNBC.<br><br>Rolls-Royce ingår i tyska BMW-koncernen.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="BMW">
+			<instrument isin="DE0005190037" market="DBAG">BMW3</instrument>
+			<instrument isin="DE0005190003" market="DBAG">BMW</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+	</socialtags>
+</item>

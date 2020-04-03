@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Daimler och BMW:s taxiapptjänst beställer 60 Tesla-bilar</title>
+	<guid>FWM0042C1B</guid>
+	<pubDate>Wed, 08 Jan 2020 13:19:32 GMT</pubDate>
+	<isoDate>2020-01-08T13:19:32+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://electrek.co/2020/01/08/tesla-large-order-competition-daimler-bmw-free-now-app/</link>
+	</links>
+	<newstext><![CDATA[Daimler och BMW:s gemensamma taxiapptjänst Free Now har lagt en order på 60 Tesla-bilar för att expandera elbilserbjudandet i Hamburg, Tyskland. Det skriver Electrek.<br/><br/>De finansiella detaljerna för ordern eller vilka Tesla-bilar det rör sig om framgår inte.<br/><br/>Free Now, som tidigare gick under namnet MyTaxi, köptes ursprungligen upp av Daimler 2014. Senare tillkom BMW som partner och tillsammans har duon investerat över en miljard dollar i verksamheten.<br/><br/>Investeringarna i Free Now syftar till att bredda tjänsten från en vanlig taxitjänst till att erbjuda fler mobilitetslösningar. Dessa inkluderar eldrivna bilar, elscooters och elcyklar.]]></newstext>
+	<htmltext><![CDATA[Daimler och BMW:s gemensamma taxiapptjänst Free Now har lagt en order på 60 Tesla-bilar för att expandera elbilserbjudandet i Hamburg, Tyskland. Det skriver Electrek.<br><br>De finansiella detaljerna för ordern eller vilka Tesla-bilar det rör sig om framgår inte.<br><br>Free Now, som tidigare gick under namnet MyTaxi, köptes ursprungligen upp av Daimler 2014. Senare tillkom BMW som partner och tillsammans har duon investerat över en miljard dollar i verksamheten.<br><br>Investeringarna i Free Now syftar till att bredda tjänsten från en vanlig taxitjänst till att erbjuda fler mobilitetslösningar. Dessa inkluderar eldrivna bilar, elscooters och elcyklar.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="BMW">
+			<instrument isin="DE0005190037" market="DBAG">BMW3</instrument>
+			<instrument isin="DE0005190003" market="DBAG">BMW</instrument>
+		</company>
+		<company name="Daimler">
+			<instrument isin="DE000A1YDAJ1" market="DBAG">DAIN</instrument>
+			<instrument isin="DE0007100000" market="DBAG">DAI</instrument>
+		</company>
+		<company name="Tesla">
+			<instrument isin="US88160R1014" market="NASDAQ">TSLA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

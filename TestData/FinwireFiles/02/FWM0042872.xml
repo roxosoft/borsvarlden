@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Ghosn håller nästa vecka presskonferens efter flykt till Libanon</title>
+	<guid>FWM0042872</guid>
+	<pubDate>Thu, 02 Jan 2020 12:04:08 GMT</pubDate>
+	<isoDate>2020-01-02T12:04:08+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.reuters.com/article/renault-nissan-ghosn-presser/nissan-ex-boss-carlos-ghosn-to-hold-press-conference-on-jan-8-lawyer-idUSL8N2960L6</link>
+	</links>
+	<newstext><![CDATA[Carlos Ghosn kommer att hålla presskonferens på onsdag den 8 januari efter att ha flytt Japan till Libanon under helgen. Det har hans advokat sagt, rapporterar Reuters.<br/><br/>Ghosn flydde Japan efter att i höstas ha gripits för ekonomiska oegentligheter inom Nissan. Han var vid tidpunkten även vd för Renault som är i en allians med det japanska bilföretaget.<br/><br/>Ghosn, vars rötter är libanesiska, kom att nå Beirut med sitt privata jetflygplan via Istanbul. Han ska ha använt sig av sitt franska pass under resan. Ghosn är även libanesisk och brasiliansk medborgare.]]></newstext>
+	<htmltext><![CDATA[Carlos Ghosn kommer att hålla presskonferens på onsdag den 8 januari efter att ha flytt Japan till Libanon under helgen. Det har hans advokat sagt, rapporterar Reuters.<br><br>Ghosn flydde Japan efter att i höstas ha gripits för ekonomiska oegentligheter inom Nissan. Han var vid tidpunkten även vd för Renault som är i en allians med det japanska bilföretaget.<br><br>Ghosn, vars rötter är libanesiska, kom att nå Beirut med sitt privata jetflygplan via Istanbul. Han ska ha använt sig av sitt franska pass under resan. Ghosn är även libanesisk och brasiliansk medborgare. ]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Nissan Motor">
+			<instrument isin="JP3672400003" market="TSE">7201</instrument>
+		</company>
+		<company name="Renault">
+			<instrument isin="FR0000131906" market="ENEXT">RNO</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+	</socialtags>
+</item>

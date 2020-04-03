@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Amerikanska flygsektorn tappar i förhandeln sedan oljeprisat rusat</title>
+	<guid>FWM0042959</guid>
+	<pubDate>Fri, 03 Jan 2020 13:27:38 GMT</pubDate>
+	<isoDate>2020-01-03T13:27:38+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://seekingalpha.com/news/3529459-airline-sector-jolted-jump-in-crude-prices</link>
+	</links>
+	<newstext><![CDATA[De amerikanska flygbolagen handlas ned rejält i förhandeln på fredagen. Bakgrunden är rusningen i oljepriset efter att USA dödat den iranska toppgeneralen Qassem Soleimani under natten mot fredag. <br/><br/>American Airlines, Delta Airlines, United Airlines, Jetblue och Southwest är samtliga ned mellan 2-3 procent under förhandeln. <br/><br/>Brentoljan har under fredagen stigit fyra procent efter dådet.]]></newstext>
+	<htmltext><![CDATA[De amerikanska flygbolagen handlas ned rejält i förhandeln på fredagen. Bakgrunden är rusningen i oljepriset efter att USA dödat den iranska toppgeneralen Qassem Soleimani under natten mot fredag. <br><br>American Airlines, Delta Airlines, United Airlines, Jetblue och Southwest är samtliga ned mellan 2-3 procent under förhandeln. <br><br>Brentoljan har under fredagen stigit fyra procent efter dådet. ]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="American Airline">
+			<instrument isin="US02376R1023" market="NASDAQ">AAL</instrument>
+		</company>
+		<company name="Delta Air Lines">
+			<instrument isin="US2473617023" market="NYSE">DAL</instrument>
+		</company>
+		<company name="United Airlines">
+			<instrument isin="US9100471096" market="NYSE">UAL</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>airlines</socialtag>
+		<socialtag>aviation</socialtag>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>leisure</socialtag>
+		<socialtag>stocks</socialtag>
+	</socialtags>
+</item>

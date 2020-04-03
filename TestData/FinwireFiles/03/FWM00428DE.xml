@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>American Airlines ska dela Boeing 737-kompensation med anställda</title>
+	<guid>FWM00428DE</guid>
+	<pubDate>Fri, 03 Jan 2020 07:55:52 GMT</pubDate>
+	<isoDate>2020-01-03T07:55:52+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.cnbc.com/2020/01/02/american-airlines-to-share-boeing-737-max-settlement-with-employees.html</link>
+	</links>
+	<newstext><![CDATA[American Airlines tänker låta sina anställda få en del av kompensationen från Boeing för markbundenheten av 737 Max-modellen. Det har en talesperson uppgett, rapporterar CNBC.<br/><br/>Det framgår inte hur stor ersättningen blir då bolaget är i fortsatta diskussioner med Boeing.<br/><br/>American sade i oktober att Max-stoppet hade påverkat 2019 års resultat före skatt med 540 miljoner dollar. Den exakta resultatkostnaden är okänd då man ännu inte vet när flygplanet ska åter tas i flyg. <br/><br/>Sedan tidigare har andra 737 Max-kunder så som Icelandair, Turkish Airlines och Southwest Airlines uppnått avtal med Boeing. Den slutliga storleken på deras ersättningar är inte fastställd på grund av att flygplanet är ännu fast på marken. 737 Max förbjuds flyga i mars efter två dödsolyckor.]]></newstext>
+	<htmltext><![CDATA[American Airlines tänker låta sina anställda få en del av kompensationen från Boeing för markbundenheten av 737 Max-modellen. Det har en talesperson uppgett, rapporterar CNBC.<br><br>Det framgår inte hur stor ersättningen blir då bolaget är i fortsatta diskussioner med Boeing.<br><br>American sade i oktober att Max-stoppet hade påverkat 2019 års resultat före skatt med 540 miljoner dollar. Den exakta resultatkostnaden är okänd då man ännu inte vet när flygplanet ska åter tas i flyg. <br><br>Sedan tidigare har andra 737 Max-kunder så som Icelandair, Turkish Airlines och Southwest Airlines uppnått avtal med Boeing. Den slutliga storleken på deras ersättningar är inte fastställd på grund av att flygplanet är ännu fast på marken. 737 Max förbjuds flyga i mars efter två dödsolyckor. ]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="American Airline">
+			<instrument isin="US02376R1023" market="NASDAQ">AAL</instrument>
+		</company>
+		<company name="Boeing">
+			<instrument isin="US0970231058" market="NYSE">BA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>airlines</socialtag>
+		<socialtag>aviation</socialtag>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>leisure</socialtag>
+	</socialtags>
+</item>
