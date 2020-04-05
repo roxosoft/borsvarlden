@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using NUnit.Framework;
-using borsvarlden.Helpers;
 using System.IO;
+using borsvarlden.Services.Finwire;
 
 namespace borsvarlden.Tests.UnitTests
 {
@@ -47,7 +47,7 @@ namespace borsvarlden.Tests.UnitTests
 
         public FinWireData TestOneFile(string file)
         {
-            var p = new FinwireFileParser();
+            var p = new FinwireFileParserService();
             return p.Parse(file);
         }
     }

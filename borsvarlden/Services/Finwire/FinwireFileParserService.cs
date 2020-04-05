@@ -7,14 +7,16 @@ using System.Xml;
 using System.Xml.XPath;
 using borsvarlden.Db;
 
-
-namespace borsvarlden.Helpers
+namespace borsvarlden.Services.Finwire
 {
-
-    public class FinwireFileParser : IFinwireParser
+    public interface IFinwireParserService
     {
+        FinWireData Parse(string path);
+    }
 
-        public FinwireFileParser()
+    public class FinwireFileParserService : IFinwireParserService
+    {
+        public FinwireFileParserService()
         {
 
         }
@@ -54,14 +56,10 @@ namespace borsvarlden.Helpers
                 foreach (var singleCompany in el.SelectNodes("company"))
                     companies.Add(((XmlElement)singleCompany).GetAttribute("name"));
 
-            //  if (companies.Count > 0)
-            //    System.Threading.Thread.Sleep(0);
-
             if (companies.Count > 0)
                 finWireDate.Companies = companies;
 
             return finWireDate;
-
         }
     }
 
@@ -74,8 +72,6 @@ namespace borsvarlden.Helpers
         public string Agency { get; set; }
         public List<string> SocialTags { get; set; }
         public List<string> Companies { get; set; }
-
         public bool IsValid => !String.IsNullOrEmpty(Guid);
     }
-
 }

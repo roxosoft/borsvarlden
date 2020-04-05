@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using borsvarlden.Db;
-using borsvarlden.Helpers;
 using borsvarlden.Models;
+using borsvarlden.Services.Finwire;
 
 namespace borsvarlden.Services.Entities
 {
-
     public interface IFinwireNewsService
     {
         void AddSingleNews(FinWireData finwireData);

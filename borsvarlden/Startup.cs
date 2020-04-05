@@ -14,7 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using borsvarlden.Models;
 using borsvarlden.Finwire;
 using borsvarlden.Services.Entities;
-using borsvarlden.Helpers;
+using borsvarlden.Services.Finwire;
 
 namespace borsvarlden
 {
@@ -51,7 +51,7 @@ namespace borsvarlden
                     }));
             services.AddHangfireServer(options => options.WorkerCount = 1);
             services.AddMvc();
-            services.AddScoped<IFinwireParser, FinwireFileParser>();
+            services.AddScoped<IFinwireParserService, FinwireFileParserService>();
             services.AddScoped<IFinwireNewsService, FinwireNewsService>();
         }
 
@@ -69,7 +69,7 @@ namespace borsvarlden
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseHangfireDashboard();
-            RecurringJob.AddOrUpdate<FinwireUpdater>(x => x.Execute(), Cron.MinuteInterval(5));
+            RecurringJob.AddOrUpdate<FinwireJob>(x => x.Execute(), Cron.MinuteInterval(5));
          
 
 

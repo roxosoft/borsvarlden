@@ -3,21 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
-
-using borsvarlden.Models;
-using borsvarlden.Helpers;
 using borsvarlden.Services.Entities;
-using borsvarlden.Finwire;
-using borsvarlden.Db;
+using borsvarlden.Services.Finwire;
 
 namespace borsvarlden.Finwire
 {
-    public class FinwireUpdater 
+    public class FinwireJob
     {
-        private IFinwireParser _parser;
+        private IFinwireParserService _parser;
         private IFinwireNewsService _finwireNewsService;
       
-        public FinwireUpdater(IFinwireNewsService finwireNewsService, IFinwireParser parser)
+        public FinwireJob(IFinwireNewsService finwireNewsService, IFinwireParserService parser)
         { 
             _finwireNewsService = finwireNewsService;
             _parser = parser;
@@ -43,6 +39,5 @@ namespace borsvarlden.Finwire
                 }
             }
         }
-
     }
 }
