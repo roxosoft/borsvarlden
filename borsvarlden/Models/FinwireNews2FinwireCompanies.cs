@@ -11,6 +11,5 @@ namespace borsvarlden.Models
         public FinwireNew FinwireNew { get; set; }
         public int FinwareCompanyId { get; set; }
         public FinwireCompany FinwireCompany { get; set; }
-
     }
 }

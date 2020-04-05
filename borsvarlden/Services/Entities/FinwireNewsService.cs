@@ -17,7 +17,6 @@ namespace borsvarlden.Services.Entities
     {
         private ApplicationContext _dbContext;
 
-
         public FinwireNewsService(ApplicationContext dbContext)
         {
             _dbContext = dbContext;

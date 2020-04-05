@@ -11,7 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Hangfire;
 using Microsoft.EntityFrameworkCore;
-using borsvarlden.Models;
 using borsvarlden.Finwire;
 using borsvarlden.Services.Entities;
 using borsvarlden.Services.Finwire;
@@ -70,11 +69,7 @@ namespace borsvarlden
             app.UseStaticFiles();
             app.UseHangfireDashboard();
             RecurringJob.AddOrUpdate<FinwireJob>(x => x.Execute(), Cron.MinuteInterval(5));
-         
-
-
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -11,6 +11,5 @@ namespace borsvarlden.Models
         public FinwireNew FinwireNew { get; set; }
         public int FinwireSocialTagId { get; set; }
         public FinwireSocialTag FinwireSocialTag { get; set; }
-
     }
 }

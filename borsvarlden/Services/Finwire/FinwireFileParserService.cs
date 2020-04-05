@@ -4,8 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
-using System.Xml.XPath;
-using borsvarlden.Db;
 
 namespace borsvarlden.Services.Finwire
 {
