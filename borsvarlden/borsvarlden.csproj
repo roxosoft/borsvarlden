@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200405133512_AddFilters.cs" />
+    <Compile Remove="Migrations\20200405133512_AddFilters.Designer.cs" />
+    <Compile Remove="Migrations\20200405163333_FiltersSeeding.cs" />
+    <Compile Remove="Migrations\20200405163333_FiltersSeeding.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Hangfire" Version="1.7.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />

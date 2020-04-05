@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using borsvarlden.Db;
 
 namespace borsvarlden.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20200405150010_AddFilters")]
+    partial class AddFilters
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,176 +72,6 @@ namespace borsvarlden.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FinwireFilters");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            FinwireFilterType = (short)1,
-                            Value = "Stockholm Bullets"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            FinwireFilterType = (short)1,
-                            Value = "Stocks in Play"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            FinwireFilterType = (short)1,
-                            Value = "Dagens aktierekommendationer i översikt"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            FinwireFilterType = (short)2,
-                            Value = "(uppdatering)"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            FinwireFilterType = (short)2,
-                            Value = "(uppdaterad)"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            FinwireFilterType = (short)2,
-                            Value = "(Oms)"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            FinwireFilterType = (short)2,
-                            Value = "(forts)"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            FinwireFilterType = (short)2,
-                            Value = "(omsändning)"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            FinwireFilterType = (short)2,
-                            Value = "(r)"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            FinwireFilterType = (short)2,
-                            Value = "(rättelse)"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            FinwireFilterType = (short)3,
-                            Value = "analytics"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            FinwireFilterType = (short)3,
-                            Value = "automotive"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            FinwireFilterType = (short)3,
-                            Value = "betting"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            FinwireFilterType = (short)3,
-                            Value = "biometrics"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            FinwireFilterType = (short)3,
-                            Value = "commodities"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            FinwireFilterType = (short)3,
-                            Value = "crowdfunding"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            FinwireFilterType = (short)3,
-                            Value = "cryptocurrency"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            FinwireFilterType = (short)3,
-                            Value = "dividend"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            FinwireFilterType = (short)3,
-                            Value = "funding"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            FinwireFilterType = (short)3,
-                            Value = "gaming"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            FinwireFilterType = (short)3,
-                            Value = "ipo"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            FinwireFilterType = (short)3,
-                            Value = "macro"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            FinwireFilterType = (short)3,
-                            Value = "share"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            FinwireFilterType = (short)3,
-                            Value = "stockholmbullets"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            FinwireFilterType = (short)3,
-                            Value = "tech"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            FinwireFilterType = (short)4,
-                            Value = "avanza"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            FinwireFilterType = (short)4,
-                            Value = "nordent"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            FinwireFilterType = (short)4,
-                            Value = "hm"
-                        });
                 });
 
             modelBuilder.Entity("borsvarlden.Models.FinwireNew", b =>
