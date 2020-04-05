@@ -30,6 +30,10 @@ namespace borsvarlden.Finwire
                 //there is no data
                 if (i == 4 || i == 5)
                     continue;
+
+                var path = $@"{pathBase}{i.ToString("D2")}";
+                var finwireData = _parser.Parse(Directory.GetFiles(path)[0]);
+                UpdateSingleNews(finwireData);
                
                 var path = $@"{pathBase}\{i.ToString("D2")}";
 
@@ -41,44 +45,56 @@ namespace borsvarlden.Finwire
             }
         }
 
-
-        public void AddSingleNews(FinWireData finwireData)
+        public void UpdateSingleNews(FinWireData finwireData)
         {
-            if (_dbContext.FinwireNews.Any(x => finwireData.Guid == x.Guid))
-                return;
+            var newsEntity = new FinwireNew();
 
-            var newsEntity = new FinwireNew()
-            {
-                Guid = finwireData.Guid,
-                Title = finwireData.Title,
-                Date = finwireData.Date,
-                NewsText = finwireData.NewsText,
-                FinwireAgency = _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)
-                                ?? _dbContext.Add(new FinwireAgency { Agency = finwireData.Agency }).Entity
+            var socialTagsFound = new List<FinwireSocialTag>();
 
-            };
-            
-            var newsEntityAdded = _dbContext.Add(newsEntity).Entity;
+            if (finwireData.SocialTags.Count > 1)
+                System.Threading.Thread.Sleep(100);
 
             //todo make generic method in helper etc, find better solution using EF Core
-            finwireData.SocialTags?.ForEach(x =>
-                _dbContext.Add(new FinwireNew2FirnwireSocialTag
-                {
-                    FinwireNew = newsEntityAdded,
-                    FinwireSocialTag = _dbContext.FinwireSocialTags.FirstOrDefault(y => y.Tag == x)
-                                       ?? _dbContext.Add(new FinwireSocialTag { Tag = x }).Entity
-                })
-            );
+            finwireData.SocialTags.ForEach(x =>
+            {
+                FinwireSocialTag socialTag = _dbContext.FinwireSocialTags.FirstOrDefault(y => y.Tag == x);
+                //not exist
+                if (socialTag == null)
+                    socialTag = _dbContext.Add(new FinwireSocialTag { Tag = x }).Entity;
+
+                socialTagsFound.Add(socialTag);
+            });
+
+            var newsEntityAdded = _dbContext.Add(newsEntity).Entity;
+
+            socialTagsFound.ForEach(el => _dbContext.Add(new FinwireNew2FirnwireSocialTag
+            {
+                FinwireNew = newsEntityAdded,
+                FinwireSocialTag = el
+            }));
+
+            var finwireCompaniesFound = new List<FinwireCompany>();
 
             finwireData.Companies?.ForEach(x =>
             {
-                _dbContext.Add(new FinwireNew2FinwireCompany
-                {
-                    FinwireNew = newsEntityAdded,
-                    FinwireCompany = _dbContext.FinwireCompanies.FirstOrDefault(y => y.Company == x)
-                                    ?? _dbContext.Add(new FinwireCompany { Company = x }).Entity
-                });
+                FinwireCompany finwireCompany = _dbContext.FinwireCompanies.FirstOrDefault(y => y.Company == x);
+                //not exist
+                if (finwireCompany == null)
+                    finwireCompany = _dbContext.Add(new FinwireCompany { Company = x }).Entity;
+
+                finwireCompaniesFound.Add(finwireCompany);
             });
+
+              
+
+            finwireCompaniesFound.ForEach(el => _dbContext.Add(new FinwireNew2FinwireCompany
+            {
+                FinwireNew = newsEntityAdded,
+                FinwireCompany = el
+            }));
+
+            if (finwireCompaniesFound.Count > 0)
+                System.Threading.Thread.Sleep(1000);
 
             _dbContext.SaveChanges();
         }

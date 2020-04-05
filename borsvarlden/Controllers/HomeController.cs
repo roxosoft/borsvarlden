@@ -24,8 +24,9 @@ namespace borsvarlden.Controllers
 
         public IActionResult Index()
         {
-            _dbContext.FinwireNews.Add(new FinwireNew {Guid = ""});
+            _dbContext.FinwireNews.Add(new FinwireNew { Guid = "" });
             _dbContext.SaveChanges();
+
             return View();
         }
 
