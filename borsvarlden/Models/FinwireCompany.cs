@@ -9,7 +9,6 @@ namespace borsvarlden.Models
     {
         public int Id { get; set; }
         public string Company { get; set; }
-
         public List<FinwireNew2FinwireCompany> FinwireNew2FinwireCompanies { get; set; }
     }
 }

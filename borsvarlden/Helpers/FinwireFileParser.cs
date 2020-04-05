@@ -10,7 +10,7 @@ using borsvarlden.Db;
 
 namespace borsvarlden.Helpers
 {
-   
+
     public class FinwireFileParser : IFinwireParser
     {
 
@@ -21,14 +21,14 @@ namespace borsvarlden.Helpers
 
         public FinWireData Parse(string pathToFile)
         {
-            var content =  File.ReadAllText(pathToFile);
+            var content = File.ReadAllText(pathToFile);
 
-             var xmlDocument = new XmlDocument();
-             xmlDocument.LoadXml(content);
+            var xmlDocument = new XmlDocument();
+            xmlDocument.LoadXml(content);
 
-             var item = xmlDocument.SelectSingleNode("item");
+            var item = xmlDocument.SelectSingleNode("item");
 
-             var finWireDate = new FinWireData
+            var finWireDate = new FinWireData
             {
                 Title = item.SelectSingleNode("type")?.InnerText,
                 Guid = item.SelectSingleNode("guid")?.InnerText,
@@ -46,19 +46,19 @@ namespace borsvarlden.Helpers
                     socialTagsList.Add(((XmlNode)singleSocialTag).InnerText);
 
             if (socialTagsList.Count > 0)
-                 finWireDate.SocialTags = socialTagsList;
+                finWireDate.SocialTags = socialTagsList;
 
             var companies = new List<string>();
 
             foreach (XmlElement el in item.SelectNodes("companies"))
                 foreach (var singleCompany in el.SelectNodes("company"))
-                    companies.Add(((XmlElement) singleCompany).GetAttribute("name"));
-            
-          //  if (companies.Count > 0)
+                    companies.Add(((XmlElement)singleCompany).GetAttribute("name"));
+
+            //  if (companies.Count > 0)
             //    System.Threading.Thread.Sleep(0);
 
             if (companies.Count > 0)
-                 finWireDate.Companies = companies;
+                finWireDate.Companies = companies;
 
             return finWireDate;
 

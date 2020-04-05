@@ -7,7 +7,6 @@ using borsvarlden.Models;
 
 namespace borsvarlden.Db
 {
-    
     public class ApplicationContext :DbContext
     {
         public DbSet <FinwireNew> FinwireNews { get;set; }
@@ -48,7 +47,6 @@ namespace borsvarlden.Db
                 .HasOne(c => c.FinwireNew)
                 .WithMany(p => p.FinwireNew2FirnwireSocialTags)
                 .HasForeignKey(p => p.FinwireNewId);
-
         }
     }
 }

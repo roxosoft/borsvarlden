@@ -32,6 +32,10 @@ namespace borsvarlden.Finwire
                 //there is no data
                 if (i == 4 || i == 5)
                     continue;
+
+                var path = $@"{pathBase}{i.ToString("D2")}";
+                var finwireData = _parser.Parse(Directory.GetFiles(path)[0]);
+                UpdateSingleNews(finwireData);
                
                 var path = $@"{pathBase}\{i.ToString("D2")}";
 

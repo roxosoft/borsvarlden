@@ -9,7 +9,6 @@ namespace borsvarlden.Models
     {
         public int Id { get; set; }
         public string Tag { get; set;}
-
         public List<FinwireNew2FirnwireSocialTag> FinwireNew2FirnwireSocialTags { get; set; }
     }
 }
