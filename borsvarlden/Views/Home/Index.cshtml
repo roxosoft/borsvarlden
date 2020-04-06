@@ -1,8 +1,50 @@
-﻿@{
+﻿@model List<FinwireNew>;
+
+@{
     ViewData["Title"] = "Home Page";
+
+    int firstBigBlockCount = 1;
+    int firstSmallBlockCount = 2;
+    int secondBigBlockCount = 1;
+    int secondSmallBlockCount = 3;
+
+    int chunkSize = firstBigBlockCount + firstSmallBlockCount + secondBigBlockCount + secondSmallBlockCount;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row">
+    <div class="col-8">
+        @for (int index = 0; index < Model.Count / chunkSize; index++)
+        {
+            foreach (var news in Model.Take(firstBigBlockCount))
+            {
+                <div class="big-block">
+                </div>
+            }
+
+            foreach (var news in Model.Skip(firstBigBlockCount).Take(firstSmallBlockCount))
+            {
+                <div class="small-block">
+                </div>
+            }
+
+            foreach (var news in Model.Skip(firstBigBlockCount + firstSmallBlockCount).Take(secondBigBlockCount))
+            {
+                <div class="big-block">
+                </div>
+            }
+
+            foreach (var news in Model.Skip(firstBigBlockCount + firstSmallBlockCount + secondBigBlockCount).Take(secondSmallBlockCount))
+            {
+                <div class="small-block">
+                </div>
+            }
+
+            Model.RemoveRange(0, chunkSize);
+       }
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    </div>
+    <div class="col-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    </div>
 </div>

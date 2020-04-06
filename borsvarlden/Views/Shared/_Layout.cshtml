@@ -6,12 +6,11 @@
     <title>@ViewData["Title"] - borsvarlden</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/_layout.css" />
     @RenderSection("Styles", required: false)
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-red-main border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-red-main border-bottom box-shadow">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img class="navbar-logo" src="~/assets/images/header-logo-white.png" />
@@ -23,25 +22,68 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-white" href="#">Traders Club</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-white" href="#">Nyhetsbrev</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Om Börsvärlden</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container container-default" style="min-height: 1000px;">  @*remove inline style*@
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="body-wrapper">
+        <div class="container container-default" style="min-height: 1000px;">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     </div>
-
     <footer class="border-top footer bg-gray-main">
         <div class="container">
-            &copy; 2020 - borsvarlden - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row footer-main">
+                <div class="col-sm-3 text-center-xs text-left-sm">
+                    <h3>
+                        Navigation
+                    </h3>
+                </div>
+                <div class="col-sm-3 text-center-xs text-left-sm">
+                    <h3>
+                        Länkar
+                    </h3>
+                </div>
+                <div class="col-sm-3 text-center-xs text-left-sm">
+                    <h3>
+                        Kontaktuppgifter
+                    </h3>
+                    <p>
+                        Börsvärlden
+                        <br>
+                        Taptogatan 6
+                        <br>
+                        115 27 Stockholm
+                    </p>
+                    <p>
+                        <a href="mailto:info@borsvarlden.com">info@borsvarlden.com</a>
+                        <br>
+                        <a href="#">www.borsvarlden.com</a>
+                    </p>
+                </div>
+                <div class="col-sm-3 text-center-xs text-left-sm">
+                    <a asp-controller="Home" asp-action="Index">
+                        <img src="~/assets/images/borsvarlden_logo_alternative_510x510.png" class="footer-logo" width="128" height="128">
+                    </a>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div class="row footer-copyright">
+                <div class="col-sm-12 text-center-xs text-left-sm">
+                    <p>Copyright © 2020<br>Allt material är upphovsrättsskyddat enligt lag</p>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

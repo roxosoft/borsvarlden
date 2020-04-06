@@ -7,6 +7,7 @@ using borsvarlden.Db;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using borsvarlden.Models;
+using borsvarlden.Services.Entities;
 
 namespace borsvarlden.Controllers
 {
@@ -14,17 +15,18 @@ namespace borsvarlden.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        private ApplicationContext _dbContext;
+        private IFinwireNewsService _finwireNewsService;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationContext dbContext)
+        public HomeController(ILogger<HomeController> logger, IFinwireNewsService finwireNewsService)
         {
             _logger = logger;
-            _dbContext = dbContext;
+            _finwireNewsService = finwireNewsService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var model = await _finwireNewsService.GetMainNews(30);
+            return View(model);
         }
 
         public IActionResult Privacy()
