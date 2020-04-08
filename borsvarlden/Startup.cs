@@ -52,6 +52,7 @@ namespace borsvarlden
             services.AddMvc();
             services.AddScoped<IFinwireParserService, FinwireFileParserService>();
             services.AddScoped<IFinwireNewsService, FinwireNewsService>();
+            services.AddScoped<IFinwireFilterService, FinwireFilterService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -16,16 +16,20 @@ namespace borsvarlden.Services.Entities
     public class FinwireNewsService : IFinwireNewsService
     {
         private ApplicationContext _dbContext;
+        private IFinwireFilterService _finwireFilterService;
 
-        public FinwireNewsService(ApplicationContext dbContext)
+        public FinwireNewsService(ApplicationContext dbContext, IFinwireFilterService finwireNewsService)
         {
             _dbContext = dbContext;
+            _finwireFilterService = finwireNewsService;
         }
 
         public void AddSingleNews(FinWireData finwireData)
         {
             if (_dbContext.FinwireNews.Any(x => finwireData.Guid == x.Guid))
                 return;
+
+            
 
             var newsEntity = new FinwireNew()
             {
