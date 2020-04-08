@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using borsvarlden.Db;
 using borsvarlden.Models;
 using borsvarlden.Services.Finwire;
+using Microsoft.EntityFrameworkCore;
 
 namespace borsvarlden.Services.Entities
 {
     public interface IFinwireNewsService
     {
         void AddSingleNews(FinWireData finwireData);
+        Task<List<FinwireNew>> GetMainNews(int newsCount);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -65,6 +67,12 @@ namespace borsvarlden.Services.Entities
             });
 
             _dbContext.SaveChanges();
+        }
+
+        public async Task<List<FinwireNew>> GetMainNews(int newsCount)
+        {
+            List<FinwireNew> result = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
+            return result;
         }
     }
 }
