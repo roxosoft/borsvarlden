@@ -43,7 +43,7 @@ namespace borsvarlden.Services.Entities
             return Contains(type, value);
         }
 
-        private bool IsWhiteListFilterPassed
+        
 
         private bool IsTagBlackFilterNotPassed(EnumFinwireFilterTypes type, string value)
         {
