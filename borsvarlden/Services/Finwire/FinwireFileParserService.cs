@@ -30,7 +30,7 @@ namespace borsvarlden.Services.Finwire
 
             var finWireDate = new FinWireData
             {
-                Title = item.SelectSingleNode("type")?.InnerText,
+                Title = item.SelectSingleNode("title")?.InnerText,
                 Guid = item.SelectSingleNode("guid")?.InnerText,
                 Date = DateTime.Parse(item.SelectSingleNode("isoDate")?.InnerText, System.Globalization.CultureInfo.CurrentCulture,
                                         System.Globalization.DateTimeStyles.AdjustToUniversal),

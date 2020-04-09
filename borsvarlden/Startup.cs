@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using borsvarlden.Finwire;
 using borsvarlden.Services.Entities;
 using borsvarlden.Services.Finwire;
+using borsvarlden.Helpers;
 
 namespace borsvarlden
 {
@@ -53,6 +54,7 @@ namespace borsvarlden
             services.AddScoped<IFinwireParserService, FinwireFileParserService>();
             services.AddScoped<IFinwireNewsService, FinwireNewsService>();
             services.AddScoped<IFinwireFilterService, FinwireFilterService>();
+            services.AddScoped<IConfigurationHelper, ConfigurationHelper>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

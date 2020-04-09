@@ -1,0 +1,52 @@
+﻿.index-side-banner {
+    padding: 5px;
+}
+
+.index-content-wrapper {
+    padding: 5px;
+}
+
+.index-side-banner-wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+.stiky-side-banner {
+    padding-top: 10px;
+    position: sticky;
+    top: 10px;
+}
+
+.index-row {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.banner-wrapper {
+    padding-bottom: 15px;
+}
+
+.big-block {
+    .hidden-big {
+        display: none;
+    }
+}
+
+.small-block {
+    .hidden-small {
+        display: none;
+    }
+
+    .image-wrapper {
+        width: 168px;
+        height: 94px;
+        float: left;
+        overflow: hidden;
+        padding: 0;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

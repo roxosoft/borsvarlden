@@ -6,6 +6,9 @@
     <title>@ViewData["Title"] - borsvarlden</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/side-aricles.css" />
+    <link rel="stylesheet" href="~/css/latest.css" />
+    <link rel="stylesheet" href="~/css/detailed.css" />
     @RenderSection("Styles", required: false)
 </head>
 <body>
@@ -22,13 +25,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Traders Club</a>
+                            <a class="nav-link text-white" href="#">Om Börsvärlden</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Nyhetsbrev</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Om Börsvärlden</a>
+                            <a class="nav-link text-white" href="#">Traders Club</a>
                         </li>
                     </ul>
                 </div>
@@ -37,9 +40,7 @@
     </header>
     <div class="body-wrapper">
         <div class="container container-default" style="min-height: 1000px;">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
+            @RenderBody()
         </div>
     </div>
     <footer class="border-top footer bg-gray-main">

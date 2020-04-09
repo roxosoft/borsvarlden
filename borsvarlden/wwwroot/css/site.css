@@ -9,9 +9,6 @@ html {
     position: relative;
     min-height: 100%; }
 
-a {
-    color: #0366d6; }
-
 a.navbar-brand {
     white-space: normal;
     text-align: center;
@@ -31,8 +28,14 @@ a.navbar-brand {
         min-width: 1250px; } }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    min-width: 270px;
     min-height: 50px;
-    color: white; }
+    color: white;
+    z-index: 9999; }
 
 .bg-red-main {
     background-color: #f44336; }
@@ -107,7 +110,10 @@ button.accept-policy {
     border-bottom: 1px solid #37474f; }
 
 .body-wrapper {
-    background-color: #f0f0f0; }
+    background-color: #f0f0f0;
+    padding-top: 50px; }
 
 .container-default {
-    background-color: white; }
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 30px; }

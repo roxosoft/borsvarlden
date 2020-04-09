@@ -1,0 +1,38 @@
+﻿.article:not(:first-child) {
+    border-top: 1px solid #e0e0e0;
+}
+
+.article {
+    display: grid;
+
+    .image-wrapper img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    a {
+        margin: 20px 0;
+        color: #222;
+    }
+
+    .article-label {
+        color: #f44336;
+        font-weight: 700;
+        margin-right: 10px;
+        text-transform: uppercase;
+        font-size: 11pt;
+    }
+
+    h3 {
+        font-size: 15pt;
+        line-height: 1.4em;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.5em;
+    }
+}
