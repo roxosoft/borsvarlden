@@ -6,7 +6,8 @@
 
 .index-side-banner-wrapper {
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    padding-top: 15px; }
 
 .stiky-side-banner {
     padding-top: 10px;

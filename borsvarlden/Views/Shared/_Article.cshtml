@@ -14,14 +14,14 @@
     </div>
     <div class="article-content-wrapper">
         <span class="article-label hidden-big">
-            Model.Label ?? "Test Label"
+            @Model.Label
         </span>
         <h3>
-            Model.Title
+            @Model.Title
         </h3>
         <p class="hidden-small">
             <span class="article-label">
-                Model.Label
+                @Model.Label
             </span>
             <span class="article-content">
                 @Html.Raw(Model.ShortNewsText)
