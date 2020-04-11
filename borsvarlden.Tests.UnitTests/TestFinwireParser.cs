@@ -13,14 +13,11 @@ namespace borsvarlden.Tests.UnitTests
         {
         }
 
-        [TestCase]
-        public void TestParseAllFiles()
+        [TestCase(1)]
+        public void TestParseAllFiles(int dummy)
         {
             
-
-        //TODO use realative path 
-        var pathBase = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\..\TestData\FinwireFiles");
-            //var pathBase = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\TestData\Finwi
+            var pathBase = $@"{UnitTestConfig.TestDataPath}\FinwireFiles";
 
             for (int i = 1; i <= 8; i++)
             {
@@ -28,7 +25,7 @@ namespace borsvarlden.Tests.UnitTests
                 if (i == 4 || i == 5)
                     continue;
 
-                var path = $@"{pathBase}{i.ToString("D2")}";
+                var path = $@"{pathBase}\{i.ToString("D2")}";
 
                 foreach (var file in Directory.GetFiles(path))
                 {

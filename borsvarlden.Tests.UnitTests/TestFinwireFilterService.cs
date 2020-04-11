@@ -2,10 +2,12 @@
 using NUnit.Framework;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using borsvarlden.Db;
 using borsvarlden.Services.Entities;
 using borsvarlden.Services.Finwire;
+
 
 namespace borsvarlden.Tests.UnitTests
 {
@@ -20,6 +22,38 @@ namespace borsvarlden.Tests.UnitTests
          
         }
 
+        [TestCase(0)]
+        public void ProcessMultipleFiles(int dummy)
+        {
+            var pathBase = $@"{UnitTestConfig.TestDataPath}\FinwireFiles";
+            var stMatched = "";
+
+            for (int i = 1; i <= 8; i++)
+            {
+                //there is no data
+                if (i == 4 || i == 5)
+                    continue;
+
+                var path = $@"{pathBase}\{i.ToString("D2")}";
+                foreach (var file in Directory.GetFiles(path))
+                {
+                    if  (_finwireFilterService.IsFilterPassed(new FinwireFileParserService().Parse(file)))
+                        stMatched += $"{file}\n" ;
+                }
+            }
+        }
+
+        [TestCase(false, "02", "FWM00427AA.xml")]
+        [TestCase(true,  "02", "FWM00427AC.xml")]
+        [TestCase(true,  "02", "FWM004284C.xml")] //Title="Stockholm Bullets" Companies="Stockholm Bullets" SocialTags="calendar"
+        public void TestIsPassedSingleFile(bool expectedResult, string subdir, string fileName)
+        {
+            string path = $@"{UnitTestConfig.TestDataPath}\FinwireFiles\{subdir}\{fileName}";
+            var data = new FinwireFileParserService().Parse(path);
+            bool bResProcessed = _finwireFilterService.IsFilterPassed(data);
+            Assert.AreEqual(expectedResult, bResProcessed);
+        }
+
         [TestCaseSource("CountIsFilterPassedTest")]
         public void TestIsPassed (Tuple<bool, FinWireData> inputData)
         {
@@ -31,9 +65,35 @@ namespace borsvarlden.Tests.UnitTests
             get { yield return new Tuple<bool, FinWireData>(false, new FinWireData() {Title = "foo"}); }
         }
 
-        public static IEnumerator<List<string>> CountIsSocialTagsPassedTest
+        [TestCase(1)]
+        public  void TestSocialTags(int dummyForTest)
         {
-            get {  yield return new List<string>{""};} 
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "analytics" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "Analytics" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "betting" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "biometrics" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "commodities" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "crowdfunding" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "cryptocurrency" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "dividend" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "funding" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "gaming" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "ipo" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "macro" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "share" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "stockholmbullets" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "tech" }));
+            Assert.AreEqual(false, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "Analytics!" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "analytics", "automotive" }));
+            Assert.AreEqual(true, _finwireFilterService.IsSocialTagsWhiteListFilterPassed(new List<string> { "analytics", "foo" }));
+        }
+
+        [TestCase(1)]
+        public void TestSocialCompanies(int dummyForTest)
+        {
+            Assert.AreEqual(true, _finwireFilterService.IsCompaniesWhiteListPassed(new List<string> { "avanza" }));
+            Assert.AreEqual(true, _finwireFilterService.IsCompaniesWhiteListPassed(new List<string> { "nordent" }));
+            Assert.AreEqual(true, _finwireFilterService.IsCompaniesWhiteListPassed(new List<string> { "hm" }));
         }
 
         [TestCase("Dagens aktierekommendationer i översikt", true)]
@@ -57,6 +117,20 @@ namespace borsvarlden.Tests.UnitTests
         public void TestFilterTagBlackListNotPassed(string tag, bool expectedResult)
         {
             Assert.AreEqual(expectedResult, _finwireFilterService.IsTagBlackFilterNotPassed(tag));
+        }
+
+        [TestCase(false, "01", "FWM00427B9.xml")]
+        [TestCase(true,  "02", "FWF0042896.xml")]
+        [TestCase(true,  "08", "FWM0042B9E.xml")]
+        public void TestSingleFileFilterContent(bool expectedResult,string subdir,  string fileName)
+        {
+            string path = $@"{UnitTestConfig.TestDataPath}\FinwireFiles\{subdir}\{fileName}";
+            //var content = File.ReadAllText(path);
+            var finwireParser = new FinwireFileParserService();
+            var contentParsed = finwireParser.Parse(path).HtmlText;
+            bool bResProcessed = _finwireFilterService.IsContentFilterPassed(contentParsed);
+            Assert.AreEqual(expectedResult, bResProcessed);
+            //_finwireFilterService.IsContentFilterPassed();
         }
     }
 }

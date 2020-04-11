@@ -31,7 +31,8 @@ namespace borsvarlden.Services.Entities
             if (_dbContext.FinwireNews.Any(x => finwireData.Guid == x.Guid))
                 return;
 
-            
+            if (!_finwireFilterService.IsFilterPassed(finwireData))
+                return;
 
             var newsEntity = new FinwireNew()
             {

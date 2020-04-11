@@ -30,11 +30,12 @@ namespace borsvarlden.Services.Finwire
 
             var finWireDate = new FinWireData
             {
-                Title = item.SelectSingleNode("type")?.InnerText,
+                Title = item.SelectSingleNode("title")?.InnerText,
                 Guid = item.SelectSingleNode("guid")?.InnerText,
                 Date = DateTime.Parse(item.SelectSingleNode("isoDate")?.InnerText, System.Globalization.CultureInfo.CurrentCulture,
                                         System.Globalization.DateTimeStyles.AdjustToUniversal),
-                NewsText = item.SelectSingleNode("newstext")?.InnerText,
+                NewsText = item.SelectSingleNode("newstext")?.InnerText?.Trim(),
+                HtmlText = item.SelectSingleNode("htmltext")?.InnerText?.Trim(),
                 Agency = item.SelectSingleNode("agency")?.InnerText
             };
 
@@ -67,6 +68,7 @@ namespace borsvarlden.Services.Finwire
         public string Guid { get; set; }
         public DateTime Date { get; set; }
         public string NewsText { get; set; }
+        public string HtmlText { get; set; }
         public string Agency { get; set; }
         public List<string> SocialTags { get; set; }
         public List<string> Companies { get; set; }

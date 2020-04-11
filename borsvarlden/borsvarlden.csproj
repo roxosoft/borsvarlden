@@ -9,6 +9,8 @@
     <Compile Remove="Migrations\20200405133512_AddFilters.Designer.cs" />
     <Compile Remove="Migrations\20200405163333_FiltersSeeding.cs" />
     <Compile Remove="Migrations\20200405163333_FiltersSeeding.Designer.cs" />
+    <Compile Remove="Migrations\20200410113304_FilterSeeding.cs" />
+    <Compile Remove="Migrations\20200410113304_FilterSeeding.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,7 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
     <Folder Include="wwwroot\assets\images\" />
   </ItemGroup>
 
