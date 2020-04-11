@@ -60,6 +60,51 @@ namespace borsvarlden.Services.Finwire
 
             return finWireDate;
         }
+
+        public string GetImagePath(List<string> socialTags, List<string> companies)
+        {
+            List<object> needles = new List<object>()
+            {
+                // Specific cases socialtags
+                "stockholmbullets", // filter
+                "ipo", // filter
+                "cryptocurrency", // filter
+
+                // Company-describing socialtags based on importance
+                "space", // often grouped with telecom, space is more important
+                "healthcare", // more important than tech, vr
+                "betting", // more important than gaming/leisure
+
+                // Company-describing socialtags of equal value
+                new List<string>
+                {
+                    "aviation",
+                    "agriculture",
+                    "automotive", // filter
+                    "biometrics", // filter
+                    "gaming", // filter
+                    "ecommerce",
+                    "telecom",
+                    "vr",
+                    "realestate",
+                    "retail",
+                },
+
+                "tech", // filter
+
+                // Rest of the original filter socialtags
+                "analytics", // filter
+                "commodities", // filter
+                "crowdfunding", // filter
+                "dividend", // filter
+                "funding", // filter
+                "macro", // filter
+                "share", // filter
+            };
+
+            return "";
+        }
+
     }
 
     public class FinWireData
