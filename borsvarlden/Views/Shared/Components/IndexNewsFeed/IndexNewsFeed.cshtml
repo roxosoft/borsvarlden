@@ -1,0 +1,42 @@
+﻿@using borsvarlden.ViewModels;
+@model IndexNewsViewModel;
+
+<div class="index-article-feed">
+    @while (Model.News.Count > 0)
+    {
+        int indexInChunk = 0;
+        foreach (var news in Model.News.Take(Model.FirstBigBlockCount))
+        {
+            <div class="big-block article">
+                @await Html.PartialAsync("_Article", news)
+            </div>
+            indexInChunk++;
+        }
+
+        foreach (var news in Model.News.Skip(Model.FirstBigBlockCount).Take(Model.FirstSmallBlockCount))
+        {
+            <div class="small-block article">
+                @await Html.PartialAsync("_Article", news)
+            </div>
+            indexInChunk++;
+        }
+
+        foreach (var news in Model.News.Skip(Model.FirstBigBlockCount + Model.FirstSmallBlockCount).Take(Model.SecondBigBlockCount))
+        {
+            <div class="big-block article">
+                @await Html.PartialAsync("_Article", news)
+            </div>
+            indexInChunk++;
+        }
+
+        foreach (var news in Model.News.Skip(Model.FirstBigBlockCount + Model.FirstSmallBlockCount + Model.SecondBigBlockCount).Take(Model.SecondSmallBlockCount))
+        {
+            <div class="small-block article">
+                @await Html.PartialAsync("_Article", news)
+            </div>
+            indexInChunk++;
+        }
+
+        Model.News.RemoveRange(0, indexInChunk);
+    }
+</div>

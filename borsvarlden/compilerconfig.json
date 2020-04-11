@@ -2,5 +2,33 @@
   {
     "outputFile": "wwwroot/css/site.css",
     "inputFile": "wwwroot/css/site.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/index.css",
+    "inputFile": "wwwroot/css/index.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/article.css",
+    "inputFile": "wwwroot/css/article.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/sponsored.css",
+    "inputFile": "wwwroot/css/sponsored.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/most-read.css",
+    "inputFile": "wwwroot/css/most-read.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/latest.css",
+    "inputFile": "wwwroot/css/latest.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/side-aricles.css",
+    "inputFile": "wwwroot/css/side-aricles.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/detailed.css",
+    "inputFile": "wwwroot/css/detailed.scss"
   }
 ]

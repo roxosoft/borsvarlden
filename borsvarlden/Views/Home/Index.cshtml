@@ -1,50 +1,34 @@
-﻿@model List<FinwireNew>;
-
-@{
-    ViewData["Title"] = "Home Page";
-
-    int firstBigBlockCount = 1;
-    int firstSmallBlockCount = 2;
-    int secondBigBlockCount = 1;
-    int secondSmallBlockCount = 3;
-
-    int chunkSize = firstBigBlockCount + firstSmallBlockCount + secondBigBlockCount + secondSmallBlockCount;
+﻿@{
+    ViewData["Title"] = "Main Page";
 }
 
-<div class="row">
-    <div class="col-8">
-        @for (int index = 0; index < Model.Count / chunkSize; index++)
-        {
-            foreach (var news in Model.Take(firstBigBlockCount))
-            {
-                <div class="big-block">
-                </div>
-            }
+@section Styles{
+    <link rel="stylesheet" href="~/css/index.css" />
+    <link rel="stylesheet" href="~/css/article.css" />
+}
 
-            foreach (var news in Model.Skip(firstBigBlockCount).Take(firstSmallBlockCount))
-            {
-                <div class="small-block">
-                </div>
-            }
-
-            foreach (var news in Model.Skip(firstBigBlockCount + firstSmallBlockCount).Take(secondBigBlockCount))
-            {
-                <div class="big-block">
-                </div>
-            }
-
-            foreach (var news in Model.Skip(firstBigBlockCount + firstSmallBlockCount + secondBigBlockCount).Take(secondSmallBlockCount))
-            {
-                <div class="small-block">
-                </div>
-            }
-
-            Model.RemoveRange(0, chunkSize);
-       }
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+<div class="row index-row">
+    <div class="col-10 index-content-wrapper">
+        <div class="banner-wrapper">
+            <img src="~/assets/images/savr-panorama.jpg">
+        </div>
+        <div class="row">
+            <div class="col-8">
+                @await Component.InvokeAsync("IndexNewsFeed")
+            </div>
+            <div class="col-4">
+                @await Component.InvokeAsync("SponsoredNews")
+                @await Component.InvokeAsync("MostReadNews")
+                @await Component.InvokeAsync("LatestNews")
+            </div>
+        </div>
     </div>
-    <div class="col-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    <div class="col-2 index-side-banner-wrapper">
+        <img src="~/assets/images/luxbright_skyscraper.jpg" width="200" height="400">
+        <div class="stiky-side-banner">
+            <img src="~/assets/images/ani_synas.gif" width="200" height="200">
+        </div>
     </div>
 </div>
+
+@section Scripts{ }

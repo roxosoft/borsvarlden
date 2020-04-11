@@ -1,0 +1,46 @@
+﻿@using borsvarlden.ViewModels
+@model NewsViewModel
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+<div class="detailed-article">
+    <div class="row index-row">
+        <div class="col-10 index-content-wrapper">
+            <div class="image-wrapper row">
+                @if (string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img class="col-12" src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
+                }
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img class="col-12" src="@Model.ImageUrl">
+                }
+                <h2>
+                    @(Model.Title ?? "Test Title Test Title Test Title Test Title")
+                </h2>
+            </div>
+            <div class="banner-wrapper">
+                <img src="~/assets/images/savr-panorama.jpg">
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <span class="article-content">
+                        @Html.Raw(Model.NewsText ?? "Test Text Test Text Test Text Test Text Test Text Test Text Test Text Test Text Test Text...")
+                    </span>
+                </div>
+                <div class="col-4">
+                    @await Component.InvokeAsync("SponsoredNews")
+                    @await Component.InvokeAsync("MostReadNews")
+                    @await Component.InvokeAsync("LatestNews")
+                </div>
+            </div>
+        </div>
+        <div class="col-2 index-side-banner-wrapper">
+            <img src="~/assets/images/luxbright_skyscraper.jpg" width="200" height="400">
+            <div class="stiky-side-banner">
+                <img src="~/assets/images/ani_synas.gif" width="200" height="200">
+            </div>
+        </div>
+    </div>
+</div>

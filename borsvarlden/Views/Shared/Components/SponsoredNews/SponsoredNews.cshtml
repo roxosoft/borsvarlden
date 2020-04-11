@@ -1,0 +1,33 @@
+﻿@using borsvarlden.ViewModels;
+@model List<NewsViewModel>
+
+<div class="side-article-body">
+    <span class="side-article-label">
+        Aktuellt
+    </span>
+    <div class="sponsored-articles-container">
+        @foreach (var article in Model)
+        {
+            <div class="side-article-wrapper">
+                <a href="@Url.Action("DetailedArticle", "Home", new { articleId = article.Id})" class="side-article row">
+                    <div class="side-article-image col-4">
+                        @if (string.IsNullOrEmpty(article.ImageUrl))
+                        {
+                            <img src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
+                        }
+                        @if (!string.IsNullOrEmpty(article.ImageUrl))
+                        {
+                            <img src="@article.ImageUrl">
+                        }
+                    </div>
+                    <div class="sponsored-content col-8">
+                        <p>
+                            @article.Title
+                        </p>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+

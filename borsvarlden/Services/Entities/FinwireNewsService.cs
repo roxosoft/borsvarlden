@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using borsvarlden.Db;
 using borsvarlden.Models;
 using borsvarlden.Services.Finwire;
+using borsvarlden.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace borsvarlden.Services.Entities
@@ -12,7 +13,9 @@ namespace borsvarlden.Services.Entities
     public interface IFinwireNewsService
     {
         void AddSingleNews(FinWireData finwireData);
-        Task<List<FinwireNew>> GetMainNews(int newsCount);
+        Task<IndexNewsViewModel> GetMainNews(int newsCount);
+        Task<List<NewsViewModel>> GetNews(int newsCount);
+        Task<NewsViewModel> GetDetailedArticle(int articleId);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -70,9 +73,50 @@ namespace borsvarlden.Services.Entities
             _dbContext.SaveChanges();
         }
 
-        public async Task<List<FinwireNew>> GetMainNews(int newsCount)
+        public async Task<IndexNewsViewModel> GetMainNews(int newsCount)
         {
-            List<FinwireNew> result = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
+            var result = new IndexNewsViewModel();
+            List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
+
+            result.News = MapFinwireNewToViewModel(newsList);
+
+            return result;
+        }
+
+        public async Task<List<NewsViewModel>> GetNews(int newsCount)
+        {
+            List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
+
+            var result = MapFinwireNewToViewModel(newsList);
+
+            return result;
+        }
+
+        public async Task<NewsViewModel> GetDetailedArticle(int articleId)
+        {
+            List<FinwireNew> article = await _dbContext.FinwireNews.Where(x => x.Id == articleId).ToListAsync();
+            var result = MapFinwireNewToViewModel(article).FirstOrDefault();
+
+            return result;
+        }
+
+        private List<NewsViewModel> MapFinwireNewToViewModel(List<FinwireNew> news)
+        {
+            var result = new List<NewsViewModel>();
+
+            foreach (var newsItem in news)
+            {
+                var articleModel = new NewsViewModel()
+                {
+                    Id = newsItem.Id,
+                    Title = newsItem.Title,
+                    Date = newsItem.Date,
+                    NewsText = newsItem.NewsText
+                };
+
+                result.Add(articleModel);
+            }
+
             return result;
         }
     }

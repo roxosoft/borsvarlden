@@ -1,0 +1,31 @@
+﻿@using borsvarlden.ViewModels;
+@model NewsViewModel;
+
+<a href="@Url.Action("DetailedArticle", "Home", new { articleId = Model.Id})">
+    <div class="image-wrapper">
+        @if (string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
+        }
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl">
+        }
+    </div>
+    <div class="article-content-wrapper">
+        <span class="article-label hidden-big">
+            Model.Label ?? "Test Label"
+        </span>
+        <h3>
+            Model.Title
+        </h3>
+        <p class="hidden-small">
+            <span class="article-label">
+                Model.Label
+            </span>
+            <span class="article-content">
+                @Html.Raw(Model.ShortNewsText)
+            </span>
+        </p>
+    </div>
+</a>

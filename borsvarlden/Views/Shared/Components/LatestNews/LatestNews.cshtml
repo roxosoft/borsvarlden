@@ -1,0 +1,28 @@
+﻿@using borsvarlden.ViewModels;
+@model List<NewsViewModel>
+
+<div class="latest">
+    <span class="latest-label">
+        SENASTE
+    </span>
+    <div class="latest-articles-container">
+        @foreach (var article in Model)
+        {
+            <div class="latest-article-wrapper">
+                <a href="@Url.Action("DetailedArticle", "Home", new { articleId = article.Id})" class="latest-article row">
+                    <div class="latest-date col-2">
+                       <p>
+                           @article.Date.ToString("HH:mm")
+                       </p>
+                    </div>
+                    <div class="latest-content col-10">
+                        <p>
+                            @article.Title
+                        </p>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
