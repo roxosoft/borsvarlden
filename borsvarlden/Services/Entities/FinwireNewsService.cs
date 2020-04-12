@@ -54,7 +54,7 @@ namespace borsvarlden.Services.Entities
                 NewsText = finwireData.NewsText,
                 FinwireAgency = _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)
                             ?? _dbContext.Add(new FinwireAgency {Agency = finwireData.Agency}).Entity,
-                ImageRelativeUrl = imgData.ImageAbsoluteUrl.Substring(_imagesRootPath.Length),
+                ImageRelativeUrl = ImageHelper.AbsoluteUrlToRelativeUrl(imgData.ImageAbsoluteUrl),
                 ImageLabel = imgData.Label
             };
 
@@ -123,7 +123,8 @@ namespace borsvarlden.Services.Entities
                     Id = newsItem.Id,
                     Title = newsItem.Title,
                     Date = newsItem.Date,
-                    NewsText = newsItem.NewsText
+                    NewsText = newsItem.NewsText,
+                    ImageUrl = newsItem.ImageRelativeUrl
                 };
 
                 result.Add(articleModel);
