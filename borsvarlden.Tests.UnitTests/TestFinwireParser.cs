@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using System.IO;
 using borsvarlden.Services.Finwire;
+using borsvarlden.Tests.UnitTests.Helpers;
 
 namespace borsvarlden.Tests.UnitTests
 {
@@ -36,16 +37,25 @@ namespace borsvarlden.Tests.UnitTests
             }
         }
 
-        [TestCase]
-        public void TestSpecificFile()
+        [TestCase("08", "FWM0042BB5.xml")]
+        public void TestSpecificFile(string subfolder, string fileName)
         {
-            TestOneFile(@"f:\cs_proj\roxosoft_borsvarlden\finwire_files\test\08\FWM0042BB5.xml");
+            string path = UnitTestHelper.GetTestFilePath(subfolder, fileName);
+            TestOneFile(path);
         }
+
+        [TestCase("02","FWM00427DE.xml")]
+        [TestCase("08", "FWM0042BB5.xml")]
+        public void TestImageSpecificFile(string subfolder, string fileName)
+        {
+            string path = UnitTestHelper.GetTestFilePath(subfolder, fileName);
+            var p = UnitTestHelper.ParseNewsFile(path);
+        }
+
 
         public FinWireData TestOneFile(string file)
         {
-            var p = new FinwireFileParserService();
-            return p.Parse(file);
+            return UnitTestHelper.ParseNewsFile(file);
         }
     }
 }

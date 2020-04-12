@@ -13,7 +13,8 @@ namespace borsvarlden.Models
         public DateTime Date { get; set; }
         public string Title { get; set; }
         public string NewsText { get; set; }
-
+        public string ImageRelativeUrl { get; set; }
+        public string ImageLabel { get; set; }
         //todo with flags
         public bool FinautoPassed { get; set;}
         public bool FinautoPublished { get; set; }

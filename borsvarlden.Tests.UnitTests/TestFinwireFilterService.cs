@@ -7,6 +7,7 @@ using System.Text;
 using borsvarlden.Db;
 using borsvarlden.Services.Entities;
 using borsvarlden.Services.Finwire;
+using borsvarlden.Tests.UnitTests.Helpers;
 
 
 namespace borsvarlden.Tests.UnitTests
@@ -37,7 +38,7 @@ namespace borsvarlden.Tests.UnitTests
                 var path = $@"{pathBase}\{i.ToString("D2")}";
                 foreach (var file in Directory.GetFiles(path))
                 {
-                    if  (_finwireFilterService.IsFilterPassed(new FinwireFileParserService().Parse(file)))
+                    if  (_finwireFilterService.IsFilterPassed(UnitTestHelper.ParseNewsFile(path)));
                         stMatched += $"{file}\n" ;
                 }
             }
@@ -49,7 +50,7 @@ namespace borsvarlden.Tests.UnitTests
         public void TestIsPassedSingleFile(bool expectedResult, string subdir, string fileName)
         {
             string path = $@"{UnitTestConfig.TestDataPath}\FinwireFiles\{subdir}\{fileName}";
-            var data = new FinwireFileParserService().Parse(path);
+            var data = UnitTestHelper.ParseNewsFile(fileName);
             bool bResProcessed = _finwireFilterService.IsFilterPassed(data);
             Assert.AreEqual(expectedResult, bResProcessed);
         }
@@ -125,9 +126,8 @@ namespace borsvarlden.Tests.UnitTests
         public void TestSingleFileFilterContent(bool expectedResult,string subdir,  string fileName)
         {
             string path = $@"{UnitTestConfig.TestDataPath}\FinwireFiles\{subdir}\{fileName}";
-            //var content = File.ReadAllText(path);
-            var finwireParser = new FinwireFileParserService();
-            var contentParsed = finwireParser.Parse(path).HtmlText;
+         
+            var contentParsed = UnitTestHelper.ParseNewsFile(fileName).HtmlText;
             bool bResProcessed = _finwireFilterService.IsContentFilterPassed(contentParsed);
             Assert.AreEqual(expectedResult, bResProcessed);
             //_finwireFilterService.IsContentFilterPassed();

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using borsvarlden.Db;
+using borsvarlden.Helpers;
 using borsvarlden.Models;
 using borsvarlden.Services.Finwire;
 
@@ -22,6 +23,7 @@ namespace borsvarlden.Services.Entities
         public FinwireFilterService(ApplicationContext context)
         {
             _dbContext = context;
+           // ImageHelper.Init(imagePath);
         }
 
         public bool IsFilterPassed(FinWireData finwireData)

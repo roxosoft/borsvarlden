@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
+using  borsvarlden.Helpers;
 
 namespace borsvarlden.Services.Finwire
 {
@@ -14,9 +15,11 @@ namespace borsvarlden.Services.Finwire
 
     public class FinwireFileParserService : IFinwireParserService
     {
+        private  readonly string _imagePath;
+
         public FinwireFileParserService()
         {
-
+            
         }
 
         public FinWireData Parse(string pathToFile)
@@ -28,7 +31,7 @@ namespace borsvarlden.Services.Finwire
 
             var item = xmlDocument.SelectSingleNode("item");
 
-            var finWireDate = new FinWireData
+            var finWireData = new FinWireData
             {
                 Title = item.SelectSingleNode("title")?.InnerText,
                 Guid = item.SelectSingleNode("guid")?.InnerText,
@@ -36,7 +39,8 @@ namespace borsvarlden.Services.Finwire
                                         System.Globalization.DateTimeStyles.AdjustToUniversal),
                 NewsText = item.SelectSingleNode("newstext")?.InnerText?.Trim(),
                 HtmlText = item.SelectSingleNode("htmltext")?.InnerText?.Trim(),
-                Agency = item.SelectSingleNode("agency")?.InnerText
+                Agency = item.SelectSingleNode("agency")?.InnerText,
+
             };
 
             //todo Concat these all to methods with the delegate
@@ -47,7 +51,7 @@ namespace borsvarlden.Services.Finwire
                     socialTagsList.Add(((XmlNode)singleSocialTag).InnerText);
 
             if (socialTagsList.Count > 0)
-                finWireDate.SocialTags = socialTagsList;
+                finWireData.SocialTags = socialTagsList;
 
             var companies = new List<string>();
 
@@ -56,55 +60,10 @@ namespace borsvarlden.Services.Finwire
                     companies.Add(((XmlElement)singleCompany).GetAttribute("name"));
 
             if (companies.Count > 0)
-                finWireDate.Companies = companies;
+                finWireData.Companies = companies;
 
-            return finWireDate;
+            return finWireData;
         }
-
-        public string GetImagePath(List<string> socialTags, List<string> companies)
-        {
-            List<object> needles = new List<object>()
-            {
-                // Specific cases socialtags
-                "stockholmbullets", // filter
-                "ipo", // filter
-                "cryptocurrency", // filter
-
-                // Company-describing socialtags based on importance
-                "space", // often grouped with telecom, space is more important
-                "healthcare", // more important than tech, vr
-                "betting", // more important than gaming/leisure
-
-                // Company-describing socialtags of equal value
-                new List<string>
-                {
-                    "aviation",
-                    "agriculture",
-                    "automotive", // filter
-                    "biometrics", // filter
-                    "gaming", // filter
-                    "ecommerce",
-                    "telecom",
-                    "vr",
-                    "realestate",
-                    "retail",
-                },
-
-                "tech", // filter
-
-                // Rest of the original filter socialtags
-                "analytics", // filter
-                "commodities", // filter
-                "crowdfunding", // filter
-                "dividend", // filter
-                "funding", // filter
-                "macro", // filter
-                "share", // filter
-            };
-
-            return "";
-        }
-
     }
 
     public class FinWireData

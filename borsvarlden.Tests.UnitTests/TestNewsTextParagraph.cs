@@ -7,6 +7,7 @@ using System.Text;
 using System.Collections.Generic;
 using NUnit.Framework;
 using borsvarlden.Services.Finwire;
+using borsvarlden.Tests.UnitTests.Helpers;
 
 namespace borsvarlden.Tests.UnitTests
 {
@@ -15,7 +16,6 @@ namespace borsvarlden.Tests.UnitTests
         [TestCase(1)]
         public void TestParseAllFiles(int dummy)
         {
-
             var pathBase = $@"{UnitTestConfig.TestDataPath}\FinwireFiles";
             string st = "";
 
@@ -45,8 +45,7 @@ namespace borsvarlden.Tests.UnitTests
 
                 foreach (var file in Directory.GetFiles(path))
                 {
-                    var p = new FinwireFileParserService();
-                    var text = p.Parse(file).HtmlText.Trim();
+                    var text = UnitTestHelper.ParseNewsFile(path).HtmlText.Trim();
                     if (text.Contains("\n\n"))
                         System.Threading.Thread.Sleep(0);
                     //if (t.Contains("<p>"))

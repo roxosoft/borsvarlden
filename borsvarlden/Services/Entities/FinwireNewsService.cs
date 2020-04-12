@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using borsvarlden.Db;
 using borsvarlden.Models;
 using borsvarlden.Services.Finwire;
 using borsvarlden.ViewModels;
-using Microsoft.EntityFrameworkCore;
+
+using borsvarlden.Helpers;
+using Microsoft.AspNetCore.Hosting;
 
 namespace borsvarlden.Services.Entities
 {
@@ -22,11 +25,15 @@ namespace borsvarlden.Services.Entities
     {
         private ApplicationContext _dbContext;
         private IFinwireFilterService _finwireFilterService;
+        private readonly string _webRootPath;
+        private string _imagesRootPath => $@"{_webRootPath}\assets\images\finauto";
 
-        public FinwireNewsService(ApplicationContext dbContext, IFinwireFilterService finwireNewsService)
+        public FinwireNewsService(ApplicationContext dbContext, IFinwireFilterService finwireNewsService, IWebHostEnvironment hostEnvironment)
         {
             _dbContext = dbContext;
             _finwireFilterService = finwireNewsService;
+            _webRootPath = hostEnvironment.WebRootPath;
+            ImageHelper.Init(_imagesRootPath);
         }
 
         public void AddSingleNews(FinWireData finwireData)
@@ -37,6 +44,8 @@ namespace borsvarlden.Services.Entities
             if (!_finwireFilterService.IsFilterPassed(finwireData))
                 return;
 
+            var imgData = ImageHelper.GetImageData(finwireData.SocialTags, finwireData.Companies);
+            
             var newsEntity = new FinwireNew()
             {
                 Guid = finwireData.Guid,
@@ -44,9 +53,12 @@ namespace borsvarlden.Services.Entities
                 Date = finwireData.Date,
                 NewsText = finwireData.NewsText,
                 FinwireAgency = _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)
-                            ?? _dbContext.Add(new FinwireAgency {Agency = finwireData.Agency}).Entity
-
+                            ?? _dbContext.Add(new FinwireAgency {Agency = finwireData.Agency}).Entity,
+                ImageRelativeUrl = imgData.ImageAbsoluteUrl.Substring(_imagesRootPath.Length),
+                ImageLabel = imgData.Label
             };
+
+           
 
             var newsEntityAdded = _dbContext.Add(newsEntity).Entity;
 
