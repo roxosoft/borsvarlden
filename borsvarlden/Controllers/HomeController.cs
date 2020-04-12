@@ -27,7 +27,6 @@ namespace borsvarlden.Controllers
         public async Task<IActionResult> DetailedArticle(int articleId)
         {
             NewsViewModel model = await _finwireNewsService.GetDetailedArticle(articleId);
-
             return View(model);
         }
 

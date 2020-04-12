@@ -17,7 +17,6 @@ namespace borsvarlden.Tests.UnitTests
         [TestCase(1)]
         public void TestParseAllFiles(int dummy)
         {
-            
             var pathBase = $@"{UnitTestConfig.TestDataPath}\FinwireFiles";
 
             for (int i = 1; i <= 8; i++)
@@ -51,7 +50,6 @@ namespace borsvarlden.Tests.UnitTests
             string path = UnitTestHelper.GetTestFilePath(subfolder, fileName);
             var p = UnitTestHelper.ParseNewsFile(path);
         }
-
 
         public FinWireData TestOneFile(string file)
         {

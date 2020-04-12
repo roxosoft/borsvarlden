@@ -10,10 +10,12 @@ namespace borsvarlden.Helpers
     public static class ImageHelper
     {
         private static string _imagePath;
+
         private static string CompaniesPath => $@"{_imagePath}\company";
+
         private static string SocialTagPath => $@"{_imagePath}\socialtag";
+
         private static List<string> AvailableCompanies;
-        private static List<string> AvailableSocialTags;
 
         public static void Init(string imagePath)
         {
@@ -81,7 +83,6 @@ namespace borsvarlden.Helpers
 
             foreach (var needle in needles)
             {
-                
                 if (needle is List<string>)
                 {
                     var needleList = ((List<string>) needle);
@@ -152,10 +153,7 @@ namespace borsvarlden.Helpers
         {
             //todo lazy
             AvailableCompanies = FileHelper.GetSubdirectories(CompaniesPath);
-            AvailableSocialTags = FileHelper.GetSubdirectories(SocialTagPath);
         }
-
-      
     }
 
     public class ImageData

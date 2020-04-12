@@ -58,8 +58,6 @@ namespace borsvarlden.Services.Entities
                 ImageLabel = imgData.Label
             };
 
-           
-
             var newsEntityAdded = _dbContext.Add(newsEntity).Entity;
 
             //todo make generic method in helper etc, find better solution using EF Core
@@ -89,7 +87,6 @@ namespace borsvarlden.Services.Entities
         {
             var result = new IndexNewsViewModel();
             List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
-
             result.News = MapFinwireNewToViewModel(newsList);
 
             return result;
@@ -98,9 +95,7 @@ namespace borsvarlden.Services.Entities
         public async Task<List<NewsViewModel>> GetNews(int newsCount)
         {
             List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
-
             var result = MapFinwireNewToViewModel(newsList);
-
             return result;
         }
 
@@ -108,7 +103,6 @@ namespace borsvarlden.Services.Entities
         {
             List<FinwireNew> article = await _dbContext.FinwireNews.Where(x => x.Id == articleId).ToListAsync();
             var result = MapFinwireNewToViewModel(article).FirstOrDefault();
-
             return result;
         }
 
@@ -126,7 +120,6 @@ namespace borsvarlden.Services.Entities
                     NewsText = newsItem.NewsText,
                     ImageUrl = newsItem.ImageRelativeUrl
                 };
-
                 result.Add(articleModel);
             }
 

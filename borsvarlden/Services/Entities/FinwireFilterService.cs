@@ -23,7 +23,6 @@ namespace borsvarlden.Services.Entities
         public FinwireFilterService(ApplicationContext context)
         {
             _dbContext = context;
-           // ImageHelper.Init(imagePath);
         }
 
         public bool IsFilterPassed(FinWireData finwireData)
@@ -33,11 +32,9 @@ namespace borsvarlden.Services.Entities
             var titleWhiteListPassed = IsTitleWhiteListPassed(finwireData.Title);
             var tittleBlackListNotPassed = IsTagBlackFilterNotPassed(finwireData.Title);
             var contentTotalPassed = (contentPassed && !tittleBlackListNotPassed) || titleWhiteListPassed;
-
             var companiesPassed = IsCompaniesWhiteListPassed(finwireData.Companies);
             var soicalTagsPassed = IsSocialTagsWhiteListFilterPassed(finwireData.SocialTags);
             var termsPassed = companiesPassed || soicalTagsPassed;
-
             var filterPassed = contentTotalPassed && termsPassed;
 
             return filterPassed;   

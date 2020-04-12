@@ -28,8 +28,6 @@ namespace borsvarlden.Tests.UnitTests
         public void TestFilterContent(string testFilterContent)
         {
             var originalText = File.ReadAllText($@"{HtmlHelperInputPath}\{testFilterContent}");
-            //var t =originalText.Contains('\n');
-            
             var processedText = HtmlHelper.FilterContent(originalText);
         }
     }

@@ -11,6 +11,7 @@ namespace borsvarlden.Finwire
     public class FinwireJob
     {
         private IFinwireParserService _parser;
+
         private IFinwireNewsService _finwireNewsService;
       
         public FinwireJob(IFinwireNewsService finwireNewsService, IFinwireParserService parser)
@@ -29,7 +30,6 @@ namespace borsvarlden.Finwire
                 if (i == 4 || i == 5)
                     continue;
 
-               
                 var path = $@"{pathBase}\{i.ToString("D2")}";
 
                 foreach (var file in Directory.GetFiles(path))

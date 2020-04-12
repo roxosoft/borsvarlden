@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Text;
-using System.Collections.Generic;
 using NUnit.Framework;
 using borsvarlden.Services.Finwire;
 using borsvarlden.Tests.UnitTests.Helpers;
@@ -83,14 +81,7 @@ namespace borsvarlden.Tests.UnitTests
             var r = occurenceInFiles.ToList();
             var m = r.Where(x => x.Value["<br><br>"] >= 3).ToList();
             var m1 = r.Where(x => x.Value["<BR>"] > 0).ToList();
-            // var r = occurenceInFiles.ToList().Where(x => x.Value.ToList().Where(x=>x.Key==""));
+            
         }
-
-        /* private class PatterOccurence
-         {
-             public string Pattern { get; set; }
-             public int Count { get; set; }
-         }
-         */
     }
 }

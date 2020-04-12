@@ -38,7 +38,7 @@ namespace borsvarlden.Tests.UnitTests
                 var path = $@"{pathBase}\{i.ToString("D2")}";
                 foreach (var file in Directory.GetFiles(path))
                 {
-                    if  (_finwireFilterService.IsFilterPassed(UnitTestHelper.ParseNewsFile(path)));
+                    if  (_finwireFilterService.IsFilterPassed(UnitTestHelper.ParseNewsFile(path)))
                         stMatched += $"{file}\n" ;
                 }
             }
@@ -130,7 +130,6 @@ namespace borsvarlden.Tests.UnitTests
             var contentParsed = UnitTestHelper.ParseNewsFile(fileName).HtmlText;
             bool bResProcessed = _finwireFilterService.IsContentFilterPassed(contentParsed);
             Assert.AreEqual(expectedResult, bResProcessed);
-            //_finwireFilterService.IsContentFilterPassed();
         }
     }
 }
