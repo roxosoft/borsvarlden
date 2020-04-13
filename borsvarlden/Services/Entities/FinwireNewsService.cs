@@ -118,7 +118,8 @@ namespace borsvarlden.Services.Entities
                     Title = newsItem.Title,
                     Date = newsItem.Date,
                     NewsText = newsItem.NewsText,
-                    ImageUrl = newsItem.ImageRelativeUrl
+                    ImageUrl = newsItem.ImageRelativeUrl,
+                    Label = newsItem.ImageLabel
                 };
                 result.Add(articleModel);
             }
