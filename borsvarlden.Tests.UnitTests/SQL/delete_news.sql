@@ -1,9 +1,9 @@
-﻿delete from [dbo].[FinwireAgencies]
-delete from FinwireSocialtags
+﻿delete from FinwireSocialtags
 delete from FinwireNew2FirnwireSocialTag
 delete from [dbo].[FinwireNew2FinwireCompany]
 delete from [dbo].[FinwireCompanies]
 delete from [dbo].[FinwireNews]
+delete from [dbo].[FinwireAgencies]
 
 
 

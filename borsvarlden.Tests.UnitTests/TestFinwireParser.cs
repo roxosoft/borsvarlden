@@ -43,13 +43,6 @@ namespace borsvarlden.Tests.UnitTests
             TestOneFile(path);
         }
 
-        [TestCase("02","FWM00427DE.xml")]
-        [TestCase("08", "FWM0042BB5.xml")]
-        public void TestImageSpecificFile(string subfolder, string fileName)
-        {
-            string path = UnitTestHelper.GetTestFilePath(subfolder, fileName);
-            var p = UnitTestHelper.ParseNewsFile(path);
-        }
 
         public FinWireData TestOneFile(string file)
         {

@@ -29,7 +29,7 @@ namespace borsvarlden.Helpers
                     ,companiesInNews?.Select(x => x.ToLower()).ToList());
         }
 
-        public static ImageData GetImageDataImplementation(List<string> socialTagsInNews, List<string> companiesInNews)
+        private static ImageData GetImageDataImplementation(List<string> socialTagsInNews, List<string> companiesInNews)
         {
             string matchedDir = "";
             string label = "";
