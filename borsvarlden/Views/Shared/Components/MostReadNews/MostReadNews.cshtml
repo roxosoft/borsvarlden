@@ -17,13 +17,11 @@
                         }
                         @if (!string.IsNullOrEmpty(article.ImageUrl))
                         {
-                            <img src="@article.ImageUrl">
+                            <img src="~/assets/images/finauto/@article.ImageUrl">
                         }
                     </div>
                     <div class="most-read-content col-8">
-                        <p>
-                            @article.Title
-                        </p>
+                        <p>@article.Title</p>
                     </div>
                 </a>
             </div>

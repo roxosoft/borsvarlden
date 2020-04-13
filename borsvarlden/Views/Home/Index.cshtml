@@ -13,17 +13,23 @@
             <img src="~/assets/images/savr-panorama.jpg">
         </div>
         <div class="row">
-            <div class="col-8">
+            <div class="col-8 content-main">
                 @await Component.InvokeAsync("IndexNewsFeed")
+
+                <div class="content-botom-hidden">
+                    @await Component.InvokeAsync("SponsoredNews")
+
+                    @await Component.InvokeAsync("LatestNews")
+                </div>
             </div>
-            <div class="col-4">
+            <div class="col-4 content-right">
                 @await Component.InvokeAsync("SponsoredNews")
                 @await Component.InvokeAsync("MostReadNews")
                 @await Component.InvokeAsync("LatestNews")
             </div>
         </div>
     </div>
-    <div class="col-2 visible-md visible-lg index-side-banner-wrapper">
+    <div class="col-2 visible-lg index-side-banner-wrapper">
         <img src="~/assets/images/luxbright_skyscraper.jpg" width="200" height="400">
         <div class="stiky-side-banner">
             <img src="~/assets/images/ani_synas.gif" width="200" height="200">

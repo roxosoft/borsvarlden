@@ -7,24 +7,32 @@
 }
 
 .index-side-banner-wrapper {
-    height: 100%;
-    width: 100%;
-    padding-top: 15px;
+    padding: 5px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .stiky-side-banner {
     padding-top: 10px;
     position: sticky;
-    top: 10px;
+    top: 50px;
 }
 
 .index-row {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .banner-wrapper {
     padding-bottom: 15px;
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
 }
 
 .big-block {
@@ -46,8 +54,26 @@
         padding: 0;
 
         img {
-            height: 100%;
-            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
         }
+    }
+}
+
+@media (max-width:768px) {
+    .content-right {
+        display: none;
+    }
+
+    .content-main {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}  
+
+@media (min-width:768px) {
+    .content-botom-hidden {
+        display: none;
     }
 }

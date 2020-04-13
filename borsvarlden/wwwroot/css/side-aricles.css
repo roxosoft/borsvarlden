@@ -2,17 +2,19 @@
     width: 84px;
     height: 47px;
     float: left;
-    overflow: hidden; }
+    overflow: hidden;
+    padding: 0px; }
     .side-article-image img {
         width: 100%;
         max-width: 100%;
-        height: auto; }
+        height: auto;
+        padding-top: 5px; }
 
 .side-article-wrapper:not(:first-child) {
     border-top: 1px solid #e0e0e0; }
 
 .side-article {
-    margin: 10px 0;
+    margin: 5px 0;
     color: #222; }
 
 .side-article-label {

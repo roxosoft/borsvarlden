@@ -3,11 +3,13 @@
     height: 47px;
     float: left;
     overflow: hidden;
+    padding: 0px;
 
     img {
         width: 100%;
         max-width: 100%;
         height: auto;
+        padding-top: 5px;
     }
 }
 
@@ -16,7 +18,7 @@
 }
 
 .side-article {
-    margin: 10px 0;
+    margin: 5px 0;
     color: #222;
 }
 

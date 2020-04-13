@@ -6,7 +6,9 @@
     .article .image-wrapper img {
         width: 100%;
         max-width: 100%;
-        height: auto; }
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px; }
     .article a {
         margin: 20px 0;
         color: #222; }
@@ -24,3 +26,5 @@
     .article p {
         font-size: 16px;
         line-height: 1.5em; }
+    .article .article-content-wrapper p {
+        padding-top: 10px; }
