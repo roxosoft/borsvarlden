@@ -24,6 +24,18 @@ namespace borsvarlden.Tests.UnitTests
             var res99 = ImageHelper.GetImageData(new List<string>(), new List<string> {"alibaba"}).ImageAbsoluteUrl;
         }
 
+        //Companies="Kina, USA" Socialtags="agriculture, commodities, fx, macro, politics"
+        //Use Socialtag=agriculture (from company describing group socialtag).
+        [TestCase("07", "FWM0042A85.xml", @"\socialtag\agriculture")]
+
+        //Companies="Iran, USA" Socialtags="commodities, energy, fx, macro, oil, politics"
+        //Commodities is the first socialtag exists. Also subtag oil exists
+        [TestCase("03", "FWM0042947.xml", @"\socialtag\commodities\socialtag\oil\")]
+
+        //Companies="USA" Socialtags="fx, macro"
+        //Company "USA" is single but not exists. Socialtag=macro exists, found company subtag
+        [TestCase("02", "FWM00427B3.xml", @"\socialtag\macro\company\usa")]
+
         //Companies="Qliro" Socialtags="consumergoods, ecommerce, retail, tech"
         //Compny single and found
         [TestCase("02", "FWM0042867.xml", @"\socialtag\ecommerce||\socialtag\retail")]
@@ -46,7 +58,7 @@ namespace borsvarlden.Tests.UnitTests
 
         //Companies="Finansiella nyckeltal" Socialtags="commodities, currencies, energy, fx, macro, oil, stocks"
         //Company not found, found socialtag=commodities and found sub socialtag=oil
-        [TestCase("02", "FWM0042847.xml", @"\socialtag\commodities\oil")]
+        [TestCase("02", "FWM0042847.xml", @"\socialtag\commodities\socialtag\oil")]
         public void TestSpecificFile(string subfolder, string fileName, string resultPattern)
         {
             ImageHelper.Init(UnitTestConfig.FinautoImagesPath);
