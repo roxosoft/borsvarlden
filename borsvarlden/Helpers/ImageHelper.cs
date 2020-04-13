@@ -134,12 +134,18 @@ namespace borsvarlden.Helpers
                             }
                         }
                     }
+                    return new ImageData
+                    {
+                        ImageAbsoluteUrl = FileHelper.GetRandomImageFromDir(matchedDir),
+                        Label = label
+                    };
                 }
             }
 
+            //If not found use blackfill
             return new ImageData
             {
-                ImageAbsoluteUrl = FileHelper.GetRandomImageFromDir(matchedDir),
+                ImageAbsoluteUrl = FileHelper.GetRandomImageFromDir($@"{_imagePath}\backfill"),
                 Label = label
             };
         }

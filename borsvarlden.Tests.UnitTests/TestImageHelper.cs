@@ -21,8 +21,12 @@ namespace borsvarlden.Tests.UnitTests
             var res98 = ImageHelper.GetImageData(new List<string> {"stockholmbullets"}, new List<string>());
             var res99 = ImageHelper.GetImageData(new List<string>(), new List<string> {"alibaba"}).ImageAbsoluteUrl;
         }
-
-        [TestCase("08", "FWM0042BB5.xml","healthcare")]
+      
+        [TestCase("02", "FWM0042815.xml", @"\socialtag\commodities")]
+        //Multiple socialtags
+        [TestCase("02", "FWM00427C4.xml", @"\socialtag\commodities")]
+        //Multiple socialtags
+        [TestCase("08", "FWM0042BB5.xml", @"\socialtag\healthcare")]
         public void TestSpecificFile(string subfolder, string fileName, string resultPattern)
         {
             ImageHelper.Init(UnitTestConfig.FinautoImagesPath);
@@ -53,9 +57,11 @@ namespace borsvarlden.Tests.UnitTests
 
                 foreach (var file in Directory.GetFiles(path))
                 {
-                    var data = UnitTestHelper.ParseNewsFile(path);
+                    var data = UnitTestHelper.ParseNewsFile(file);
 
-                    if (data.Companies.Count > 1)
+                    //if (data.Companies?.Count > 10)
+                      //  System.Threading.Thread.Sleep(0);
+                    if (data.SocialTags?.Count > 5)
                         System.Threading.Thread.Sleep(0);
                 }
             }
