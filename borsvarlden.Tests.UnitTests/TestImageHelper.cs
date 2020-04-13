@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using borsvarlden.Helpers;
+using borsvarlden.Extensions;
 using borsvarlden.Tests.UnitTests.Helpers;
 
 
@@ -21,24 +23,51 @@ namespace borsvarlden.Tests.UnitTests
             var res98 = ImageHelper.GetImageData(new List<string> {"stockholmbullets"}, new List<string>());
             var res99 = ImageHelper.GetImageData(new List<string>(), new List<string> {"alibaba"}).ImageAbsoluteUrl;
         }
-      
-        [TestCase("02", "FWM0042815.xml", @"\socialtag\commodities")]
-        //Multiple socialtags
-        [TestCase("02", "FWM00427C4.xml", @"\socialtag\commodities")]
-        //Multiple socialtags
+
+        //Companies="Qliro" Socialtags="consumergoods, ecommerce, retail, tech"
+        //Compny single and found
+        [TestCase("02", "FWM0042867.xml", @"\socialtag\ecommerce||\socialtag\retail")]
+
+        //Companies="Xiaomi" Socialtags="tech""
+        //Compny single and found
+        [TestCase("02", "FWM004281E.xml", @"\company\xiaomi")]
+
+        //Companies="Cantargia" Socialtags="biotech, healthcare, insider, lifescience"
+        //Company single not found. Socialtag healthcare found.
         [TestCase("08", "FWM0042BB5.xml", @"\socialtag\healthcare")]
+
+        //Companies="Atlas Copco, Electrolux, Getinge, H&M, Handelsbanken, Nordea, SEB, SSAB, Swedbank, Telia" Socialtags="commodities, steel"
+        //Companies multiple, not found. Socialtags coomdities found, no subtag found
+        [TestCase("02", "FWM00427C4.xml", @"\socialtag\commodities")]
+
+        //Companies="Kina, Storbritannien" Socialtags="financials, fx, ipo, macro, politics, stocks"
+        //Company not found, found socialtag=ipo, no subs
+        [TestCase("02", "FWM0042815.xml", @"\socialtag\ipo")]
+
+        //Companies="Finansiella nyckeltal" Socialtags="commodities, currencies, energy, fx, macro, oil, stocks"
+        //Company not found, found socialtag=commodities and found sub socialtag=oil
+        [TestCase("02", "FWM0042847.xml", @"\socialtag\commodities\oil")]
         public void TestSpecificFile(string subfolder, string fileName, string resultPattern)
         {
             ImageHelper.Init(UnitTestConfig.FinautoImagesPath);
             string path = UnitTestHelper.GetTestFilePath(subfolder, fileName);
             var data = UnitTestHelper.ParseNewsFile(path);
-            var r= ImageHelper.GetImageData(data.SocialTags, data.Companies);
-            Assert.IsTrue(r.ImageAbsoluteUrl.Contains(resultPattern));
+            var debugString = $"Companies=\"{data.Companies.ElementsToString()}\" Socialtags=\"{data.SocialTags.ElementsToString()}\"";
+            var imageDat= ImageHelper.GetImageData(data.SocialTags, data.Companies);
+            if (resultPattern.Contains("||"))
+            {
+                bool bRes = false;
+                resultPattern.Split("||").ToList().ForEach(x => bRes = bRes || imageDat.ImageAbsoluteUrl.Contains(x));
+                Assert.IsTrue(bRes);
+            }
+            else
+                Assert.IsTrue(imageDat.ImageAbsoluteUrl.Contains(resultPattern));
         }
 
         [TestCase(1)]
         public void TestAllFiles(int dummy)
         {
+            ImageHelper.Init(UnitTestConfig.FinautoImagesPath);
             var pathBase = $@"{UnitTestConfig.TestDataPath}\FinwireFiles";
             string st = "";
 
@@ -58,11 +87,19 @@ namespace borsvarlden.Tests.UnitTests
                 foreach (var file in Directory.GetFiles(path))
                 {
                     var data = UnitTestHelper.ParseNewsFile(file);
+                    if (data.SocialTags == null || data.Companies == null)
+                        continue;
 
+                    var imageDat = ImageHelper.GetImageData(data.SocialTags, data.Companies);
                     //if (data.Companies?.Count > 10)
-                      //  System.Threading.Thread.Sleep(0);
-                    if (data.SocialTags?.Count > 5)
-                        System.Threading.Thread.Sleep(0);
+                    //  System.Threading.Thread.Sleep(0);
+                    //if (data.SocialTags?.Count > 5)
+                    //  System.Threading.Thread.Sleep(0);
+
+                    if (data.Companies?.Count == 1)
+                      {
+                         
+                      }
                 }
             }
         }
