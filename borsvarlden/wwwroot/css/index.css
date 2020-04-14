@@ -4,12 +4,6 @@
 .index-content-wrapper {
     padding: 5px; }
 
-.index-side-banner-wrapper {
-    padding: 5px; }
-    .index-side-banner-wrapper img {
-        width: 100%;
-        height: auto; }
-
 .stiky-side-banner {
     padding-top: 10px;
     position: sticky;
@@ -40,15 +34,3 @@
     .small-block .image-wrapper img {
         padding-left: 10px;
         padding-right: 10px; }
-
-@media (max-width: 768px) {
-    .content-right {
-        display: none; }
-    .content-main {
-        width: 100%;
-        flex: 0 0 100%;
-        max-width: 100%; } }
-
-@media (min-width: 768px) {
-    .content-botom-hidden {
-        display: none; } }

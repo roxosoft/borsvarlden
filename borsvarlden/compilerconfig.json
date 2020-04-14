@@ -30,5 +30,13 @@
   {
     "outputFile": "wwwroot/css/detailed.css",
     "inputFile": "wwwroot/css/detailed.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/related-news.css",
+    "inputFile": "wwwroot/css/related-news.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/read-more.css",
+    "inputFile": "wwwroot/css/read-more.scss"
   }
 ]

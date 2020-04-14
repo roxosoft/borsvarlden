@@ -24,6 +24,10 @@ namespace borsvarlden.Helpers
 
         public int SponsoredNewsCount { get; private set; }
 
+        public int RelatedNewsCount { get; private set; }
+
+        public int ReadMoreCount { get; private set; }
+
         public ConfigurationHelper(IConfiguration configuration)
         {
             FirstBigBlockCount = configuration.GetValue<int>("ApplicationSettings:FirstBigBlockCount");
@@ -35,6 +39,8 @@ namespace borsvarlden.Helpers
             LatestNewsCount = configuration.GetValue<int>("ApplicationSettings:LatestNewsCount");
             MostReadNewsCount = configuration.GetValue<int>("ApplicationSettings:MostReadNewsCount");
             SponsoredNewsCount = configuration.GetValue<int>("ApplicationSettings:SponsoredNewsCount");
+            RelatedNewsCount = configuration.GetValue<int>("ApplicationSettings:RelatedNewsCount");
+            ReadMoreCount = configuration.GetValue<int>("ApplicationSettings:ReadMoreCount");
         }
     }
 }

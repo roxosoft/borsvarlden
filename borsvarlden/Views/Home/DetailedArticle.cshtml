@@ -4,6 +4,11 @@
 @{
     ViewData["Title"] = Model.Title;
 }
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/related-news.css" />
+    <link rel="stylesheet" href="~/css/read-more.css" />
+}
 <div class="detailed-article">
     <div class="row index-row">
         <div class="col-10 index-content-wrapper">
@@ -14,33 +19,41 @@
                 }
                 @if (!string.IsNullOrEmpty(Model.ImageUrl))
                 {
-                    <img class="col-12" src="@Model.ImageUrl">
+                    <img class="col-12" src="~/@Model.ImageUrl">
                 }
-                <h2>
-                    @(Model.Title ?? "Test Title Test Title Test Title Test Title")
-                </h2>
             </div>
+            <h2>
+                @Model.Title
+            </h2>
             <div class="banner-wrapper">
                 <img src="~/assets/images/savr-panorama.jpg">
             </div>
             <div class="row">
-                <div class="col-8">
+                <div class="col-8 content-main">
                     <span class="article-content">
-                        @Html.Raw(Model.NewsText ?? "Test Text Test Text Test Text Test Text Test Text Test Text Test Text Test Text Test Text...")
+                        @Html.Raw(Model.NewsText)
                     </span>
+                    @await Component.InvokeAsync("RelatedNews")
+
+                    <div class="content-botom-hidden">
+                        @await Component.InvokeAsync("SponsoredNews")
+
+                        @await Component.InvokeAsync("LatestNews")
+                    </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4 content-right">
                     @await Component.InvokeAsync("SponsoredNews")
                     @await Component.InvokeAsync("MostReadNews")
                     @await Component.InvokeAsync("LatestNews")
                 </div>
             </div>
         </div>
-        <div class="col-2 index-side-banner-wrapper">
+        <div class="col-2 index-side-banner-wrapper visible-lg">
             <img src="~/assets/images/luxbright_skyscraper.jpg" width="200" height="400">
             <div class="stiky-side-banner">
                 <img src="~/assets/images/ani_synas.gif" width="200" height="200">
             </div>
         </div>
     </div>
+    @await Component.InvokeAsync("ReadMore")
 </div>

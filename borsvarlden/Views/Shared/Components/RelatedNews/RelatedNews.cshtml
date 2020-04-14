@@ -1,21 +1,21 @@
 ﻿@using borsvarlden.ViewModels;
 @model List<NewsViewModel>
 
-<div class="latest">
-    <span class="label latest-label">
-        SENASTE
+<div class="related-news">
+    <span class="label related-news-label">
+        RELATERAT FRÅN FINWIRE
     </span>
-    <div class="latest-articles-container">
+    <div class="related-news-container">
         @foreach (var article in Model)
         {
-            <div class="latest-article-wrapper">
-                <a href="@Url.Action("DetailedArticle", "Home", new { articleId = article.Id})" class="latest-article row">
-                    <div class="latest-date col-2">
+            <div class="related-news-wrapper">
+                <a href="@Url.Action("DetailedArticle", "Home", new { articleId = article.Id})" class="related-news-article row">
+                    <div class="related-news-date col-2">
                         <p>
                             @(article.Date.Date == DateTime.Today ? article.Date.ToString("HH:mm") : article.Date.ToString("d MMM"))
                         </p>
                     </div>
-                    <div class="latest-content col-10">
+                    <div class="related-news-content col-10">
                         <p>
                             @article.Title
                         </p>
@@ -25,4 +25,3 @@
         }
     </div>
 </div>
-

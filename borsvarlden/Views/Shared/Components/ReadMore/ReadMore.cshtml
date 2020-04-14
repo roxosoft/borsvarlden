@@ -1,16 +1,19 @@
 ﻿@using borsvarlden.ViewModels;
 @model List<NewsViewModel>
+@{
+    int counter = 0;
+}
 
-<div class="side-article-body">
-    <span class="label side-article-label">
-        MEST LÄSTA
+<div class="read-more-body">
+    <span class="label read-more-label">
+        LÄS MER
     </span>
-    <div class="most-read-articles-container">
+    <div class="read-more-container row">
         @foreach (var article in Model)
         {
-            <div class="side-article-wrapper">
-                <a href="@Url.Action("DetailedArticle", "Home", new { articleId = article.Id})" class="side-article row">
-                    <div class="side-article-image col-4">
+            <div class="read-more-wrapper col-3 @(counter > 0 ? "visible-lg": "")">
+                <a href="@Url.Action("DetailedArticle", "Home", new { articleId = article.Id})" class="read-more-link">
+                    <div class="read-more-image">
                         @if (string.IsNullOrEmpty(article.ImageUrl))
                         {
                             <img src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
@@ -20,12 +23,12 @@
                             <img src="~/@article.ImageUrl">
                         }
                     </div>
-                    <div class="most-read-content col-8">
+                    <div class="read-more-content">
                         <p>@article.Title</p>
                     </div>
                 </a>
             </div>
+            counter++;
         }
     </div>
 </div>
-

@@ -2,18 +2,19 @@
 using borsvarlden.Services.Entities;
 using borsvarlden.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace borsvarlden.Views.Shared.Components.SponsoredNews
+namespace borsvarlden.Views.Shared.Components.RelatedNews
 {
-    public class MostReadNews : ViewComponent
+    public class RelatedNews : ViewComponent
     {
         private readonly IFinwireNewsService _finwireNewsService;
         private readonly IConfigurationHelper _configurationHelper;
 
-        public MostReadNews(IFinwireNewsService finwireNewsService, IConfigurationHelper configurationHelper)
+        public RelatedNews(IFinwireNewsService finwireNewsService, IConfigurationHelper configurationHelper)
         {
             _finwireNewsService = finwireNewsService;
             _configurationHelper = configurationHelper;
@@ -21,11 +22,11 @@ namespace borsvarlden.Views.Shared.Components.SponsoredNews
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            int newsCount = _configurationHelper.MostReadNewsCount;
+            int newsCount = _configurationHelper.RelatedNewsCount;
 
             List<NewsViewModel> model = await _finwireNewsService.GetNews(newsCount);
 
-            return View("MostReadNews", model);
+            return View("RelatedNews", model);
         }
     }
 }

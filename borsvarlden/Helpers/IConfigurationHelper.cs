@@ -22,5 +22,9 @@ namespace borsvarlden.Helpers
         public int MostReadNewsCount { get; }
 
         public int SponsoredNewsCount { get; }
+
+        public int RelatedNewsCount { get; }
+
+        public int ReadMoreCount { get; }
     }
 }

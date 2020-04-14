@@ -140,6 +140,21 @@ button.accept-policy {
     padding-bottom: 30px;
 }
 
+.label {
+    color: #f44336;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.index-side-banner-wrapper {
+    padding: 5px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
 @media (min-width: 1020px) {
     .container {
         max-width: 1250px;
@@ -172,10 +187,24 @@ button.accept-policy {
     .text-left-sm {
         text-align: left !important;
     }
+
+    .content-botom-hidden {
+        display: none;
+    }
 }
 
 @media (max-width:768px) {
     .text-center-xs {
         text-align: center;
+    }
+
+    .content-right {
+        display: none;
+    }
+
+    .content-main {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
