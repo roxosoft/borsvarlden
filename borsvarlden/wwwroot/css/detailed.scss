@@ -2,7 +2,11 @@
     padding: 5px;
 
     .banner-wrapper {
-        padding: 30px 0;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        max-width: 920px;
+        max-height: 200px;
 
         img {
             height: 100%;
@@ -12,5 +16,16 @@
 
     .image-wrapper {
         margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 25pt;
+        font-weight: 700;
+    }
+
+    .content-main {
+        font-size: 11pt;
+        color: #222;
+        line-height: 150%;
     }
 }

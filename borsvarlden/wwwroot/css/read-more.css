@@ -14,4 +14,6 @@
         margin-bottom: 5px; }
     .read-more-body .read-more-content {
         margin-top: 15px;
-        margin-bottom: 5px; }
+        margin-bottom: 5px;
+        font-size: 12pt;
+        line-height: 1.4em; }

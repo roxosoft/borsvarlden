@@ -11,7 +11,7 @@
             <div class="latest-article-wrapper">
                 <a href="@Url.Action("DetailedArticle", "Home", new { articleId = article.Id})" class="latest-article row">
                     <div class="latest-date col-2">
-                        <p>
+                        <p class="latest-date">
                             @(article.Date.Date == DateTime.Today ? article.Date.ToString("HH:mm") : article.Date.ToString("d MMM"))
                         </p>
                     </div>

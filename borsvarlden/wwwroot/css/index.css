@@ -2,7 +2,7 @@
     padding: 5px; }
 
 .index-content-wrapper {
-    padding: 5px; }
+    padding-right: 15px; }
 
 .stiky-side-banner {
     padding-top: 10px;
@@ -10,11 +10,13 @@
     top: 50px; }
 
 .index-row {
-    padding-left: 15px;
-    padding-right: 15px; }
+    margin-left: -15px;
+    margin-right: -15px; }
 
 .banner-wrapper {
-    padding-bottom: 15px; }
+    display: inline-flex;
+    max-width: 960px;
+    max-height: 200px; }
     .banner-wrapper img {
         height: 100%;
         width: 100%; }
