@@ -10,8 +10,9 @@
         padding-top: 10px;
         padding-bottom: 10px; }
     .article a {
-        margin: 20px 0;
-        color: #222; }
+        margin: 20px 0; }
+    .article a:hover h3 {
+        text-decoration: underline; }
     .article .article-label {
         margin-right: 10px;
         font-size: 11pt; }
@@ -23,5 +24,5 @@
     .article p {
         font-size: 16px;
         line-height: 1.5em; }
-    .article .article-content-wrapper p {
+    .article .article-content-wrapper .hidden-small {
         padding-top: 10px; }

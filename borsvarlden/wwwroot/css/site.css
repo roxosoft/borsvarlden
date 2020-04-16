@@ -81,11 +81,14 @@ button.accept-policy {
         line-height: 130%;
         font-weight: 300;
         color: #cfd8dc; }
-    .footer a {
-        text-decoration: none;
-        color: #cfd8dc; }
-        .footer a :hover {
-            color: #0277bd; }
+
+a {
+    text-decoration: none;
+    color: #222; }
+
+a:hover {
+    text-decoration: none;
+    color: #222; }
 
 .footer-logo {
     width: 100%;

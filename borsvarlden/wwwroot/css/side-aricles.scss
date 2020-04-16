@@ -17,6 +17,12 @@
     border-top: 1px solid #e0e0e0;
 }
 
+.side-article-wrapper {
+    a:hover p {
+        text-decoration: underline;
+    }
+}
+
 .side-article {
     margin: 5px 0;
     color: #222;
