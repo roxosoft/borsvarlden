@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using borsvarlden.Models;
 using borsvarlden.ViewModels;
 using borsvarlden.Services.Entities;
+using borsvarlden.Helpers;
 
 namespace borsvarlden.Controllers
 {
@@ -12,16 +13,27 @@ namespace borsvarlden.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IFinwireNewsService _finwireNewsService;
+        private readonly IConfigurationHelper _configurationHelper;
 
-        public HomeController(ILogger<HomeController> logger, IFinwireNewsService finwireNewsService)
+        public HomeController(ILogger<HomeController> logger, IFinwireNewsService finwireNewsService, IConfigurationHelper configurationHelper)
         {
             _logger = logger;
             _finwireNewsService = finwireNewsService;
+            _configurationHelper = configurationHelper;
         }
 
         public async Task<IActionResult> Index()
         {
             return View();
+        }
+
+        public async Task<IActionResult> NewsList(int page = 1)
+        {
+            int newsOnPageCount = _configurationHelper.ListedNewsCount;
+
+            PaggingResponseViewModel<NewsViewModel> model = await _finwireNewsService.GetNewsPagging(newsOnPageCount, page);
+
+            return View(model);
         }
 
         public async Task<IActionResult> DetailedArticle(int articleId)

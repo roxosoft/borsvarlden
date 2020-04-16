@@ -18,6 +18,8 @@ namespace borsvarlden.Helpers
 
         public int IndexNewsCount { get; private set; }
 
+        public int ListedNewsCount { get; private set; }
+
         public int LatestNewsCount { get; private set; }
 
         public int MostReadNewsCount { get; private set; }
@@ -36,6 +38,7 @@ namespace borsvarlden.Helpers
             SecondSmallBlockCount = configuration.GetValue<int>("ApplicationSettings:SecondSmallBlockCount");
 
             IndexNewsCount = configuration.GetValue<int>("ApplicationSettings:IndexNewsCount");
+            ListedNewsCount = configuration.GetValue<int>("ApplicationSettings:ListedNewsCount");
             LatestNewsCount = configuration.GetValue<int>("ApplicationSettings:LatestNewsCount");
             MostReadNewsCount = configuration.GetValue<int>("ApplicationSettings:MostReadNewsCount");
             SponsoredNewsCount = configuration.GetValue<int>("ApplicationSettings:SponsoredNewsCount");

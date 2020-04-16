@@ -101,6 +101,10 @@ button.accept-policy {
         font-weight: 300;
         color: #cfd8dc;
     }
+
+    a {
+        color: #cfd8dc;
+    }
 }
 
 a {
@@ -166,6 +170,46 @@ a:hover {
 .index-side-banner-wrapper {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.big-block {
+    .hidden-big {
+        display: none;
+    }
+}
+
+.small-block {
+    .hidden-small {
+        display: none;
+    }
+
+    .image-wrapper {
+        width: 168px;
+        height: 94px;
+        float: left;
+        overflow: hidden;
+        padding: 0;
+
+        img {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
+.banner-wrapper {
+    padding-bottom: 15px;
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.stiky-side-banner {
+    padding-top: 10px;
+    position: sticky;
+    top: 50px;
 }
 
 @media (min-width: 1020px) {
