@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Main Page";
+    ViewData["Title"] = "Maximera din digitala synlighet";
 }
 
 @section Styles{
@@ -21,6 +21,7 @@
 
                     @await Component.InvokeAsync("LatestNews")
                 </div>
+                <a class="button button-red" href="@Url.Action("NewsList", "Home")">Läs fler artiklar</a>
             </div>
             <div class="col-4 content-right">
                 @await Component.InvokeAsync("SponsoredNews")

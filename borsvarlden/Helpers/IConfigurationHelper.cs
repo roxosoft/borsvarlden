@@ -17,6 +17,8 @@ namespace borsvarlden.Helpers
 
         public int IndexNewsCount { get; }
 
+        public int ListedNewsCount { get; }
+
         public int LatestNewsCount { get; }
 
         public int MostReadNewsCount { get; }

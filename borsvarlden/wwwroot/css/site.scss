@@ -32,6 +32,22 @@ a.navbar-brand {
     min-height: 50px;
     color: white;
     z-index: 9999;
+    line-height: 20px;
+    padding: 0;
+
+    .navbar-toggler {
+        margin-right: 15px;
+    }
+
+    .navbar-brand {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+}
+
+.navbar-toggler {
+    border: none;
+    background: 0 0 !important;
 }
 
 .bg-red-main {
@@ -47,7 +63,7 @@ a.navbar-brand {
     height: 32px;
 }
 
-.navbar-expand-sm .navbar-nav {
+.navbar-expand-md .navbar-nav {
     flex-direction: row-reverse;
 }
 
@@ -87,13 +103,18 @@ button.accept-policy {
     }
 
     a {
-        text-decoration: none;
         color: #cfd8dc;
-
-        :hover {
-            color: #0277bd;
-        }
     }
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #222;
 }
 
 .footer-logo {
@@ -147,17 +168,72 @@ button.accept-policy {
 }
 
 .index-side-banner-wrapper {
-    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.big-block {
+    .hidden-big {
+        display: none;
+    }
+}
+
+.small-block {
+    .hidden-small {
+        display: none;
+    }
+
+    .image-wrapper {
+        width: 168px;
+        height: 94px;
+        float: left;
+        overflow: hidden;
+        padding: 0;
+
+        img {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
+.banner-wrapper {
+    padding-bottom: 15px;
 
     img {
+        height: 100%;
         width: 100%;
-        height: auto;
     }
+}
+
+.stiky-side-banner {
+    padding-top: 10px;
+    position: sticky;
+    top: 50px;
 }
 
 @media (min-width: 1020px) {
     .container {
         max-width: 1250px;
+    }
+
+    .index-content-wrapper {
+        width: 100%;
+        max-width: 990px;
+    }
+
+    .index-side-banner-wrapper {
+        width: 230px;
+    }
+
+    .content-main {
+        width: 100%;
+        max-width: 640px;
+    }
+
+    .content-right {
+        width: 350px;
+        padding-right: 0;
     }
 }
 
@@ -177,10 +253,6 @@ button.accept-policy {
         flex: 0 0 100%;
         max-width: 100%;
     }
-
-    .index-row {
-        padding-right: 20px;
-    }
 }
 
 @media (min-width:768px) {
@@ -190,6 +262,18 @@ button.accept-policy {
 
     .content-botom-hidden {
         display: none;
+    }
+
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (max-width:767px) {
+    .banner-wrapper {
+        margin-left: -15px;
+        margin-right: -15px;
     }
 }
 

@@ -19,6 +19,7 @@ namespace borsvarlden.Services.Entities
         Task<IndexNewsViewModel> GetMainNews(int newsCount);
         Task<List<NewsViewModel>> GetNews(int newsCount);
         Task<NewsViewModel> GetDetailedArticle(int articleId);
+        Task<PaggingResponseViewModel<NewsViewModel>> GetNewsPagging(int newsOnPageCount, int nextPage);
         Task<NewsViewModel> GetDetailedArticle(string titleSlug);
     }
 
@@ -98,6 +99,23 @@ namespace borsvarlden.Services.Entities
         {
             List<FinwireNew> newsList = await _dbContext.FinwireNews.Include(m => m.TittleSlug).OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
             var result = MapFinwireNewToViewModel(newsList);
+            return result;
+        }
+
+        public async Task<PaggingResponseViewModel<NewsViewModel>> GetNewsPagging(int newsOnPageCount, int nextPage)
+        {
+            var result = new PaggingResponseViewModel<NewsViewModel>();
+            List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date)
+                                                                    .Skip(newsOnPageCount * (nextPage - 1))
+                                                                    .Take(newsOnPageCount)
+                                                                    .ToListAsync();
+
+            result.TotalCount = await _dbContext.FinwireNews.CountAsync();
+
+            result.Data = MapFinwireNewToViewModel(newsList);
+            result.CurrentPage = nextPage;
+            result.ItemsOnPageCount = newsOnPageCount;
+
             return result;
         }
 

@@ -1,15 +1,15 @@
 ﻿.side-article-image {
     width: 84px;
+    max-width: 84px;
     height: 47px;
     float: left;
     overflow: hidden;
-    padding: 0px;
+    padding-left: 0;
+    padding-right: 0;
 
     img {
         width: 100%;
-        max-width: 100%;
-        height: auto;
-        padding-top: 5px;
+        height: 100%;
     }
 }
 
@@ -17,9 +17,16 @@
     border-top: 1px solid #e0e0e0;
 }
 
+.side-article-wrapper {
+    a:hover p {
+        text-decoration: underline;
+    }
+}
+
 .side-article {
     margin: 5px 0;
     color: #222;
+    font-size: 11pt;
 }
 
 .side-article-label {

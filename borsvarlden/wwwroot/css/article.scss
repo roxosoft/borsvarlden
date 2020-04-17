@@ -15,7 +15,10 @@
 
     a {
         margin: 20px 0;
-        color: #222;
+    }
+
+    a:hover h3 {
+        text-decoration: underline;
     }
 
     .article-label {
@@ -36,7 +39,7 @@
     }
 
     .article-content-wrapper {
-        p {
+        .hidden-small {
             padding-top: 10px;
         }
     }
