@@ -20,8 +20,8 @@ namespace borsvarlden.Helpers
 
             if (currentPage > pageCount - 2)
             {
-                first = pageCount - 5;
-                last = first + 4;
+                first = pageCount - 4;
+                last = pageCount;
             }
         }
     }

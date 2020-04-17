@@ -19,7 +19,7 @@ namespace borsvarlden.Services.Entities
         Task<IndexNewsViewModel> GetMainNews(int newsCount);
         Task<List<NewsViewModel>> GetNews(int newsCount);
         Task<NewsViewModel> GetDetailedArticle(int articleId);
-        Task<PaggingResponseViewModel<NewsViewModel>> GetNewsPagging(int newsOnPageCount, int nextPage);
+        Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPagging(int newsOnPageCount, int nextPage, string searchText);
         Task<NewsViewModel> GetDetailedArticle(string titleSlug);
     }
 
@@ -102,19 +102,24 @@ namespace borsvarlden.Services.Entities
             return result;
         }
 
-        public async Task<PaggingResponseViewModel<NewsViewModel>> GetNewsPagging(int newsOnPageCount, int nextPage)
+        public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPagging(int newsOnPageCount, int nextPage, string searchText)
         {
-            var result = new PaggingResponseViewModel<NewsViewModel>();
-            List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date)
-                                                                    .Skip(newsOnPageCount * (nextPage - 1))
-                                                                    .Take(newsOnPageCount)
-                                                                    .ToListAsync();
+            var result = new PaggingSearchResponseViewModel<NewsViewModel>();
+            var query = _dbContext.FinwireNews.Include(m => m.TittleSlug).OrderByDescending(x => x.Date).AsQueryable();
 
-            result.TotalCount = await _dbContext.FinwireNews.CountAsync();
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                query = query.Where(x => x.Title.Contains(searchText));
+            }
+
+            List<FinwireNew> newsList = await query.Skip(newsOnPageCount * (nextPage - 1)).Take(newsOnPageCount).ToListAsync();
+
+            result.TotalCount = await query.CountAsync();
 
             result.Data = MapFinwireNewToViewModel(newsList);
             result.CurrentPage = nextPage;
             result.ItemsOnPageCount = newsOnPageCount;
+            result.SearchText = searchText;
 
             return result;
         }

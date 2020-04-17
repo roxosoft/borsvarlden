@@ -27,11 +27,11 @@ namespace borsvarlden.Controllers
             return View();
         }
 
-        public async Task<IActionResult> NewsList(int page = 1)
+        public async Task<IActionResult> NewsList(int page = 1, string searchText = null)
         {
             int newsOnPageCount = _configurationHelper.ListedNewsCount;
 
-            PaggingResponseViewModel<NewsViewModel> model = await _finwireNewsService.GetNewsPagging(newsOnPageCount, page);
+            PaggingSearchResponseViewModel<NewsViewModel> model = await _finwireNewsService.GetNewsSearchPagging(newsOnPageCount, page, searchText);
 
             return View(model);
         }

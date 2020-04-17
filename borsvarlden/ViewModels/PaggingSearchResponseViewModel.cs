@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace borsvarlden.ViewModels
 {
-    public class PaggingResponseViewModel<T> where T : class
+    public class PaggingSearchResponseViewModel<T> where T : class
     {
+        public string SearchText { get; set; }
+
         public List<T> Data { get; set; }
 
         public int CurrentPage { get; set; }
@@ -23,7 +25,7 @@ namespace borsvarlden.ViewModels
             }
         }
 
-        public PaggingResponseViewModel()
+        public PaggingSearchResponseViewModel()
         {
             Data = new List<T>();
         }

@@ -23,3 +23,38 @@
 
 .index-article-feed {
     padding-bottom: 20px; }
+
+.search-form {
+    display: table;
+    border-collapse: separate;
+    padding: 0;
+    width: 100%;
+    height: 34px; }
+    .search-form > * {
+        display: table-cell;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        color: #555; }
+    .search-form .search-text {
+        height: inherit;
+        width: 92%;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        float: left;
+        padding: 6px 12px; }
+    .search-form .submit-search {
+        height: inherit;
+        width: 8%;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        float: right;
+        background: #fff;
+        border-left: 0;
+        text-align: center; }
+        .search-form .submit-search button {
+            border: 0;
+            background: 0 0;
+            height: inherit; }
