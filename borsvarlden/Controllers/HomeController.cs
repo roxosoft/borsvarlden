@@ -30,6 +30,13 @@ namespace borsvarlden.Controllers
             return View(model);
         }
 
+        [Route("articlar/{titleSlug}")]
+        public async Task<IActionResult> DetailedArticle([FromRoute]string titleSlug)
+        {
+            NewsViewModel model = await _finwireNewsService.GetDetailedArticle(titleSlug);
+            return View(model);
+        }
+
         public IActionResult Privacy()
         {
             return View();

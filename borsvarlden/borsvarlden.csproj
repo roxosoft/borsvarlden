@@ -12,6 +12,10 @@
     <Compile Remove="Migrations\20200405163333_FiltersSeeding.Designer.cs" />
     <Compile Remove="Migrations\20200410113304_FilterSeeding.cs" />
     <Compile Remove="Migrations\20200410113304_FilterSeeding.Designer.cs" />
+    <Compile Remove="Migrations\20200417041812_AddedTittleSlug.cs" />
+    <Compile Remove="Migrations\20200417041812_AddedTittleSlug.Designer.cs" />
+    <Compile Remove="Migrations\20200417042421_AddedTittleSlug.cs" />
+    <Compile Remove="Migrations\20200417042421_AddedTittleSlug.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

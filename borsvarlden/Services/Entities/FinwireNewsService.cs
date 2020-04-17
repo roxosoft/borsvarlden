@@ -19,6 +19,7 @@ namespace borsvarlden.Services.Entities
         Task<IndexNewsViewModel> GetMainNews(int newsCount);
         Task<List<NewsViewModel>> GetNews(int newsCount);
         Task<NewsViewModel> GetDetailedArticle(int articleId);
+        Task<NewsViewModel> GetDetailedArticle(string titleSlug);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -55,7 +56,8 @@ namespace borsvarlden.Services.Entities
                 FinwireAgency = _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)
                             ?? _dbContext.Add(new FinwireAgency {Agency = finwireData.Agency}).Entity,
                 ImageRelativeUrl = ImageHelper.AbsoluteUrlToRelativeUrl(imgData.ImageAbsoluteUrl),
-                ImageLabel = imgData.Label
+                ImageLabel = imgData.Label,
+                TittleSlug = _dbContext.Add(new TittleSlug {Slug = finwireData.TittleSlug}).Entity
             };
 
             var newsEntityAdded = _dbContext.Add(newsEntity).Entity;
@@ -86,7 +88,7 @@ namespace borsvarlden.Services.Entities
         public async Task<IndexNewsViewModel> GetMainNews(int newsCount)
         {
             var result = new IndexNewsViewModel();
-            List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
+            List<FinwireNew> newsList = await _dbContext.FinwireNews.Include(m => m.TittleSlug).OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
             result.News = MapFinwireNewToViewModel(newsList);
 
             return result;
@@ -94,14 +96,27 @@ namespace borsvarlden.Services.Entities
 
         public async Task<List<NewsViewModel>> GetNews(int newsCount)
         {
-            List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
+            List<FinwireNew> newsList = await _dbContext.FinwireNews.Include(m => m.TittleSlug).OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
             var result = MapFinwireNewToViewModel(newsList);
             return result;
         }
 
         public async Task<NewsViewModel> GetDetailedArticle(int articleId)
         {
-            List<FinwireNew> article = await _dbContext.FinwireNews.Where(x => x.Id == articleId).ToListAsync();
+            List<FinwireNew> article = await _dbContext.FinwireNews
+                .Include(m => m.TittleSlug)
+                .Where(x => x.Id == articleId)
+                .ToListAsync();
+            var result = MapFinwireNewToViewModel(article).FirstOrDefault();
+            return result;
+        }
+
+        public async Task<NewsViewModel> GetDetailedArticle(string titleSlug)
+        {
+            List<FinwireNew> article = await _dbContext.FinwireNews
+                .Include(m =>m.TittleSlug)
+                .Where(x => x.TittleSlug.Slug == titleSlug)
+                .ToListAsync();
             var result = MapFinwireNewToViewModel(article).FirstOrDefault();
             return result;
         }
@@ -119,7 +134,8 @@ namespace borsvarlden.Services.Entities
                     Date = newsItem.Date,
                     NewsText = newsItem.NewsText,
                     ImageUrl = newsItem.ImageRelativeUrl,
-                    Label = newsItem.ImageLabel
+                    Label = newsItem.ImageLabel,
+                    TittleSlug = newsItem.TittleSlug.Slug
                 };
                 result.Add(articleModel);
             }

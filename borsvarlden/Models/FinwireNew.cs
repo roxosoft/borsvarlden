@@ -20,6 +20,7 @@ namespace borsvarlden.Models
         public bool FinautoPublished { get; set; }
 
         public FinwireAgency FinwireAgency { get; set; }
+        public TittleSlug TittleSlug { get; set; }
 
         public List<FinwireNew2FirnwireSocialTag> FinwireNew2FirnwireSocialTags { get; set; }
         public List<FinwireNew2FinwireCompany> FinwireNew2FinwireCompanies { get; set; }

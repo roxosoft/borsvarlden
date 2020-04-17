@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
-using  borsvarlden.Helpers;
+using borsvarlden.Helpers;
+using borsvarlden.Extensions;
+
 
 namespace borsvarlden.Services.Finwire
 {
@@ -40,7 +42,7 @@ namespace borsvarlden.Services.Finwire
                 NewsText = item.SelectSingleNode("newstext")?.InnerText?.Trim(),
                 HtmlText = item.SelectSingleNode("htmltext")?.InnerText?.Trim(),
                 Agency = item.SelectSingleNode("agency")?.InnerText,
-
+                TittleSlug = item.SelectSingleNode("title")?.InnerText.ToSlug()
             };
 
             //todo Concat these all to methods with the delegate
@@ -74,6 +76,7 @@ namespace borsvarlden.Services.Finwire
         public string NewsText { get; set; }
         public string HtmlText { get; set; }
         public string Agency { get; set; }
+        public string TittleSlug { get; set;}
         public List<string> SocialTags { get; set; }
         public List<string> Companies { get; set; }
         public bool IsValid => !String.IsNullOrEmpty(Guid);

@@ -1,7 +1,7 @@
 ﻿@using borsvarlden.ViewModels;
 @model NewsViewModel;
 
-<a href="@Url.Action("DetailedArticle", "Home", new { articleId = Model.Id})">
+<a href="~/articlar/@Html.Raw(Model.TittleSlug)">
     <div class="image-wrapper">
         @if (string.IsNullOrEmpty(Model.ImageUrl))
         {

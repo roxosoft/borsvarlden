@@ -19,6 +19,8 @@ namespace borsvarlden.ViewModels
 
         public string NewsText { get; set; }
 
+        public string TittleSlug { get; set; }
+
         public string ShortNewsText
         {
             get
