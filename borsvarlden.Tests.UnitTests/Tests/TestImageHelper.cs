@@ -82,7 +82,6 @@ namespace borsvarlden.Tests.UnitTests.Tests
         {
             ImageHelper.Init(UnitTestConfig.FinautoImagesPath);
             var pathBase = $@"{UnitTestConfig.TestDataPath}\FinwireFiles";
-            string st = "";
 
             var occurenceInFiles = new Dictionary<string, Dictionary<string, int>>();
 
