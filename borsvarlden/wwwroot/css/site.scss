@@ -40,7 +40,6 @@ a.navbar-brand {
     }
 
     .navbar-brand {
-        margin-left: 15px;
         margin-right: 0;
     }
 }
@@ -65,6 +64,15 @@ a.navbar-brand {
 
 .navbar-expand-md .navbar-nav {
     flex-direction: row-reverse;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+
+    a {
+        padding: 0 !important;
+    }
 }
 
 .border-top {
@@ -105,6 +113,11 @@ button.accept-policy {
     a {
         color: #cfd8dc;
     }
+
+    .footer-col {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 a {
@@ -124,7 +137,7 @@ a:hover {
 }
 
 .footer-main {
-    width: 100%;
+    padding-bottom: 15px;
 
     h3 {
         font-size: 14px;
@@ -132,6 +145,7 @@ a:hover {
         font-weight: 700;
         margin-bottom: 10px;
         text-transform: uppercase;
+        margin-top: 30px;
     }
 }
 
@@ -159,6 +173,14 @@ a:hover {
     background-color: white;
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.nav-container.container {
+    padding-right: 15px;
+}
+
+.button-red {
+    background: #f44336;
 }
 
 .label {
@@ -280,6 +302,10 @@ a:hover {
 @media (max-width:768px) {
     .text-center-xs {
         text-align: center;
+    }
+
+    .navbar-brand {
+        margin-left: 15px;
     }
 
     .content-right {
