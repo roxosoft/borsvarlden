@@ -1,6 +1,9 @@
 ﻿.latest-article-wrapper:not(:first-child) {
     border-top: 1px solid #e0e0e0; }
 
+.latest-article {
+    width: 100%; }
+
 .latest-label {
     display: block;
     margin-bottom: 10px;
@@ -17,12 +20,9 @@
 
 .latest-content {
     font-size: 11pt;
-    padding-left: 5px;
-    padding-right: 5px; }
+    padding-left: 55px; }
 
 .latest-date {
-    padding-left: 5px;
-    padding-right: 5px;
     float: left;
     width: 55px;
     font-size: 10pt;
