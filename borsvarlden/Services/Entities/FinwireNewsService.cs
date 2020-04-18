@@ -52,6 +52,7 @@ namespace borsvarlden.Services.Entities
             {
                 Guid = finwireData.Guid,
                 Title = finwireData.Title,
+                Subtitle = finwireData.SubTitle,
                 Date = finwireData.Date,
                 NewsText = finwireData.NewsText,
                 FinwireAgency = _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)

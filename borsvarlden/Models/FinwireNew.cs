@@ -12,6 +12,7 @@ namespace borsvarlden.Models
         public string PathRelative { get; set; }
         public DateTime Date { get; set; }
         public string Title { get; set; }
+        public string Subtitle { get; set; }
         public string NewsText { get; set; }
         public string ImageRelativeUrl { get; set; }
         public string ImageLabel { get; set; }

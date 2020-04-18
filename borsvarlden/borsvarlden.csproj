@@ -16,6 +16,8 @@
     <Compile Remove="Migrations\20200417041812_AddedTittleSlug.Designer.cs" />
     <Compile Remove="Migrations\20200417042421_AddedTittleSlug.cs" />
     <Compile Remove="Migrations\20200417042421_AddedTittleSlug.Designer.cs" />
+    <Compile Remove="Migrations\20200418071812_AddMigration.cs" />
+    <Compile Remove="Migrations\20200418071812_AddMigration.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
