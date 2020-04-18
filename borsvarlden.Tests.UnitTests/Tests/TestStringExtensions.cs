@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 using borsvarlden.Extensions;
 
-namespace borsvarlden.Tests.UnitTests
+namespace borsvarlden.Tests.UnitTests.Tests
 {
     class TestStringExtensions
     {

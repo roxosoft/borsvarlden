@@ -4,8 +4,9 @@ using System.IO;
 using System.Text;
 using NUnit.Framework;
 using borsvarlden.Helpers;
+using borsvarlden.Tests.UnitTests.Config;
 
-namespace borsvarlden.Tests.UnitTests
+namespace borsvarlden.Tests.UnitTests.Tests
 {
     [TestFixture]
     class TestHtmlHelper

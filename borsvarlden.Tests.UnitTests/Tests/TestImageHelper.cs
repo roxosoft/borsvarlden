@@ -6,10 +6,11 @@ using System.Text;
 using NUnit.Framework;
 using borsvarlden.Helpers;
 using borsvarlden.Extensions;
+using borsvarlden.Tests.UnitTests.Config;
 using borsvarlden.Tests.UnitTests.Helpers;
 
 
-namespace borsvarlden.Tests.UnitTests
+namespace borsvarlden.Tests.UnitTests.Tests
 {
     class TestImageHelper
     {

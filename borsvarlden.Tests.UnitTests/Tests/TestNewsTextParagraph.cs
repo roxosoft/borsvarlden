@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
 using borsvarlden.Services.Finwire;
+using borsvarlden.Tests.UnitTests.Config;
 using borsvarlden.Tests.UnitTests.Helpers;
 
-namespace borsvarlden.Tests.UnitTests
+namespace borsvarlden.Tests.UnitTests.Tests
 {
     public class TestNewsTextNewLine
     {

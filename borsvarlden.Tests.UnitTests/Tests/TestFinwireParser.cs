@@ -2,9 +2,10 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using System.IO;
 using borsvarlden.Services.Finwire;
+using borsvarlden.Tests.UnitTests.Config;
 using borsvarlden.Tests.UnitTests.Helpers;
 
-namespace borsvarlden.Tests.UnitTests
+namespace borsvarlden.Tests.UnitTests.Tests
 {
     [TestFixture]
     public class TestsFinwireFileParser

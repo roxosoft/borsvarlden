@@ -7,10 +7,11 @@ using System.Text;
 using borsvarlden.Db;
 using borsvarlden.Services.Entities;
 using borsvarlden.Services.Finwire;
+using borsvarlden.Tests.UnitTests.Config;
 using borsvarlden.Tests.UnitTests.Helpers;
 
 
-namespace borsvarlden.Tests.UnitTests
+namespace borsvarlden.Tests.UnitTests.Tests
 {
     [TestFixture]
     class TestFinwireFilterService

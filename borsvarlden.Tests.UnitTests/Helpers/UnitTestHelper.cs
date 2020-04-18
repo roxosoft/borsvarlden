@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using borsvarlden.Services.Finwire;
+using borsvarlden.Tests.UnitTests.Config;
 
 namespace borsvarlden.Tests.UnitTests.Helpers
 {
