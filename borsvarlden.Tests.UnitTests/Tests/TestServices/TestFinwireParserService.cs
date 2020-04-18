@@ -5,7 +5,7 @@ using borsvarlden.Services.Finwire;
 using borsvarlden.Tests.UnitTests.Config;
 using borsvarlden.Tests.UnitTests.Helpers;
 
-namespace borsvarlden.Tests.UnitTests.Tests
+namespace borsvarlden.Tests.UnitTests.Tests.TestServices
 {
     [TestFixture]
     public class TestsFinwireFileParser

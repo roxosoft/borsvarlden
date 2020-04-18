@@ -6,7 +6,7 @@ using NUnit.Framework;
 using borsvarlden.Helpers;
 using borsvarlden.Tests.UnitTests.Config;
 
-namespace borsvarlden.Tests.UnitTests.Tests
+namespace borsvarlden.Tests.UnitTests.Tests.TestHelpers
 {
     [TestFixture]
     class TestHtmlHelper
