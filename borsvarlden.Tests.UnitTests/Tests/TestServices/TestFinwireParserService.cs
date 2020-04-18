@@ -33,6 +33,7 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestServices
                     var res = TestOneFile(file);
                     Assert.IsTrue(res.IsValid);
                     Assert.IsNotNull(res.Guid);
+                    Assert.IsFalse(string.IsNullOrEmpty(res.SubTitle));
                 }
             }
         }

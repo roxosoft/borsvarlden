@@ -40,6 +40,7 @@ namespace borsvarlden.Services.Finwire
                 Date = DateTime.Parse(item.SelectSingleNode("isoDate")?.InnerText, System.Globalization.CultureInfo.CurrentCulture,
                                         System.Globalization.DateTimeStyles.AdjustToUniversal),
                 NewsText = item.SelectSingleNode("newstext")?.InnerText?.Trim(),
+                SubTitle = item.SelectSingleNode("newstext")?.InnerText.FistParagraph(),
                 HtmlText = item.SelectSingleNode("htmltext")?.InnerText?.Trim(),
                 Agency = item.SelectSingleNode("agency")?.InnerText,
                 TittleSlug = item.SelectSingleNode("title")?.InnerText.ToSlug()
@@ -75,6 +76,7 @@ namespace borsvarlden.Services.Finwire
         public DateTime Date { get; set; }
         public string NewsText { get; set; }
         public string HtmlText { get; set; }
+        public string SubTitle { get; set; }
         public string Agency { get; set; }
         public string TittleSlug { get; set;}
         public List<string> SocialTags { get; set; }
