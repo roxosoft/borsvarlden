@@ -155,6 +155,7 @@ namespace borsvarlden.Services.Entities
                 {
                     Id = newsItem.Id,
                     Title = newsItem.Title,
+                    ShortNewsText = newsItem.Subtitle,
                     Date = newsItem.Date,
                     NewsText = newsItem.NewsText,
                     ImageUrl = newsItem.ImageRelativeUrl,

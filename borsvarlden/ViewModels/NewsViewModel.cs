@@ -21,22 +21,6 @@ namespace borsvarlden.ViewModels
 
         public string TittleSlug { get; set; }
 
-        public string ShortNewsText
-        {
-            get
-            {
-                if (!string.IsNullOrEmpty(NewsText))
-                {
-                    List<string> splitedText = NewsText.Split(" ").ToList();
-                    string result = splitedText.Count > 20
-                        ? string.Join(" ", splitedText.Take(20).Append("..."))
-                        : NewsText;
-
-                    return result;
-                }
-
-                return "";
-            }
-        }
+        public string ShortNewsText { get; set;}
     }
 }
