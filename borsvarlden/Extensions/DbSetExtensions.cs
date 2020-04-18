@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace borsvarlden.Db
+namespace borsvarlden.Extensions.Db
 {
     public static class DbSetExtensions
     {
