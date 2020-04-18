@@ -9,7 +9,7 @@
         @foreach (var article in Model)
         {
             <div class="related-news-wrapper">
-                <a href="@Url.Action("DetailedArticle", "Home", new { articleId = article.Id})" class="related-news-article row">
+                <a href="~/articlar/@Html.Raw(article.TittleSlug)" class="related-news-article row">
                     <div class="related-news-date col-2">
                         <p>
                             @(article.Date.Date == DateTime.Today ? article.Date.ToString("HH:mm") : article.Date.ToString("d MMM"))
