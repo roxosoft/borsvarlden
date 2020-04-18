@@ -9,8 +9,8 @@
         @foreach (var article in Model)
         {
             <div class="side-article-wrapper">
-                <a href="~/articlar/@Html.Raw(article.TittleSlug)" class="side-article row">
-                    <div class="side-article-image col-4">
+                <a href="~/articlar/@Html.Raw(article.TittleSlug)" class="side-article">
+                    <div class="side-article-image">
                         @if (string.IsNullOrEmpty(article.ImageUrl))
                         {
                             <img src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
@@ -20,7 +20,7 @@
                             <img src="~/@article.ImageUrl">
                         }
                     </div>
-                    <div class="most-read-content col-8">
+                    <div class="side-article-content">
                         <p>@article.Title</p>
                     </div>
                 </a>
