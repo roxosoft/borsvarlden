@@ -21,6 +21,6 @@ namespace borsvarlden.ViewModels
 
         public string TittleSlug { get; set; }
 
-        public string ShortNewsText { get; set;}
+        public string Subtitle { get; set;}
     }
 }
