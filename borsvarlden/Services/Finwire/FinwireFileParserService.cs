@@ -12,61 +12,70 @@ namespace borsvarlden.Services.Finwire
 {
     public interface IFinwireParserService
     {
-        FinWireData Parse(string path);
+        Task<FinWireData> ParseFile(string pathToFile);
+        Task<FinWireData> ParseXmlContent(string xmlContent);
     }
 
     public class FinwireFileParserService : IFinwireParserService
     {
-        private  readonly string _imagePath;
 
         public FinwireFileParserService()
         {
             
         }
 
-        public FinWireData Parse(string pathToFile)
+        public async Task<FinWireData> ParseFile(string pathToFile)
         {
-            var content = File.ReadAllText(pathToFile);
-
-            var xmlDocument = new XmlDocument();
-            xmlDocument.LoadXml(content);
-
-            var item = xmlDocument.SelectSingleNode("item");
-
-            var finWireData = new FinWireData
-            {
-                Title = item.SelectSingleNode("title")?.InnerText,
-                Guid = item.SelectSingleNode("guid")?.InnerText,
-                Date = DateTime.Parse(item.SelectSingleNode("isoDate")?.InnerText, System.Globalization.CultureInfo.CurrentCulture,
-                                        System.Globalization.DateTimeStyles.AdjustToUniversal),
-                NewsText = item.SelectSingleNode("newstext")?.InnerText?.Trim(),
-                SubTitle = item.SelectSingleNode("newstext")?.InnerText.FistParagraph(),
-                HtmlText = item.SelectSingleNode("htmltext")?.InnerText?.Trim(),
-                Agency = item.SelectSingleNode("agency")?.InnerText,
-                TittleSlug = item.SelectSingleNode("title")?.InnerText.ToSlug()
-            };
-
-            //todo Concat these all to methods with the delegate
-            var socialTagsList = new List<string>();
-
-            foreach (XmlElement el in item.SelectNodes("socialtags"))
-                foreach (var singleSocialTag in el.SelectNodes("socialtag"))
-                    socialTagsList.Add(((XmlNode)singleSocialTag).InnerText);
-
-            if (socialTagsList.Count > 0)
-                finWireData.SocialTags = socialTagsList;
-
-            var companies = new List<string>();
-
-            foreach (XmlElement el in item.SelectNodes("companies"))
-                foreach (var singleCompany in el.SelectNodes("company"))
-                    companies.Add(((XmlElement)singleCompany).GetAttribute("name"));
-
-            if (companies.Count > 0)
-                finWireData.Companies = companies;
-
-            return finWireData;
+            var content = await File.ReadAllTextAsync(pathToFile);
+            return await ParseXmlContent(content);
         }
+
+        public async Task <FinWireData> ParseXmlContent(string xmlContent)
+        {
+            return await Task.Run<FinWireData>(() =>
+            {
+                var xmlDocument = new XmlDocument();
+                xmlDocument.LoadXml(xmlContent);
+
+                var item = xmlDocument.SelectSingleNode("item");
+
+                var finWireData = new FinWireData
+                {
+                    Title = item.SelectSingleNode("title")?.InnerText,
+                    Guid = item.SelectSingleNode("guid")?.InnerText,
+                    Date = DateTime.Parse(item.SelectSingleNode("isoDate")?.InnerText,
+                        System.Globalization.CultureInfo.CurrentCulture,
+                        System.Globalization.DateTimeStyles.AdjustToUniversal),
+                    NewsText = item.SelectSingleNode("newstext")?.InnerText?.Trim(),
+                    SubTitle = item.SelectSingleNode("newstext")?.InnerText.FistParagraph(),
+                    HtmlText = item.SelectSingleNode("htmltext")?.InnerText?.Trim(),
+                    Agency = item.SelectSingleNode("agency")?.InnerText,
+                    TittleSlug = item.SelectSingleNode("title")?.InnerText.ToSlug()
+                };
+
+                //todo Concat these all to methods with the delegate
+                var socialTagsList = new List<string>();
+
+                foreach (XmlElement el in item.SelectNodes("socialtags"))
+                foreach (var singleSocialTag in el.SelectNodes("socialtag"))
+                    socialTagsList.Add(((XmlNode) singleSocialTag).InnerText);
+
+                if (socialTagsList.Count > 0)
+                    finWireData.SocialTags = socialTagsList;
+
+                var companies = new List<string>();
+
+                foreach (XmlElement el in item.SelectNodes("companies"))
+                foreach (var singleCompany in el.SelectNodes("company"))
+                    companies.Add(((XmlElement) singleCompany).GetAttribute("name"));
+
+                if (companies.Count > 0)
+                    finWireData.Companies = companies;
+
+                return finWireData;
+            });
+        }
+
     }
 
     public class FinWireData

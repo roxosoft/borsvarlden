@@ -34,8 +34,8 @@ namespace borsvarlden.Finwire
 
                 foreach (var file in Directory.GetFiles(path))
                 {
-                    var finwireData = _parser.Parse(file);
-                    _finwireNewsService.AddSingleNews(finwireData);
+                    var finwireData = _parser.ParseFile(file);
+                    _finwireNewsService.AddSingleNews(finwireData.Result);
                 }
             }
         }

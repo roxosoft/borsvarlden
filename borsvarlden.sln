@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "borsvarlden", "borsvarlden\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9DF5B9F1-3D0F-4C53-A515-A1EDD2A445FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "borsvarlden.Tests.UnitTests", "borsvarlden.Tests.UnitTests\borsvarlden.Tests.UnitTests.csproj", "{23846B84-EC12-4E27-8548-91B75A04F76C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "borsvarlden.Tests.UnitTests", "borsvarlden.Tests.UnitTests\borsvarlden.Tests.UnitTests.csproj", "{23846B84-EC12-4E27-8548-91B75A04F76C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
