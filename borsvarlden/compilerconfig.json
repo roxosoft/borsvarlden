@@ -42,5 +42,9 @@
   {
     "outputFile": "wwwroot/css/news-list.css",
     "inputFile": "wwwroot/css/news-list.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/social-buttons.css",
+    "inputFile": "wwwroot/css/social-buttons.scss"
   }
 ]

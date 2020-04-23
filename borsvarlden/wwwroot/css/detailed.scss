@@ -1,31 +1,115 @@
 ﻿.detailed-article {
-    padding: 5px;
 
     .banner-wrapper {
-        margin-bottom: 20px;
-        padding-bottom: 20px;
+        padding-bottom: 20pt;
+        margin: 0 0 20pt;
         border-bottom: 1px solid #ddd;
-        max-width: 920px;
-        max-height: 200px;
+    }
 
-        img {
-            height: 100%;
-            width: 100%;
+    .banner-container {
+        max-width: 960px;
+        max-height: 200px;
+    }
+
+    .image-text {
+        margin-top: 15px;
+        line-height: 150%;
+
+        span {
+            font-weight: 500;
         }
     }
 
     .image-wrapper {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     h2 {
         font-size: 25pt;
         font-weight: 700;
+        margin-bottom: 1em;
+        line-height: 130%;
     }
 
     .content-main {
         font-size: 11pt;
         color: #222;
         line-height: 150%;
+    }
+
+    .lead-wrapper {
+        margin: 20pt 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .lead {
+        font-size: 13pt;
+        font-weight: 700;
+        padding: 0 0 20pt;
+        margin: 0;
+        line-height: 150%;
+    }
+
+    .post-author {
+        margin-top: 20pt;
+        margin-bottom: 20pt;
+        display: table;
+        width: 100%;
+    }
+
+    .post-author-description {
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 15px;
+
+        p {
+            margin: 0;
+            font-weight: 700;
+        }
+    }
+
+    .post-author-avatar {
+        width: 50px;
+        display: table-cell;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+    }
+
+    .buttons-container {
+        margin-bottom: 20px;
+    }
+
+    .post-article-meta {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #999;
+        line-height: 1.42857em;
+        font-size: 10pt;
+    }
+
+    .article-footer {
+        margin-top: 20pt;
+        padding-top: 20pt;
+        border-top: 1px solid #ddd;
+    }
+
+    .owl-dots {
+        .owl-dot.active span {
+            background-color: #f44336;
+        }
+
+        .owl-dot:hover span {
+            background-color: #f44336;
+        }
+
+        .owl-dot span {
+            width: 14px;
+            height: 14px;
+            margin: 5px;
+        }
     }
 }

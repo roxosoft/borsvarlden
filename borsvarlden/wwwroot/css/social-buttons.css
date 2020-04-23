@@ -1,0 +1,23 @@
+﻿.social-buttons {
+    margin-bottom: 20pt; }
+    .social-buttons .social-buttons-list {
+        list-style: none;
+        height: 34px;
+        padding: 0;
+        margin: 0; }
+        .social-buttons .social-buttons-list li {
+            float: left;
+            margin: 2px;
+            padding: 0;
+            width: 100px;
+            height: 30px;
+            text-align: center; }
+        .social-buttons .social-buttons-list i {
+            padding: 8px;
+            display: inline-block; }
+    .social-buttons .facebook {
+        background-color: #3c589a; }
+    .social-buttons .twitter {
+        background-color: #55acee; }
+    .social-buttons .email {
+        background-color: #649a3f; }

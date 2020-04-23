@@ -12,27 +12,66 @@
 <div class="detailed-article">
     <div class="row index-row">
         <div class="col-10 index-content-wrapper">
-            <div class="image-wrapper row">
-                @if (string.IsNullOrEmpty(Model.ImageUrl))
-                {
-                    <img class="col-12" src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
-                }
-                @if (!string.IsNullOrEmpty(Model.ImageUrl))
-                {
-                    <img class="col-12" src="~/@Model.ImageUrl">
-                }
+            <div class="image-wrapper">
+                <div class="image-container row">
+                    @if (string.IsNullOrEmpty(Model.ImageUrl))
+                    {
+                        <img class="col-12" src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
+                    }
+                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                    {
+                        <img class="col-12" src="~/@Model.ImageUrl">
+                    }
+                </div>
+                <div class="image-text">
+                    <span>
+                        Bildkälla:
+                    </span>
+                    Stockfoto
+                </div>
             </div>
             <h2>
                 @Model.Title
             </h2>
+            <div class="lead-wrapper">
+                <p class="lead">
+                    @Model.Subtitle
+                </p>
+                <div>
+                    @await Html.PartialAsync("_SocialButtons")
+                </div>
+            </div>
             <div class="banner-wrapper">
-                <img src="~/assets/images/savr-panorama.jpg">
+                <div class="banner-container">
+                    <img src="~/assets/images/savr-panorama.jpg">
+                </div>
             </div>
             <div class="row">
                 <div class="col-8 content-main">
                     <span class="article-content">
                         @Html.Raw(Model.NewsText)
                     </span>
+
+                    <div class="post-author">
+                        <div class="post-author-avatar">
+                            <img src="~/assets/images/bv-app-square-128x128.png">
+                        </div>
+                        <div class="post-author-description">
+                            <p>
+                                Finwire / Börsvärlden
+                            </p>
+                        </div>
+                    </div>
+                    <div class="article-footer">
+                        <div class="buttons-container">
+                            @await Html.PartialAsync("_SocialButtons")
+                        </div>
+                        <div class="post-article-meta">
+                            <div class="date">
+                                Publicerad @Model.Date.ToString("dd MMMM yyyy, HH:mm")
+                            </div>
+                        </div>
+                    </div>
                     @await Component.InvokeAsync("RelatedNews")
 
                     <div class="content-botom-hidden">
@@ -57,3 +96,25 @@
     </div>
     @await Component.InvokeAsync("ReadMore")
 </div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            var carousel = $(".owl-carousel").owlCarousel({
+                margin: 30,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 2
+                    },
+                    768: {
+                        items: 3
+                    },
+                    1020: {
+                        items: 4
+                    }
+                }
+            });
+        });
+    </script>
+}
