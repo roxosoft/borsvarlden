@@ -38,7 +38,7 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestServices
                 var path = $@"{pathBase}\{i.ToString("D2")}";
                 foreach (var file in Directory.GetFiles(path))
                 {
-                    if  (_finwireFilterService.IsFilterPassed(UnitTestHelper.ParseNewsFile(path)))
+                    if  (_finwireFilterService.IsFilterPassed(UnitTestHelper.ParseNewsFile(file)))
                         stMatched += $"{file}\n" ;
                 }
             }

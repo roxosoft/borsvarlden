@@ -51,7 +51,7 @@ namespace borsvarlden.Services.Finwire
                     HtmlText = item.SelectSingleNode("htmltext")?.InnerText?.Trim(),
                     Agency = item.SelectSingleNode("agency")?.InnerText,
                     TittleSlug = item.SelectSingleNode("title")?.InnerText.ToSlug()
-                };
+                }.BuildSubtitle();
 
                 //todo Concat these all to methods with the delegate
                 var socialTagsList = new List<string>();
