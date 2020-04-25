@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using borsvarlden.Models;
 
 namespace borsvarlden.Db
 {
     public class ApplicationContext :DbContext
     {
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet <FinwireNew> FinwireNews { get;set; }
         public DbSet <FinwireCompany> FinwireCompanies { get; set; }
         public DbSet <FinwireSocialTag> FinwireSocialTags { get; set; }
@@ -51,6 +48,8 @@ namespace borsvarlden.Db
                 .HasForeignKey(p => p.FinwireNewId);
 
             FiltersSeeding(modelBuilder);
+
+            UsersSeeding(modelBuilder);
         }
 
         private void FiltersSeeding(ModelBuilder modelBuilder)
@@ -89,6 +88,13 @@ namespace borsvarlden.Db
                 new FinwireFilter { Id = i++, FinwireFilterType = EnumFinwireFilterTypes._04_FilterComplanies, Value = "avanza" },
                 new FinwireFilter { Id = i++, FinwireFilterType = EnumFinwireFilterTypes._04_FilterComplanies, Value = "nordent" },
                 new FinwireFilter { Id = i++, FinwireFilterType = EnumFinwireFilterTypes._04_FilterComplanies, Value = "hm" }
+            );
+        }
+
+        private void UsersSeeding(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ApplicationUser>().HasData(
+                new ApplicationUser { Id = 1, UserName = "admin", PasswordHash = "21232F297A57A5A743894A0E4A801FC3" } // admin:admin
             );
         }
     }

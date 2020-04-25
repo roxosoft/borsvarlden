@@ -24,6 +24,10 @@
     "inputFile": "wwwroot/css/latest.scss"
   },
   {
+    "outputFile": "wwwroot/css/login.css",
+    "inputFile": "wwwroot/css/login.scss"
+  },
+  {
     "outputFile": "wwwroot/css/side-aricles.css",
     "inputFile": "wwwroot/css/side-aricles.scss"
   },

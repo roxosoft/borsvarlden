@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 
 namespace borsvarlden
 {
@@ -30,6 +32,12 @@ namespace borsvarlden
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString(_databaseConnectionStringName)));
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = new PathString("/Account/Login");
+                });
 
             services.AddHangfire(configuration => configuration
                 .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
@@ -51,6 +59,7 @@ namespace borsvarlden
             services.AddScoped<IFinwireNewsService, FinwireNewsService>();
             services.AddScoped<IFinwireFilterService,FinwireFilterService>();
             services.AddScoped<IConfigurationHelper, ConfigurationHelper>();
+            services.AddScoped<IApplicationUserService, ApplicationUserService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -69,6 +78,8 @@ namespace borsvarlden
             app.UseHangfireDashboard();
             RecurringJob.AddOrUpdate<FinwireJob>(x => x.Execute(), Cron.MinuteInterval(5));
             app.UseRouting();
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
