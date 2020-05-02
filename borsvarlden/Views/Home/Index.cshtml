@@ -2,9 +2,15 @@
     ViewData["Title"] = "Maximera din digitala synlighet";
 }
 
+
 @section Styles{
     <link rel="stylesheet" href="~/css/index.css" />
     <link rel="stylesheet" href="~/css/article.css" />
+    <link rel="stylesheet" href="~/css/bv-form.css" />
+    <link rel="stylesheet" href="~/css/bv-widget-subscribe.css" />
+    <link rel="stylesheet" href="~/css/bv-top-level.css" />
+    <link rel="stylesheet" href="~/css/bv-panel.css" />
+    <link rel="stylesheet" href="~/css/bv-screen-768px.css"/>
 }
 
 <div class="row index-row">
@@ -26,6 +32,7 @@
             <div class="col-4 content-right">
                 @await Component.InvokeAsync("SponsoredNews")
                 @await Component.InvokeAsync("MostReadNews")
+                @await Component.InvokeAsync("SubscribeForm")
                 @await Component.InvokeAsync("LatestNews")
             </div>
         </div>
