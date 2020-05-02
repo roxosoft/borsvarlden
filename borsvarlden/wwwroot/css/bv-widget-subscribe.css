@@ -93,6 +93,9 @@
     font-size: 11pt;
     line-height: 100%; }
 
+.bv-widget-subscribe.widget-sidebar .panel .has-error .help-block, .bv-widget-subscribe.widget-sidebar .panel .has-error .control-label, .bv-widget-subscribe.widget-sidebar .panel .has-error .radio, .bv-widget-subscribe.widget-sidebar .panel .has-error .checkbox, .bv-widget-subscribe.widget-sidebar .panel .has-error .radio-inline, .bv-widget-subscribe.widget-sidebar .panel .has-error .checkbox-inline, .bv-widget-subscribe.widget-sidebar .panel .has-error.radio label, .bv-widget-subscribe.widget-sidebar .panel .has-error.checkbox label, .bv-widget-subscribe.widget-sidebar .panel .has-error.radio-inline label, .bv-widget-subscribe.widget-sidebar .panel .has-error.checkbox-inline label {
+    color: #fff; }
+
 .bv-widget-subscribe a {
     text-decoration: underline; }
 
