@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using borsvarlden.Db;
-using borsvarlden.Models;
-using borsvarlden.Services.Finwire;
-using borsvarlden.ViewModels;
+﻿﻿using System.Collections.Generic;
+ using System.Linq;
+ using System.Threading.Tasks;
+ using borsvarlden.Areas.Admin.ViewModels;
+ using borsvarlden.Db;
+ using borsvarlden.Helpers;
+ using borsvarlden.Models;
+ using borsvarlden.Services.Finwire;
+ using borsvarlden.ViewModels;
+ using DevExtreme.AspNet.Data;
+ using DevExtreme.AspNet.Data.ResponseModel;
+ using DevExtreme.AspNet.Mvc;
+ using Microsoft.AspNetCore.Hosting;
+ using Microsoft.EntityFrameworkCore;
 
-using borsvarlden.Helpers;
-using Microsoft.AspNetCore.Hosting;
-
-namespace borsvarlden.Services.Entities
+ namespace borsvarlden.Services.Entities
 {
     public interface IFinwireNewsService
     {
@@ -21,6 +23,8 @@ namespace borsvarlden.Services.Entities
         Task<NewsViewModel> GetDetailedArticle(int articleId);
         Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPagging(int newsOnPageCount, int nextPage, string searchText);
         Task<NewsViewModel> GetDetailedArticle(string titleSlug);
+
+        Task<LoadResult> GetNewsList(DataSourceLoadOptions options);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -143,6 +147,22 @@ namespace borsvarlden.Services.Entities
                 .ToListAsync();
             var result = MapFinwireNewToViewModel(article).FirstOrDefault();
             return result;
+        }
+        
+        public async Task<LoadResult> GetNewsList(DataSourceLoadOptions options)
+        {
+            var r = await DataSourceLoader.LoadAsync(_dbContext.FinwireNews, options);
+            return r;
+            
+            // var result = await _dbContext.FinwireNews.Select(c => new ArticleInListViewModel
+            //     {
+            //         Id = c.Id,
+            //         Title = c.Title,
+            //         Date = c.Date,
+            //         ImageUrl = c.ImageRelativeUrl
+            //     }).ToListAsync();
+            //
+            // return result;
         }
 
         private List<NewsViewModel> MapFinwireNewToViewModel(List<FinwireNew> news)

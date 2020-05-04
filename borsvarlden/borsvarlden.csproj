@@ -1,10 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <LangVersion>Latest</LangVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Migrations\20200405133512_AddFilters.cs" />
     <Compile Remove="Migrations\20200405133512_AddFilters.Designer.cs" />
@@ -19,38 +17,38 @@
     <Compile Remove="Migrations\20200418071812_AddMigration.cs" />
     <Compile Remove="Migrations\20200418071812_AddMigration.Designer.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
   </ItemGroup>
-
   <ItemGroup>
     <_ContentIncludedByDefault Remove="compilerconfig.json" />
     <_ContentIncludedByDefault Remove="wwwroot\css\article.css" />
     <_ContentIncludedByDefault Remove="wwwroot\css\article.min.css" />
   </ItemGroup>
-
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.6.1" />
+    <PackageReference Include="DevExtreme.Web" Version="20.1.3" />
     <PackageReference Include="Hangfire" Version="1.7.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
     <PackageReference Include="System.Xml.ReaderWriter" Version="4.3.1" />
   </ItemGroup>
-
   <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
     <Folder Include="wwwroot\assets\images\" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="compilerconfig.json" />
+    <PackageReference Include="DevExtreme.AspNet.Core" Version="19.2.7" />
   </ItemGroup>
-
-
-
 </Project>
