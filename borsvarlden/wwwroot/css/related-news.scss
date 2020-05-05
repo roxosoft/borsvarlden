@@ -3,8 +3,13 @@
     padding-left: 15px;
 
     .related-news-date {
-        padding-left: 5px;
-        padding-right: 5px;
+        float: left;
+        width: 55px;
+        
+        p {
+            font-size: 10pt;
+            font-weight: 600;
+        }
     }
 
     .related-news-label {
@@ -20,5 +25,9 @@
 
     .related-news-wrapper:not(:first-child) {
         border-top: 1px solid #e0e0e0;
+    }
+    
+    .related-news-content {
+        padding-left: 55px;
     }
 }

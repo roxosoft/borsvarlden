@@ -9,13 +9,13 @@
         @foreach (var article in Model)
         {
             <div class="related-news-wrapper">
-                <a href="~/articlar/@Html.Raw(article.TittleSlug)" class="related-news-article row">
-                    <div class="related-news-date col-2">
+                <a href="~/articlar/@Html.Raw(article.TittleSlug)" class="related-news-article">
+                    <div class="related-news-date">
                         <p>
                             @(article.Date.Date == DateTime.Today ? article.Date.ToString("HH:mm") : article.Date.ToString("d MMM"))
                         </p>
                     </div>
-                    <div class="related-news-content col-10">
+                    <div class="related-news-content">
                         <p>
                             @article.Title
                         </p>
