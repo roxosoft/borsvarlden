@@ -52,10 +52,6 @@
     "inputFile": "wwwroot/css/bv-widget.scss"
   },
   {
-    "outputFile": "wwwroot/css/bv-screen-768px.css",
-    "inputFile": "wwwroot/css/bv-screen-768px.scss"
-  },
-  {
     "outputFile": "wwwroot/css/bv-top-level.css",
     "inputFile": "wwwroot/css/bv-top-level.scss"
   },

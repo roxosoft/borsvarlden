@@ -42,6 +42,11 @@ namespace borsvarlden.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> SubscribeNews()
+        {
+            return View();
+        }
+
         [Route("articlar/{titleSlug}")]
         public async Task<IActionResult> DetailedArticle([FromRoute]string titleSlug)
         {
