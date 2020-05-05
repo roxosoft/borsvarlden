@@ -26,7 +26,8 @@
             columns: [
                 {
                     dataField: "date",
-                    caption: "Date created"
+                    caption: "Date created",
+                    dataType: "datetime"
                 },
                 {
                     dataField: "title",
@@ -75,11 +76,15 @@
             // filterRow: { visible: true },
             // headerFilter: { visible: true },
             editing: {
+                mode: "popup",
                 allowUpdating: true,
                 allowAdding: true,
                 allowDeleting: true
             },
             remoteOperations: true,
+            searchPanel: {
+                visible: true
+            },
             grouping: {
                 autoExpandAll: false
             },

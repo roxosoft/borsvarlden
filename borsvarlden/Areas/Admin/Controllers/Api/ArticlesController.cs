@@ -1,15 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
-using borsvarlden.Areas.Admin.ViewModels;
+﻿using System.Threading.Tasks;
 using borsvarlden.Services.Entities;
 using DevExtreme.AspNet.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace borsvarlden.Areas.Admin.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ArticlesController : ControllerBase
     {
         private readonly IFinwireNewsService _newsService;
