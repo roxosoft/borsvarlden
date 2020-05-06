@@ -54,6 +54,12 @@ namespace borsvarlden.Controllers
             return View(model);
         }
 
+        [Route("om-borsvarlden")]
+        public IActionResult TradersClub()
+        {
+            return Redirect ("https://www.facebook.com/groups/tradersclubsverige");
+        }
+
         public IActionResult Privacy()
         {
             return View();
