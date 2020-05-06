@@ -50,11 +50,7 @@
     border-bottom-color: #dddddd; }
 
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
-    border-top: none;
-    border-left: 1px solid #e0e0e0;
-    border-right: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-    background-color: #fafafa; }
+    border-top: none; }
 
 .panel-title > a {
     display: block;

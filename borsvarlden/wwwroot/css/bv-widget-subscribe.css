@@ -131,11 +131,9 @@ bv-widget-subscribe input[type=checkbox] {
 .bv-widget-subscribe a {
     text-decoration: underline; }
 
-.bv-widget-subscribe p {
-    color: #505050 !important; }
-
-.bv-widget-subscribe p {
-    color: #505050 !important; }
+.bv-widget-subscribe.widget-sidebar p {
+    font-size: 10pt;
+    color: #fff !important; }
 
 a:not([href]):not([tabindex]) {
     color: #fff;
