@@ -309,3 +309,13 @@ p {
 
 p {
     margin: 0 0 10px; }
+
+section.gray {
+    background: #f2f2f2; }
+
+.section-5pc {
+    padding-top: 5%;
+    padding-bottom: 5%; }
+
+.margin-bottom-20 {
+    margin-bottom: 20px !important; }
