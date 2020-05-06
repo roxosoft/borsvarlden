@@ -39,9 +39,6 @@ button, input, optgroup, select, textarea {
     margin-top: 10px;
     margin-bottom: 10px; }
 
-a, a:hover, a:visited, a:active, a:focus {
-    color: #0277bd; }
-
 .radio label, .checkbox label {
     min-height: 20px;
     padding-left: 20px;
@@ -176,3 +173,13 @@ bv-sidebar-group a, .bv-sidebar-group a:active, .bv-sidebar-group a:hover, .bv-s
 
 .body-container, .bv-container-page {
     padding-top: 15px; }
+
+.bv-sidebar-group ul.sidebar-list li a {
+    padding: 6px 0; }
+
+.bv-sidebar-group a, .bv-sidebar-group a:active, .bv-sidebar-group a:hover, .bv-sidebar-group a:visited {
+    text-decoration: none;
+    color: #222; }
+
+.bv-sidebar-group a {
+    display: block; }

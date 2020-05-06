@@ -108,7 +108,6 @@ button.accept-policy {
     bottom: 0;
     width: 100%;
     white-space: nowrap;
-    line-height: 60px;
     padding-top: 20px;
     padding-bottom: 40px;
     color: #fff;
@@ -375,6 +374,19 @@ h1 {
     .bv-container-page .bv-content-right {
         width: 350px;
     }
+
+    .text-left-sm {
+        text-align: left !important;
+    }
+
+    .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+        float: left;
+    }
+
+    .col-sm-3 {
+        width: 25%;
+    }
+
 }
 
 @media (max-width:767px) {
@@ -436,4 +448,8 @@ section.gray {
 
 .margin-bottom-20 {
     margin-bottom: 20px !important;
+}
+
+.text-center-xs {
+    text-align: center;
 }
