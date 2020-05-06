@@ -218,4 +218,14 @@ bv-sidebar-group a, .bv-sidebar-group a:active, .bv-sidebar-group a:hover, .bv-s
     margin-bottom: 5px;
 }
 
+.bv-container-page {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.body-container, .bv-container-page {
+    padding-top: 15px;
+}
+
 

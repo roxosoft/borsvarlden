@@ -140,6 +140,19 @@ a:hover {
     color: #222;
 }
 
+.body-container p a:not(.button), .bv-container-page p a:not(.button) {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #0277bd;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 130%;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
 .footer-logo {
     width: 100%;
     max-width: 256px;

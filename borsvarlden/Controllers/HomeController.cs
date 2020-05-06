@@ -55,9 +55,15 @@ namespace borsvarlden.Controllers
         }
 
         [Route("traders-club")]
-        public IActionResult TradersClub()
+        public async Task<IActionResult> TradersClub()
         {
             return Redirect ("https://www.facebook.com/groups/tradersclubsverige");
+        }
+
+        [Route("om-borsvarlden")]
+        public async Task<IActionResult> About()
+        {
+            return View();
         }
 
         public IActionResult Privacy()
