@@ -98,6 +98,10 @@ button.accept-policy {
         padding-left: 15px;
         padding-right: 15px; }
 
+.footer-col a:hover {
+    text-decoration: underline;
+    color: #cfd8dc; }
+
 a {
     text-decoration: none;
     color: #222; }
@@ -327,3 +331,8 @@ section.gray {
 
 .text-center-xs {
     text-align: center; }
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
