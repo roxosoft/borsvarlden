@@ -4,6 +4,7 @@
 
 .article {
     display: grid;
+    display: -ms-grid;
 
     .image-wrapper img {
         width: 100%;
@@ -13,6 +14,7 @@
     }
 
     a {
+        display: block;
         margin: 20px 0;
     }
 
