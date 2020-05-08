@@ -51,9 +51,13 @@
         margin-top: 0;
         
         .image-wrapper img {
-            padding-top: 5px;
+            padding-top: 25px;
         }
     }
+    
+    &:first-child a .image-wrapper img {
+        padding-top: 5px;
+    } 
 }
 
 .max-2-lines {
