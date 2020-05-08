@@ -31,13 +31,13 @@
                 <div class="navbar-collapse collapse d-md-inline-flex flex-md-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Om Börsvärlden</a>
+                            <a class="nav-link text-white" href="~/om-borsvarlden">Om Börsvärlden</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Nyhetsbrev</a>
+                            <a class="nav-link text-white" href="~/Home/SubscribeNews">Nyhetsbrev</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Traders Club</a>
+                            <a class="nav-link text-white" href="~/traders-club">Traders Club</a>
                         </li>
                     </ul>
                 </div>
@@ -56,11 +56,48 @@
                     <h3>
                         Navigation
                     </h3>
+                    
+                    <ul id="menu-footermeny" class="">
+                        <li id="menu-item-2835" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2835">
+                            <a href="~/traders-club/">Traders Club</a>
+                        </li>
+                        <li id="menu-item-3863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3863">
+                            <a href="~/nyhetsbrev/">Nyhetsbrev</a>
+                        </li>
+                        <li id="menu-item-1199" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199">
+                            <a href="~/om-borsvarlden/">Om Börsvärlden</a>
+                        </li>
+                        <li id="menu-item-3864" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3864">
+                            <a href="https://foretagstjanster.borsvarlden.com">Företagstjänster</a>
+                        </li>
+                        <li id="menu-item-1238" class="menu-item menu-item-type-post_type_archive menu-item-object-article menu-item-1238">
+                            <a href="~/artiklar/">Artikelarkiv</a>
+                        </li>
+                    </ul>
+
                 </div>
                 <div class="col-sm-3 text-center-xs text-left-sm footer-col">
                     <h3>
                         Länkar
                     </h3>
+                    <ul>
+                        <li>
+                            <a href="https://borsvarlden.com/friskrivning/">Friskrivning</a>
+                        </li>
+                        <li>
+                            <a href="https://borsvarlden.com/integritetspolicy/">Dataskyddspolicy</a>
+                        </li>
+                        <li>
+                            <a href="https://borsvarlden.com/information-om-cookies/">Information om cookies</a>
+                        </li>
+                        <li>
+                            <a href="https://borsvarlden.com/nyhetsbrev/">Påbörja prenumeration</a>
+                        </li>
+                        <li>
+                            <a href="http://borsvarlden.us8.list-manage1.com/unsubscribe?u=4896fc5971b74f114ff713288&amp;id=c2e1e2ec40">Avsluta prenumeration</a>
+                        </li>
+                    </ul>
+
                 </div>
                 <div class="col-sm-3 text-center-xs text-left-sm footer-col">
                     <h3>
@@ -99,6 +136,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/owl-carousel/owl.carousel.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/validator.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

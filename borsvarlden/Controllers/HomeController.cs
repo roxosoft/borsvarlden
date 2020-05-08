@@ -42,11 +42,28 @@ namespace borsvarlden.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> SubscribeNews()
+        {
+            return View();
+        }
+
         [Route("articlar/{titleSlug}")]
         public async Task<IActionResult> DetailedArticle([FromRoute]string titleSlug)
         {
             NewsViewModel model = await _finwireNewsService.GetDetailedArticle(titleSlug);
             return View(model);
+        }
+
+        [Route("traders-club")]
+        public async Task<IActionResult> TradersClub()
+        {
+            return Redirect ("https://www.facebook.com/groups/tradersclubsverige");
+        }
+
+        [Route("om-borsvarlden")]
+        public async Task<IActionResult> About()
+        {
+            return View();
         }
 
         public IActionResult Privacy()

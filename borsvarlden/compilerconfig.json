@@ -50,5 +50,25 @@
   {
     "outputFile": "wwwroot/css/social-buttons.css",
     "inputFile": "wwwroot/css/social-buttons.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/bv-widget.css",
+    "inputFile": "wwwroot/css/bv-widget.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/bv-top-level.css",
+    "inputFile": "wwwroot/css/bv-top-level.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/bv-panel.css",
+    "inputFile": "wwwroot/css/bv-panel.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/bv-widget-subscribe.css",
+    "inputFile": "wwwroot/css/bv-widget-subscribe.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/bv-form.css",
+    "inputFile": "wwwroot/css/bv-form.scss"
   }
 ]

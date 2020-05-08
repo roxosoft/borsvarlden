@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * Validator v0.7.2 for Bootstrap 3, by @1000hz
  * Copyright 2015 Cina Saffary
  * Licensed under http://opensource.org/licenses/MIT

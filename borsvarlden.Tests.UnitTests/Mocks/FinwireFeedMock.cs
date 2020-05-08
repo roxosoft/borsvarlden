@@ -10,8 +10,14 @@ namespace borsvarlden.Tests.UnitTests.Mocks
 {
     public class FinwireFeedMock
     {
-        private static readonly string ServerName = "localhost";
-        private static readonly int Port = 5001;
+        private static readonly bool _useWanAddress = false;
+        private static readonly string ServerNameLocal = "localhost";
+        private static readonly string ServerNameWan = "borsvarlden.conveyor.cloud";
+        private static readonly int PortLocal = 5001;
+        private static readonly string ServerName = _useWanAddress ? ServerNameWan : ServerNameLocal  ;
+        private static readonly string PortSuffix = _useWanAddress ? "" : $":{PortLocal}";
+        
+        private static readonly string _endPointUrl = $"https://{ServerName}{PortSuffix}/api/updatenews";
 
         [SetUp]
         public void Setup()
@@ -21,15 +27,12 @@ namespace borsvarlden.Tests.UnitTests.Mocks
         [TestCase("08", "FWM0042BB5.xml")]
         public void TestSingleRequest(string subfolder, string fileName)
         {
-            var endPointUrl = $"https://{ServerName}:{Port}/api/updatenews";
-
             string path = UnitTestHelper.GetTestFilePath(subfolder, fileName);
             var xmlContent = File.ReadAllText(path);
             var guid = UnitTestHelper.ParseNewsContent(xmlContent).Guid;
 
             var postData = $"xml={System.Web.HttpUtility.UrlEncode(xmlContent)}&uid={ System.Web.HttpUtility.UrlEncode(guid)}";
-           // postData = System.Web.HttpUtility.UrlEncode(postData);
-            var res = RestConnector.GetData(endPointUrl, "POST", postData);
+            var res = RestConnector.GetData(_endPointUrl, "POST", postData);
             Assert.AreEqual("OK", res);
         }
 
