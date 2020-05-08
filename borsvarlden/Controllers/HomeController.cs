@@ -27,6 +27,7 @@ namespace borsvarlden.Controllers
             return View();
         }
 
+        [Route("articlar")]
         public async Task<IActionResult> NewsList(int page = 1, string searchText = null)
         {
             int newsOnPageCount = _configurationHelper.ListedNewsCount;
