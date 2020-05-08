@@ -66,6 +66,12 @@ namespace borsvarlden.Controllers
             return View();
         }
 
+        [Route("friskrivning")]
+        public async Task<IActionResult> Disclaimer()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
