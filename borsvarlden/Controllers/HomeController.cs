@@ -73,6 +73,7 @@ namespace borsvarlden.Controllers
             return View();
         }
 
+        [Route("integritetspolicy")]
         public IActionResult Privacy()
         {
             return View();
