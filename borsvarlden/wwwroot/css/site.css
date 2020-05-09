@@ -339,3 +339,70 @@ footer ul {
 .body-container ul, .body-container ol, .bv-container-page ul, .bv-container-page ol {
     font-size: 16px;
     line-height: 150%; }
+
+.stacktable {
+    width: 100%;
+}
+
+table {
+    background-color: transparent;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0; 
+
+}
+
+table.article-table.large-only {
+    display: table;
+}
+
+table.article-table.small-only {
+   display: none;
+}
+
+table.article-table {
+    font-size: 10pt; 
+    margin: 20px 0;
+}
+
+table.article-table.large-only tr {
+    border-bottom: 1px solid #ccc;
+}
+
+table.article-table tr:first-child {
+    font-weight: 700;
+}
+
+table.article-table td:first-child, table.article-table th:first-child {
+    padding-left: 10px; }
+
+table.article-table tr td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px; }
+
+table.article-table td, table.article-table th {
+    vertical-align: top; }
+
+table.article-table td, table.article-table tr {
+    height: auto !important; }
+
+table.article-table.small-only .st-head-row {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+}
+
+ table.article-table.small-only .st-head-row-main {
+    display: none;
+ }
+
+table.article-table.large-only tr:nth-child(odd):not(:first-child) {
+    background-color: #f7f7f7;
+}
+
+table.article-table p {
+    font-size: 10pt !important;
+    margin-bottom: 0 !important;
+}

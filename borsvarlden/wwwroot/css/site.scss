@@ -468,3 +468,26 @@ footer ul {
     font-size: 16px;
     line-height: 150%;
 }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table.article-table td:first-child, table.article-table th:first-child {
+    padding-left: 10px;
+}
+
+table.article-table tr td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+
+table.article-table td, table.article-table th {
+    vertical-align: top;
+}
+
+table.article-table td, table.article-table tr {
+    height: auto !important;
+}

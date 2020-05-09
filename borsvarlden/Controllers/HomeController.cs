@@ -79,6 +79,13 @@ namespace borsvarlden.Controllers
             return View();
         }
 
+
+        [Route("information-om-cookies")]
+        public async Task<IActionResult> InformationCookies()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
