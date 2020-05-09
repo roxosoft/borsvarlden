@@ -43,6 +43,7 @@ namespace borsvarlden.Controllers
             return View(model);
         }
 
+        [Route("nyhetsbrev")]
         public async Task<IActionResult> SubscribeNews()
         {
             return View();
