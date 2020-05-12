@@ -14,14 +14,10 @@
         $("#articles-grid").dxDataGrid({
             dataSource: DevExpress.data.AspNet.createStore({
                 key: "id",
-                loadUrl: "@Url.Action("Get", "Articles")"
-                @*updateUrl: "@Url.Action("UpdateOrder", "Northwind")",
-                insertUrl: "@Url.Action("InsertOrder", "Northwind")",
-                deleteUrl: "@Url.Action("DeleteOrder", "Northwind")",
-                onBeforeSend: function(operation, ajaxSettings) {
-                     operation - any of "load", "update", "insert", "delete"
-                     ajaxSettings - http://api.jquery.com/jquery.ajax/
-                }*@
+                loadUrl: "@Url.Action("Get", "Articles")",
+                insertUrl: "@Url.Action("Insert","Articles")",
+                updateUrl: "@Url.Action("Update", "Articles")",
+                deleteUrl: "@Url.Action("Delete","Articles")"
             }),
             columns: [
                 {
@@ -32,54 +28,48 @@
                 {
                     dataField: "title",
                     caption: "Title"
-                    @*lookup: {
-                        valueExpr: "value",
-                        displayExpr: "text",
-                        dataSource: DevExpress.data.AspNet.createStore({
-                            key: "value",
-                            loadUrl: "@Url.Action("CustomersLookup", "Northwind")"
-                        })
-                    }*@
+                },
+                {
+                    dataField: "subtitle",
+                    visible: false  
                 },
                 {
                     dataField: "imageRelativeUrl",
                     caption: "Image URL"
+                },
+                {
+                    dataField: "newsText",
+                    visible: false
                 }
-                //{
-                //    dataField: "orderDate",
-                //    dataType: "date",
-                //    headerFilter: {
-                //        groupInterval: "quarter"
-                //    }
-                //},
-                //{
-                //    dataField: "freight",
-                //    headerFilter: {
-                //        groupInterval: 100
-                //    }
-                //},
-                //"shipCountry",
-                //"shipRegion",
-                @*{
-                    dataField: "shipVia",
-                    lookup: {
-                        valueExpr: "value",
-                        displayExpr: "text",
-                        dataSource: DevExpress.data.AspNet.createStore({
-                            key: "value",
-                            loadUrl: "@Url.Action("ShippersLookup", "Northwind")"
-                        })
-                    }
-                }*@
             ],
-            // groupPanel: { visible: true },
-            // filterRow: { visible: true },
-            // headerFilter: { visible: true },
             editing: {
                 mode: "popup",
                 allowUpdating: true,
                 allowAdding: true,
-                allowDeleting: true
+                allowDeleting: true,
+                popup: {
+                    title: "Article",
+                    showTitle: true,
+                    width: 900,
+                    height: 700
+                },
+                form: {
+                    colCount: 2,
+                    items: ["date", "type", "title", "subtitle",
+                        {
+                            dataField: "newsText",
+                            editorType: "dxTextArea",
+                            colSpan: 2,
+                            editorOptions: {
+                                height: 300
+                            }
+                        },
+                        "dateModified",
+                        "imageRelativeUrl",
+                        "slug",
+                        "order"
+                    ]
+                }
             },
             remoteOperations: true,
             searchPanel: {
@@ -87,31 +77,7 @@
             },
             grouping: {
                 autoExpandAll: false
-            },
-            @*summary: {
-                totalItems: [
-                    { column: "freight", summaryType: "sum" }
-                ],
-                groupItems: [
-                    { column: "freight", summaryType: "sum" },
-                    { summaryType: "count" }
-                ]
-            },
-            masterDetail: {
-                enabled: true,
-                template: function(container, options) {
-                    $("<div>")
-                        .dxDataGrid({
-                            dataSource: DevExpress.data.AspNet.createStore({
-                                loadUrl: "@Url.Action("OrderDetails", "Northwind")",
-                                loadParams: { orderId: options.data.orderId }
-                            }),
-                            remoteOperations: true,
-                            showBorders: true
-                        })
-                        .appendTo(container);
-                }
-            }*@
+            }
         });
     });
 </script>

@@ -1,7 +1,6 @@
 ﻿﻿using System.Collections.Generic;
  using System.Linq;
  using System.Threading.Tasks;
- using borsvarlden.Areas.Admin.ViewModels;
  using borsvarlden.Db;
  using borsvarlden.Helpers;
  using borsvarlden.Models;
@@ -12,6 +11,7 @@
  using DevExtreme.AspNet.Mvc;
  using Microsoft.AspNetCore.Hosting;
  using Microsoft.EntityFrameworkCore;
+ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
  namespace borsvarlden.Services.Entities
 {
@@ -25,6 +25,10 @@
         Task<NewsViewModel> GetDetailedArticle(string titleSlug);
 
         Task<LoadResult> GetNewsList(DataSourceLoadOptions options);
+        Task<FinwireNew> GetArticle(int id);
+        Task AddArticle(FinwireNew article);
+        Task UpdateArticle(FinwireNew article);
+        Task DeleteArticle(int id);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -151,18 +155,43 @@
         
         public async Task<LoadResult> GetNewsList(DataSourceLoadOptions options)
         {
-            var r = await DataSourceLoader.LoadAsync(_dbContext.FinwireNews, options);
-            return r;
+            var result = await DataSourceLoader.LoadAsync(_dbContext.FinwireNews, options);
             
-            // var result = await _dbContext.FinwireNews.Select(c => new ArticleInListViewModel
-            //     {
-            //         Id = c.Id,
-            //         Title = c.Title,
-            //         Date = c.Date,
-            //         ImageUrl = c.ImageRelativeUrl
-            //     }).ToListAsync();
-            //
-            // return result;
+            return result;
+        }
+
+        /// <inheritdoc />
+        public async Task<FinwireNew> GetArticle(int id)
+        {
+            var result = await _dbContext.FinwireNews.FirstOrDefaultAsync(n => n.Id == id);
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        public async Task AddArticle(FinwireNew article)
+        {
+            _dbContext.Entry(article).State = EntityState.Added;
+            await _dbContext.SaveChangesAsync();
+        }
+
+        /// <inheritdoc />
+        public async Task UpdateArticle(FinwireNew article)
+        {
+            _dbContext.Entry(article).State = EntityState.Modified;
+            await _dbContext.SaveChangesAsync();
+        }
+
+        /// <inheritdoc />
+        public async Task DeleteArticle(int id)
+        {
+            var article = await GetArticle(id);
+
+            if (article != null)
+            {
+                _dbContext.Entry(article).State = EntityState.Deleted;
+                await _dbContext.SaveChangesAsync();
+            }
         }
 
         private List<NewsViewModel> MapFinwireNewToViewModel(List<FinwireNew> news)
