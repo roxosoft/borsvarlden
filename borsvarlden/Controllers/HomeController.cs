@@ -27,6 +27,7 @@ namespace borsvarlden.Controllers
             return View();
         }
 
+        [Route("articlar")]
         public async Task<IActionResult> NewsList(int page = 1, string searchText = null)
         {
             int newsOnPageCount = _configurationHelper.ListedNewsCount;
@@ -42,6 +43,7 @@ namespace borsvarlden.Controllers
             return View(model);
         }
 
+        [Route("nyhetsbrev")]
         public async Task<IActionResult> SubscribeNews()
         {
             return View();
@@ -66,7 +68,21 @@ namespace borsvarlden.Controllers
             return View();
         }
 
+        [Route("friskrivning")]
+        public async Task<IActionResult> Disclaimer()
+        {
+            return View();
+        }
+
+        [Route("integritetspolicy")]
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+
+        [Route("information-om-cookies")]
+        public async Task<IActionResult> InformationCookies()
         {
             return View();
         }

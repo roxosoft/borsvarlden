@@ -10,9 +10,9 @@ namespace borsvarlden.Tests.UnitTests.Mocks
 {
     public class FinwireFeedMock
     {
-        private static readonly bool _useWanAddress = false;
+        private static readonly bool _useWanAddress = true;
         private static readonly string ServerNameLocal = "localhost";
-        private static readonly string ServerNameWan = "borsvarlden.conveyor.cloud";
+        private static readonly string ServerNameWan = "borsvarlden.azurewebsites.net"; //"borsvarlden.conveyor.cloud";
         private static readonly int PortLocal = 5001;
         private static readonly string ServerName = _useWanAddress ? ServerNameWan : ServerNameLocal  ;
         private static readonly string PortSuffix = _useWanAddress ? "" : $":{PortLocal}";
