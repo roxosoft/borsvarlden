@@ -19,9 +19,9 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestHelpers
                  ,"Bengt Jöndell har den 7 januari köpt 5 000 aktier i forskningsbolaget Cantargia där han är finanschef. Aktierna köptes till kursen 18,70 kronor per aktie, en affär på 93 500 kronor. Affären gjordes på Nasdaq Stockholm. Det framgår av Finansinspektionens insynsregister.")]
         public void Test(string inpuNewsText, string expectedSubtitle, string expectedNewsText)
         {
-            var data = new FinWireData {HtmlText = inpuNewsText}.BuildSubtitle();
+            var data = new FinWireData {NewsText = inpuNewsText}.BuildSubtitle();
             Assert.AreEqual(expectedSubtitle, data.SubTitle);
-            Assert.AreEqual(expectedNewsText, data.HtmlText);
+            Assert.AreEqual(expectedNewsText, data.NewsText);
         }
     }
 }
