@@ -35,7 +35,12 @@
                 },
                 {
                     dataField: "imageRelativeUrl",
-                    caption: "Image URL"
+                    caption: "Image",
+                    width: 110,
+                    alignment: "center",
+                    cellTemplate: function(container, options) {
+                        container.append("<img style='width: auto' src=\"" + options.text + "\" width=\"50\" height=\"50\" >");
+                    }
                 },
                 {
                     dataField: "newsText",
