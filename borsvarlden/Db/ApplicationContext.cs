@@ -11,7 +11,6 @@ namespace borsvarlden.Db
         public DbSet <FinwireSocialTag> FinwireSocialTags { get; set; }
         public DbSet <FinwireAgency> FinwireAgencies { get; set; }
         public DbSet <FinwireFilter> FinwireFilters { get; set; }
-        public DbSet<TittleSlug> TittleSlugs { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {

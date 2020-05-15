@@ -45,6 +45,26 @@
                 {
                     dataField: "newsText",
                     visible: false
+                },
+                {
+                    dataField: "isAdvertising",
+                    dataType: "boolean",
+                    visible: false
+                },
+                {
+                    dataField: "dateModified",
+                    dataType: "datetime",
+                    visible: false
+                },
+                {
+                    dataField: "slug",
+                    dataType: "string",
+                    visible: false
+                },
+                {
+                    dataField: "order",
+                    dataType: "number",
+                    visible: false
                 }
             ],
             editing: {
@@ -60,7 +80,12 @@
                 },
                 form: {
                     colCount: 2,
-                    items: ["date", "type", "title", "subtitle",
+                    items: ["date", 
+                        {
+                            dataField: "isAdvertising",
+                            dataType: "boolean"
+                        }, 
+                        "title", "subtitle",
                         {
                             dataField: "newsText",
                             editorType: "dxTextArea",
@@ -69,7 +94,10 @@
                                 height: 300
                             }
                         },
-                        "dateModified",
+                        {
+                            dataField: "dateModified",
+                            dataType: "datetime"
+                        },
                         "imageRelativeUrl",
                         "slug",
                         "order"

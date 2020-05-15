@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using borsvarlden.Db;
 
 namespace borsvarlden.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20200515061041_NewsAddFields")]
+    partial class NewsAddFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -315,18 +317,20 @@ namespace borsvarlden.Migrations
                     b.Property<string>("PathRelative")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Slug")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Subtitle")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("TittleSlugId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("FinwireAgencyId");
+
+                    b.HasIndex("TittleSlugId");
 
                     b.ToTable("FinwireNews");
                 });
@@ -376,6 +380,21 @@ namespace borsvarlden.Migrations
                     b.ToTable("FinwireSocialTags");
                 });
 
+            modelBuilder.Entity("borsvarlden.Models.TittleSlug", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Slug")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TittleSlugs");
+                });
+
             modelBuilder.Entity("borsvarlden.Models.FinwireCompany", b =>
                 {
                     b.HasOne("borsvarlden.Models.FinwireAgency", null)
@@ -388,6 +407,10 @@ namespace borsvarlden.Migrations
                     b.HasOne("borsvarlden.Models.FinwireAgency", "FinwireAgency")
                         .WithMany()
                         .HasForeignKey("FinwireAgencyId");
+
+                    b.HasOne("borsvarlden.Models.TittleSlug", "TittleSlug")
+                        .WithMany()
+                        .HasForeignKey("TittleSlugId");
                 });
 
             modelBuilder.Entity("borsvarlden.Models.FinwireNew2FinwireCompany", b =>

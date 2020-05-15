@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace borsvarlden.Models
 {
@@ -11,17 +9,21 @@ namespace borsvarlden.Models
         public string Guid { get; set; }
         public string PathRelative { get; set; }
         public DateTime Date { get; set; }
+        public DateTime DateModified { get; set; }
         public string Title { get; set; }
         public string Subtitle { get; set; }
         public string NewsText { get; set; }
         public string ImageRelativeUrl { get; set; }
         public string ImageLabel { get; set; }
+        public int Order { get; set; }
         //todo with flags
+        public bool IsAdvertising { get; set; } 
         public bool FinautoPassed { get; set;}
         public bool FinautoPublished { get; set; }
 
+        public string Slug { get; set; }
+        
         public FinwireAgency FinwireAgency { get; set; }
-        public TittleSlug TittleSlug { get; set; }
 
         public List<FinwireNew2FirnwireSocialTag> FinwireNew2FirnwireSocialTags { get; set; }
         public List<FinwireNew2FinwireCompany> FinwireNew2FinwireCompanies { get; set; }

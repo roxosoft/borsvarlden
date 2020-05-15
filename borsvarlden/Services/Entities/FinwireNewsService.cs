@@ -1,4 +1,5 @@
-﻿﻿using System.Collections.Generic;
+﻿﻿using System;
+ using System.Collections.Generic;
  using System.Linq;
  using System.Threading.Tasks;
  using borsvarlden.Db;
@@ -67,7 +68,7 @@
                             ?? _dbContext.Add(new FinwireAgency {Agency = finwireData.Agency}).Entity,
                 ImageRelativeUrl = ImageHelper.AbsoluteUrlToRelativeUrl(imgData.ImageAbsoluteUrl),
                 ImageLabel = imgData.Label,
-                TittleSlug = _dbContext.Add(new TittleSlug {Slug = finwireData.TittleSlug}).Entity
+                Slug = finwireData.TittleSlug
             };
 
             var newsEntityAdded = _dbContext.Add(newsEntity).Entity;
@@ -98,7 +99,7 @@
         public async Task<IndexNewsViewModel> GetMainNews(int newsCount)
         {
             var result = new IndexNewsViewModel();
-            List<FinwireNew> newsList = await _dbContext.FinwireNews.Include(m => m.TittleSlug).OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
+            List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
             result.News = MapFinwireNewToViewModel(newsList);
 
             return result;
@@ -106,7 +107,7 @@
 
         public async Task<List<NewsViewModel>> GetNews(int newsCount)
         {
-            List<FinwireNew> newsList = await _dbContext.FinwireNews.Include(m => m.TittleSlug).OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
+            List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
             var result = MapFinwireNewToViewModel(newsList);
             return result;
         }
@@ -114,7 +115,7 @@
         public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPagging(int newsOnPageCount, int nextPage, string searchText)
         {
             var result = new PaggingSearchResponseViewModel<NewsViewModel>();
-            var query = _dbContext.FinwireNews.Include(m => m.TittleSlug).OrderByDescending(x => x.Date).AsQueryable();
+            var query = _dbContext.FinwireNews.OrderByDescending(x => x.Date).AsQueryable();
 
             if (!string.IsNullOrEmpty(searchText))
             {
@@ -136,7 +137,6 @@
         public async Task<NewsViewModel> GetDetailedArticle(int articleId)
         {
             List<FinwireNew> article = await _dbContext.FinwireNews
-                .Include(m => m.TittleSlug)
                 .Where(x => x.Id == articleId)
                 .ToListAsync();
             var result = MapFinwireNewToViewModel(article).FirstOrDefault();
@@ -146,8 +146,7 @@
         public async Task<NewsViewModel> GetDetailedArticle(string titleSlug)
         {
             List<FinwireNew> article = await _dbContext.FinwireNews
-                .Include(m =>m.TittleSlug)
-                .Where(x => x.TittleSlug.Slug == titleSlug)
+                .Where(x => x.Slug == titleSlug)
                 .ToListAsync();
             var result = MapFinwireNewToViewModel(article).FirstOrDefault();
             return result;
@@ -171,6 +170,8 @@
         /// <inheritdoc />
         public async Task AddArticle(FinwireNew article)
         {
+            article.DateModified = DateTime.UtcNow;
+
             _dbContext.Entry(article).State = EntityState.Added;
             await _dbContext.SaveChangesAsync();
         }
@@ -178,6 +179,8 @@
         /// <inheritdoc />
         public async Task UpdateArticle(FinwireNew article)
         {
+            article.DateModified = DateTime.UtcNow;
+            
             _dbContext.Entry(article).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
         }
@@ -209,7 +212,7 @@
                     NewsText = newsItem.NewsText,
                     ImageUrl = newsItem.ImageRelativeUrl,
                     Label = newsItem.ImageLabel,
-                    TittleSlug = newsItem.TittleSlug.Slug
+                    TittleSlug = newsItem.Slug
                 };
                 result.Add(articleModel);
             }
