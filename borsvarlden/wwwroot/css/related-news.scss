@@ -1,8 +1,7 @@
 ﻿.related-news {
     padding-top: 30px;
-    padding-left: 15px;
 
-    .related-news-date {
+    &-date {
         float: left;
         width: 55px;
         
@@ -12,23 +11,23 @@
         }
     }
 
-    .related-news-label {
+    &-label {
         font-size: 10pt;
         display: block;
         margin-bottom: 10px;
         border-bottom: 2px solid #f44336;
     }
 
-    .related-news-article {
+    &-article {
         color: #222;
         margin-top: 10px;
     }
 
-    .related-news-wrapper:not(:first-child) {
+    &-wrapper:not(:first-child) {
         border-top: 1px solid #e0e0e0;
     }
     
-    .related-news-content {
+    &-content {
         padding-left: 55px;
     }
 }
