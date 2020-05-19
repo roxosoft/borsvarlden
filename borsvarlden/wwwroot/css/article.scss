@@ -1,5 +1,9 @@
 ﻿.article:not(:first-child) {
     border-top: 1px solid #e0e0e0;
+
+    a {
+        margin: 20px 0;
+    }
 }
 
 .article {
@@ -15,7 +19,7 @@
 
     a {
         display: block;
-        margin: 20px 0;
+        margin-bottom: 20px;
     }
 
     a:hover h3 {
@@ -60,7 +64,7 @@
     }
     
     &:first-child a .image-wrapper img {
-        padding-top: 5px;
+        padding-top: 0;
     } 
 }
 
