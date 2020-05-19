@@ -1,11 +1,17 @@
-﻿.read-more-body {
-    border-top: 3px solid #f44336;
-    margin-top: 20pt;
-    padding-top: 20pt; }
-    .read-more-body .read-more-label {
-        font-size: 11pt; }
-    .read-more-body .read-more-content {
-        margin-top: 15px;
-        margin-bottom: 5px;
-        font-size: 12pt;
-        line-height: 1.4em; }
+.read-more-body {
+  border-top: 3px solid #f44336;
+  margin-top: 20pt;
+  padding-top: 20pt;
+}
+.read-more-body .read-more-label {
+  font-size: 11pt;
+  margin-bottom: 16px;
+}
+.read-more-body .read-more-content {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 12pt;
+  line-height: 1.4em;
+}
+
+/*# sourceMappingURL=read-more.css.map */
