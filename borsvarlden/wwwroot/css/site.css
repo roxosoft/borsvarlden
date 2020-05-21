@@ -112,18 +112,18 @@ button.accept-policy {
   padding-bottom: 40px;
   color: #fff;
 }
-
+.footer ul {
+  line-height: 1.4em;
+}
 .footer p {
   font-size: 10pt;
   line-height: 130%;
   font-weight: 300;
   color: #cfd8dc;
 }
-
 .footer a {
   color: #cfd8dc;
 }
-
 .footer .footer-col {
   padding-left: 15px;
   padding-right: 15px;

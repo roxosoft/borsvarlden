@@ -111,22 +111,26 @@ button.accept-policy {
     padding-top: 20px;
     padding-bottom: 40px;
     color: #fff;
-}
+    
+    ul {
+        line-height: 1.4em;
+    }
 
-.footer p {
-    font-size: 10pt;
-    line-height: 130%;
-    font-weight: 300;
-    color: #cfd8dc;
-}
+    p {
+        font-size: 10pt;
+        line-height: 130%;
+        font-weight: 300;
+        color: #cfd8dc;
+    }
 
-.footer a {
-    color: #cfd8dc;
-}
+    a {
+        color: #cfd8dc;
+    }
 
-.footer .footer-col {
-    padding-left: 15px;
-    padding-right: 15px;
+    .footer-col {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 .footer-col a:hover {
