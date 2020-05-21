@@ -111,22 +111,26 @@ button.accept-policy {
     padding-top: 20px;
     padding-bottom: 40px;
     color: #fff;
-}
+    
+    ul {
+        line-height: 1.4em;
+    }
 
-.footer p {
-    font-size: 10pt;
-    line-height: 130%;
-    font-weight: 300;
-    color: #cfd8dc;
-}
+    p {
+        font-size: 10pt;
+        line-height: 130%;
+        font-weight: 300;
+        color: #cfd8dc;
+    }
 
-.footer a {
-    color: #cfd8dc;
-}
+    a {
+        color: #cfd8dc;
+    }
 
-.footer .footer-col {
-    padding-left: 15px;
-    padding-right: 15px;
+    .footer-col {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 .footer-col a:hover {
@@ -412,6 +416,11 @@ h3 {
         margin-left: 15px;
     }
 
+    .container-default {
+        padding-top:15px;
+        padding-bottom: 15px;
+    }
+    
     .content-right {
         display: none;
     }
@@ -435,7 +444,7 @@ h3 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 11pt;
     line-height: 150%;
     margin-bottom: 1em;
 }

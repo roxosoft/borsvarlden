@@ -26,6 +26,12 @@
     padding-top: 25px;
 }
 
+@media (max-width: 768px) {
+    .index-content-row {
+        padding-top: 0;
+    }
+}
+
 .button-red:hover {
     background: #f57f17;
     color: #fff;
