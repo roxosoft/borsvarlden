@@ -26,9 +26,9 @@ namespace borsvarlden.Controllers.Api
         [Route("api/updatenews")]
         public async Task<string> UpdateNews(string xml, string uid)
         {
+            _logger.LogWarning($"API updeatenews uid={uid}");
             var data = await _finwireParserService.ParseXmlContent(xml);
             _finwireNewsService.AddSingleNews(data);
-            _logger.LogInformation($"API updeatenews uid={uid}");
             return "OK";
         }
     }
