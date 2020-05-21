@@ -406,6 +406,11 @@ h3 {
     margin-left: 15px;
   }
 
+  .container-default {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
   .content-right {
     display: none;
   }
