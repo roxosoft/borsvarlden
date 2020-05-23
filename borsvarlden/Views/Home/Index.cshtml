@@ -22,12 +22,12 @@
             <div class="col-8 content-main">
                 @await Component.InvokeAsync("IndexNewsFeed")
 
+                <a class="button button-red" href="@Url.Action("NewsList", "Home")">Läs fler artiklar</a>
                 <div class="content-botom-hidden">
                     @await Component.InvokeAsync("SponsoredNews")
 
                     @await Component.InvokeAsync("LatestNews")
                 </div>
-                <a class="button button-red" href="@Url.Action("NewsList", "Home")">Läs fler artiklar</a>
             </div>
             <div class="col-4 content-right">
                 @await Component.InvokeAsync("SponsoredNews")

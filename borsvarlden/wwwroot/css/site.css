@@ -234,8 +234,9 @@ h3 {
   padding-right: 15px;
 }
 
-.button-red {
+.button.button-red {
   background: #f44336;
+  margin-bottom: 30px;
 }
 
 .label {
