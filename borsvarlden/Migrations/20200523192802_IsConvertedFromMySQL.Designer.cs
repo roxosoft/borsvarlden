@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using borsvarlden.Db;
 
 namespace borsvarlden.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20200523192802_IsConvertedFromMySQL")]
+    partial class IsConvertedFromMySQL
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -379,29 +381,6 @@ namespace borsvarlden.Migrations
                     b.ToTable("FinwireSocialTags");
                 });
 
-            modelBuilder.Entity("borsvarlden.Models.NewsMeta", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("FinwireNewId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("MetaKey")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MetaValue")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FinwireNewId");
-
-                    b.ToTable("NewsMetas");
-                });
-
             modelBuilder.Entity("borsvarlden.Models.FinwireCompany", b =>
                 {
                     b.HasOne("borsvarlden.Models.FinwireAgency", null)
@@ -442,15 +421,6 @@ namespace borsvarlden.Migrations
                     b.HasOne("borsvarlden.Models.FinwireSocialTag", "FinwireSocialTag")
                         .WithMany("FinwireNew2FirnwireSocialTags")
                         .HasForeignKey("FinwireSocialTagId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("borsvarlden.Models.NewsMeta", b =>
-                {
-                    b.HasOne("borsvarlden.Models.FinwireNew", "FinwireNew")
-                        .WithMany()
-                        .HasForeignKey("FinwireNewId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

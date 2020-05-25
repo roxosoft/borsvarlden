@@ -20,6 +20,7 @@ namespace borsvarlden.Models
         public bool IsAdvertising { get; set; } 
         public bool FinautoPassed { get; set;}
         public bool FinautoPublished { get; set; }
+        public bool IsConvertedFromMySQL { get; set; }
 
         public string Slug { get; set; }
         

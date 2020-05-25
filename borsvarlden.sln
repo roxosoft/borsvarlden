@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9DF5B9F1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "borsvarlden.Tests.UnitTests", "borsvarlden.Tests.UnitTests\borsvarlden.Tests.UnitTests.csproj", "{23846B84-EC12-4E27-8548-91B75A04F76C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{40A4FFE0-7A6F-4B73-B9E3-ABD96220FEA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBConverter", "DBConverter\DBConverter.csproj", "{64E3D891-C076-436F-B77D-880C2555F8B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,17 @@ Global
 		{23846B84-EC12-4E27-8548-91B75A04F76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23846B84-EC12-4E27-8548-91B75A04F76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23846B84-EC12-4E27-8548-91B75A04F76C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64E3D891-C076-436F-B77D-880C2555F8B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64E3D891-C076-436F-B77D-880C2555F8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64E3D891-C076-436F-B77D-880C2555F8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64E3D891-C076-436F-B77D-880C2555F8B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{23846B84-EC12-4E27-8548-91B75A04F76C} = {9DF5B9F1-3D0F-4C53-A515-A1EDD2A445FB}
+		{64E3D891-C076-436F-B77D-880C2555F8B3} = {40A4FFE0-7A6F-4B73-B9E3-ABD96220FEA7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D167268C-24D3-40C3-92D8-005DC121B69C}

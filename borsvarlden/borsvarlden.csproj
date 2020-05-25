@@ -16,6 +16,14 @@
     <Compile Remove="Migrations\20200417042421_AddedTittleSlug.Designer.cs" />
     <Compile Remove="Migrations\20200418071812_AddMigration.cs" />
     <Compile Remove="Migrations\20200418071812_AddMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200523192713_IsConverterFromMySQL.cs" />
+    <Compile Remove="Migrations\20200523192713_IsConverterFromMySQL.Designer.cs" />
+    <Compile Remove="Migrations\20200523193736_NewsMeta.cs" />
+    <Compile Remove="Migrations\20200523193736_NewsMeta.Designer.cs" />
+    <Compile Remove="Migrations\20200523194310_NewsMeta.cs" />
+    <Compile Remove="Migrations\20200523194310_NewsMeta.Designer.cs" />
+    <Compile Remove="Migrations\20200523195801_NewsMeta.cs" />
+    <Compile Remove="Migrations\20200523195801_NewsMeta.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
