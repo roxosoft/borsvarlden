@@ -37,6 +37,20 @@ namespace DBConverter.borsvarlden
             {
                 db.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
 
+                var term = db.WpTermRelationships
+                    .Join(db.WpTermTaxonomy.Where(p => p.Taxonomy == "article_socialtag" || p.Taxonomy == "article_company"),
+                        x => x.TermTaxonomyId, y => y.TermTaxonomyId,
+                        (x, y) => new {WpTermRelationships = x, WpTermTaxonomy = y})
+                    .Join(db.WpTerms,
+                        x => x.WpTermTaxonomy.TermId, y => y.TermId,
+                        (x, y) => new {WpTermTaxonomy = x, WpTerms = y})
+                    .Join(db.WpPosts.Where(u => !nullGmtIds.Contains(u.Id)), 
+                        x => x.WpTermTaxonomy.WpTermRelationships.ObjectId,
+                        y => y.Id,
+                        (x, y) => new {WpTermRelationships = x, WpPosts=y})
+                    .AsNoTracking()
+                    .ToList();
+
                 var r = db.WpPosts
                     .Where(x => !nullGmtIds.Contains(x.Id) && x.PostType == "article" && x.PostStatus == "publish" /*&& x.Id == 64340*/)
                     .Join(db.WpPostmeta.Where(a => a.MetaKey == "_thumbnail_id"),
@@ -54,18 +68,56 @@ namespace DBConverter.borsvarlden
                     .ToList()
                     .ForEach(p =>
                     {
-                        dbMS.FinwireNews.Add(
-                            new FinwireNews()
-                            {
-                                IsConvertedFromMySql = true,
-                                NewsText = p.Post.Post.PostContent,
-                                Title = p.Post.Post.PostTitle,
-                                Date = p.Post.Post.PostDate,
-                                ImageRelativeUrl = p.Meta.MetaValue.ToNewImageFilePath(),
-                                Slug = p.Post.Post.PostName
-                            });
-                    });
+                        var r1 = term.FindAll(x => x.WpPosts.Id == p.Post.Post.Id);
+                        var socialTagsAdded = new List<FinwireSocialTags>();
+                        var companiesAdded = new List<FinwireCompanies>();
 
+                       r1.ForEach(x =>
+                       {
+                           if (x.WpTermRelationships.WpTermTaxonomy.WpTermTaxonomy.Taxonomy == "article_socialtag")
+                           {
+                               var socialTag =  new FinwireSocialTags {Tag = x.WpTermRelationships.WpTerms.Name};
+                               socialTagsAdded.Add(socialTag);
+                           }
+                           else if (x.WpTermRelationships.WpTermTaxonomy.WpTermTaxonomy.Taxonomy == "article_company")
+                           {
+                               var company = new FinwireCompanies {Company = x.WpTermRelationships.WpTerms.Name};
+                               companiesAdded.Add(company);
+                           }
+                       });
+
+                       var newsEntityAdded = new FinwireNews()
+                       {
+                           IsConvertedFromMySql = true,
+                           NewsText = p.Post.Post.PostContent,
+                           Title = p.Post.Post.PostTitle,
+                           Date = p.Post.Post.PostDate,
+                           ImageRelativeUrl = p.Meta.MetaValue.ToNewImageFilePath(),
+                           Slug = p.Post.Post.PostName
+                       };
+
+                       dbMS.FinwireNews.Add(newsEntityAdded);
+                       //todo make generic method in helper etc, find better solution using EF Core
+                       socialTagsAdded?.ForEach(x =>
+                           {
+                               dbMS.FinwireNew2FirnwireSocialTag.Add(new FinwireNew2FirnwireSocialTag
+                               {
+                                   FinwireNew = newsEntityAdded,
+                                   FinwireSocialTag = dbMS.FinwireSocialTags.FirstOrDefault(y => y.Tag == x.Tag) 
+                                                      ?? dbMS.Add(new FinwireSocialTags { Tag=x.Tag}).Entity
+                               });
+                           }
+                       );
+
+                       companiesAdded?.ForEach(x =>
+                           dbMS.FinwireNew2FinwireCompany.Add(new FinwireNew2FinwireCompany
+                               {
+                                   FinwireNew = newsEntityAdded,
+                                   FinwareCompany = dbMS.FinwireCompanies.FirstOrDefault(y => y.Company == x.Company)
+                                                    ?? dbMS.Add(new FinwireCompanies {Company = x.Company}).Entity
+                               })
+                           );
+                    });
                 dbMS.SaveChanges();
             }
         }
