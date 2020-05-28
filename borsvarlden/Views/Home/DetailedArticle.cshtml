@@ -6,6 +6,7 @@
 }
 
 @section Styles{
+    <link rel="stylesheet" href="~/css/bv-widget-subscribe.css" />
     <link rel="stylesheet" href="~/css/related-news.css" />
     <link rel="stylesheet" href="~/css/read-more.css" />
 }
@@ -84,6 +85,7 @@
                 <div class="col-4 content-right">
                     @await Component.InvokeAsync("SponsoredNews")
                     @await Component.InvokeAsync("MostReadNews")
+                    @await Component.InvokeAsync("SubscribeForm")
                     @await Component.InvokeAsync("LatestNews")
                 </div>
             </div>

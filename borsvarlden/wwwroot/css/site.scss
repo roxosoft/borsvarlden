@@ -38,6 +38,27 @@ a.navbar-brand {
 
 .navbar .navbar-toggler {
     margin-right: 15px;
+    
+    .navbar-toggler-icon {
+        color: white;
+        display: none;
+    }
+    
+    &.collapsed {
+        .navbar-toggler-icon {
+            color: white;
+            display: block;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+        }
+        
+        .navbar-toggler-close-icon {
+            display: none;
+        }
+    }
+    
+    &.close {
+        opacity: 1.0;
+    }
 }
 
 .navbar .navbar-brand {
@@ -47,6 +68,11 @@ a.navbar-brand {
 .navbar-toggler {
     border: none;
     background: 0 0 !important;
+}
+
+.navbar-toggler-close-icon {
+    font-size: 40px;
+    color: white;
 }
 
 .bg-red-main {
@@ -75,8 +101,8 @@ a.navbar-brand {
     margin-right: 10px;
 }
 
-.navbar-nav .nav-item a {
-    padding: 0 !important;
+.navbar-nav .nav-item a.nav-link {
+    padding: 0;
     line-height: 20px;
     border-bottom: 2px solid transparent;
 }
@@ -111,22 +137,26 @@ button.accept-policy {
     padding-top: 20px;
     padding-bottom: 40px;
     color: #fff;
-}
+    
+    ul {
+        line-height: 1.4em;
+    }
 
-.footer p {
-    font-size: 10pt;
-    line-height: 130%;
-    font-weight: 300;
-    color: #cfd8dc;
-}
+    p {
+        font-size: 10pt;
+        line-height: 130%;
+        font-weight: 300;
+        color: #cfd8dc;
+    }
 
-.footer a {
-    color: #cfd8dc;
-}
+    a {
+        color: #cfd8dc;
+    }
 
-.footer .footer-col {
-    padding-left: 15px;
-    padding-right: 15px;
+    .footer-col {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 .footer-col a:hover {
@@ -214,8 +244,9 @@ h3 {
     padding-right: 15px;
 }
 
-.button-red {
+.button.button-red {
     background: #f44336;
+    margin-bottom: 30px;
 }
 
 .label {
@@ -408,10 +439,36 @@ h3 {
         text-align: center;
     }
 
+    .nav-container.container {
+        padding-right: 0;
+    }
+    
     .navbar-brand {
         margin-left: 15px;
+        min-height: 50px;
+        padding: 9px 0;
     }
 
+    .navbar-expand-md .navbar-nav {
+        flex-direction: column-reverse;
+        
+        .nav-item {
+            margin-left: 0;
+            margin-right: 0;
+            border-top: 1px solid rgba(255,255,255,.25);
+            
+            .nav-link {
+                padding: 10px 15px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .container-default {
+        padding-top:15px;
+        padding-bottom: 15px;
+    }
+    
     .content-right {
         display: none;
     }
@@ -435,7 +492,7 @@ h3 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 11pt;
     line-height: 150%;
     margin-bottom: 1em;
 }

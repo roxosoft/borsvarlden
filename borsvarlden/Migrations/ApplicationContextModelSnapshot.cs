@@ -306,6 +306,9 @@ namespace borsvarlden.Migrations
                     b.Property<bool>("IsAdvertising")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsConvertedFromMySQL")
+                        .HasColumnType("bit");
+
                     b.Property<string>("NewsText")
                         .HasColumnType("nvarchar(max)");
 
@@ -376,6 +379,29 @@ namespace borsvarlden.Migrations
                     b.ToTable("FinwireSocialTags");
                 });
 
+            modelBuilder.Entity("borsvarlden.Models.NewsMeta", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("FinwireNewId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MetaKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MetaValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FinwireNewId");
+
+                    b.ToTable("NewsMetas");
+                });
+
             modelBuilder.Entity("borsvarlden.Models.FinwireCompany", b =>
                 {
                     b.HasOne("borsvarlden.Models.FinwireAgency", null)
@@ -416,6 +442,15 @@ namespace borsvarlden.Migrations
                     b.HasOne("borsvarlden.Models.FinwireSocialTag", "FinwireSocialTag")
                         .WithMany("FinwireNew2FirnwireSocialTags")
                         .HasForeignKey("FinwireSocialTagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("borsvarlden.Models.NewsMeta", b =>
+                {
+                    b.HasOne("borsvarlden.Models.FinwireNew", "FinwireNew")
+                        .WithMany()
+                        .HasForeignKey("FinwireNewId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

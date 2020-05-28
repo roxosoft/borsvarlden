@@ -16,6 +16,14 @@
     <Compile Remove="Migrations\20200417042421_AddedTittleSlug.Designer.cs" />
     <Compile Remove="Migrations\20200418071812_AddMigration.cs" />
     <Compile Remove="Migrations\20200418071812_AddMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200523192713_IsConverterFromMySQL.cs" />
+    <Compile Remove="Migrations\20200523192713_IsConverterFromMySQL.Designer.cs" />
+    <Compile Remove="Migrations\20200523193736_NewsMeta.cs" />
+    <Compile Remove="Migrations\20200523193736_NewsMeta.Designer.cs" />
+    <Compile Remove="Migrations\20200523194310_NewsMeta.cs" />
+    <Compile Remove="Migrations\20200523194310_NewsMeta.Designer.cs" />
+    <Compile Remove="Migrations\20200523195801_NewsMeta.cs" />
+    <Compile Remove="Migrations\20200523195801_NewsMeta.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
@@ -32,9 +40,9 @@
     <PackageReference Include="DevExtreme.Web" Version="20.1.3" />
     <PackageReference Include="Hangfire" Version="1.7.9" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
