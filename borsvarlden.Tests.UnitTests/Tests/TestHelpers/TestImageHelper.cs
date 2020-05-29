@@ -115,5 +115,15 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestHelpers
                 }
             }
         }
+
+        [TestCase(@"f:\cs_proj\roxosoft_borsvarlden\master\borsvarlden\borsvarlden\wwwroot\wwwroot\assets\images\finauto\socialtag\macro\bvfa-s-macro-0028.jpg",
+                  @"assets/images/finauto/socialtag/macro/bvfa-s-macro-0028.jpg")]
+
+        [TestCase(@"f:\cs_proj\roxosoft_borsvarlden\master\borsvarlden\borsvarlden\wwwroot\assets\images\finauto\socialtag\macro\bvfa-s-macro-0028.jpg",
+            @"assets/images/finauto/socialtag/macro/bvfa-s-macro-0028.jpg")]
+        public void AbsoluteUrlToRelativeUrl(string inputPath, string outputPath)
+        {
+            Assert.AreEqual(outputPath, ImageHelper.AbsoluteUrlToRelativeUrl(inputPath));
+        }
     }
 }

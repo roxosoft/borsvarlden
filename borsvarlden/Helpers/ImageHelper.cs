@@ -152,7 +152,7 @@ namespace borsvarlden.Helpers
 
         public static string AbsoluteUrlToRelativeUrl(string absoluteUrl)
         {
-            return absoluteUrl.Substring(absoluteUrl.IndexOf("wwwroot") + 8).Replace('\\', '/');
+            return absoluteUrl.Substring(absoluteUrl.IndexOf("assets")).Replace('\\', '/');
         }
 
         private static void InitAvailableData()
