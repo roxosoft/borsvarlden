@@ -134,6 +134,7 @@ button.accept-policy {
 }
 .footer ul {
   line-height: 1.4em;
+  font-weight: 300;
 }
 .footer p {
   font-size: 10pt;
