@@ -309,6 +309,10 @@ h3 {
     padding-bottom: 5px;
 }
 
+.form-control::placeholder {
+    color: #ACACAC;
+}
+
 .index-side-banner-wrapper {
     padding-left: 15px;
     padding-right: 15px;
