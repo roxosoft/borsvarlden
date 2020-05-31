@@ -288,7 +288,9 @@ h3 {
 .column-label {
   color: #aeaaaa;
   font-size: 7pt;
+  line-height: 1;
   text-transform: uppercase;
+  padding-bottom: 5px;
 }
 
 .index-side-banner-wrapper {
