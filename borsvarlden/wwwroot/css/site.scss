@@ -43,22 +43,6 @@ a.navbar-brand {
         color: white;
         display: none;
     }
-    
-    &.collapsed {
-        .navbar-toggler-icon {
-            color: white;
-            display: block;
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
-        }
-        
-        .navbar-toggler-close-icon {
-            display: none;
-        }
-    }
-    
-    &.close {
-        opacity: 1.0;
-    }
 }
 
 .navbar .navbar-brand {
@@ -68,11 +52,72 @@ a.navbar-brand {
 .navbar-toggler {
     border: none;
     background: 0 0 !important;
-}
+    padding: 9px 10px;
+    
+    &:focus {
+        outline: none;
+    }
+    
+    .icon-bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #fff;
+        -webkit-transition: all .1s;
+        -o-transition: all .1s;
+        transition: all .1s;
+        
+        &+.icon-bar {
+            margin-top: 4px;
+        }
+        
+        &.top-bar {
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform-origin: 10% 10%;
+            -ms-transform-origin: 10% 10%;
+            -o-transform-origin: 10% 10%;
+            transform-origin: 10% 10%;
+        }
+        
+        &.middle-bar {
+            opacity: 0;
+        }
+        
+        &.bottom-bar {
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 10% 90%;
+            -ms-transform-origin: 10% 90%;
+            -o-transform-origin: 10% 90%;
+            transform-origin: 10% 90%;
+        }
+    }
+    
+    &.collapsed {
+        .top-bar {
+            -webkit-transform: rotate(0);
+            -ms-transform: rotate(0);
+            -o-transform: rotate(0);
+            transform: rotate(0);
+        }
 
-.navbar-toggler-close-icon {
-    font-size: 40px;
-    color: white;
+        .middle-bar {
+            opacity: 1;
+        }
+
+        .bottom-bar {
+            -webkit-transform: rotate(0);
+            -ms-transform: rotate(0);
+            -o-transform: rotate(0);
+            transform: rotate(0);
+        }
+    }
 }
 
 .bg-red-main {
