@@ -200,16 +200,19 @@
         private List<NewsViewModel> MapFinwireNewToViewModel(List<FinwireNew> news)
         {
             var result = new List<NewsViewModel>();
+           
 
             foreach (var newsItem in news)
             {
-                var subtitle = newsItem.Subtitle;
-                if (subtitle.Length >= 140)
+                var subtitle = newsItem.Subtitle; 
+                var subtitleMaxLength = 140;
+
+                if (subtitle.Length >= subtitleMaxLength)
                 {
-                    var index = subtitle.LastIndexOf(' ', 140);
+                    var index = subtitle.LastIndexOf(' ', subtitleMaxLength - 1);
                     subtitle = subtitle.Substring(0, index) + "...";
                 }
-                
+
                 var articleModel = new NewsViewModel()
                 {
                     Id = newsItem.Id,
