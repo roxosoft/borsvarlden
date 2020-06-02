@@ -3,7 +3,6 @@ using borsvarlden.Finwire;
 using borsvarlden.Helpers;
 using borsvarlden.Services.Entities;
 using borsvarlden.Services.Finwire;
-using Hangfire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -39,21 +38,8 @@ namespace borsvarlden
                     options.LoginPath = new PathString("/Account/Login");
                 });
 
-            services.AddHangfire(configuration => configuration
-                .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
-                .UseSimpleAssemblyNameTypeSerializer()
-                .UseRecommendedSerializerSettings()
-                .UseSqlServerStorage(Configuration.GetConnectionString(_databaseConnectionStringName),
-                    new Hangfire.SqlServer.SqlServerStorageOptions
-                    {
-                        CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
-                        SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
-                        QueuePollInterval = TimeSpan.Zero,
-                        UseRecommendedIsolationLevel = true,
-                        UsePageLocksOnDequeue = true,
-                        DisableGlobalLocks = true
-                    }));
-            services.AddHangfireServer(options => options.WorkerCount = 1);
+          
+          
             services.AddMvc();
             services.AddScoped<IFinwireParserService, FinwireFileParserService>();
             services.AddScoped<IFinwireNewsService, FinwireNewsService>();
@@ -75,11 +61,6 @@ namespace borsvarlden
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseHangfireDashboard();
-            if (env.IsDevelopment())
-                RecurringJob.AddOrUpdate<FinwireJob>(x => x.Execute(), Cron.MinuteInterval(5));
-            else
-                RecurringJob.RemoveIfExists("FinwireJob.Execute");
 
             app.UseRouting();
 
