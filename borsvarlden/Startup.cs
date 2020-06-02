@@ -76,7 +76,8 @@ namespace borsvarlden
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseHangfireDashboard();
-            RecurringJob.AddOrUpdate<FinwireJob>(x => x.Execute(), Cron.MinuteInterval(5));
+            if (env.IsDevelopment())
+                RecurringJob.AddOrUpdate<FinwireJob>(x => x.Execute(), Cron.MinuteInterval(5));
             app.UseRouting();
 
             app.UseAuthentication();
