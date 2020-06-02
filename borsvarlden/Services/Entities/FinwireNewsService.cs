@@ -203,11 +203,18 @@
 
             foreach (var newsItem in news)
             {
+                var subtitle = newsItem.Subtitle;
+                if (subtitle.Length >= 140)
+                {
+                    var index = subtitle.LastIndexOf(' ', 140);
+                    subtitle = subtitle.Substring(0, index) + "...";
+                }
+                
                 var articleModel = new NewsViewModel()
                 {
                     Id = newsItem.Id,
                     Title = newsItem.Title,
-                    Subtitle = newsItem.Subtitle,
+                    Subtitle = subtitle,
                     Date = newsItem.Date,
                     NewsText = newsItem.NewsText,
                     ImageUrl = newsItem.ImageRelativeUrl,
