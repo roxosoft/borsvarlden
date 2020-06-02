@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Analytikerkonsensus inför dagens USA-rapporter - Factset</title>
+	<guid>FWM004CDBF</guid>
+	<pubDate>Thu, 28 May 2020 08:15:29 GMT</pubDate>
+	<isoDate>2020-05-28T08:15:29+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Sammanställningen nedan avser det globala börsinformationsföretaget Factsets<br/>analytikerkonsensus för amerikanska bolag som senare i dag lämnar delårsrapport.<br/><br/>Om bolaget har lämnat egen guidning anges det på specifik rad i tabellen.<br/><br/><br/>Rapportbolag                   Försäljning,<br/>  prognos (MUSD) Försäljning i<br/>  fjol Res ex<br/>  eo/aktie, prognos (USD) Res ex eo/aktie<br/>  i fjol Res ex eo/aktie<br/>  innevarande kvartal, prognos Res ex eo/aktie<br/>  innevarande helår, prognos Räkenskapsår <br/>                                                                                                                                                                                                                                                     <br/>Dell                           20 748                        21 990               0,97                             1,45                     1,19                                           5,15                                         Brutet år    <br/>                                                                                                                                                                                                                                                     <br/>Abercrombie                    497                           734                  -1,39                            -0,29                    -0,84                                          -0,68                                        Brutet år    <br/>                                                                                                                                                                                                                                                     <br/>Salesforce.com                 4 850                         3 737                0,69                             0,93                     0,74                                           3,06                                         Brutet år    <br/>- Bolagets guidning (låg)      4 875                                              0,70                                                                                                     3,16                                                      <br/>- Bolagets guidning (hög) 4 885                                              0,71                                                                                                     3,18                                                      <br/>                                                                                                                                                                                                                                                     <br/>Costco<br/>  Wholesale             37 017                        34 740               1,88                             1,89                     2,73                                           8,57                                         Brutet år    <br/>                                                                                                                                                                                                                                                     <br/>Källa: Factset]]></newstext>
+	<htmltext><![CDATA[Sammanställningen nedan avser det globala börsinformationsföretaget Factsets<br>analytikerkonsensus för amerikanska bolag som senare i dag lämnar delårsrapport.<br><br>Om bolaget har lämnat egen guidning anges det på specifik rad i tabellen.<br><br><table><tbody><tr><td>Rapportbolag</td><td>Försäljning,
+  prognos (MUSD)</td><td>Försäljning i
+  fjol</td><td>Res ex
+  eo/aktie, prognos (USD)</td><td>Res ex eo/aktie
+  i fjol</td><td>Res ex eo/aktie
+  innevarande kvartal, prognos</td><td>Res ex eo/aktie
+  innevarande helår, prognos</td><td>Räkenskapsår</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Dell</td><td>20 748</td><td>21 990</td><td>0,97</td><td>1,45</td><td>1,19</td><td>5,15</td><td>Brutet år</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Abercrombie</td><td>497</td><td>734</td><td>-1,39</td><td>-0,29</td><td>-0,84</td><td>-0,68</td><td>Brutet år</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Salesforce.com</td><td>4 850</td><td>3 737</td><td>0,69</td><td>0,93</td><td>0,74</td><td>3,06</td><td>Brutet år</td></tr><tr><td>- Bolagets guidning (låg)</td><td>4 875</td><td></td><td>0,70</td><td></td><td></td><td>3,16</td><td></td></tr><tr><td>- Bolagets guidning&nbsp;(hög)</td><td>4 885</td><td></td><td>0,71</td><td></td><td></td><td>3,18</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Costco
+  Wholesale</td><td>37 017</td><td>34 740</td><td>1,88</td><td>1,89</td><td>2,73</td><td>8,57</td><td>Brutet år</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Källa: Factset</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>]]></htmltext>
+	<signature><![CDATA[Lars Johansson<br/>lars.johansson@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Abercrombie">
+			<instrument isin="US0028962076" market="NYSE">ANF</instrument>
+		</company>
+		<company name="Costco Wholesale">
+			<instrument isin="US22160K1051" market="NASDAQ">COST</instrument>
+		</company>
+		<company name="Dell">
+			<instrument isin="US24703L2025" market="NYSE">DELL</instrument>
+		</company>
+		<company name="Salesforce">
+			<instrument isin="US79466L3024" market="NYSE">CRM</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>analytics</socialtag>
+		<socialtag>estimates</socialtag>
+		<socialtag>stocks</socialtag>
+	</socialtags>
+</item>

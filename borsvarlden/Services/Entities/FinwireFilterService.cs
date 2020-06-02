@@ -30,7 +30,7 @@ namespace borsvarlden.Services.Entities
             //todo logging
             var contentPassed = IsContentFilterPassed(finwireData.HtmlText);
             var titleWhiteListPassed = IsTitleWhiteListPassed(finwireData.Title);
-            var tittleBlackListNotPassed = IsTagBlackFilterNotPassed(finwireData.Title);
+            var tittleBlackListNotPassed = IsTitleBlackFilterNotPassed(finwireData.Title);
             var contentTotalPassed = (contentPassed && !tittleBlackListNotPassed) || titleWhiteListPassed;
             var companiesPassed = IsCompaniesWhiteListPassed(finwireData.Companies);
             var soicalTagsPassed = IsSocialTagsWhiteListFilterPassed(finwireData.SocialTags);
@@ -42,12 +42,12 @@ namespace borsvarlden.Services.Entities
 
         public bool IsTitleWhiteListPassed(string title)
         {
-            return IsTagWhitelistFilterPassed(EnumFinwireFilterTypes._01_TitleWhitelist, title);
+            return ContainsSubstr(EnumFinwireFilterTypes._01_TitleWhitelist, title);
         }
 
-        public bool IsTagBlackFilterNotPassed(string title)
+        public bool IsTitleBlackFilterNotPassed(string title)
         {
-            return IsTagBlackFilterNotPassed(EnumFinwireFilterTypes._02_TitleBlackList, title);
+            return ContainsSubstr(EnumFinwireFilterTypes._02_TitleBlackList, title);
         }
 
         public bool IsSocialTagsWhiteListFilterPassed(List<string> tags)
@@ -62,12 +62,17 @@ namespace borsvarlden.Services.Entities
 
         public bool IsContentFilterPassed(string content)
         {
-            var minPsossibleParagraphs = 4;
+            var minPsossibleParagraphs = 3;
 
-            var countBr = Regex.Matches(content, "<br><br>").Count;
-            var countDblN = Regex.Matches(content, "\n\n").Count;
+            //replace <br><br><br>... to <br><br>
+            var contentUse= Regex.Replace(content, "([ \t]*<br>[ \t]*){3,}", "<br><br>");
+            //remove <br><br> on the end of text
+            contentUse = Regex.Replace(contentUse, "((<br>){2,}$)", String.Empty);
 
-            if (countBr + countDblN + 1  >= minPsossibleParagraphs)
+            var countBr = Regex.Matches(contentUse, "<br>[ \t]*<br>").Count;
+            var countDblN = Regex.Matches(contentUse, "\n\n").Count;
+            //Paragraphs = delimiters_count + the_last_paragraph
+            if (countBr + countDblN  + 1  >= minPsossibleParagraphs)
                 return true;
 
             return false;
@@ -100,6 +105,12 @@ namespace borsvarlden.Services.Entities
         {
             return _dbContext.FinwireFilters.Any(x =>
                 x.FinwireFilterType == filterType && x.Value.ToLower() == value.ToLower());
+        }
+
+        private bool ContainsSubstr(EnumFinwireFilterTypes filterType, string value)
+        {
+            return _dbContext.FinwireFilters.Any(x =>
+                x.FinwireFilterType == filterType && value.ToLower().Contains(x.Value.ToLower()));
         }
     }
 }

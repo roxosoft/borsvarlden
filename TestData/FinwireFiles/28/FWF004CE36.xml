@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Didner &amp; Gerge Fonder minskar till under 5 procent i Indutrade</title>
+	<guid>FWF004CE36</guid>
+	<pubDate>Thu, 28 May 2020 13:25:03 GMT</pubDate>
+	<isoDate>2020-05-28T13:25:03+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Didner &amp; Gerge Fonder har minskat med 183 882 aktier i teknikhandelsbolaget Indutrade och äger nu cirka 5,9 miljoner aktier. Det motsvarar 4,9 procent av kapital och röster, enligt ett flaggningsmeddelande.]]></newstext>
+	<htmltext><![CDATA[Didner &amp; Gerge Fonder har minskat med 183 882 aktier i teknikhandelsbolaget Indutrade och äger nu cirka 5,9 miljoner aktier. Det motsvarar 4,9 procent av kapital och röster, enligt ett flaggningsmeddelande.]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWF</agency>
+	<companies>
+		<company name="Didner &amp; Gerge Fonder">
+			<instrument isin="SE0005962347" market="FUNDS">DID-SMI</instrument>
+			<instrument isin="SE0004167567" market="FUNDS">DID-GLO</instrument>
+			<instrument isin="SE0002699421" market="FUNDS">DID-SMÅ</instrument>
+			<instrument isin="SE0000428336" market="FUNDS">DID-AKT</instrument>
+		</company>
+		<company name="Indutrade">
+			<instrument isin="SE0001515552" market="SSE">INDT</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>industrials</socialtag>
+		<socialtag>insider</socialtag>
+	</socialtags>
+</item>

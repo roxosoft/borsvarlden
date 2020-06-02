@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Cnooc avstår förköpsrätt av Uganda-tillgångar från Tullow Oil</title>
+	<guid>FWM004CDE3</guid>
+	<pubDate>Thu, 28 May 2020 09:49:20 GMT</pubDate>
+	<isoDate>2020-05-28T09:49:20+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.londonstockexchange.com/exchange/news/market-news/market-news-detail/TLW/14555707.html</link>
+	</links>
+	<newstext><![CDATA[Kinesiska Cnooc tänker inte utnyttja förköpsrätten att köpa Tullow Oils tillgångar i Uganda under samma villkor som i affären med franska Total. Det framgår av ett pressmeddelande.<br/><br/>När transaktionen kablades ut den 23 april uppgavs det att Cnooc hade rättigheten att köpa 50 procent av tillgångarna till samma villkor som Total.<br/><br/>Tullow Oil uppger att beslutet inte påverkar transaktionen eller dess slutförande, vilket väntas under andra halvåret 2020.<br/><br/>Tullow, som finansiellt ligger dåligt till, säljer tillgångarna för 575 miljoner dollar. Bolaget siktar på att totalt inbringa en miljard dollar via avyttringar.<br/><br/>Bolagets marknadsvärde är ned 90 procent det senaste året.]]></newstext>
+	<htmltext><![CDATA[Kinesiska Cnooc tänker inte utnyttja förköpsrätten att köpa Tullow Oils tillgångar i Uganda under samma villkor som i affären med franska Total. Det framgår av ett pressmeddelande.<br><br>När transaktionen kablades ut den 23 april uppgavs det att Cnooc hade rättigheten att köpa 50 procent av tillgångarna till samma villkor som Total.<br><br>Tullow Oil uppger att beslutet inte påverkar transaktionen eller dess slutförande, vilket väntas under andra halvåret 2020.<br><br>Tullow, som finansiellt ligger dåligt till, säljer tillgångarna för 575 miljoner dollar. Bolaget siktar på att totalt inbringa en miljard dollar via avyttringar.<br><br>Bolagets marknadsvärde är ned 90 procent det senaste året.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Total">
+			<instrument isin="FR0000120271" market="ENEXT">FP</instrument>
+		</company>
+		<company name="Tullow Oil">
+			<instrument isin="GB0001500809" market="LSE">TLW</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>commodities</socialtag>
+		<socialtag>energy</socialtag>
+		<socialtag>ma</socialtag>
+		<socialtag>oil</socialtag>
+	</socialtags>
+</item>

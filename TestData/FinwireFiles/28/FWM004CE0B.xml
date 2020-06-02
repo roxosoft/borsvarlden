@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Sociala medier borde inte faktagranska politikers inlägg - Zuckerberg</title>
+	<guid>FWM004CE0B</guid>
+	<pubDate>Thu, 28 May 2020 11:40:54 GMT</pubDate>
+	<isoDate>2020-05-28T11:40:54+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.cnbc.com/2020/05/28/zuckerberg-facebook-twitter-should-not-fact-check-political-speech.html</link>
+	</links>
+	<newstext><![CDATA[Facebooks vd Mark Zuckerberg anser inte att sociala medier borde faktagranska vad politiker skriver. Uttalandet kommer sedan Twitter för första gången gjort detta med president Donald Trump, som därefter hotat med att stänga ned sociala medier. <br/><br/>Till CNBC uppgav Zuckerberg hur känsliga politiska uttalanden är. <br/><br/>”Det är en av de mest känsliga delarna i en demokrati och människor borde kunna se vad politiker har att säga”, sade Zuckerberg. Han tillade samtidigt att även Facebook har en gräns som ingen, inte ens politiker, är tillåtna att överskrida.<br/><br/>Enligt Vita huset väntas Trump skriva under en exekutiv order mot sociala medier under torsdagen. Vad som ingår i ordern nämndes inte.]]></newstext>
+	<htmltext><![CDATA[Facebooks vd Mark Zuckerberg anser inte att sociala medier borde faktagranska vad politiker skriver. Uttalandet kommer sedan Twitter för första gången gjort detta med president Donald Trump, som därefter hotat med att stänga ned sociala medier. <br><br>Till CNBC uppgav Zuckerberg hur känsliga politiska uttalanden är. <br><br>”Det är en av de mest känsliga delarna i en demokrati och människor borde kunna se vad politiker har att säga”, sade Zuckerberg. Han tillade samtidigt att även Facebook har en gräns som ingen, inte ens politiker, är tillåtna att överskrida.<br><br>Enligt Vita huset väntas Trump skriva under en exekutiv order mot sociala medier under torsdagen. Vad som ingår i ordern nämndes inte.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Facebook">
+			<instrument isin="US30303M1027" market="NASDAQ">FB</instrument>
+		</company>
+		<company name="Twitter">
+			<instrument isin="US90184L1026" market="NYSE">TWTR</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>macro</socialtag>
+		<socialtag>media</socialtag>
+		<socialtag>politics</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

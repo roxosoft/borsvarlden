@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using NUnit.Framework;
 using System.IO;
 using borsvarlden.Services.Finwire;
@@ -37,7 +37,8 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestServices
                 }
             }
         }
-
+        
+        [TestCase("29", "FWS004CF9A.xml")]
         [TestCase("08", "FWM0042BB5.xml")]
         public void TestSpecificFile(string subfolder, string fileName)
         {
@@ -45,10 +46,17 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestServices
             TestOneFile(path);
         }
 
-
         public FinWireData TestOneFile(string file)
         {
             return UnitTestHelper.ParseNewsFile(file);
+        }
+                                            
+        [TestCase("FWM004CDF7.xml", "Torsdagens aktierekommendationer i översikt")]
+        public void ParseStockRecommendationsDayOfWeek(string filename, string expectedTitle)
+        {
+            var pathfile = $@"{UnitTestConfig.TestDataPath}\Specific\{filename}";
+            var data = UnitTestHelper.ParseNewsFile(pathfile);
+            Assert.AreEqual(expectedTitle, data.Title);
         }
     }
 }

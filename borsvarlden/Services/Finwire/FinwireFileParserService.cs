@@ -46,12 +46,12 @@ namespace borsvarlden.Services.Finwire
                     Date = DateTime.Parse(item.SelectSingleNode("isoDate")?.InnerText,
                         System.Globalization.CultureInfo.CurrentCulture,
                         System.Globalization.DateTimeStyles.AdjustToUniversal),
-                    NewsText = item.SelectSingleNode("newstext")?.InnerText?.Trim(),
-                    SubTitle = item.SelectSingleNode("newstext")?.InnerText.FistParagraph(),
-                    HtmlText = item.SelectSingleNode("htmltext")?.InnerText?.Trim(),
+                    HtmlText = item.SelectSingleNode("htmltext")?.InnerText?.Trim().ParseHtmlText(),
                     Agency = item.SelectSingleNode("agency")?.InnerText,
                     TittleSlug = item.SelectSingleNode("title")?.InnerText.ToSlug()
-                }.BuildSubtitle();
+                }.PostProcessTitle();
+
+                (finWireData.SubTitle, finWireData.HtmlText) = finWireData.HtmlText.SplitSubtitleAndNews();
 
                 //todo Concat these all to methods with the delegate
                 var socialTagsList = new List<string>();

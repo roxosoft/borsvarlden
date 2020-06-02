@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Totalt sju insidermisstänkta i Balder-ärendet</title>
+	<guid>FWM004CF13</guid>
+	<pubDate>Fri, 29 May 2020 08:54:15 GMT</pubDate>
+	<isoDate>2020-05-29T08:54:15+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.di.se/nyheter/minst-fem-ytterligare-misstankta-i-insiderharvan-med-balderchefer/</link>
+		<link type="html" mime="text/html">https://www.realtid.se/totalt-sju-insidermisstankta-i-balder-arendet</link>
+	</links>
+	<newstext><![CDATA[Insiderhärvan med koppling till Balder-chefer växer i antal inblandade personer. Utöver finanschefen Marcus Hansson och ekonomidirektören Magnus Björndahl, som båda begärts häktade, ska fem till personer vara inblandade. Merparten av dem bor i Göteborgs-regionen, skriver Realtid med hänvisning till Ekobrottsmyndigheten.<br/><br/>De fem har inte begärts häktade men har tilldelats försvarsadvokater på misstankar om insiderbrott eller grovt insiderbrott. Det samma gäller för omnämnda toppduon på Balder.<br/><br/>Enligt uppgifter till Dagens industri avser misstankarna transaktioner som gjordes i samband med nischbanken Collectors vinstvarning i januari. Balder är största ägare i Collector och dess vd och storägare Erik Selin sitter i bankens styrelse.]]></newstext>
+	<htmltext><![CDATA[Insiderhärvan med koppling till Balder-chefer växer i antal inblandade personer. Utöver finanschefen Marcus Hansson och ekonomidirektören Magnus Björndahl, som båda begärts häktade, ska fem till personer vara inblandade. Merparten av dem bor i Göteborgs-regionen, skriver Realtid med hänvisning till Ekobrottsmyndigheten.<br><br>De fem har inte begärts häktade men har tilldelats försvarsadvokater på misstankar om insiderbrott eller grovt insiderbrott. Det samma gäller för omnämnda toppduon på Balder.<br><br>Enligt uppgifter till Dagens industri avser misstankarna transaktioner som gjordes i samband med nischbanken Collectors vinstvarning i januari. Balder är största ägare i Collector och dess vd och storägare Erik Selin sitter i bankens styrelse.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Balder">
+			<instrument isin="SE0000455057" market="SSE">BALD B</instrument>
+		</company>
+		<company name="Collector">
+			<instrument isin="SE0007048020" market="SSE">COLL</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>insider</socialtag>
+		<socialtag>realestate</socialtag>
+	</socialtags>
+</item>

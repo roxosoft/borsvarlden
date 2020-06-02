@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Affärsvärlden säljer resterande aktier i Pexip och tar in Millicom i portföljen</title>
+	<guid>FWM004CE04</guid>
+	<pubDate>Thu, 28 May 2020 11:16:59 GMT</pubDate>
+	<isoDate>2020-05-28T11:16:59+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Affärsvärlden gör en förändring i sin portfölj, enligt en uppdatering på torsdagen. <br/><br/>Portföljen tecknade en post i norska Pexip, som säljer mjukvarulösningar för videokonferenser, vid nyintroduktionen tidigare i maj och kursen steg snabbt över det riktvärde på 83 kronor som tidningens analys pekade på. &quot;Vi håller koll från sidlinjen och sålde resten av våra aktier på drygt 86 kronor. En delförsäljning har tidigare gjorts på 92 kronor&quot;, skriver Affärsvärlden. <br/><br/>Ersättare i portföljen blir teleoperatören Millicom som nyligen fick köpråd av tidningen. &quot;Vi köper in aktien till kursen 230 kronor. Posten får en vikt på 8 procent i portföljen&quot;, skriver Affärsvärlden om Millicom.]]></newstext>
+	<htmltext><![CDATA[Affärsvärlden gör en förändring i sin portfölj, enligt en uppdatering på torsdagen. <br><br>Portföljen tecknade en post i norska Pexip, som säljer mjukvarulösningar för videokonferenser, vid nyintroduktionen tidigare i maj och kursen steg snabbt över det riktvärde på 83 kronor som tidningens analys pekade på. "Vi håller koll från sidlinjen och sålde resten av våra aktier på drygt 86 kronor. En delförsäljning har tidigare gjorts på 92 kronor", skriver Affärsvärlden. <br><br>Ersättare i portföljen blir teleoperatören Millicom som nyligen fick köpråd av tidningen. "Vi köper in aktien till kursen 230 kronor. Posten får en vikt på 8 procent i portföljen", skriver Affärsvärlden om Millicom.]]></htmltext>
+	<signature><![CDATA[Henrik Öhlin<br/>henrik.ohlin@finwire.se, 0703-21 06 99<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Millicom">
+			<instrument isin="SE0001174970" market="SSE">TIGO SDB</instrument>
+		</company>
+		<company name="Pexip">
+			<instrument isin="NO0010840507" market="OSE">PEXIP</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>analytics</socialtag>
+		<socialtag>stocks</socialtag>
+	</socialtags>
+</item>

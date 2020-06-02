@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>EU godkänner försäljning av ABB Power Grids till Hitachi</title>
+	<guid>FWM004CF3B</guid>
+	<pubDate>Fri, 29 May 2020 10:22:38 GMT</pubDate>
+	<isoDate>2020-05-29T10:22:38+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[EU-kommissionen godkänner affären där ABB säljer sin division Power Grids till japanska Hitachi.<br/><br/>&quot;Kommissionen drog slutsatsen att förvärvet inte skulle ge upphov till några konkurrensproblem eftersom Hitachis verksamhet inom elnätsverksamheten har geografiskt fokus på japanska och kinesiska marknader&quot;, framgår det av ett pressmeddelande.<br/><br/>Affären presenterades i slutet av 2018 och innebär att ABB behåller nära 20 procent av Power Grids med option att sälja resten under en treårsperiod.]]></newstext>
+	<htmltext><![CDATA[EU-kommissionen godkänner affären där ABB säljer sin division Power Grids till japanska Hitachi.<br><br>"Kommissionen drog slutsatsen att förvärvet inte skulle ge upphov till några konkurrensproblem eftersom Hitachis verksamhet inom elnätsverksamheten har geografiskt fokus på japanska och kinesiska marknader", framgår det av ett pressmeddelande.<br><br>Affären presenterades i slutet av 2018 och innebär att ABB behåller nära 20 procent av Power Grids med option att sälja resten under en treårsperiod.]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="ABB">
+			<instrument isin="CH0012221716" market="SSE">ABB</instrument>
+		</company>
+		<company name="Hitachi">
+			<instrument isin="JP3788600009" market="TSE">6501</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>energy</socialtag>
+		<socialtag>industrials</socialtag>
+		<socialtag>ma</socialtag>
+	</socialtags>
+</item>

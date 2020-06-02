@@ -63,7 +63,7 @@
                 Title = finwireData.Title,
                 Subtitle = finwireData.SubTitle,
                 Date = finwireData.Date,
-                NewsText = finwireData.NewsText,
+                NewsText = finwireData.HtmlText,
                 FinwireAgency = _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)
                             ?? _dbContext.Add(new FinwireAgency {Agency = finwireData.Agency}).Entity,
                 ImageRelativeUrl = ImageHelper.AbsoluteUrlToRelativeUrl(imgData.ImageAbsoluteUrl),

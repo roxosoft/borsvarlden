@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Trump skriver under exekutiv order riktad mot Twitter och sociala medier</title>
+	<guid>FWM004CE7C</guid>
+	<pubDate>Fri, 29 May 2020 05:19:28 GMT</pubDate>
+	<isoDate>2020-05-29T05:19:28+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[USA:s president Donald Trump undertecknade på torsdagskvällen som väntat en exekutiv order rörande sociala medier. Det innebär bland annat att sociala medier-företag inte längre ska skyddas mot rättsliga påföljder på det sätt som varit gällande i amerikansk lagstiftning.<br/><br/>Trump menar att Twitter håller på med &quot;otillbörlig politisk aktivism&quot;, framför allt mot konservativa i USA. Åtgärden kommer efter att Twitter tidigare i veckan faktagranskat några av presidentens inlägg.<br/><br/>Twitter kallar presidentordern för ”reaktionär och politiserad”.]]></newstext>
+	<htmltext><![CDATA[USA:s president Donald Trump undertecknade på torsdagskvällen som väntat en exekutiv order rörande sociala medier. Det innebär bland annat att sociala medier-företag inte längre ska skyddas mot rättsliga påföljder på det sätt som varit gällande i amerikansk lagstiftning.<br><br>Trump menar att Twitter håller på med "otillbörlig politisk aktivism", framför allt mot konservativa i USA. Åtgärden kommer efter att Twitter tidigare i veckan faktagranskat några av presidentens inlägg.<br><br>Twitter kallar presidentordern för ”reaktionär och politiserad”.]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Facebook">
+			<instrument isin="US30303M1027" market="NASDAQ">FB</instrument>
+		</company>
+		<company name="Twitter">
+			<instrument isin="US90184L1026" market="NYSE">TWTR</instrument>
+		</company>
+		<company name="USA">
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>fx</socialtag>
+		<socialtag>macro</socialtag>
+		<socialtag>politics</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Goldman Sachs handlas exklusive utdelning i dag</title>
+	<guid>FWM004CEC9</guid>
+	<pubDate>Fri, 29 May 2020 08:31:01 GMT</pubDate>
+	<isoDate>2020-05-29T08:31:01+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Goldman Sachs handlas i dag exklusive rätt till utdelning med 1,25 dollar per aktie.<br/><br/>Det framgår av Factset.]]></newstext>
+	<htmltext><![CDATA[<span class="generated_text">Goldman Sachs handlas i dag exklusive rätt till utdelning med 1,25 dollar per aktie.<br><br>Det framgår av Factset.<br></span>]]></htmltext>
+	<signature><![CDATA[Amila Ceranic<br/>Finwire News]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Goldman Sachs">
+			<instrument isin="US38141G1040" market="NYSE">GS</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>dividend</socialtag>
+		<socialtag>financials</socialtag>
+	</socialtags>
+</item>

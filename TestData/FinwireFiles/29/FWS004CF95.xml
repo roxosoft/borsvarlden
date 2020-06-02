@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Genova Property köper fastighet i Uppsala för 350 miljoner kronor från SBB</title>
+	<guid>FWS004CF95</guid>
+	<pubDate>Fri, 29 May 2020 14:36:10 GMT</pubDate>
+	<isoDate>2020-05-29T14:36:10+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Fastighetsbolaget Genova Property har avtalat om att förvärva samhällsfastigheten Flogsta 47:1 i Ekeby, Uppsala till ett underliggande fastighetsvärde om 350 miljoner kronor. Säljare är fastighetsbolaget SBB. Det framgår av ett pressmeddelande. <br/><br/>Fastigheten har en uthyrbar area på 16 500 kvadratmeter och den årliga hyresintäkten är 26 miljoner kronor. Tillträde är planerat till 30 oktober 2020. Genovas förvärv finansieras med en kombination av lån och egna medel.]]></newstext>
+	<htmltext><![CDATA[Fastighetsbolaget Genova Property har avtalat om att förvärva samhällsfastigheten Flogsta 47:1 i Ekeby, Uppsala till ett underliggande fastighetsvärde om 350 miljoner kronor. Säljare är fastighetsbolaget SBB. Det framgår av ett pressmeddelande. <br><br>Fastigheten har en uthyrbar area på 16 500 kvadratmeter och den årliga hyresintäkten är 26 miljoner kronor. Tillträde är planerat till 30 oktober 2020. Genovas förvärv finansieras med en kombination av lån och egna medel.]]></htmltext>
+	<signature><![CDATA[Henrik Öhlin<br/>henrik.ohlin@finwire.se, 0703-21 06 99<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWS</agency>
+	<companies>
+		<company name="Genova Property">
+			<instrument isin="SE0007526132" market="SSEFN">GPG PREF</instrument>
+		</company>
+		<company name="SBB">
+			<instrument isin="SE0009580715" market="SSEFN">SBB PREF</instrument>
+			<instrument isin="SE0011844091" market="SSE">SBB D</instrument>
+			<instrument isin="SE0009554454" market="SSE">SBB B</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>realestate</socialtag>
+	</socialtags>
+</item>

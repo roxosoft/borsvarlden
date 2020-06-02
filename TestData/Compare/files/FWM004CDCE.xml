@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Handelsbanken varnar för bakslag inom verkstadssektorn</title>
+	<guid>FWM004CDCE</guid>
+	<pubDate>Thu, 28 May 2020 08:56:18 GMT</pubDate>
+	<isoDate>2020-05-28T08:56:18+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Handelsbanken varnar för bakslag inom verkstadssektorn när nästan samtliga nordiska bolag handlas med tvåsiffriga värderingspremier jämfört med det historiska genomsnittet. Sektorn handlas till ev/ebit 14x, att jämföra med 11,2 gånger för 15-årsgenomsnittet.<br/><br/>Därmed handlas bolagen med en 25 procents värderingspremie samtidigt som resultatprognoserna sänkts för i år rejält. <br/><br/>Handelsbankens vinstrevideringar (ebit) är i genomsnitt 40 procent för 2020. Inför det andra kvartalet förväntar sig banken till och med förluster för bland annat Autoliv och Volvo.<br/><br/>Vinstförväntningarna kombinerat med nuvarande värderingar får banken att bli försiktig till sektorn.<br/><br/>”Sammantaget har vi en försiktig inställning till merparten aktier i sektorn, då vi bedömer att värderingen inte ger något större utrymme för bakslag och framtidsutsikterna är mycket osäkra. Vi har rekommendationen Köp på Sandvik och Volvo (baserat på förväntningar om strukturella förbättringar och relativt rimliga värderingar), samt Veoneer (då vi menar att tillväxtcaset är intakt)”, skriver Handelsbanken.]]></newstext>
+	<htmltext><![CDATA[Handelsbanken varnar för bakslag inom verkstadssektorn när nästan samtliga nordiska bolag handlas med tvåsiffriga värderingspremier jämfört med det historiska genomsnittet. Sektorn handlas till ev/ebit 14x, att jämföra med 11,2 gånger för 15-årsgenomsnittet.<br><br>Därmed handlas bolagen med en 25 procents värderingspremie samtidigt som resultatprognoserna sänkts för i år rejält. <br><br>Handelsbankens vinstrevideringar (ebit) är i genomsnitt 40 procent för 2020. Inför det andra kvartalet förväntar sig banken till och med förluster för bland annat Autoliv och Volvo.<br><br>Vinstförväntningarna kombinerat med nuvarande värderingar får banken att bli försiktig till sektorn.<br><br>”Sammantaget har vi en försiktig inställning till merparten aktier i sektorn, då vi bedömer att värderingen inte ger något större utrymme för bakslag och framtidsutsikterna är mycket osäkra. Vi har rekommendationen Köp på Sandvik och Volvo (baserat på förväntningar om strukturella förbättringar och relativt rimliga värderingar), samt Veoneer (då vi menar att tillväxtcaset är intakt)”, skriver Handelsbanken.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="ABB">
+			<instrument isin="CH0012221716" market="SSE">ABB</instrument>
+		</company>
+		<company name="Atlas Copco">
+			<instrument isin="SE0011166628" market="SSE">ATCO B</instrument>
+			<instrument isin="SE0011166610" market="SSE">ATCO A</instrument>
+		</company>
+		<company name="Autoliv">
+			<instrument isin="SE0000382335" market="SSE">ALIV SDB</instrument>
+		</company>
+		<company name="Epiroc" orgnr="556041-2149">
+			<instrument isin="SE0011166941" market="SSE">EPI B</instrument>
+			<instrument isin="SE0011166933" market="SSE">EPI A</instrument>
+		</company>
+		<company name="Sandvik">
+			<instrument isin="SE0000667891" market="SSE">SAND</instrument>
+		</company>
+		<company name="Traton">
+			<instrument isin="DE000TRAT0N7" market="SSE">8TRA</instrument>
+		</company>
+		<company name="Trelleborg">
+			<instrument isin="SE0000114837" market="SSE">TREL B</instrument>
+		</company>
+		<company name="Veoneer">
+			<instrument isin="SE0011115963" market="SSE">VNE SDB</instrument>
+		</company>
+		<company name="Volvo">
+			<instrument isin="SE0000115446" market="SSE">VOLV B</instrument>
+			<instrument isin="SE0000115420" market="SSE">VOLV A</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>analytics</socialtag>
+		<socialtag>industrials</socialtag>
+		<socialtag>stocks</socialtag>
+	</socialtags>
+</item>

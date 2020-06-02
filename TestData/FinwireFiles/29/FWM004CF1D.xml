@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Volatis finanschef ökar aktiennehavet</title>
+	<guid>FWM004CF1D</guid>
+	<pubDate>Fri, 29 May 2020 09:13:47 GMT</pubDate>
+	<isoDate>2020-05-29T09:13:47+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Andreas Stenbäck har den 29 maj köpt 1 450 aktier i industrigruppen Volati där han är finanschef. Aktierna köptes till kursen 38,80 kronor per aktie, en affär på 56 000 kronor. Affären gjordes på Nasdaq Stockholm. Det framgår av Finansinspektionens insynsregister.]]></newstext>
+	<htmltext><![CDATA[Andreas Stenbäck har den 29 maj köpt 1 450 aktier i industrigruppen Volati där han är finanschef. Aktierna köptes till kursen 38,80 kronor per aktie, en affär på 56 000 kronor. Affären gjordes på Nasdaq Stockholm. Det framgår av Finansinspektionens insynsregister.]]></htmltext>
+	<signature><![CDATA[Henrik Öhlin<br/>henrik.ohlin@finwire.se, 0703-21 06 99<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Volati">
+			<instrument isin="SE0009143670" market="SSE">VOLO PREF</instrument>
+			<instrument isin="SE0009143662" market="SSE">VOLO</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>industrials</socialtag>
+		<socialtag>insider</socialtag>
+	</socialtags>
+</item>

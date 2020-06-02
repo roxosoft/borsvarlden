@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>DNB Grönt Norden ny i Folksams utbud</title>
+	<guid>FWF004CDB9</guid>
+	<pubDate>Thu, 28 May 2020 08:43:33 GMT</pubDate>
+	<isoDate>2020-05-28T08:43:33+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Folksam meddelar till Finwire att man har lagt till DNB Grönt Norden A2 i sitt fondutbud.]]></newstext>
+	<htmltext><![CDATA[Folksam meddelar till Finwire att man har lagt till DNB Grönt Norden A2 i sitt fondutbud.]]></htmltext>
+	<signature><![CDATA[Love Josefsson<br/>love@finwire.se, 0708-97 44 06<br/>Nyhetsbyrån Finwire<br/><br/>Läsaren av innehållet kan anta att Finwire har erhållit eller kommer att erhålla betalning för utförandet av finansiella företagstjänster från bolaget. Ersättningen är på förhand avtalad och är inte beroende av innehållet.]]></signature>
+	<language>sv</language>
+	<agency>FWF</agency>
+	<companies>
+		<company name="DNB Grønt Norden">
+			<instrument isin="NO0010102866" market="FUNDS">DNBGN</instrument>
+		</company>
+		<company name="Folksam">
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>mutualfunds</socialtag>
+	</socialtags>
+</item>

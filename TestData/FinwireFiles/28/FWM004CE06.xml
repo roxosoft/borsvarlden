@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Boeing tillverkar 737 Max igen</title>
+	<guid>FWM004CE06</guid>
+	<pubDate>Thu, 28 May 2020 11:19:22 GMT</pubDate>
+	<isoDate>2020-05-28T11:19:22+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.cnbc.com/2020/05/27/boeing-resumes-production-of-beleaguered-737-max.html</link>
+	</links>
+	<newstext><![CDATA[Boeing har återupptagit produktionen av den markbundna modellen 737 Max, enligt ett uttalande. Det rapporterar CNBC.<br/><br/>Produktionen har stått stilla sedan i januari. Boeing valde att dra i handbromsen efter att hundratals flygplan fyllt upp lagren i USA.<br/><br/>Med produktionen igång igen (ska trappas upp gradvis) visar det på optimism från Boeing om att se modellen åter i luften igen, skriver nyhetskanalen.<br/><br/>737 Max har fått flygförbud sedan våren 2019 efter två dödsolyckor. Sedan dess har Boeing jobbat på att uppgradera dess defekta säkerhetssystem som orsakade olyckorna och nu inväntas godkännande från luftfartsmyndigheten, FAA.<br/><br/>Boeing ville till CNBC inte kommentera ifall FAA är nära att certifiera flygplanen som säkra att flyga med igen.]]></newstext>
+	<htmltext><![CDATA[Boeing har återupptagit produktionen av den markbundna modellen 737 Max, enligt ett uttalande. Det rapporterar CNBC.<br><br>Produktionen har stått stilla sedan i januari. Boeing valde att dra i handbromsen efter att hundratals flygplan fyllt upp lagren i USA.<br><br>Med produktionen igång igen (ska trappas upp gradvis) visar det på optimism från Boeing om att se modellen åter i luften igen, skriver nyhetskanalen.<br><br>737 Max har fått flygförbud sedan våren 2019 efter två dödsolyckor. Sedan dess har Boeing jobbat på att uppgradera dess defekta säkerhetssystem som orsakade olyckorna och nu inväntas godkännande från luftfartsmyndigheten, FAA.<br><br>Boeing ville till CNBC inte kommentera ifall FAA är nära att certifiera flygplanen som säkra att flyga med igen.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Boeing">
+			<instrument isin="US0970231058" market="NYSE">BA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>airlines</socialtag>
+		<socialtag>aviation</socialtag>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>leisure</socialtag>
+	</socialtags>
+</item>

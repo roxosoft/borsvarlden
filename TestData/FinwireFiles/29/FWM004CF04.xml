@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Twitter flaggar och döljer tweet från Trump</title>
+	<guid>FWM004CF04</guid>
+	<pubDate>Fri, 29 May 2020 08:14:00 GMT</pubDate>
+	<isoDate>2020-05-29T08:14:00+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://twitter.com/TwitterComms/status/1266267446979129345</link>
+	</links>
+	<newstext><![CDATA[Twitter har flaggat och dolt en tweet från president Donald Trump. Det sker efter att Trump under torsdagen undertecknat en exekutiv order riktad mot just Twitter och sociala medier.<br/><br/>&quot;Denna tweet bryter mot Twitters regler om förhärligande av våld. Twitter har dock bestämt att det ligger i allmänhetens intresse att denna tweet fortsätter att vara åtkomlig&quot;, står det om Trumps inlägg som går att klicka fram.<br/><br/>I sitt inlägg skrev Trump om de våldsamma protesterna i Minneapolis efter att en afroamerikansk man dödats i samband med ett polisingripande. Trump skrev bland annat &quot;när plundringen börjar, så börjar skjutandet&quot;.]]></newstext>
+	<htmltext><![CDATA[Twitter har flaggat och dolt en tweet från president Donald Trump. Det sker efter att Trump under torsdagen undertecknat en exekutiv order riktad mot just Twitter och sociala medier.<br><br>"Denna tweet bryter mot Twitters regler om förhärligande av våld. Twitter har dock bestämt att det ligger i allmänhetens intresse att denna tweet fortsätter att vara åtkomlig", står det om Trumps inlägg som går att klicka fram.<br><br>I sitt inlägg skrev Trump om de våldsamma protesterna i Minneapolis efter att en afroamerikansk man dödats i samband med ett polisingripande. Trump skrev bland annat "när plundringen börjar, så börjar skjutandet".]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Twitter">
+			<instrument isin="US90184L1026" market="NYSE">TWTR</instrument>
+		</company>
+		<company name="USA">
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>macro</socialtag>
+		<socialtag>media</socialtag>
+		<socialtag>politics</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

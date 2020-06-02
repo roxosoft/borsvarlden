@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Trump ska underteckna exekutiv order mot sociala medier efter Twitters faktakoll</title>
+	<guid>FWM004CD50</guid>
+	<pubDate>Thu, 28 May 2020 05:33:19 GMT</pubDate>
+	<isoDate>2020-05-28T05:33:19+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://twitter.com/Yamiche/status/1265771557152083968</link>
+	</links>
+	<newstext><![CDATA[Twitters faktakoll av USA:s president Donald Trump kommer att leda till en exekutiv order som ska straffa sociala medier. Ordern kommer att undertecknas redan under torsdagen, sade Vita huset. <br/><br/>Detaljerna är oklara men Trump har varnat att han kan reglera eller stänga ned sociala medier.<br/><br/>Trumps raseri kommer sedan mikrobloggen flaggat för att hans inlägg om fusk relaterat till poströstning i presidentvalet är ett ogrundat påstående. Trump, som hävdar att poströstning skulle leda till grovt fusk, svarade med att han inte tänker låta sin yttrandefrihet strypas. Senare attackerade han Twitters agerande som bevis på att den sociala plattformen är emot konservativa i USA.]]></newstext>
+	<htmltext><![CDATA[Twitters faktakoll av USA:s president Donald Trump kommer att leda till en exekutiv order som ska straffa sociala medier. Ordern kommer att undertecknas redan under torsdagen, sade Vita huset. <br><br>Detaljerna är oklara men Trump har varnat att han kan reglera eller stänga ned sociala medier.<br><br>Trumps raseri kommer sedan mikrobloggen flaggat för att hans inlägg om fusk relaterat till poströstning i presidentvalet är ett ogrundat påstående. Trump, som hävdar att poströstning skulle leda till grovt fusk, svarade med att han inte tänker låta sin yttrandefrihet strypas. Senare attackerade han Twitters agerande som bevis på att den sociala plattformen är emot konservativa i USA.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Facebook">
+			<instrument isin="US30303M1027" market="NASDAQ">FB</instrument>
+		</company>
+		<company name="Twitter">
+			<instrument isin="US90184L1026" market="NYSE">TWTR</instrument>
+		</company>
+		<company name="USA">
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>consumerservices</socialtag>
+		<socialtag>macro</socialtag>
+		<socialtag>media</socialtag>
+		<socialtag>politics</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

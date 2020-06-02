@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Raysearch i avtal om att koppla samman Raycare med Varian Truebeam</title>
+	<guid>FWM004CE05</guid>
+	<pubDate>Thu, 28 May 2020 11:16:00 GMT</pubDate>
+	<isoDate>2020-05-28T11:16:00+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Medicinteknikbolaget Raysearch har ingått ett interoperabilitetsavtal med Varian Medical Systems. Det ger möjlighet att koppla samman onkologiinformationssystemet Raycare med Varians linjäraccelerator Truebeam.<br/><br/>&quot;Vi arbetar ständigt med att lägga till stöd för fler behandlingsmaskiner i RayCare och det gläder mig att vi nu har ingått detta avtal. Interoperabiliteten med Varian TrueBeam kommer att öka marknadspotentialen för RayCare väsentligt och även förbättra arbetsflödet för våra befintliga kunder&quot;, kommenterar vd Johan Löf i ett pressmeddelande.<br/><br/>Gränssnittet beskrivs vara under utveckling med målet att släppa det i slutet av 2020. Det kommer krävas regulatoriskt godkännande på vissa marknader.]]></newstext>
+	<htmltext><![CDATA[Medicinteknikbolaget Raysearch har ingått ett interoperabilitetsavtal med Varian Medical Systems. Det ger möjlighet att koppla samman onkologiinformationssystemet Raycare med Varians linjäraccelerator Truebeam.<br><br>"Vi arbetar ständigt med att lägga till stöd för fler behandlingsmaskiner i RayCare och det gläder mig att vi nu har ingått detta avtal. Interoperabiliteten med Varian TrueBeam kommer att öka marknadspotentialen för RayCare väsentligt och även förbättra arbetsflödet för våra befintliga kunder", kommenterar vd Johan Löf i ett pressmeddelande.<br><br>Gränssnittet beskrivs vara under utveckling med målet att släppa det i slutet av 2020. Det kommer krävas regulatoriskt godkännande på vissa marknader.]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Raysearch">
+			<instrument isin="SE0000135485" market="SSE">RAY B</instrument>
+		</company>
+		<company name="Varian Medical">
+			<instrument isin="US92220P1057" market="NYSE">VAR</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>healthcare</socialtag>
+		<socialtag>lifescience</socialtag>
+		<socialtag>medtech</socialtag>
+	</socialtags>
+</item>

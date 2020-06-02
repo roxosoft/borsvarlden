@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Scania drar tillbaka utdelningsförslag</title>
+	<guid>FWM004CDE8</guid>
+	<pubDate>Thu, 28 May 2020 10:03:09 GMT</pubDate>
+	<isoDate>2020-05-28T10:03:09+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Lastbilstillverkaren Scania, som ingår i Traton, meddelar att styrelsen enhälligt beslutat att dra tillbaka utdelningsförslaget till årsstämman den 25 juni.<br/><br/>&quot;Det råder fortfarande en stor osäkerhet kring den fulla effekten av Coronavirusets spridning och dess konsekvenser på den globala efterfrågan. Som ytterligare finansiell försiktighetsåtgärd under den pågående krisen, föreslår styrelsen att årsstämman håller inne aktieutdelningen för 2019&quot;, framgår det av ett pressmeddelande.]]></newstext>
+	<htmltext><![CDATA[Lastbilstillverkaren Scania, som ingår i Traton, meddelar att styrelsen enhälligt beslutat att dra tillbaka utdelningsförslaget till årsstämman den 25 juni.<br><br>"Det råder fortfarande en stor osäkerhet kring den fulla effekten av Coronavirusets spridning och dess konsekvenser på den globala efterfrågan. Som ytterligare finansiell försiktighetsåtgärd under den pågående krisen, föreslår styrelsen att årsstämman håller inne aktieutdelningen för 2019", framgår det av ett pressmeddelande.]]></htmltext>
+	<signature><![CDATA[Stefan Linnér<br/>stefan.linner@finwire.se<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Scania">
+			<instrument isin="SE0000308280" market="PRIVATE">SCV B</instrument>
+			<instrument isin="SE0000308272" market="PRIVATE">SCV A</instrument>
+		</company>
+		<company name="Traton">
+			<instrument isin="DE000TRAT0N7" market="SSE">8TRA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>commercialvehicles</socialtag>
+		<socialtag>corporateactions</socialtag>
+		<socialtag>dividend</socialtag>
+		<socialtag>industrials</socialtag>
+	</socialtags>
+</item>

@@ -44,13 +44,22 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestServices
             }
         }
 
+        [TestCase("A<br><br>BC<br><br><br><br>", false)]
+        [TestCase("Under perioden 4 - 25 maj 2020 hade innehavare av teckningsoptioner av serie 2020 kunnat teckna aktier med stöd av teckningsoptioner.<br><br>Totalt nyttjades 3 097 892 teckningsoptioner av serie 2020, vilket motsvarar en nyttjandegrad om cirka 64 procent, motsvarande 774 473 aktier. <br><br> <br><br>",false)]
+        [TestCase("ABC<br><br><br>", false)]
+        public void TestContentFilterPassed(string content, bool expected)
+        {
+            //Esen Esports meddelar utfall för nyttjande av teckningsoptioner av serie 2020
+            Assert.AreEqual(expected, _finwireFilterService.IsContentFilterPassed(content));
+        }
+
         [TestCase(false, "02", "FWM00427AA.xml")]
         [TestCase(true,  "02", "FWM00427AC.xml")]
         [TestCase(true,  "02", "FWM004284C.xml")] //Title="Stockholm Bullets" Companies="Stockholm Bullets" SocialTags="calendar"
         public void TestIsPassedSingleFile(bool expectedResult, string subdir, string fileName)
         {
             string path = $@"{UnitTestConfig.TestDataPath}\FinwireFiles\{subdir}\{fileName}";
-            var data = UnitTestHelper.ParseNewsFile(fileName);
+            var data = UnitTestHelper.ParseNewsFile(path);
             bool bResProcessed = _finwireFilterService.IsFilterPassed(data);
             Assert.AreEqual(expectedResult, bResProcessed);
         }
@@ -107,6 +116,7 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestServices
             Assert.AreEqual(expectedResult,_finwireFilterService.IsTitleWhiteListPassed(tag) );
         }
 
+        [TestCase("Mekonomen rapporterar förlust för första kvartalet (uppdatering)", true)]
         [TestCase("(uppdatering)", true)]
         [TestCase("(uppdaterad)", true)]
         [TestCase("(Oms)", true)]
@@ -115,11 +125,13 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestServices
         [TestCase("(r)", true)]
         [TestCase("(rättelse)", true)]
         [TestCase("foo", false)]
-        public void TestFilterTagBlackListNotPassed(string tag, bool expectedResult)
+        public void TestFilterTitleBlackListNotPassed(string tag, bool expectedResult)
         {
-            Assert.AreEqual(expectedResult, _finwireFilterService.IsTagBlackFilterNotPassed(tag));
+            Assert.AreEqual(expectedResult, _finwireFilterService.IsTitleBlackFilterNotPassed(tag));
         }
 
+        [TestCase(true,  "99", "FWM004CDA4.xml")]
+        [TestCase(true,  "29", "FWM004CF9F.xml")]
         [TestCase(false, "01", "FWM00427B9.xml")]
         [TestCase(true,  "02", "FWF0042896.xml")]
         [TestCase(true,  "08", "FWM0042B9E.xml")]
@@ -127,7 +139,7 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestServices
         {
             string path = $@"{UnitTestConfig.TestDataPath}\FinwireFiles\{subdir}\{fileName}";
          
-            var contentParsed = UnitTestHelper.ParseNewsFile(fileName).HtmlText;
+            var contentParsed = UnitTestHelper.ParseNewsFile(path).HtmlText;
             bool bResProcessed = _finwireFilterService.IsContentFilterPassed(contentParsed);
             Assert.AreEqual(expectedResult, bResProcessed);
         }

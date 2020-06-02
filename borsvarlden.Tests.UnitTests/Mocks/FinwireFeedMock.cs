@@ -24,6 +24,8 @@ namespace borsvarlden.Tests.UnitTests.Mocks
         {
         }
 
+        [TestCase("29", "FWM004CF9F.xml")]
+        [TestCase("02", "FWM00427AC.xml")]
         [TestCase("08", "FWM0042BB5.xml")]
         public void TestSingleRequest(string subfolder, string fileName)
         {

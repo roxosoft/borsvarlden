@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Apple har köpt AI-startupen Inductiv - BN</title>
+	<guid>FWM004CDC2</guid>
+	<pubDate>Thu, 28 May 2020 08:24:22 GMT</pubDate>
+	<isoDate>2020-05-28T08:24:22+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.bloomberg.com/news/articles/2020-05-27/apple-buys-machine-learning-startup-to-improve-data-used-in-siri</link>
+	</links>
+	<newstext><![CDATA[Apple har förvärvat Inductiv, en startup som utvecklar teknik som använder artificiell intelligens för att identifiera fel i datasamlingar. Det rapporterar Bloomberg News. De finansiella detaljerna nämns inte.<br/><br/>Ingenjörsteamet på Inductiv uppges ha anslutit till Apple för några veckor sedan. <br/><br/>Inductivs teknik tänker Apple använda i röstassistenten Siri och andra projekt med koppling till maskinlärning och datavetenskap, uppgavs det.<br/><br/>Apple ville inte bekräfta affären men sade att man då och då brukar köpa mindre teknikbolag.]]></newstext>
+	<htmltext><![CDATA[Apple har förvärvat Inductiv, en startup som utvecklar teknik som använder artificiell intelligens för att identifiera fel i datasamlingar. Det rapporterar Bloomberg News. De finansiella detaljerna nämns inte.<br><br>Ingenjörsteamet på Inductiv uppges ha anslutit till Apple för några veckor sedan. <br><br>Inductivs teknik tänker Apple använda i röstassistenten Siri och andra projekt med koppling till maskinlärning och datavetenskap, uppgavs det.<br><br>Apple ville inte bekräfta affären men sade att man då och då brukar köpa mindre teknikbolag.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Apple">
+			<instrument isin="US0378331005" market="NASDAQ">AAPL</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>ma</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

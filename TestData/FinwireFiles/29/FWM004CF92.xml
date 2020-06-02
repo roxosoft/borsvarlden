@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Öresund köper aktier i Bilia för 6,3 miljoner kronor</title>
+	<guid>FWM004CF92</guid>
+	<pubDate>Fri, 29 May 2020 14:20:49 GMT</pubDate>
+	<isoDate>2020-05-29T14:20:49+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Investmentbolaget Öresund har den 28 maj köpt 83 277 A-aktier i Bilia där bolaget är storägare. Aktierna köptes till kursen 75,35 kronor per aktie, en affär på 6,27 miljoner kronor. Affären gjordes på Nasdaq Stockholm. Det framgår av Finansinspektionens insynsregister.]]></newstext>
+	<htmltext><![CDATA[Investmentbolaget Öresund har den 28 maj köpt 83 277 A-aktier i Bilia där bolaget är storägare. Aktierna köptes till kursen 75,35 kronor per aktie, en affär på 6,27 miljoner kronor. Affären gjordes på Nasdaq Stockholm. Det framgår av Finansinspektionens insynsregister.]]></htmltext>
+	<signature><![CDATA[Henrik Öhlin<br/>henrik.ohlin@finwire.se, 0703-21 06 99<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Bilia">
+			<instrument isin="SE0009921588" market="SSE">BILI A</instrument>
+		</company>
+		<company name="Öresund" url="www.oresund.se">
+			<instrument isin="SE0008321608" market="SSE">ORES</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>consumergoods</socialtag>
+		<socialtag>financials</socialtag>
+		<socialtag>industrials</socialtag>
+		<socialtag>insider</socialtag>
+		<socialtag>retail</socialtag>
+	</socialtags>
+</item>

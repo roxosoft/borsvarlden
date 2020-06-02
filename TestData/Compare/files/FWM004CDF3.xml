@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Google överväger investering i Vodafones indiska verksamhet - FT</title>
+	<guid>FWM004CDF3</guid>
+	<pubDate>Thu, 28 May 2020 10:42:32 GMT</pubDate>
+	<isoDate>2020-05-28T10:42:32+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Google kan komma att köpa in sig i Vodafones kämpande enhet i Indien, uppger källor till Financial Times.<br/><br/>En källa uppgav att Google överväger att köpa cirka fem procent i Vodafone Idea, som är ett samriskbolag mellan brittiska telekomjätten Vodafone och lokala Aditya Birla Group. <br/><br/>Uppgifterna kommer mot bakgrund av att enheten dras med finansiella problem. En annan källa sade att Googles utvärdering befinner sig i en tidig fas.<br/><br/>Indien med sin miljardbefolkning lockar telekomaktörer i hopp om att vinna över miljoner av abonnenter.<br/><br/>På sistone har det märkt när det gäller investeringarna i ett annat företag, Reliance Industries dotterbolag Jio Platforms. Här har Facebook redan miljardinvesterat, och även riskkapitalbolagen KKR och Silver Lake har radat upp pengar för en del av kakan. Baserat på senaste uppgifter är även Microsoft intresserade och det nämns en andel på 2,5 procent. <br/><br/>Om Google slår till på Vodafone Idea blir bolaget alltså en direkt konkurrent till Facebook, och potentiellt Microsoft, på den indiska marknaden.<br/><br/>Google, Vodafone och Birla har avböjt att kommentera.]]></newstext>
+	<htmltext><![CDATA[Google kan komma att köpa in sig i Vodafones kämpande enhet i Indien, uppger källor till Financial Times.<br><br>En källa uppgav att Google överväger att köpa cirka fem procent i Vodafone Idea, som är ett samriskbolag mellan brittiska telekomjätten Vodafone och lokala Aditya Birla Group. <br><br>Uppgifterna kommer mot bakgrund av att enheten dras med finansiella problem. En annan källa sade att Googles utvärdering befinner sig i en tidig fas.<br><br>Indien med sin miljardbefolkning lockar telekomaktörer i hopp om att vinna över miljoner av abonnenter.<br><br>På sistone har det märkt när det gäller investeringarna i ett annat företag, Reliance Industries dotterbolag Jio Platforms. Här har Facebook redan miljardinvesterat, och även riskkapitalbolagen KKR och Silver Lake har radat upp pengar för en del av kakan. Baserat på senaste uppgifter är även Microsoft intresserade och det nämns en andel på 2,5 procent. <br><br>Om Google slår till på Vodafone Idea blir bolaget alltså en direkt konkurrent till Facebook, och potentiellt Microsoft, på den indiska marknaden.<br><br>Google, Vodafone och Birla har avböjt att kommentera.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Alphabet">
+			<instrument isin="US02079K3059" market="NASDAQ">GOOGL</instrument>
+			<instrument isin="US02079K1079" market="NASDAQ">GOOG</instrument>
+		</company>
+		<company name="Vodafone">
+			<instrument isin="US92857W3088" market="NASDAQ">VOD</instrument>
+			<instrument isin="GB00BH4HKS39" market="LSE">VOD</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>tech</socialtag>
+		<socialtag>telecom</socialtag>
+	</socialtags>
+</item>

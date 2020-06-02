@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<type>ARTICLE</type>
+	<title>Consilium och Lundin Mining handlas idag exklusive rätt till utdelning</title>
+	<guid>FWM004CD1F</guid>
+	<pubDate>Thu, 28 May 2020 04:41:00 GMT</pubDate>
+	<isoDate>2020-05-28T04:41:00+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Två bolag på Stockholmsbörsen, Nasdaq Stockholms huvudlista, handlas idag den 28 maj exklusive rätt till utdelning. Det gäller marinelektronikbolaget Consilium och gruvbolaget Lundin Mining, enligt följande:<br/><br/>* Consilium 17,00 kronor<br/>* Lundin Mining 0,04 CAD (utdelningen är 0,16 CAD i årstakt)]]></newstext>
+	<htmltext><![CDATA[Två bolag på Stockholmsbörsen, Nasdaq Stockholms huvudlista, handlas idag den 28 maj exklusive rätt till utdelning. Det gäller marinelektronikbolaget Consilium och gruvbolaget Lundin Mining, enligt följande:<br><br>* Consilium 17,00 kronor<br>* Lundin Mining 0,04 CAD (utdelningen är 0,16 CAD i årstakt) ]]></htmltext>
+	<signature><![CDATA[Henrik Öhlin<br/>henrik.ohlin@finwire.se, 0703-21 06 99<br/>Nyhetsbyrån Finwire]]></signature>
+	<language>sv</language>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Consilium">
+			<instrument isin="SE0000236382" market="SSE">CONS B</instrument>
+		</company>
+		<company name="Lundin Mining">
+			<instrument isin="CA5503721063" market="SSE">LUMI</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>corporateactions</socialtag>
+		<socialtag>dividend</socialtag>
+	</socialtags>
+</item>

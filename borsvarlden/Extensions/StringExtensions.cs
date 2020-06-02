@@ -41,5 +41,15 @@ namespace borsvarlden.Extensions
                 return sb.ToString();
             }
         }
+
+        public static string Remove(this string value, string substring)
+        {
+            return value.Replace(substring, string.Empty);
+        }
+
+        public static string RemoveRegex(this string input, string regex)
+        {
+            return Regex.Replace(input, regex, string.Empty);
+        }
     }
 }
