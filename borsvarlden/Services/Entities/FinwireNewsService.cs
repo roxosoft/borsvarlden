@@ -30,6 +30,7 @@
         Task AddArticle(FinwireNew article);
         Task UpdateArticle(FinwireNew article);
         Task DeleteArticle(int id);
+        Task GetRelatedNews(int id);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -110,6 +111,13 @@
             List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
             var result = MapFinwireNewToViewModel(newsList);
             return result;
+        }
+
+        public async Task GetRelatedNews(int id)
+        {
+            //todo async
+            //var res =  _dbContext.Fin  //_dbContext.FinwireNews.Where(x => x.Id == id).FirstOrDefault();
+
         }
 
         public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPagging(int newsOnPageCount, int nextPage, string searchText)
@@ -226,5 +234,8 @@
 
             return result;
         }
+
+       // private void GetNew
+
     }
 }

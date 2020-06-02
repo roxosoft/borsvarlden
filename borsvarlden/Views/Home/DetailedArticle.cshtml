@@ -77,7 +77,7 @@
                             </div>
                         </div>
                     </div>
-                    @await Component.InvokeAsync("RelatedNews")
+                    @await Component.InvokeAsync("RelatedNews", new { News = Model} );
 
                     <div class="content-botom-hidden">
                         @await Component.InvokeAsync("SponsoredNews")
