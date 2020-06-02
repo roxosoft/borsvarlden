@@ -78,6 +78,9 @@ namespace borsvarlden
             app.UseHangfireDashboard();
             if (env.IsDevelopment())
                 RecurringJob.AddOrUpdate<FinwireJob>(x => x.Execute(), Cron.MinuteInterval(5));
+            else
+                RecurringJob.RemoveIfExists("FinwireJob.Execute");
+
             app.UseRouting();
 
             app.UseAuthentication();
