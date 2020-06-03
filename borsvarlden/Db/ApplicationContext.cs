@@ -12,6 +12,8 @@ namespace borsvarlden.Db
         public DbSet <FinwireAgency> FinwireAgencies { get; set; }
         public DbSet <FinwireFilter> FinwireFilters { get; set; }
         public DbSet <NewsMeta> NewsMetas { get; set; }
+        public virtual DbSet<FinwireNew2FinwireCompany> FinwireNew2FinwireCompany { get; set; }
+        public virtual DbSet<FinwireNew2FirnwireSocialTag> FinwireNew2FirnwireSocialTag { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {

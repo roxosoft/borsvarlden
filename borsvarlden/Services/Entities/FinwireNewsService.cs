@@ -30,7 +30,7 @@
         Task AddArticle(FinwireNew article);
         Task UpdateArticle(FinwireNew article);
         Task DeleteArticle(int id);
-        Task GetRelatedNews(int id);
+        Task<List<NewsViewModel>> GetRelatedNews(int id, int newsCount);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -113,11 +113,51 @@
             return result;
         }
 
-        public async Task GetRelatedNews(int id)
+        public async Task<List<NewsViewModel>> GetRelatedNews(int id, int newsCount)
         {
-            //todo async
-            //var res =  _dbContext.Fin  //_dbContext.FinwireNews.Where(x => x.Id == id).FirstOrDefault();
+            return await Task.Run(
+                () =>
+                {
+                    var companiesOfNews = _dbContext.FinwireNews
+                        .Where(x => x.Id == id)
+                        .Include(x => x.FinwireNew2FinwireCompanies)
+                        .FirstOrDefault()
+                        ?.FinwireNew2FinwireCompanies
+                        .Select(x => x.FinwareCompanyId);
+                    
+                    var newsIdWithCompanies = _dbContext.FinwireNew2FinwireCompany
+                        .Where(x => companiesOfNews.Contains(x.FinwareCompanyId) && x.FinwireNewId != id)
+                        .Select(x => x.FinwireNewId);
 
+                    var relatedNewsWithCompanies = _dbContext.FinwireNews
+                        .Where(x => newsIdWithCompanies.Contains(x.Id))
+                        .OrderByDescending(x => x.Date)
+                        .Take(newsCount);
+
+                    var socialTagsOfNews = _dbContext.FinwireNews
+                        .Where(x => x.Id == id)
+                        .Include(x => x.FinwireNew2FirnwireSocialTags)
+                        .FirstOrDefault()
+                        ?.FinwireNew2FirnwireSocialTags
+                        .Select(x => x.FinwireSocialTagId);
+
+                    var newsIdWithSocialTags = _dbContext.FinwireNew2FirnwireSocialTag
+                        .Where(x => socialTagsOfNews.Contains(x.FinwireSocialTagId) && x.FinwireNewId != id)
+                        .Select(x => x.FinwireNewId);
+
+                    var relatedNewsWithSocialTags = _dbContext.FinwireNews
+                        .Where(x => newsIdWithSocialTags.Contains(x.Id))
+                        .OrderByDescending(x => x.Date)
+                        .Take(newsCount);
+
+                    var rs = relatedNewsWithCompanies
+                        .Union(relatedNewsWithSocialTags)
+                        .OrderByDescending(x=>x.Date)
+                        .Take(newsCount)
+                        .ToList();
+
+                    return MapFinwireNewToViewModel(rs); 
+                });
         }
 
         public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPagging(int newsOnPageCount, int nextPage, string searchText)

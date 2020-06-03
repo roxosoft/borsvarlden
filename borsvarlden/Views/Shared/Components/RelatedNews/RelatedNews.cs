@@ -24,9 +24,8 @@ namespace borsvarlden.Views.Shared.Components.RelatedNews
         {
             int newsCount = _configurationHelper.RelatedNewsCount;
             var callingViewModel = (NewsViewModel) this.ViewComponentContext.Arguments["News"];
-            await _finwireNewsService.GetRelatedNews(callingViewModel.Id);
 
-            List<NewsViewModel> model = await _finwireNewsService.GetNews(newsCount);
+            List<NewsViewModel> model = await _finwireNewsService.GetRelatedNews(callingViewModel.Id, newsCount);
 
             return View("RelatedNews", model);
         }
