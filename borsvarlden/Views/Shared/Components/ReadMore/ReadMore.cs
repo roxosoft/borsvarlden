@@ -24,7 +24,8 @@ namespace borsvarlden.Views.Shared.Components.ReadMore
         {
             int newsCount = _configurationHelper.ReadMoreCount;
 
-            List<NewsViewModel> model = await _finwireNewsService.GetNews(newsCount);
+            var callingViewModel = (NewsViewModel)this.ViewComponentContext.Arguments["News"];
+            List<NewsViewModel> model = await _finwireNewsService.GetMoreNews(callingViewModel.Id);
 
             return View("ReadMore", model);
         }

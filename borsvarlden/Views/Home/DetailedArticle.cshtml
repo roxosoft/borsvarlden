@@ -101,7 +101,7 @@
             </div>
         </div>
     </div>
-    @await Component.InvokeAsync("ReadMore")
+    @await Component.InvokeAsync("ReadMore", new { News = Model} )
 </div>
 
 @section Scripts{

@@ -31,6 +31,7 @@
         Task UpdateArticle(FinwireNew article);
         Task DeleteArticle(int id);
         Task<List<NewsViewModel>> GetRelatedNews(int id, int newsCount);
+        Task<List<NewsViewModel>> GetMoreNews(int id);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -39,6 +40,7 @@
         private IFinwireFilterService _finwireFilterService;
         private readonly string _webRootPath;
         private string _imagesRootPath => $@"{_webRootPath}\assets\images\finauto";
+        private static Random rndGen = new Random();
 
         public FinwireNewsService(ApplicationContext dbContext, IFinwireFilterService finwireNewsService, IWebHostEnvironment hostEnvironment)
         {
@@ -158,6 +160,34 @@
 
                     return MapFinwireNewToViewModel(rs); 
                 });
+        }
+
+
+        public async Task<List<NewsViewModel>> GetMoreNews(int id)
+        {
+            return await Task.Run(
+                () =>
+                {
+                    var paramOutputNews = 8;
+                    var paramDepthOfRetrieve = 20;
+                    var topNews = _dbContext.FinwireNews
+                        .OrderByDescending(x => x.Date)
+                        .Take(paramDepthOfRetrieve)
+                        .ToList();
+
+                    int n = topNews.Count;
+                    while (n > 1)
+                    {
+                        n--;
+                        int k = rndGen.Next(n + 1);
+                        var value = topNews[k];
+                        topNews[k] = topNews[n];
+                        topNews[n] = value;
+                    }
+
+                    return MapFinwireNewToViewModel(topNews.Take(paramOutputNews).ToList());
+                }
+            );
         }
 
         public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPagging(int newsOnPageCount, int nextPage, string searchText)
