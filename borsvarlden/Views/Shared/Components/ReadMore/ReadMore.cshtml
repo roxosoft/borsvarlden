@@ -9,7 +9,7 @@
         @foreach (var article in Model)
         {
             <div class="read-more-wrapper">
-                <a href="~/articlar/@Html.Raw(article.TittleSlug)" class="read-more-link">
+                <a href="~/artiklar/@Html.Raw(article.TittleSlug)" class="read-more-link">
                     <div class="read-more-image">
                         @if (string.IsNullOrEmpty(article.ImageUrl))
                         {

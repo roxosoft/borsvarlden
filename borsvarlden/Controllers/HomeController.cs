@@ -27,7 +27,7 @@ namespace borsvarlden.Controllers
             return View();
         }
 
-        [Route("articlar")]
+        [Route("artiklar")]
         public async Task<IActionResult> NewsList(int page = 1, string searchText = null)
         {
             int newsOnPageCount = _configurationHelper.ListedNewsCount;
@@ -49,7 +49,7 @@ namespace borsvarlden.Controllers
             return View();
         }
 
-        [Route("articlar/{titleSlug}")]
+        [Route("artiklar/{titleSlug}")]
         public async Task<IActionResult> DetailedArticle([FromRoute]string titleSlug)
         {
             NewsViewModel model = await _finwireNewsService.GetDetailedArticle(titleSlug);
