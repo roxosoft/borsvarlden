@@ -18,7 +18,7 @@
 {
     public interface IFinwireNewsService
     {
-        void AddSingleNews(FinWireData finwireData);
+        Task AddSingleNews(FinWireData finwireData);
         Task<IndexNewsViewModel> GetMainNews(int newsCount);
         Task<List<NewsViewModel>> GetNews(int newsCount);
         Task<NewsViewModel> GetDetailedArticle(int articleId);
@@ -50,53 +50,59 @@
             ImageHelper.Init(_imagesRootPath);
         }
 
-        public void AddSingleNews(FinWireData finwireData)
+        public async Task AddSingleNews(FinWireData finwireData)
         {
-            if (_dbContext.FinwireNews.Any(x => finwireData.Guid == x.Guid))
-                return;
-
-            if (!_finwireFilterService.IsFilterPassed(finwireData))
-                return;
-
-            var imgData = ImageHelper.GetImageData(finwireData.SocialTags, finwireData.Companies);
-            
-            var newsEntity = new FinwireNew()
-            {
-                Guid = finwireData.Guid,
-                Title = finwireData.Title,
-                Subtitle = finwireData.SubTitle,
-                Date = finwireData.Date,
-                NewsText = finwireData.HtmlText,
-                FinwireAgency = _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)
-                            ?? _dbContext.Add(new FinwireAgency {Agency = finwireData.Agency}).Entity,
-                ImageRelativeUrl = ImageHelper.AbsoluteUrlToRelativeUrl(imgData.ImageAbsoluteUrl),
-                ImageLabel = imgData.Label,
-                Slug = finwireData.TittleSlug
-            };
-
-            var newsEntityAdded = _dbContext.Add(newsEntity).Entity;
-
-            //todo make generic method in helper etc, find better solution using EF Core
-            finwireData.SocialTags?.ForEach(x =>
-                _dbContext.Add(new FinwireNew2FirnwireSocialTag
+            var finwireXmlNewsAdded = await _dbContext.FinwireXmlNews.AddAsync(new FinwireXmlNews
                 {
-                    FinwireNew = newsEntityAdded,
-                FinwireSocialTag = _dbContext.FinwireSocialTags.FirstOrDefault(y => y.Tag == x)
-                                   ?? _dbContext.Add(new FinwireSocialTag {Tag = x}).Entity
-                })
-            );
-
-            finwireData.Companies?.ForEach(x =>
-            {
-                _dbContext.Add(new FinwireNew2FinwireCompany
-                {
-                    FinwireNew = newsEntityAdded,
-                    FinwireCompany = _dbContext.FinwireCompanies.FirstOrDefault(y => y.Company == x)
-                                 ?? _dbContext.Add(new FinwireCompany {Company = x}).Entity
+                    DateTime = DateTime.Now,
+                    FileContent = finwireData.RoughXml,
+                    FileName = finwireData.Guid,
                 });
-            });
 
-            _dbContext.SaveChanges();
+                if (!_dbContext.FinwireNews.Any(x => finwireData.Guid == x.Guid) &&
+                    _finwireFilterService.IsFilterPassed(finwireData))
+                {
+                    var imgData = ImageHelper.GetImageData(finwireData.SocialTags, finwireData.Companies);
+
+                    var newsEntity = new FinwireNew()
+                    {
+                        Guid = finwireData.Guid,
+                        Title = finwireData.Title,
+                        Subtitle = finwireData.SubTitle,
+                        Date = finwireData.Date,
+                        NewsText = finwireData.HtmlText,
+                        FinwireAgency = _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)
+                                        ?? (await _dbContext.AddAsync(new FinwireAgency {Agency = finwireData.Agency})).Entity,
+                        ImageRelativeUrl = ImageHelper.AbsoluteUrlToRelativeUrl(imgData.ImageAbsoluteUrl),
+                        ImageLabel = imgData.Label,
+                        Slug = finwireData.TittleSlug,
+                        FinwireXmlNews = finwireXmlNewsAdded.Entity
+                    };
+
+                    var newsEntityAdded = (await _dbContext.AddAsync(newsEntity)).Entity;
+                  
+                    //todo make generic method in helper etc, find better solution using EF Core
+                    finwireData.SocialTags?.ForEach(async x =>
+                        await _dbContext.AddAsync(new FinwireNew2FirnwireSocialTag
+                        {
+                            FinwireNew = newsEntityAdded,
+                            FinwireSocialTag = _dbContext.FinwireSocialTags.FirstOrDefault(y => y.Tag == x)
+                                               ?? (await _dbContext.AddAsync(new FinwireSocialTag {Tag = x})).Entity
+                        })
+                    );
+
+                    finwireData.Companies?.ForEach(async x =>
+                    {
+                        await _dbContext.AddAsync(new FinwireNew2FinwireCompany
+                        {
+                            FinwireNew = newsEntityAdded,
+                            FinwireCompany = _dbContext.FinwireCompanies.FirstOrDefault(y => y.Company == x)
+                                             ?? (await _dbContext.AddAsync(new FinwireCompany {Company = x})).Entity
+                        });
+                    });
+                }
+
+                await _dbContext.SaveChangesAsync();
         }
 
         public async Task<IndexNewsViewModel> GetMainNews(int newsCount)

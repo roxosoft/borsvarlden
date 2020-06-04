@@ -34,7 +34,7 @@ namespace borsvarlden.Controllers.Api
         {
             _logger.LogWarning($"API updeatenews uid={uid}");
             var data = await _finwireParserService.ParseXmlContent(xml);
-            _finwireNewsService.AddSingleNews(data);
+            await _finwireNewsService.AddSingleNews(data);
             return "OK";
         }
 
@@ -58,7 +58,7 @@ namespace borsvarlden.Controllers.Api
                 foreach (var file in Directory.GetFiles(path))
                 {
                     var finwireData = _finwireParserService.ParseFile(file);
-                    _finwireNewsService.AddSingleNews(finwireData.Result);
+                    await _finwireNewsService.AddSingleNews(finwireData.Result);
                 }
             }
             return "OK";

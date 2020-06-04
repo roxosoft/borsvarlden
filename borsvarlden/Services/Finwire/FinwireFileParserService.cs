@@ -48,7 +48,8 @@ namespace borsvarlden.Services.Finwire
                         System.Globalization.DateTimeStyles.AdjustToUniversal).AddSeconds(-1),
                     HtmlText = item.SelectSingleNode("htmltext")?.InnerText?.Trim().ParseHtmlText(),
                     Agency = item.SelectSingleNode("agency")?.InnerText,
-                    TittleSlug = item.SelectSingleNode("title")?.InnerText.ToSlug()
+                    TittleSlug = item.SelectSingleNode("title")?.InnerText.ToSlug(),
+                    RoughXml = xmlContent
                 }.PostProcessTitle();
 
                 (finWireData.SubTitle, finWireData.HtmlText) = finWireData.HtmlText.SplitSubtitleAndNews();
@@ -91,5 +92,6 @@ namespace borsvarlden.Services.Finwire
         public List<string> SocialTags { get; set; }
         public List<string> Companies { get; set; }
         public bool IsValid => !String.IsNullOrEmpty(Guid);
+        public string RoughXml { get; set; }
     }
 }

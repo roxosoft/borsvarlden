@@ -25,6 +25,7 @@ namespace DBConverter.borsvarlden_MSSql
         public virtual DbSet<FinwireNew2FirnwireSocialTag> FinwireNew2FirnwireSocialTag { get; set; }
         public virtual DbSet<FinwireNews> FinwireNews { get; set; }
         public virtual DbSet<FinwireSocialTags> FinwireSocialTags { get; set; }
+        public virtual DbSet<FinwireXmlNews> FinwireXmlNews { get; set; }
         public virtual DbSet<Hash> Hash { get; set; }
         public virtual DbSet<Job> Job { get; set; }
         public virtual DbSet<JobParameter> JobParameter { get; set; }
@@ -134,6 +135,8 @@ namespace DBConverter.borsvarlden_MSSql
             {
                 entity.HasIndex(e => e.FinwireAgencyId);
 
+                entity.HasIndex(e => e.FinwireXmlNewsId);
+
                 entity.Property(e => e.Date).HasDefaultValueSql("('0001-01-01T00:00:00.0000000')");
 
                 entity.Property(e => e.DateModified).HasDefaultValueSql("('0001-01-01T00:00:00.0000000')");
@@ -158,6 +161,10 @@ namespace DBConverter.borsvarlden_MSSql
                 entity.HasOne(d => d.FinwireAgency)
                     .WithMany(p => p.FinwireNews)
                     .HasForeignKey(d => d.FinwireAgencyId);
+
+                entity.HasOne(d => d.FinwireXmlNews)
+                    .WithMany(p => p.FinwireNews)
+                    .HasForeignKey(d => d.FinwireXmlNewsId);
             });
 
             modelBuilder.Entity<Hash>(entity =>

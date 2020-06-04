@@ -29,8 +29,10 @@ namespace DBConverter.borsvarlden_MSSql
         public int Order { get; set; }
         public string Slug { get; set; }
         public bool? IsConvertedFromMySql { get; set; }
+        public int? FinwireXmlNewsId { get; set; }
 
         public virtual FinwireAgencies FinwireAgency { get; set; }
+        public virtual FinwireXmlNews FinwireXmlNews { get; set; }
         public virtual ICollection<FinwireNew2FinwireCompany> FinwireNew2FinwireCompany { get; set; }
         public virtual ICollection<FinwireNew2FirnwireSocialTag> FinwireNew2FirnwireSocialTag { get; set; }
         public virtual ICollection<NewsMetas> NewsMetas { get; set; }

@@ -52,7 +52,7 @@ namespace DBConverter.borsvarlden
                     .ToList();
 
                 var r = db.WpPosts
-                    .Where(x => !nullGmtIds.Contains(x.Id) && x.PostType == "article" && x.PostStatus == "publish" /*&& x.Id == 64340*/)
+                    .Where(x => !nullGmtIds.Contains(x.Id) && x.PostType == "article" && x.PostStatus == "publish")
                     .Join(db.WpPostmeta.Where(a => a.MetaKey == "_thumbnail_id"),
                         post => post.Id, meta => meta.PostId,
                         (post, meta) => new {Post = post, Meta = meta})
@@ -86,7 +86,15 @@ namespace DBConverter.borsvarlden
                            }
                        });
 
-                       var newsEntityAdded = new FinwireNews()
+                      /* var finwireXmlNewsAdded =  dbMS.FinwireXmlNews.Add(new FinwireXmlNews
+                       {
+                           DateTime = DateTime.Now,
+                           //FileContent =  .RoughXml,
+                           FileName = p.Post.Post.Guid
+                       });*/
+
+
+                        var newsEntityAdded = new FinwireNews()
                        {
                            IsConvertedFromMySql = true,
                            NewsText = p.Post.Post.PostContent,

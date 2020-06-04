@@ -25,6 +25,7 @@ namespace borsvarlden.Models
         public string Slug { get; set; }
         
         public FinwireAgency FinwireAgency { get; set; }
+        public FinwireXmlNews FinwireXmlNews { get; set; }
 
         public List<FinwireNew2FirnwireSocialTag> FinwireNew2FirnwireSocialTags { get; set; }
         public List<FinwireNew2FinwireCompany> FinwireNew2FinwireCompanies { get; set; }
