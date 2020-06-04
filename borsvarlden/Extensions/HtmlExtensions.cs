@@ -20,8 +20,9 @@ namespace borsvarlden.Extensions
             var res = input.Replace("<![CDATA[", string.Empty)
                 .Remove("]]>")
                 .RemoveRegex("<span[=_a-zA-Z\" ]*>")
-                .Remove("</span>");
-            
+                .Remove("</span>")
+                .Replace("<table>", "<table class=\"article-table\">");
+
             return res;
         }
 
@@ -29,7 +30,10 @@ namespace borsvarlden.Extensions
         {
             var res = input.Split("<br><br>");
 
-            var subtitle = res[0];
+            var subtitle = res[0]
+                .Remove("<p>")
+                .Remove("</p>");
+
             var newsText = input.Remove($"{res[0]}<br><br>");
             
             return (subtitle, newsText);

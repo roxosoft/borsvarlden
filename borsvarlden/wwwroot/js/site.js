@@ -35,5 +35,6 @@
                 }, 100);
             }
         })
+    $('table.article-table').stacktable();
     });// End of document ready
 })(jQuery);

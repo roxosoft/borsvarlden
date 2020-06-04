@@ -388,6 +388,12 @@ h3 {
     .container {
         max-width: 100%;
     }
+    table.article-table.large-only {
+        display: none;
+    }
+    table.article-table.small-only {
+        display: table;
+    }
 }
 
 @media (max-width: 1020px) {
@@ -658,3 +664,4 @@ table.article-table p {
     font-size: 10pt !important;
     margin-bottom: 0 !important;
 }
+
