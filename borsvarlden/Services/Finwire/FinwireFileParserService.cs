@@ -45,7 +45,7 @@ namespace borsvarlden.Services.Finwire
                     Guid = item.SelectSingleNode("guid")?.InnerText,
                     Date = DateTime.Parse(item.SelectSingleNode("isoDate")?.InnerText,
                         System.Globalization.CultureInfo.CurrentCulture,
-                        System.Globalization.DateTimeStyles.AdjustToUniversal),
+                        System.Globalization.DateTimeStyles.AdjustToUniversal).AddSeconds(-1),
                     HtmlText = item.SelectSingleNode("htmltext")?.InnerText?.Trim().ParseHtmlText(),
                     Agency = item.SelectSingleNode("agency")?.InnerText,
                     TittleSlug = item.SelectSingleNode("title")?.InnerText.ToSlug()
