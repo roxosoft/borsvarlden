@@ -5,8 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
 using borsvarlden.Services.Finwire;
 using borsvarlden.Services.Entities;
+using Microsoft.AspNetCore.Hosting;
 
 namespace borsvarlden.Controllers.Api
 {
@@ -15,12 +17,15 @@ namespace borsvarlden.Controllers.Api
         private IFinwireNewsService _finwireNewsService;
         private IFinwireParserService _finwireParserService;
         private ILogger _logger;
+        private IWebHostEnvironment _webHostEnvironment;
 
-        public FinwireController(IFinwireNewsService finwireNewsService, IFinwireParserService finwireParserService,  ILogger<FinwireController> logger)
+        public FinwireController(IFinwireNewsService finwireNewsService, IFinwireParserService finwireParserService,  
+                                ILogger<FinwireController> logger, IWebHostEnvironment webHostEnvironment)
         {
             _finwireNewsService = finwireNewsService;
             _finwireParserService = finwireParserService;
             _logger = logger;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         [HttpPost]
@@ -37,6 +42,9 @@ namespace borsvarlden.Controllers.Api
         [Route("api/seednews")]
         public async Task<string> SeedNews()
         {
+            if (!_webHostEnvironment.IsDevelopment())
+                return "";
+
             var pathBase = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\TestData\FinwireFiles");
 
             for (int i = 1; i <= 8; i++)
