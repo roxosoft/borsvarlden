@@ -13,19 +13,11 @@
         }
     </div>
     <div class="article-content-wrapper">
-        <span class="label article-label d-block d-sm-none">
+        <span class="label article-label">
             @Model.Label
         </span>
         <h3>
             @Model.Title
         </h3>
-        <p class="hidden-small d-none d-sm-block">
-            <span class="label article-label">
-                @Model.Label
-            </span>
-            <span class="article-content">
-                @Html.Raw(Model.Subtitle)
-            </span>
-        </p>
     </div>
 </a>
