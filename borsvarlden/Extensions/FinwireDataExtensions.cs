@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using borsvarlden.Helpers;
+using borsvarlden.Models;
 using borsvarlden.Services.Finwire;
 
 namespace borsvarlden.Extensions
@@ -66,5 +68,24 @@ namespace borsvarlden.Extensions
 
             return finWireData;
         }
+
+        public static FinwireNew ToFinwireNews(this FinWireData finwireData)
+        {
+            var imgData = ImageHelper.GetImageData(finwireData.SocialTags, finwireData.Companies);
+
+            var r = new FinwireNew
+            {
+                Guid = finwireData.Guid,
+                Title = finwireData.Title,
+                Subtitle = finwireData.SubTitle,
+                Date = finwireData.Date,
+                NewsText = finwireData.HtmlText,
+                ImageRelativeUrl = ImageHelper.AbsoluteUrlToRelativeUrl(imgData.ImageAbsoluteUrl),
+                ImageLabel = imgData.Label,
+                Slug = finwireData.TittleSlug,
+            };
+            return r;
+        }
+
     }
 }

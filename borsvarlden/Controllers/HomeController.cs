@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using borsvarlden.Models;
 using borsvarlden.ViewModels;
+using borsvarlden.Extensions;
+using borsvarlden.Services.Finwire;
 using borsvarlden.Services.Entities;
 using borsvarlden.Helpers;
 
@@ -14,12 +16,19 @@ namespace borsvarlden.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IFinwireNewsService _finwireNewsService;
         private readonly IConfigurationHelper _configurationHelper;
+        private readonly IFinwireParserService _finwireParserService;
+        private readonly IFinwireXmlNewsService _finwireXmlService;
+        private readonly IFinwireCompaniesService _finwireCompaniesService;
 
-        public HomeController(ILogger<HomeController> logger, IFinwireNewsService finwireNewsService, IConfigurationHelper configurationHelper)
+        public HomeController(ILogger<HomeController> logger, IFinwireNewsService finwireNewsService, IFinwireParserService finwireParserService,
+                              IFinwireXmlNewsService finwireXmlService,  IFinwireCompaniesService finwireCompaniesService, IConfigurationHelper configurationHelper)
         {
             _logger = logger;
             _finwireNewsService = finwireNewsService;
             _configurationHelper = configurationHelper;
+            _finwireParserService = finwireParserService;
+            _finwireXmlService = finwireXmlService;
+            _finwireCompaniesService = finwireCompaniesService;
         }
 
         public async Task<IActionResult> Index()
@@ -43,17 +52,31 @@ namespace borsvarlden.Controllers
             return View(model);
         }
 
-        [Route("nyhetsbrev")]
-        public async Task<IActionResult> SubscribeNews()
-        {
-            return View();
-        }
-
         [Route("artiklar/{titleSlug}")]
         public async Task<IActionResult> DetailedArticle([FromRoute]string titleSlug)
         {
             NewsViewModel model = await _finwireNewsService.GetDetailedArticle(titleSlug);
             return View(model);
+        }
+
+        [Route("finwire/{guid}")]
+        public async Task<IActionResult> FinwireArticleFromXmlByGuid(string guid)
+        {
+            var content = await _finwireXmlService.GetFileContentAsync(guid);
+            var finwireData = await _finwireParserService.ParseXmlContent(content);
+
+            var finwireNews = finwireData.ToFinwireNews();
+            finwireNews = _finwireCompaniesService.JoinCompanies(finwireNews, finwireData.Companies);
+            var model = finwireNews.ToNewsViewModelFromXml(finwireData.Companies, finwireData.SocialTags);
+           
+            // NewsViewModel model = await _finwireNewsService.GetDetailedArticle(guid);
+            return View("DetailedArticle",model);
+        }
+
+        [Route("nyhetsbrev")]
+        public async Task<IActionResult> SubscribeNews()
+        {
+            return View();
         }
 
         [Route("traders-club")]

@@ -38,14 +38,14 @@ namespace borsvarlden
                     options.LoginPath = new PathString("/Account/Login");
                 });
 
-          
-          
             services.AddMvc();
             services.AddScoped<IFinwireParserService, FinwireFileParserService>();
             services.AddScoped<IFinwireNewsService, FinwireNewsService>();
             services.AddScoped<IFinwireFilterService,FinwireFilterService>();
             services.AddScoped<IConfigurationHelper, ConfigurationHelper>();
             services.AddScoped<IApplicationUserService, ApplicationUserService>();
+            services.AddScoped<IFinwireXmlNewsService, FinwireXmlNewsService>();
+            services.AddScoped<IFinwireCompaniesService, FinwireCompaniesService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

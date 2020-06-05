@@ -22,5 +22,13 @@ namespace borsvarlden.ViewModels
         public string TittleSlug { get; set; }
 
         public string Subtitle { get; set;}
+
+        public string Guid { get; set; }
+
+        public bool IsFromXml { get; set; }
+
+        public List <string> Companies { get; set; }
+
+        public List <string> SocialTags { get; set;}
     }
 }

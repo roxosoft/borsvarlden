@@ -7,6 +7,7 @@
  using borsvarlden.Models;
  using borsvarlden.Services.Finwire;
  using borsvarlden.ViewModels;
+ using borsvarlden.Extensions;
  using DevExtreme.AspNet.Data;
  using DevExtreme.AspNet.Data.ResponseModel;
  using DevExtreme.AspNet.Mvc;
@@ -30,7 +31,7 @@
         Task AddArticle(FinwireNew article);
         Task UpdateArticle(FinwireNew article);
         Task DeleteArticle(int id);
-        Task<List<NewsViewModel>> GetRelatedNews(int id, int newsCount);
+        Task<List<NewsViewModel>> GetRelatedNews(NewsViewModel newsView, int newsCount);
         Task<List<NewsViewModel>> GetMoreNews(int id);
     }
 
@@ -62,22 +63,14 @@
                 if (!_dbContext.FinwireNews.Any(x => finwireData.Guid == x.Guid) &&
                     _finwireFilterService.IsFilterPassed(finwireData))
                 {
-                    var imgData = ImageHelper.GetImageData(finwireData.SocialTags, finwireData.Companies);
+                    
+                    var newsEntity = finwireData.ToFinwireNews();
 
-                    var newsEntity = new FinwireNew()
-                    {
-                        Guid = finwireData.Guid,
-                        Title = finwireData.Title,
-                        Subtitle = finwireData.SubTitle,
-                        Date = finwireData.Date,
-                        NewsText = finwireData.HtmlText,
-                        FinwireAgency = _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)
-                                        ?? (await _dbContext.AddAsync(new FinwireAgency {Agency = finwireData.Agency})).Entity,
-                        ImageRelativeUrl = ImageHelper.AbsoluteUrlToRelativeUrl(imgData.ImageAbsoluteUrl),
-                        ImageLabel = imgData.Label,
-                        Slug = finwireData.TittleSlug,
-                        FinwireXmlNews = finwireXmlNewsAdded.Entity
-                    };
+                    newsEntity.FinwireAgency =
+                        _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)
+                        ?? (await _dbContext.AddAsync(new FinwireAgency {Agency = finwireData.Agency})).Entity;
+
+                    newsEntity.FinwireXmlNews = finwireXmlNewsAdded.Entity;
 
                     var newsEntityAdded = (await _dbContext.AddAsync(newsEntity)).Entity;
                   
@@ -121,50 +114,90 @@
             return result;
         }
 
-        public async Task<List<NewsViewModel>> GetRelatedNews(int id, int newsCount)
+        public async Task<List<NewsViewModel>> GetRelatedNews(NewsViewModel newsViewModel, int newsCount)
         {
             return await Task.Run(
-                () =>
+                async () =>
                 {
-                    var companiesOfNews = _dbContext.FinwireNews
-                        .Where(x => x.Id == id)
-                        .Include(x => x.FinwireNew2FinwireCompanies)
-                        .FirstOrDefault()
-                        ?.FinwireNew2FinwireCompanies
-                        .Select(x => x.FinwareCompanyId);
-                    
-                    var newsIdWithCompanies = _dbContext.FinwireNew2FinwireCompany
-                        .Where(x => companiesOfNews.Contains(x.FinwareCompanyId) && x.FinwireNewId != id)
-                        .Select(x => x.FinwireNewId);
 
-                    var relatedNewsWithCompanies = _dbContext.FinwireNews
-                        .Where(x => newsIdWithCompanies.Contains(x.Id))
-                        .OrderByDescending(x => x.Date)
-                        .Take(newsCount);
+                    if (newsViewModel.IsFromXml)
+                    {
+                        var res = new List<FinwireNew>();
 
-                    var socialTagsOfNews = _dbContext.FinwireNews
-                        .Where(x => x.Id == id)
-                        .Include(x => x.FinwireNew2FirnwireSocialTags)
-                        .FirstOrDefault()
-                        ?.FinwireNew2FirnwireSocialTags
-                        .Select(x => x.FinwireSocialTagId);
+                        if (newsViewModel.Companies != null)
+                        {
+                            var newsCompaniesRelated = await _dbContext.FinwireNews
+                                .Include(x => x.FinwireNew2FinwireCompanies)
+                                .ThenInclude(x => x.FinwireCompany)
+                                .Where(x => x.Guid != newsViewModel.Guid &&
+                                            x.FinwireNew2FinwireCompanies.Any(y => newsViewModel.Companies.Contains(y.FinwireCompany.Company)))
+                                .OrderByDescending(x => x.Date)
+                                .Take(newsCount)
+                                .ToListAsync();
 
-                    var newsIdWithSocialTags = _dbContext.FinwireNew2FirnwireSocialTag
-                        .Where(x => socialTagsOfNews.Contains(x.FinwireSocialTagId) && x.FinwireNewId != id)
-                        .Select(x => x.FinwireNewId);
+                            res.AddRange(newsCompaniesRelated);
+                        }
 
-                    var relatedNewsWithSocialTags = _dbContext.FinwireNews
-                        .Where(x => newsIdWithSocialTags.Contains(x.Id))
-                        .OrderByDescending(x => x.Date)
-                        .Take(newsCount);
+                        if (newsViewModel.SocialTags != null)
+                        {
+                            var newsSocialTagRelated = await _dbContext.FinwireNews
+                                .Include(x => x.FinwireNew2FirnwireSocialTags)
+                                .ThenInclude(x => x.FinwireSocialTag)
+                                .Where(x => x.Guid != newsViewModel.Guid &&
+                                          x.FinwireNew2FirnwireSocialTags.Any(y => newsViewModel.SocialTags.Contains(y.FinwireSocialTag.Tag)))
+                                .OrderByDescending(x => x.Date)
+                                .Take(newsCount)
+                                .ToListAsync();
 
-                    var rs = relatedNewsWithCompanies
-                        .Union(relatedNewsWithSocialTags)
-                        .OrderByDescending(x=>x.Date)
-                        .Take(newsCount)
-                        .ToList();
+                            res.AddRange(newsSocialTagRelated);
+                        }
 
-                    return MapFinwireNewToViewModel(rs); 
+                        return MapFinwireNewToViewModel(res.Distinct().Take(newsCount).ToList());
+                    }
+                    else
+                    {
+                        var companiesOfNews = _dbContext.FinwireNews
+                            .Where(x => x.Id == newsViewModel.Id)
+                            .Include(x => x.FinwireNew2FinwireCompanies)
+                            .FirstOrDefault()
+                            ?.FinwireNew2FinwireCompanies
+                            .Select(x => x.FinwareCompanyId);
+
+                        var newsIdWithCompanies = _dbContext.FinwireNew2FinwireCompany
+                            .Where(x => companiesOfNews.Contains(x.FinwareCompanyId) &&
+                                        x.FinwireNewId != newsViewModel.Id)
+                            .Select(x => x.FinwireNewId);
+
+                        var relatedNewsWithCompanies = _dbContext.FinwireNews
+                            .Where(x => newsIdWithCompanies.Contains(x.Id))
+                            .OrderByDescending(x => x.Date)
+                            .Take(newsCount);
+
+                        var socialTagsOfNews = _dbContext.FinwireNews
+                            .Where(x => x.Id == newsViewModel.Id)
+                            .Include(x => x.FinwireNew2FirnwireSocialTags)
+                            .FirstOrDefault()
+                            ?.FinwireNew2FirnwireSocialTags
+                            .Select(x => x.FinwireSocialTagId);
+
+                        var newsIdWithSocialTags = _dbContext.FinwireNew2FirnwireSocialTag
+                            .Where(x => socialTagsOfNews.Contains(x.FinwireSocialTagId) &&
+                                        x.FinwireNewId != newsViewModel.Id)
+                            .Select(x => x.FinwireNewId);
+
+                        var relatedNewsWithSocialTags = _dbContext.FinwireNews
+                            .Where(x => newsIdWithSocialTags.Contains(x.Id))
+                            .OrderByDescending(x => x.Date)
+                            .Take(newsCount);
+
+                        var rs = relatedNewsWithCompanies
+                            .Union(relatedNewsWithSocialTags)
+                            .OrderByDescending(x => x.Date)
+                            .Take(newsCount)
+                            .ToList();
+
+                        return MapFinwireNewToViewModel(rs);
+                    }
                 });
         }
 
@@ -284,37 +317,14 @@
         private List<NewsViewModel> MapFinwireNewToViewModel(List<FinwireNew> news)
         {
             var result = new List<NewsViewModel>();
-           
 
             foreach (var newsItem in news)
             {
-                var subtitle = newsItem.Subtitle; 
-                var subtitleMaxLength = 140;
-
-                if (subtitle.Length >= subtitleMaxLength)
-                {
-                    var index = subtitle.LastIndexOf(' ', subtitleMaxLength - 1);
-                    subtitle = subtitle.Substring(0, index) + "...";
-                }
-
-                var articleModel = new NewsViewModel()
-                {
-                    Id = newsItem.Id,
-                    Title = newsItem.Title,
-                    Subtitle = subtitle,
-                    Date = newsItem.Date,
-                    NewsText = newsItem.NewsText,
-                    ImageUrl = newsItem.ImageRelativeUrl,
-                    Label = newsItem.ImageLabel,
-                    TittleSlug = newsItem.Slug
-                };
+                var articleModel = newsItem.ToNewsViewModel();
                 result.Add(articleModel);
             }
 
             return result;
         }
-
-       // private void GetNew
-
     }
 }
