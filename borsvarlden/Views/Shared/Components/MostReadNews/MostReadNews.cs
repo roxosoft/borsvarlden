@@ -22,8 +22,12 @@ namespace borsvarlden.Views.Shared.Components.SponsoredNews
         public async Task<IViewComponentResult> InvokeAsync()
         {
             int newsCount = _configurationHelper.MostReadNewsCount;
+            int id = -1;
 
-            List<NewsViewModel> model = await _finwireNewsService.GetNews(newsCount);
+            if (ViewComponentContext.Arguments.TryGetValue("News", out var news))
+                id = ((NewsViewModel) news).Id;
+            
+            var model = await _finwireNewsService.GetMostReadNews(newsCount, id);
 
             return View("MostReadNews", model);
         }

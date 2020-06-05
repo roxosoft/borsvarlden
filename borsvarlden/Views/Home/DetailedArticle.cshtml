@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-4 content-right">
                     @await Component.InvokeAsync("SponsoredNews")
-                    @await Component.InvokeAsync("MostReadNews")
+                    @await Component.InvokeAsync("MostReadNews", new { News = Model} )
                     @await Component.InvokeAsync("SubscribeForm")
                     @await Component.InvokeAsync("LatestNews")
                 </div>

@@ -21,7 +21,7 @@ namespace borsvarlden.Models
         public bool FinautoPassed { get; set;}
         public bool FinautoPublished { get; set; }
         public bool IsConvertedFromMySQL { get; set; }
-
+        public int ReadCount { get; set; }
         public string Slug { get; set; }
         
         public FinwireAgency FinwireAgency { get; set; }

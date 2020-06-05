@@ -33,6 +33,8 @@
         Task DeleteArticle(int id);
         Task<List<NewsViewModel>> GetRelatedNews(NewsViewModel newsView, int newsCount);
         Task<List<NewsViewModel>> GetMoreNews(int id);
+        Task UpdateReadCount(string slug);
+        Task<List<NewsViewModel>> GetMostReadNews(int count, int id);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -314,6 +316,47 @@
             }
         }
 
+        public async Task UpdateReadCount(string slug)
+        {
+            var rec = await _dbContext.FinwireNews
+                .FirstOrDefaultAsync(x => x.Slug == slug);
+
+            if (rec != null)
+            {
+                rec.ReadCount++;
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+
+        public async Task <List<NewsViewModel>> GetMostReadNews(int countNeed, int id)
+        {
+            var parDeptDays = 1;
+            var lstFinwirewNews = new List<FinwireNew>();
+
+            lstFinwirewNews = await _dbContext.FinwireNews
+                .Where(x => x.Date > DateTime.Now.AddDays(-parDeptDays) && x.Id != id)
+                .OrderByDescending(x => x.ReadCount)
+                .ThenByDescending(x => x.Date)
+                .Take(countNeed)
+                .ToListAsync();
+
+            if (lstFinwirewNews.Count < countNeed)
+            {
+                var r = await _dbContext.FinwireNews
+                    .Where(x => x.Id != id)
+                    .OrderByDescending(x => x.Date)
+                    .Take(countNeed)
+                    .ToListAsync();
+
+               lstFinwirewNews.AddRange(r);
+               lstFinwirewNews = lstFinwirewNews.Distinct()
+                   .Take(countNeed)
+                   .ToList();
+            }
+
+            return MapFinwireNewToViewModel(lstFinwirewNews);
+        }
+
         private List<NewsViewModel> MapFinwireNewToViewModel(List<FinwireNew> news)
         {
             var result = new List<NewsViewModel>();
@@ -326,5 +369,6 @@
 
             return result;
         }
+
     }
 }

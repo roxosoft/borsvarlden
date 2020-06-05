@@ -55,6 +55,14 @@ namespace borsvarlden.Controllers
         [Route("artiklar/{titleSlug}")]
         public async Task<IActionResult> DetailedArticle([FromRoute]string titleSlug)
         {
+            var cookie = this.GetCookie(titleSlug);
+
+            if (cookie == null)
+            {
+                this.SetCookie(titleSlug);
+                await _finwireNewsService.UpdateReadCount(titleSlug);
+            }
+
             NewsViewModel model = await _finwireNewsService.GetDetailedArticle(titleSlug);
             return View(model);
         }
@@ -68,8 +76,7 @@ namespace borsvarlden.Controllers
             var finwireNews = finwireData.ToFinwireNews();
             finwireNews = _finwireCompaniesService.JoinCompanies(finwireNews, finwireData.Companies);
             var model = finwireNews.ToNewsViewModelFromXml(finwireData.Companies, finwireData.SocialTags);
-           
-            // NewsViewModel model = await _finwireNewsService.GetDetailedArticle(guid);
+            
             return View("DetailedArticle",model);
         }
 
