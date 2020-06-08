@@ -128,47 +128,9 @@
             return await Task.Run(
                 async () =>
                 {
-
-                  /*  if (newsViewModel.IsFromXml)
+                    var listNewsOutput = new List<FinwireNew>();
+                    if (newsViewModel.IsFinwireNews)
                     {
-                        var res = new List<FinwireNew>();
-
-                        if (newsViewModel.Companies != null)
-                        {
-                            var newsCompaniesRelated = await _dbContext.FinwireNews
-                                .Include(x => x.FinwireNew2FinwireCompanies)
-                                .ThenInclude(x => x.FinwireCompany)
-                                .Where(x => x.Guid != newsViewModel.Guid &&
-                                            x.FinwireNew2FinwireCompanies.Any(y => newsViewModel.Companies.Contains(y.FinwireCompany.Company)))
-                                .OrderByDescending(x => x.Date)
-                                .Take(newsCount)
-                                .ToListAsync();
-
-                            res.AddRange(newsCompaniesRelated);
-                        }
-
-                        if (newsViewModel.SocialTags != null)
-                        {
-                            var newsSocialTagRelated = await _dbContext.FinwireNews
-                                .Include(x => x.FinwireNew2FirnwireSocialTags)
-                                .ThenInclude(x => x.FinwireSocialTag)
-                                .Where(x => x.Guid != newsViewModel.Guid &&
-                                          x.FinwireNew2FirnwireSocialTags.Any(y => newsViewModel.SocialTags.Contains(y.FinwireSocialTag.Tag)))
-                                .OrderByDescending(x => x.Date)
-                                .Take(newsCount)
-                                .ToListAsync();
-
-                            res.AddRange(newsSocialTagRelated);
-                        }
-
-                        return MapFinwireNewToViewModel(res.Distinct().Take(newsCount).ToList());
-                    }
-                    else*/
-                  {
-                      var listNewsOutput = new List<FinwireNew>();
-
-                      if (newsViewModel.IsFinwireNews)
-                      {
                           var companiesOfNews = _dbContext.FinwireNews
                               .Where(x => x.Id == newsViewModel.Id)
                               .Include(x => x.FinwireNew2FinwireCompanies)
@@ -203,15 +165,14 @@
                               .OrderByDescending(x => x.Date)
                               .Take(newsCount);
 
-                          listNewsOutput = relatedNewsWithCompanies
+                          listNewsOutput = await relatedNewsWithCompanies
                               .Union(relatedNewsWithSocialTags)
                               .OrderByDescending(x => x.Date)
                               .Take(newsCount)
-                              .ToList();
-                      }
-
-                      return MapFinwireNewToViewModel(listNewsOutput);
+                              .ToListAsync();
                     }
+
+                    return MapFinwireNewToViewModel(listNewsOutput);
                 });
         }
 
