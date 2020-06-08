@@ -24,8 +24,13 @@ namespace borsvarlden.Models
         public int ReadCount { get; set; }
         public string Slug { get; set; }
         public bool IsFinwireNews { get; set; }
-        public bool IsBorsvarldenArticle { get; set; }
-        
+        public bool IsBorsvarldenArticle { get; set; } 
+        public bool IsPublished { get; set; } 
+
+        public string CompanyName { get; set; }
+        public DateTime PrioDeadLine { get; set; }
+        public string Label { get; set; }
+
         public FinwireAgency FinwireAgency { get; set; }
         public FinwireXmlNews FinwireXmlNews { get; set; }
 
