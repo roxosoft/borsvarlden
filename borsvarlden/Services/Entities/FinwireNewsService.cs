@@ -20,7 +20,7 @@
     public interface IFinwireNewsService
     {
         Task AddSingleNews(FinWireData finwireData);
-        Task<IndexNewsViewModel> GetMainNews(int newsCount);
+        Task<IndexNewsViewModel> GetMainNewsForSeeding(int newsCount);
         Task<List<NewsViewModel>> GetNews(int newsCount);
         Task<NewsViewModel> GetDetailedArticle(int articleId);
         Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPagging(int newsOnPageCount, int nextPage, string searchText);
@@ -100,14 +100,11 @@
                 await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<IndexNewsViewModel> GetMainNews(int newsCount)
+        
+        public async Task<IndexNewsViewModel> GetMainNewsForSeeding(int newsCount)
         {
             var result = new IndexNewsViewModel();
-            List<FinwireNew> newsList = await _dbContext.FinwireNews
-                .Where(x=>x.FinautoPassed || x.IsBorsvarldenArticle)
-                .OrderByDescending(x =>x.Date)
-                .Take(newsCount)
-                .ToListAsync();
+            List<FinwireNew> newsList = await GetMainNewsListAsync(newsCount);
             result.News = MapFinwireNewToViewModel(newsList);
 
             return result;
@@ -115,10 +112,7 @@
 
         public async Task<List<NewsViewModel>> GetNews(int newsCount)
         {
-            List<FinwireNew> newsList = await _dbContext.FinwireNews
-                .OrderByDescending(x => x.Date)
-                .Take(newsCount)
-                .ToListAsync();
+            List<FinwireNew> newsList = await GetMainNewsListAsync(newsCount);
             var result = MapFinwireNewToViewModel(newsList);
             return result;
         }
@@ -180,15 +174,11 @@
         public async Task<List<NewsViewModel>> GetMoreNews(int id)
         {
             return await Task.Run(
-                () =>
+                async () =>
                 {
                     var paramOutputNews = 8;
                     var paramDepthOfRetrieve = 20;
-                    var topNews = _dbContext.FinwireNews
-                        .Where(x=>x.FinautoPassed || x.IsBorsvarldenArticle)
-                        .OrderByDescending(x => x.Date)
-                        .Take(paramDepthOfRetrieve)
-                        .ToList();
+                    var topNews = await GetMainNewsListAsync(paramDepthOfRetrieve);
 
                     int n = topNews.Count;
                     while (n > 1)
@@ -317,6 +307,7 @@
             var lstFinwirewNews = new List<FinwireNew>();
 
             lstFinwirewNews = await _dbContext.FinwireNews
+                .Where(x => x.FinautoPassed || x.IsBorsvarldenArticle)
                 .Where(x => x.Date > DateTime.Now.AddDays(-parDeptDays) && x.Id != id)
                 .OrderByDescending(x => x.ReadCount)
                 .ThenByDescending(x => x.Date)
@@ -326,6 +317,7 @@
             if (lstFinwirewNews.Count < countNeed)
             {
                 var r = await _dbContext.FinwireNews
+                    .Where(x => x.FinautoPassed || x.IsBorsvarldenArticle)
                     .Where(x => x.Id != id)
                     .OrderByDescending(x => x.Date)
                     .Take(countNeed)
@@ -353,5 +345,23 @@
             return result;
         }
 
+        private IQueryable<FinwireNew> GetMainNews()
+        {
+            return _dbContext.FinwireNews
+                .Where(x => x.FinautoPassed || x.IsBorsvarldenArticle)
+                .OrderByDescending(x => x.Date);
+
+        }
+
+        private IQueryable<FinwireNew> GetMainNews(int newsCount)
+        {
+            return GetMainNews()
+                .Take(newsCount);
+        }
+
+        private async Task<List<FinwireNew>> GetMainNewsListAsync(int newsCount)
+        {
+            return  await GetMainNews(newsCount).ToListAsync();
+        }
     }
 }

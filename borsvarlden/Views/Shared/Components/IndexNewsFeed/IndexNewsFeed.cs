@@ -19,7 +19,7 @@ namespace borsvarlden.Views.Shared.Components.IndexNewsFeed
         public async Task<IViewComponentResult> InvokeAsync()
         {
             int newsCount = _configurationHelper.IndexNewsCount;
-            var model = await _finwireNewsService.GetMainNews(newsCount);
+            var model = await _finwireNewsService.GetMainNewsForSeeding(newsCount);
 
             model.FirstBigBlockCount = _configurationHelper.FirstBigBlockCount;
             model.FirstSmallBlockCount = _configurationHelper.FirstSmallBlockCount;
