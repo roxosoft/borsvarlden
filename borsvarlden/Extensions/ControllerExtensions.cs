@@ -19,7 +19,8 @@ namespace borsvarlden.Extensions
                 Path = "/",
                 HttpOnly = false,
                 Secure = false,
-                IsEssential = true
+                IsEssential = true,
+                Expires = DateTime.Now.AddMonths(1)
             });
         }
     }
