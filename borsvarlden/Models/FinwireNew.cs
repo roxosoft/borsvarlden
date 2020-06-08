@@ -23,6 +23,8 @@ namespace borsvarlden.Models
         public bool IsConvertedFromMySQL { get; set; }
         public int ReadCount { get; set; }
         public string Slug { get; set; }
+        public bool IsFinwireNews { get; set; }
+        public bool IsBorsvarldenArticle { get; set; }
         
         public FinwireAgency FinwireAgency { get; set; }
         public FinwireXmlNews FinwireXmlNews { get; set; }

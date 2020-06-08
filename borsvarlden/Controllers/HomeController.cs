@@ -70,13 +70,15 @@ namespace borsvarlden.Controllers
         [Route("finwire/{guid}")]
         public async Task<IActionResult> FinwireArticleFromXmlByGuid(string guid)
         {
-            var content = await _finwireXmlService.GetFileContentAsync(guid);
-            var finwireData = await _finwireParserService.ParseXmlContent(content);
+            NewsViewModel model = await _finwireNewsService.GetDetailedArticleByGuid(guid);
+            var cookie = this.GetCookie(model.TittleSlug);
 
-            var finwireNews = finwireData.ToFinwireNews();
-            finwireNews = _finwireCompaniesService.JoinCompanies(finwireNews, finwireData.Companies);
-            var model = finwireNews.ToNewsViewModelFromXml(finwireData.Companies, finwireData.SocialTags);
-            
+             if (cookie == null)
+             {
+                 this.SetCookie(model.TittleSlug);
+                 await _finwireNewsService.UpdateReadCount(model.TittleSlug);
+             }
+             
             return View("DetailedArticle",model);
         }
 

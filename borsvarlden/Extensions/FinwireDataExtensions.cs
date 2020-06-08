@@ -83,6 +83,7 @@ namespace borsvarlden.Extensions
                 ImageRelativeUrl = ImageHelper.AbsoluteUrlToRelativeUrl(imgData.ImageAbsoluteUrl),
                 ImageLabel = imgData.Label,
                 Slug = finwireData.TittleSlug,
+                IsFinwireNews = true
             };
             return r;
         }

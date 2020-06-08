@@ -4,6 +4,7 @@ delete from [dbo].[FinwireNew2FinwireCompany]
 delete from [dbo].[FinwireCompanies]
 delete from [dbo].[FinwireNews]
 delete from [dbo].[FinwireAgencies]
+delete from FinwireXmlNews
 
 select * from FinwireSocialtags;
 select * from [dbo].[FinwireNew2FirnwireSocialTag]

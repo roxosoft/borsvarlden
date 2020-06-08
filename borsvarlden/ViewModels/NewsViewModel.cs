@@ -30,5 +30,9 @@ namespace borsvarlden.ViewModels
         public List <string> Companies { get; set; }
 
         public List <string> SocialTags { get; set;}
+
+        public bool IsFinwireNews { get; set; }
+
+        public string CopyrightLabel { get; set; }
     }
 }

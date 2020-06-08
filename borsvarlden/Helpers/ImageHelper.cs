@@ -100,7 +100,7 @@ namespace borsvarlden.Helpers
                     throw new ApplicationException("GetImagePath wrong item type");
                 
                 //Current needle exists in news's  socialtags
-                if (socialTagsInNews.Contains(thisNeedle))
+                if (socialTagsInNews?.Contains(thisNeedle)??true)
                 {
                     var pathSocialTags = $@"{SocialTagPath}\{thisNeedle}";
                     //If we'll not find any subdirs - use this one as resulst

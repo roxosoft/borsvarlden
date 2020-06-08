@@ -25,6 +25,7 @@
         Task<NewsViewModel> GetDetailedArticle(int articleId);
         Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPagging(int newsOnPageCount, int nextPage, string searchText);
         Task<NewsViewModel> GetDetailedArticle(string titleSlug);
+        Task<NewsViewModel> GetDetailedArticleByGuid(string guid);
 
         Task<LoadResult> GetNewsList(DataSourceLoadOptions options);
         Task<FinwireNew> GetArticle(int id);
@@ -62,11 +63,10 @@
                     FileName = finwireData.Guid,
                 });
 
-                if (!_dbContext.FinwireNews.Any(x => finwireData.Guid == x.Guid) &&
-                    _finwireFilterService.IsFilterPassed(finwireData))
+                if (!_dbContext.FinwireNews.Any(x => finwireData.Guid == x.Guid))
                 {
-                    
                     var newsEntity = finwireData.ToFinwireNews();
+                    newsEntity.FinautoPassed =  _finwireFilterService.IsFilterPassed(finwireData);
 
                     newsEntity.FinwireAgency =
                         _dbContext.FinwireAgencies.FirstOrDefault(x => x.Agency == finwireData.Agency)
@@ -103,7 +103,11 @@
         public async Task<IndexNewsViewModel> GetMainNews(int newsCount)
         {
             var result = new IndexNewsViewModel();
-            List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
+            List<FinwireNew> newsList = await _dbContext.FinwireNews
+                .Where(x=>x.FinautoPassed || x.IsBorsvarldenArticle)
+                .OrderByDescending(x =>x.Date)
+                .Take(newsCount)
+                .ToListAsync();
             result.News = MapFinwireNewToViewModel(newsList);
 
             return result;
@@ -111,7 +115,10 @@
 
         public async Task<List<NewsViewModel>> GetNews(int newsCount)
         {
-            List<FinwireNew> newsList = await _dbContext.FinwireNews.OrderByDescending(x => x.Date).Take(newsCount).ToListAsync();
+            List<FinwireNew> newsList = await _dbContext.FinwireNews
+                .OrderByDescending(x => x.Date)
+                .Take(newsCount)
+                .ToListAsync();
             var result = MapFinwireNewToViewModel(newsList);
             return result;
         }
@@ -122,7 +129,7 @@
                 async () =>
                 {
 
-                    if (newsViewModel.IsFromXml)
+                  /*  if (newsViewModel.IsFromXml)
                     {
                         var res = new List<FinwireNew>();
 
@@ -156,49 +163,54 @@
 
                         return MapFinwireNewToViewModel(res.Distinct().Take(newsCount).ToList());
                     }
-                    else
-                    {
-                        var companiesOfNews = _dbContext.FinwireNews
-                            .Where(x => x.Id == newsViewModel.Id)
-                            .Include(x => x.FinwireNew2FinwireCompanies)
-                            .FirstOrDefault()
-                            ?.FinwireNew2FinwireCompanies
-                            .Select(x => x.FinwareCompanyId);
+                    else*/
+                  {
+                      var listNewsOutput = new List<FinwireNew>();
 
-                        var newsIdWithCompanies = _dbContext.FinwireNew2FinwireCompany
-                            .Where(x => companiesOfNews.Contains(x.FinwareCompanyId) &&
-                                        x.FinwireNewId != newsViewModel.Id)
-                            .Select(x => x.FinwireNewId);
+                      if (newsViewModel.IsFinwireNews)
+                      {
+                          var companiesOfNews = _dbContext.FinwireNews
+                              .Where(x => x.Id == newsViewModel.Id)
+                              .Include(x => x.FinwireNew2FinwireCompanies)
+                              .FirstOrDefault()
+                              ?.FinwireNew2FinwireCompanies
+                              .Select(x => x.FinwareCompanyId);
 
-                        var relatedNewsWithCompanies = _dbContext.FinwireNews
-                            .Where(x => newsIdWithCompanies.Contains(x.Id))
-                            .OrderByDescending(x => x.Date)
-                            .Take(newsCount);
+                          var newsIdWithCompanies = _dbContext.FinwireNew2FinwireCompany
+                              .Where(x => companiesOfNews.Contains(x.FinwareCompanyId) &&
+                                          x.FinwireNewId != newsViewModel.Id)
+                              .Select(x => x.FinwireNewId);
 
-                        var socialTagsOfNews = _dbContext.FinwireNews
-                            .Where(x => x.Id == newsViewModel.Id)
-                            .Include(x => x.FinwireNew2FirnwireSocialTags)
-                            .FirstOrDefault()
-                            ?.FinwireNew2FirnwireSocialTags
-                            .Select(x => x.FinwireSocialTagId);
+                          var relatedNewsWithCompanies = _dbContext.FinwireNews
+                              .Where(x => newsIdWithCompanies.Contains(x.Id) && x.IsFinwireNews)
+                              .OrderByDescending(x => x.Date)
+                              .Take(newsCount);
 
-                        var newsIdWithSocialTags = _dbContext.FinwireNew2FirnwireSocialTag
-                            .Where(x => socialTagsOfNews.Contains(x.FinwireSocialTagId) &&
-                                        x.FinwireNewId != newsViewModel.Id)
-                            .Select(x => x.FinwireNewId);
+                          var socialTagsOfNews = _dbContext.FinwireNews
+                              .Where(x => x.Id == newsViewModel.Id)
+                              .Include(x => x.FinwireNew2FirnwireSocialTags)
+                              .FirstOrDefault()
+                              ?.FinwireNew2FirnwireSocialTags
+                              .Select(x => x.FinwireSocialTagId);
 
-                        var relatedNewsWithSocialTags = _dbContext.FinwireNews
-                            .Where(x => newsIdWithSocialTags.Contains(x.Id))
-                            .OrderByDescending(x => x.Date)
-                            .Take(newsCount);
+                          var newsIdWithSocialTags = _dbContext.FinwireNew2FirnwireSocialTag
+                              .Where(x => socialTagsOfNews.Contains(x.FinwireSocialTagId) &&
+                                          x.FinwireNewId != newsViewModel.Id)
+                              .Select(x => x.FinwireNewId);
 
-                        var rs = relatedNewsWithCompanies
-                            .Union(relatedNewsWithSocialTags)
-                            .OrderByDescending(x => x.Date)
-                            .Take(newsCount)
-                            .ToList();
+                          var relatedNewsWithSocialTags = _dbContext.FinwireNews
+                              .Where(x => newsIdWithSocialTags.Contains(x.Id) &&  x.IsFinwireNews)
+                              .OrderByDescending(x => x.Date)
+                              .Take(newsCount);
 
-                        return MapFinwireNewToViewModel(rs);
+                          listNewsOutput = relatedNewsWithCompanies
+                              .Union(relatedNewsWithSocialTags)
+                              .OrderByDescending(x => x.Date)
+                              .Take(newsCount)
+                              .ToList();
+                      }
+
+                      return MapFinwireNewToViewModel(listNewsOutput);
                     }
                 });
         }
@@ -212,6 +224,7 @@
                     var paramOutputNews = 8;
                     var paramDepthOfRetrieve = 20;
                     var topNews = _dbContext.FinwireNews
+                        .Where(x=>x.FinautoPassed || x.IsBorsvarldenArticle)
                         .OrderByDescending(x => x.Date)
                         .Take(paramDepthOfRetrieve)
                         .ToList();
@@ -266,6 +279,15 @@
         {
             List<FinwireNew> article = await _dbContext.FinwireNews
                 .Where(x => x.Slug == titleSlug)
+                .ToListAsync();
+            var result = MapFinwireNewToViewModel(article).FirstOrDefault();
+            return result;
+        }
+
+        public async Task<NewsViewModel> GetDetailedArticleByGuid(string guid)
+        {
+            List<FinwireNew> article = await _dbContext.FinwireNews
+                .Where(x => x.Guid == guid)
                 .ToListAsync();
             var result = MapFinwireNewToViewModel(article).FirstOrDefault();
             return result;
