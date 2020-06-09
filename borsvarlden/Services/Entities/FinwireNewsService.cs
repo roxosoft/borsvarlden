@@ -36,6 +36,7 @@
         Task<List<NewsViewModel>> GetMoreNews(int id);
         Task UpdateReadCount(string slug);
         Task<List<NewsViewModel>> GetMostReadNews(int count, int id);
+        Task<List<NewsViewModel>> GetAdvertiseNewsList(int newsCount);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -100,14 +101,18 @@
                 await _dbContext.SaveChangesAsync();
         }
 
-        
         public async Task<IndexNewsViewModel> GetMainNewsForSeeding(int newsCount)
         {
             var result = new IndexNewsViewModel();
-            List<FinwireNew> newsList = await GetMainNewsListAsync(newsCount);
+            var newsList = await GetMainNewsWithAdvertisePrio(newsCount).ToListAsync();
             result.News = MapFinwireNewToViewModel(newsList);
 
             return result;
+        }
+
+        public async Task<List<NewsViewModel>> GetAdvertiseNewsList(int newsCount)
+        {
+            return MapFinwireNewToViewModel(await GetAdvertiseNews(newsCount).ToListAsync());
         }
 
         public async Task<List<NewsViewModel>> GetNews(int newsCount)
@@ -332,6 +337,30 @@
             return MapFinwireNewToViewModel(lstFinwirewNews);
         }
 
+        private IQueryable<FinwireNew> GetMainNewsWithAdvertisePrio(int count)
+        {
+            var advertiseNews = GetAdvertiseNews(count);
+
+            var allLastNews = GetMainNews(count);
+
+            var res = advertiseNews.Union(allLastNews)
+                .OrderByDescending(x => x.IsAdvertising)
+                .ThenBy(x => x.Order)
+                .ThenByDescending(x => x.Date)
+                .Take(count);
+
+            return res;
+        }
+
+        private IQueryable<FinwireNew> GetAdvertiseNews(int count)
+        {
+           return _dbContext.FinwireNews
+                .Where(x => x.IsAdvertising && x.IsPublished && DateTime.Now < x.PrioDeadLine)
+                .OrderBy(x => x.Order)
+                .ThenBy(x => x.Date)
+                .Take(count);
+        }
+
         private List<NewsViewModel> MapFinwireNewToViewModel(List<FinwireNew> news)
         {
             var result = new List<NewsViewModel>();
@@ -345,10 +374,11 @@
             return result;
         }
 
+
         private IQueryable<FinwireNew> GetMainNews()
         {
             return _dbContext.FinwireNews
-                .Where(x => x.FinautoPassed || x.IsBorsvarldenArticle)
+                .Where(x => x.FinautoPassed || x.IsBorsvarldenArticle && x.IsPublished)
                 .OrderByDescending(x => x.Date);
 
         }

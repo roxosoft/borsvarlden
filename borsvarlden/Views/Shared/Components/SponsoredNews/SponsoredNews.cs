@@ -23,7 +23,7 @@ namespace borsvarlden.Views.Shared.Components.SponsoredNews
         {
             int newsCount = _configurationHelper.SponsoredNewsCount;
 
-            List<NewsViewModel> model = await _finwireNewsService.GetNews(newsCount);
+            List<NewsViewModel> model = await _finwireNewsService.GetAdvertiseNewsList(newsCount);
 
             return View("SponsoredNews", model);
         }

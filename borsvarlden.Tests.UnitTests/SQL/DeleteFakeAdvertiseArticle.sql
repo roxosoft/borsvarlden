@@ -1,0 +1,1 @@
+﻿delete from FinwireNews where title ='EG7 redovisar omsättningstillväxt om nästan 1000 %'

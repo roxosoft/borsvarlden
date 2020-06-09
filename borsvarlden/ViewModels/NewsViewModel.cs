@@ -15,7 +15,7 @@ namespace borsvarlden.ViewModels
 
         public DateTime Date { get; set; }
 
-        public string Label { get; set; }
+        public string ImageLabel { get; set; }
 
         public string NewsText { get; set; }
 
@@ -38,5 +38,7 @@ namespace borsvarlden.ViewModels
         public string CompanyName { get; set; }
 
         public string CopyrightLabel { get; set; }
+
+        public string Label { get; set; }
     }
 }

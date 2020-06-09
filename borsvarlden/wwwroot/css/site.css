@@ -513,3 +513,9 @@ table.article-table p {
     font-weight: 700;
     text-decoration: underline;
     color: #0277bd; }
+
+.label-subtitle {
+    color: #f44336;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 0.5rem; }

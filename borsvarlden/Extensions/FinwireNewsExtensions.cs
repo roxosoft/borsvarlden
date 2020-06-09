@@ -27,13 +27,14 @@ namespace borsvarlden.Extensions
                 Date = newsItem.Date,
                 NewsText = newsItem.NewsText,
                 ImageUrl = newsItem.ImageRelativeUrl,
-                Label = newsItem.ImageLabel,
+                ImageLabel = newsItem.ImageLabel,
                 TittleSlug = newsItem.Slug,
                 Guid = newsItem.Guid,
                 IsFinwireNews = newsItem.IsFinwireNews,
                 CompanyName = newsItem.CompanyName,
                 IsAdvertising = newsItem.IsAdvertising,
-                CopyrightLabel = newsItem.IsBorsvarldenArticle ? "Börsvärlden" : "Finwire / Börsvärlden"  
+                CopyrightLabel = newsItem.IsBorsvarldenArticle ? "Börsvärlden" : "Finwire / Börsvärlden",
+                Label = newsItem.Label
             };
         }
 

@@ -43,6 +43,10 @@
             </h2>
             <div class="lead-wrapper">
                 <p class="lead">
+                    @if (!string.IsNullOrEmpty(Model.Label))
+                    {
+                        <span class="label-subtitle">@Model.Label</span>
+                    }
                     @Model.Subtitle
                 </p>
                 <div>

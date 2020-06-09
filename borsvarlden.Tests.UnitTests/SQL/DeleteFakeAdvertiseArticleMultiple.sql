@@ -1,0 +1,1 @@
+﻿delete from FinwireNews where title like '%EG7 redovisar omsättningstillväxt om nästan 1000 %'
