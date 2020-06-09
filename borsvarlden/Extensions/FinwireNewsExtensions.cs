@@ -31,7 +31,9 @@ namespace borsvarlden.Extensions
                 TittleSlug = newsItem.Slug,
                 Guid = newsItem.Guid,
                 IsFinwireNews = newsItem.IsFinwireNews,
-                CopyrightLabel = newsItem.IsFinwireNews ? "Finwire / Börsvärlden" : "Börsvärlden"
+                CompanyName = newsItem.CompanyName,
+                IsAdvertising = newsItem.IsAdvertising,
+                CopyrightLabel = newsItem.IsBorsvarldenArticle ? "Börsvärlden" : "Finwire / Börsvärlden"  
             };
         }
 

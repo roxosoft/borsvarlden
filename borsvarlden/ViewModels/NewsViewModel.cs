@@ -33,6 +33,10 @@ namespace borsvarlden.ViewModels
 
         public bool IsFinwireNews { get; set; }
 
+        public bool IsAdvertising { get; set; }
+
+        public string CompanyName { get; set; }
+
         public string CopyrightLabel { get; set; }
     }
 }
