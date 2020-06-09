@@ -490,3 +490,26 @@ table.article-table.large-only tr:nth-child(odd):not(:first-child) {
 table.article-table p {
     font-size: 10pt !important;
     margin-bottom: 0 !important; }
+
+.image-wrapper .image-container .border-sponsored {
+    display: block;
+    background-color: #f4f4f4;
+    color: #222;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 10pt;
+    line-height: 1.3em;
+    letter-spacing: .5px;
+    text-transform: uppercase; }
+
+.content-main p.disclaimer {
+    font-weight: 300;
+    color: #707070;
+    margin-block-start: 1em; }
+
+.content-main p.disclaimer a {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #0277bd; }
