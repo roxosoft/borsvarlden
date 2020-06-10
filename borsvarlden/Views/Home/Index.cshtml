@@ -1,7 +1,7 @@
-﻿@{
+﻿@using borsvarlden.Helpers
+@{
     ViewData["Title"] = "Maximera din digitala synlighet";
 }
-
 
 @section Styles{
     <link rel="stylesheet" href="~/css/index.css" />
@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="~/css/bv-widget-subscribe.css" />
     <link rel="stylesheet" href="~/css/bv-top-level.css" />
     <link rel="stylesheet" href="~/css/bv-panel.css" />
+    <link rel="stylesheet" href="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/css/settings.css" type="text/css" media="all" />
+}
+
+@section ScriptsHead {
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/assets/js/includes/jquery/jquery.js"></script>
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js"></script>
 }
 
 <div class="row index-row">
     <div class="col-10 index-content-wrapper">
         <div class="column-label">ANNONS</div>
-        <div class="banner-wrapper">
-            <iframe src="https://borsvarlden-banners.azurewebsites.net/getslider.php" width="960" style="border:none;" height="200"></iframe>
-        </div>
+        @await Component.InvokeAsync("BannerTop")
         <div class="row index-content-row">
             <div class="col-8 content-main">
                 @await Component.InvokeAsync("IndexNewsFeed")
