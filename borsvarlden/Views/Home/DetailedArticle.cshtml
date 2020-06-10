@@ -2,7 +2,8 @@
 @model NewsViewModel
 
 @{
-    ViewData["Title"] = Model.Title;
+    ViewData["Title"] = Model?.Title;
+    ViewData["Model"] = Model;
 }
 
 @section Styles{

@@ -526,3 +526,10 @@ table.article-table p {
     position: relative;
     bottom: 18px;
     left: 2px; }
+
+.side-article-wrapper .side-article-content h3 {
+    font-size: 11pt !important;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 150%; }

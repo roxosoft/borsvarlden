@@ -27,7 +27,7 @@
             <div class="col-8 content-main">
                 @await Component.InvokeAsync("IndexNewsFeed")
 
-                <a class="button button-red" href="@Url.Action("NewsList", "Home")">Läs fler artiklar</a>
+                <a class="button button-red" href="~/artiklar">Läs fler artiklar</a>
                 <div class="content-botom-hidden">
                     @await Component.InvokeAsync("SponsoredNews")
 

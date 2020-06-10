@@ -37,6 +37,8 @@ namespace borsvarlden.Controllers
         }
 
         [Route("artiklar")]
+        [Route("artiklar/sida/{page}")]
+        [Route("artiklar/sida/{page}/{searchText}")]
         public async Task<IActionResult> NewsList(int page = 1, string searchText = null)
         {
             int newsOnPageCount = _configurationHelper.ListedNewsCount;

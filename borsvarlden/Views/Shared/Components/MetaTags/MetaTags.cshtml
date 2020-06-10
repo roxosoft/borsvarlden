@@ -1,0 +1,35 @@
+﻿@using borsvarlden.Helpers
+@using Microsoft.AspNetCore.Http
+@using borsvarlden.ViewModels
+
+@model NewsViewModel
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noarchive">
+<meta name="googlebot" content="noarchive">
+@Html.Raw(@MetaHelper.GetMetaNameDescription(@Context.Request.Path))
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta property="og:locale" content="sv_SE" />
+<meta property="og:type" content="website" />
+@Html.Raw(@MetaHelper.GetMetaPropertyOgTitle(@Context.Request.Path, Model, ViewData))
+@Html.Raw(@MetaHelper.GetMetaPropertyOgDescription(@Context.Request.Path, Model))
+<meta property="og:url" content="https://borsvarlden.com/" />
+<meta property="og:site_name" content="Börsvärlden" />
+<meta property="fb:app_id" content="848321055353262" />
+<meta property="og:image" content="https://borsvarlden.com/assets/images/meta/borsvarlden-facebook-share-image.jpg" />
+<meta property="og:image:secure_url" content="https://borsvarlden.com/assets/images/meta/borsvarlden-facebook-share-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary" />
+@Html.Raw(@MetaHelper.GetMetaNameTwitterDescription(@Context.Request.Path, Model))
+@Html.Raw(@MetaHelper.GetMetaNameTwitterTitle(@Context.Request.Path, Model,ViewData))
+<meta name="twitter:image" content="https://borsvarlden.com/assets/images/meta/borsvarlden-facebook-share-image.jpg" />
+<meta name="apple-mobile-web-app-title" content="Börsvärlden">
+<meta name="application-name" content="Börsvärlden">
+<meta name="msapplication-TileColor" content="#455a64">
+<meta name="msapplication-TileImage" content="https://borsvarlden.com/assets/images/meta/mstile-144x144.png">
+<meta name="msapplication-config" content="https://borsvarlden.com/assets/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="generator" content="Powered by Slider Revolution 6.1.3 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
