@@ -1,0 +1,5 @@
+﻿@using borsvarlden.Helpers
+
+<div>
+    @Html.Raw(@BannerHelper.GetHtmlAsync().ConfigureAwait(false).GetAwaiter().GetResult())
+</div>
