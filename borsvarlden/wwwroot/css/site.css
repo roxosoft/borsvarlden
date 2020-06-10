@@ -519,3 +519,10 @@ table.article-table p {
     font-weight: 700;
     text-transform: uppercase;
     margin-right: 0.5rem; }
+
+.image-sponsor-label {
+    color: #f8f9fa;
+    font-size: 12px;
+    position: relative;
+    bottom: 18px;
+    left: 2px; }

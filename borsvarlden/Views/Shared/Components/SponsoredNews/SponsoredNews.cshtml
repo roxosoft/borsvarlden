@@ -19,6 +19,10 @@
                         {
                             <img src="~/@article.ImageUrl">
                         }
+                        @if (article.IsAdvertising)
+                        {
+                            <span class="image-sponsor-label">SPONSRAD</span>
+                        }
                     </div>
                     <div class="side-article-content">
                         <p>@article.Title</p>
