@@ -161,8 +161,19 @@ bv-widget-subscribe input[type=checkbox] {
     color: #fff !important;
 }
 
-
 a:not([href]):not([tabindex]) {
     color: #fff;
     text-decoration: none;
+}
+
+.subscribe-form-description p{
+    font-size: 16px; 
+}
+
+.bv-sidebar-group .display_archive .campaign a:hover {
+    text-decoration: underline
+}
+
+.bv-widget-subscribe .panel-default a {
+    font-size: 11pt;
 }

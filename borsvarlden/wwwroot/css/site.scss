@@ -310,7 +310,7 @@ h3 {
 }
 
 .form-control::placeholder {
-    color: #ACACAC;
+    color: #555;
 }
 
 .index-side-banner-wrapper {
@@ -355,6 +355,12 @@ h3 {
 
 .visible-xs {
     display: none !important;
+}
+
+@media (min-width: 1250px)  {
+    .container{
+    width: 1250px;    
+    }
 }
 
 @media (max-width: 1249px) and (min-width: 768px) {
