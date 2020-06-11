@@ -275,6 +275,9 @@ h3 {
     position: sticky;
     top: 50px; }
 
+.visible-xs {
+    display: none !important; }
+
 @media (max-width: 1249px) and (min-width: 768px) {
     .container {
         width: 100% !important; } }
@@ -368,7 +371,9 @@ h3 {
         font-size: 11pt; }
     .banner-wrapper {
         margin-left: -15px;
-        margin-right: -15px; } }
+        margin-right: -15px; }
+    .visible-xs {
+        display: block !important; } }
 
 @media (max-width: 768px) {
     .text-center-xs {
@@ -396,7 +401,9 @@ h3 {
     .content-main {
         width: 100%;
         flex: 0 0 100%;
-        max-width: 100%; } }
+        max-width: 100%; }
+    .hidden-xs {
+        display: none; } }
 
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
     float: left; }

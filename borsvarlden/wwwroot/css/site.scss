@@ -353,6 +353,10 @@ h3 {
     top: 50px;
 }
 
+.visible-xs {
+    display: none !important;
+}
+
 @media (max-width: 1249px) and (min-width: 768px) {
     .container {
         width: 100% !important;
@@ -498,6 +502,10 @@ h3 {
         margin-left: -15px;
         margin-right: -15px;
     }
+
+    .visible-xs {
+        display: block !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -543,6 +551,10 @@ h3 {
         width: 100%;
         flex: 0 0 100%;
         max-width: 100%;
+    }
+
+    .hidden-xs {
+        display: none;
     }
 }
 

@@ -7,6 +7,7 @@
         int indexInChunk = 0;
         foreach (var news in Model.News.Take(Model.FirstBigBlockCount))
         {
+            news.IsBigBlock = true;
             <div class="big-block article">
                 @await Html.PartialAsync("_Article", news)
             </div>
@@ -23,6 +24,7 @@
 
         foreach (var news in Model.News.Skip(Model.FirstBigBlockCount + Model.FirstSmallBlockCount).Take(Model.SecondBigBlockCount))
         {
+            news.IsBigBlock = true;
             <div class="big-block article">
                 @await Html.PartialAsync("_Article", news)
             </div>

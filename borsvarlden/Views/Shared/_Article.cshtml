@@ -13,11 +13,38 @@
         }
     </div>
     <div class="article-content-wrapper">
-        <span class="label article-label">
-            @Model.ImageLabel
-        </span>
-        <h3>
+        @if (Model.IsBigBlock)
+        {
+            <span class="visible-xs label article-label">@Model.ImageLabel</span>
+
+            <h3>
+                @Model.Title
+            </h3>
+
+            <p class="hidden-xs">
+                @if (!string.IsNullOrEmpty(Model.ImageLabel))
+                {
+                    <span class="label article-label">
+                        @Model.ImageLabel
+                    </span>
+                }
+                <span>
+                    @Model.Subtitle
+                </span>
+            </p>
+        }
+        @if (!Model.IsBigBlock)
+        {
+            @if (!string.IsNullOrEmpty(Model.ImageLabel))
+             {
+              <span class="label article-label">
+                  @Model.ImageLabel
+              </span>
+             }
+            <h3>
             @Model.Title
-        </h3>
+            </h3>
+        }
+
     </div>
 </a>

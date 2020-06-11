@@ -47,6 +47,10 @@
             padding-top: 10px;
         }
     }
+
+    .index-article-feed .big-block .article-content-wrapper {
+        padding: 20px;
+    }       
     
     &.small-block .article-content-wrapper {
         padding-left: 168px;
@@ -56,17 +60,23 @@
 .big-block.article {
     h3 {
         font-size: 18pt;
+        margin-bottom: 10px;
     }
-    
+
     a {
         margin-top: 0;
-        
+        margin-bottom: 0;
+
         .image-wrapper img {
             padding-top: 20px;
         }
     }
-    
+
     &:first-child a .image-wrapper img {
         padding-top: 0;
-    } 
+    }
+
+    .article-content-wrapper {
+        padding-top: 20px;
+    }
 }

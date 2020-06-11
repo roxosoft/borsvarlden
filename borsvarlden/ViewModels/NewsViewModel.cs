@@ -40,5 +40,7 @@ namespace borsvarlden.ViewModels
         public string CopyrightLabel { get; set; }
 
         public string Label { get; set; }
+
+        public bool IsBigBlock { get; set; }
     }
 }
