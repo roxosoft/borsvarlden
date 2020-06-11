@@ -113,7 +113,21 @@
         }
     }
 
-    .owl-carousel .owl-item .read-more-content p{
+    .owl-carousel .owl-item .read-more-content p {
         font-size: 11pt;
+    }
+
+    detailed-article h1 {
+        font-size: 25pt;
+        font-weight: 700;
+        margin-bottom: 1em;
+        line-height: 130%;
+    }
+
+    .detailed-article h2 {
+        font-size: 25pt;
+        font-weight: 700;
+        margin-bottom: 1em;
+        line-height: 130%;
     }
 }
