@@ -29,6 +29,7 @@ namespace borsvarlden.Models
 
         public string CompanyName { get; set; }
         public DateTime PrioDeadLine { get; set; }
+        public DateTime ActualDeadLine { get; set; }
         public string Label { get; set; }
 
         public FinwireAgency FinwireAgency { get; set; }

@@ -26,6 +26,8 @@
     <Compile Remove="Migrations\20200523195801_NewsMeta.Designer.cs" />
     <Compile Remove="Migrations\20200608124051_ArticleAddNewFields.cs" />
     <Compile Remove="Migrations\20200608124051_ArticleAddNewFields.Designer.cs" />
+    <Compile Remove="Migrations\20200612114604_AddActualDeadline.cs" />
+    <Compile Remove="Migrations\20200612114604_AddActualDeadline.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="compilerconfig.json" />

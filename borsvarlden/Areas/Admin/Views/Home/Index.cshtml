@@ -65,6 +65,38 @@
                     dataField: "order",
                     dataType: "number",
                     visible: false
+                },
+                {
+                    dataField: "companyName",
+                    dataType: "string",
+                    visible: true
+                },
+                {
+                    dataField: "prioDeadLine",
+                    caption: "Prio deadline",
+                    dataType: "datetime",
+                    visible: true
+                },
+                {
+                    dataField: "label",
+                    dataType: "string",
+                    visible: true
+                },
+                {
+                    dataField: "isPublished",
+                    dataType: "boolean",
+                    visible: true
+                },
+                {
+                    dataField: "actualDeadLine",
+                    caption: "Actual deadline",
+                    dataType: "datetime",
+                    visible: true
+                },
+                {
+                    dataField: "isBorsvarldenArticle",
+                    dataType: "boolean",
+                    visible: true
                 }
             ],
             editing: {
@@ -76,7 +108,7 @@
                     title: "Article",
                     showTitle: true,
                     width: 1000,
-                    height: 920
+                    height: 1000
                 },
                 form: {
                     colCount: 2,
@@ -124,7 +156,26 @@
                         },
                         "imageRelativeUrl",
                         "slug",
-                        "order"
+                        "order",
+                        "companyName",
+                        {
+                            dataField: "prioDeadLine",
+                            dataType: "datetime"
+                        },
+                        "label",
+                        {
+                            dataField: "isPublished",
+                            dataType: "boolean"
+                        },
+                        {
+                            dataField: "actualDeadLine",
+                            dataType: "datetime"
+                        },
+                        {
+                            dataField: "isBorsvarldenArticle",
+                            dataType: "boolean",
+                            visible: true
+                        }
                     ]
                 }
             },
