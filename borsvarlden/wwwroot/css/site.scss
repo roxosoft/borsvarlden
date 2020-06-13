@@ -313,6 +313,27 @@ h3 {
     color: #555;
 }
 
+.signup .panel {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    
+    .panel-body {
+        padding-right: 3px;
+    }
+}
+
+.inline-signup .form-control::placeholder {
+    color: #999;
+}
+
+.inline-signup .form-control:-ms-input-placeholder {
+    color: #999;
+}
+
+.inline-signup .form-control::-webkit-input-placeholder {
+    color: #999;
+}
+
 .index-side-banner-wrapper {
     padding-left: 15px;
     padding-right: 15px;

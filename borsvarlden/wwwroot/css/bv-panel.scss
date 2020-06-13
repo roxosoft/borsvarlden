@@ -118,8 +118,16 @@ panel-title > a.collapsed:hover, .panel-title > a.collapsed:visited {
     color: inherit;
 }*/
 
-.panel-title > a:after {
+.panel-title > a.collapsed:after {
     content: "\f078";
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.panel-title > a:after {
+    content: "\f077";
     font-family: 'FontAwesome';
     position: absolute;
     top: 10px;
