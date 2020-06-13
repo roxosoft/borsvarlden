@@ -74,5 +74,9 @@
   {
     "outputFile": "wwwroot/css/disclaimer.css",
     "inputFile": "wwwroot/css/disclaimer.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/cookie-notice.css",
+    "inputFile": "wwwroot/css/cookie-notice.scss"
   }
 ]

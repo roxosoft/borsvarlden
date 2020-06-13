@@ -1,19 +1,20 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    @await Component.InvokeAsync("MetaTags", new { Model = ViewData["Model"]})
+    @await Component.InvokeAsync("MetaTags", new { Model = ViewData["Model"] })
     <title>@ViewData["Title"] - borsvarlden</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,800italic,700,700italic,600italic,600,400italic,300,300italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="~/lib/owl-carousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="~/lib/owl-carousel/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css"/>
-    <link rel="stylesheet" href="~/css/side-aricles.css"/>
-    <link rel="stylesheet" href="~/css/latest.css"/>
-    <link rel="stylesheet" href="~/css/detailed.css"/>
-    <link rel="stylesheet" href="~/css/social-buttons.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/side-aricles.css" />
+    <link rel="stylesheet" href="~/css/latest.css" />
+    <link rel="stylesheet" href="~/css/detailed.css" />
+    <link rel="stylesheet" href="~/css/social-buttons.css" />
+    <link rel="stylesheet" href="~/css/cookie-notice.css" />
     @RenderSection("Styles", required: false)
     @RenderSection("ScriptsHead", required: false)
 </head>
@@ -51,14 +52,16 @@
             @RenderBody()
         </div>
     </div>
+
     <footer class="border-top footer bg-gray-main">
+        <!--<div class="foo"> Vi använder enhetsidentifierare för att anpassa innehållet och annonserna till användarna, tillhandahålla funktioner för sociala medier och analysera vår trafik, utgivna av tredje parter. Dessa kan i sin tur kombinera informationen med annan information som de har på dig som de har samlat in när du använt deras tjänster eller besökt andra sidor.</div>-->
         <div class="container">
             <div class="row footer-main">
                 <div class="col-sm-3 text-center-xs text-left-sm footer-col">
                     <h3>
                         Navigation
                     </h3>
-                    
+
                     <ul id="menu-footermeny" class="">
                         <li id="menu-item-2835" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2835">
                             <a href="~/traders-club/">Traders Club</a>
@@ -131,8 +134,18 @@
                 </div>
             </div>
         </div>
+        <div id="cookie-notice" class="cn-bottom" style="color: rgb(255, 255, 255); background-color: rgb(38, 50, 56); display: block;">
+            <div class="cookie-notice-container">
+                <span id="cn-notice-text" class="cookie-notice-content">
+                    Denna webbplats använder cookies
+                </span>
+                <span class="cookie-notice-content cookie-notice-message"> Vi använder enhetsidentifierare för att anpassa innehållet och annonserna till användarna, tillhandahålla funktioner för sociala medier och analysera vår trafik, utgivna av tredje parter. Dessa kan i sin tur kombinera informationen med annan information som de har på dig som de har samlat in när du använt deras tjänster eller besökt andra sidor.</span>
+                <a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie button">Jag förstår</a>
+                <a href="~/information-om-cookies/" target="_self" id="cn-more-info" class="button">Läs mer</a>
+            </div>
+        </div>
     </footer>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet" property="stylesheet" media="all" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet" property="stylesheet" media="all" type="text/css">
     <script src="https://kit.fontawesome.com/2614cd82a6.js" crossorigin="anonymous"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/owl-carousel/owl.carousel.min.js"></script>
@@ -140,5 +153,6 @@
     <script src="~/js/stacktable.js"></script>
     <script src="~/js/validator.js"></script>
     @RenderSection("Scripts", required: false)
+<script type="text/javascript" src="~/js/cookie-notice.js"></script>
 </body>
 </html>
