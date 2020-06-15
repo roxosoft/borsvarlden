@@ -10,36 +10,14 @@
 			$( this ).setCookieNotice( $( this ).data( 'cookie-set' ) );
 		} );
 
-		// handle on scroll
-        /*if (cnArgs.onScroll == 'yes')
-        {
-			var cnHandleScroll = function () {
-				var win = $( this );
-				if ( win.scrollTop() > parseInt( 100) ) {
-					// If user scrolls at least 100 pixels
-					win.setCookieNotice( 'accept' );
-					win.off( 'scroll', cnHandleScroll ); //remove itself after cookie accept
-				}
-			};
-
-			$( window ).on( 'scroll', cnHandleScroll );
-		}
-        */
 		// display cookie notice
 		if ( document.cookie.indexOf( 'cookie_notice_accepted' ) === -1 ) {
-		//	if ( cnArgs.hideEffect === 'fade' ) {
-				cnDomNode.fadeIn( 300 );
-			//} else if ( cnArgs.hideEffect === 'slide' ) {
-				//cnDomNode.slideDown( 300 );
-			//} else {
-				//cnDomNode.show();
-			//}
-			$( 'body' ).addClass( 'cookies-not-accepted' );
+            cnDomNode.fadeIn( 300 );
+            $( 'body' ).addClass( 'cookies-not-accepted' );
 		} else {
 			cnDomNode.removeCookieNotice();
 		}
-
-	} );
+    } );
 
 	// set Cookie Notice
 	$.fn.setCookieNotice = function ( cookie_value ) {
@@ -65,19 +43,10 @@
 			expires		: cnLater
 		} );
 
-		// hide message container
-		//if ( cnArgs.hideEffect === 'fade' ) {
-			cnDomNode.fadeOut( 300, function () {
+		cnDomNode.fadeOut( 300, function () {
 				self.removeCookieNotice();
 			} );
-		/*} else if ( cnArgs.hideEffect === 'slide' ) {
-			cnDomNode.slideUp( 300, function () {
-				self.removeCookieNotice();
-			} );
-		} else {
-			self.removeCookieNotice();
-		}*/
-	};
+    };
 
 	// remove Cookie Notice
 	$.fn.removeCookieNotice = function ( cookie_value ) {
