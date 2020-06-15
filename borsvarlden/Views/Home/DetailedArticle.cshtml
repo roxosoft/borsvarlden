@@ -6,13 +6,17 @@
     ViewData["Model"] = Model;
 }
 
+@section ScriptsHead {
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/assets/js/includes/jquery/jquery.js"></script>
+}
+
 @section Styles{
-<link rel="stylesheet" href="~/css/bv-form.css" />
-<link rel="stylesheet" href="~/css/bv-widget-subscribe.css" />
-<link rel="stylesheet" href="~/css/bv-top-level.css" />
-<link rel="stylesheet" href="~/css/bv-panel.css" />
-<link rel="stylesheet" href="~/css/related-news.css" />
-<link rel="stylesheet" href="~/css/read-more.css" />
+    <link rel="stylesheet" href="~/css/bv-form.css" />
+    <link rel="stylesheet" href="~/css/bv-widget-subscribe.css" />
+    <link rel="stylesheet" href="~/css/bv-top-level.css" />
+    <link rel="stylesheet" href="~/css/bv-panel.css" />
+    <link rel="stylesheet" href="~/css/related-news.css" />
+    <link rel="stylesheet" href="~/css/read-more.css" />
 }
 <div class="detailed-article">
     <div class="row index-row">
@@ -26,10 +30,10 @@
                     @if (!string.IsNullOrEmpty(Model.ImageUrl))
                     {
                         @if (Model.IsAdvertising && !string.IsNullOrEmpty(Model.CompanyName))
-                         {
+                        {
                             <span class="border-sponsored">I SAMARBETE MED @Model.CompanyName.ToUpper()</span>
-                         }
-                    <img class="col-12" src="~/@Model.ImageUrl">
+                        }
+                        <img class="col-12" src="~/@Model.ImageUrl">
                     }
                 </div>
                 <div class="image-text">
@@ -65,14 +69,14 @@
                     <span class="article-content">
                         @Html.Raw(Model.NewsText)
                     </span>
-                   
+
                     @if (Model.IsAdvertising && !string.IsNullOrEmpty(Model.CompanyName))
                     {
                         <p class="disclaimer">
                             <i>Det här är en sponsrad artikel framtagen i samarbete med @Model.CompanyName. Sponsrade inlägg är en del av Börsvärldens annonserbjudande. Om du med anledning av våra sponsrade inlägg önskar att komma i kontakt med oss, vänligen skriv till <a href="mailto:ir@borsvarlden.com">IR@borsvarlden.com</a>.</i>
                         </p>
                     }
-                  
+
                     <div class="post-author">
                         <div class="post-author-avatar">
                             <img src="~/assets/images/bv-app-square-128x128.png">
@@ -103,7 +107,7 @@
                 </div>
                 <div class="col-4 content-right">
                     @await Component.InvokeAsync("SponsoredNews")
-                    @await Component.InvokeAsync("MostReadNews", new { News = Model} )
+                    @await Component.InvokeAsync("MostReadNews", new { News = Model })
                     @await Component.InvokeAsync("SubscribeForm")
                     @await Component.InvokeAsync("LatestNews")
                 </div>
@@ -117,11 +121,11 @@
             </div>
         </div>
     </div>
-    @await Component.InvokeAsync("ReadMore", new { News = Model} )
+    @await Component.InvokeAsync("ReadMore", new { News = Model })
 </div>
 
 @section Scripts{
-<script>
+    <script>
         $(document).ready(function () {
             var carousel = $(".owl-carousel").owlCarousel({
                 margin: 30,
@@ -139,5 +143,5 @@
                 }
             });
         });
-</script>
+    </script>
 }
