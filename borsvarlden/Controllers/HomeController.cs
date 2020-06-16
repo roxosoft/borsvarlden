@@ -43,7 +43,7 @@ namespace borsvarlden.Controllers
         {
             int newsOnPageCount = _configurationHelper.ListedNewsCount;
 
-            PaggingSearchResponseViewModel<NewsViewModel> model = await _finwireNewsService.GetNewsSearchPagging(newsOnPageCount, page, searchText);
+            PaggingSearchResponseViewModel<NewsViewModel> model = await _finwireNewsService.GetNewsSearchPaging(newsOnPageCount, page, searchText);
 
             return View(model);
         }

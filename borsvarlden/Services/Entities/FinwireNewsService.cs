@@ -20,10 +20,10 @@
     public interface IFinwireNewsService
     {
         Task AddSingleNews(FinWireData finwireData);
-        Task<IndexNewsViewModel> GetMainNewsForSeeding(int newsCount);
+        Task<IndexNewsViewModel> GetMainNewsForFeeding(int newsCount);
         Task<List<NewsViewModel>> GetNews(int newsCount);
         Task<NewsViewModel> GetDetailedArticle(int articleId);
-        Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPagging(int newsOnPageCount, int nextPage, string searchText);
+        Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText);
         Task<NewsViewModel> GetDetailedArticle(string titleSlug);
         Task<NewsViewModel> GetDetailedArticleByGuid(string guid);
 
@@ -101,10 +101,10 @@
                 await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<IndexNewsViewModel> GetMainNewsForSeeding(int newsCount)
+        public async Task<IndexNewsViewModel> GetMainNewsForFeeding(int newsCount)
         {
             var result = new IndexNewsViewModel();
-            var newsList = await GetMainNewsWithAdvertisePrio(newsCount).ToListAsync();
+            var newsList = await GetNewsForFeedingWithPrio(newsCount);
             result.News = MapFinwireNewToViewModel(newsList);
 
             return result;
@@ -112,7 +112,7 @@
 
         public async Task<List<NewsViewModel>> GetAdvertiseNewsList(int newsCount)
         {
-            return MapFinwireNewToViewModel(await GetAdvertiseNews(newsCount).ToListAsync());
+            return MapFinwireNewToViewModel(await GetActualNews().ToListAsync());
         }
 
         public async Task<List<NewsViewModel>> GetNews(int newsCount)
@@ -200,10 +200,13 @@
             );
         }
 
-        public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPagging(int newsOnPageCount, int nextPage, string searchText)
+        public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText)
         {
             var result = new PaggingSearchResponseViewModel<NewsViewModel>();
-            var query = _dbContext.FinwireNews.OrderByDescending(x => x.Date).AsQueryable();
+            var query = _dbContext.FinwireNews
+                .Where(x => !x.IsBorsvarldenArticle)
+                .OrderByDescending(x => x.Date)
+                .AsQueryable();
 
             if (!string.IsNullOrEmpty(searchText))
             {
@@ -336,30 +339,41 @@
 
             return MapFinwireNewToViewModel(lstFinwirewNews);
         }
-
-        private IQueryable<FinwireNew> GetMainNewsWithAdvertisePrio(int count)
+        
+        private async Task<List<FinwireNew>> GetNewsForFeedingWithPrio(int count)
         {
-            var advertiseNews = GetAdvertiseNews(count);
-
-            var allLastNews = GetMainNews(count);
-
-            var res = advertiseNews.Union(allLastNews)
-                .OrderByDescending(x => x.IsAdvertising)
-                .ThenBy(x => x.Order)
-                .ThenByDescending(x => x.Date)
-                .Take(count);
+            var prioNews = await GetPrioNews().ToListAsync();
+            var nonBorsvarldenArticles = await GetNonBorsvarldenArticles(count).ToListAsync();
+            prioNews.AddRange(nonBorsvarldenArticles);
+            var res = prioNews.Take(count).ToList();
 
             return res;
         }
 
-        private IQueryable<FinwireNew> GetAdvertiseNews(int count)
+        private IQueryable<FinwireNew> GetNonBorsvarldenArticles(int count)
         {
-           return _dbContext.FinwireNews
-                .Where(x => x.IsAdvertising && x.IsPublished && DateTime.Now < x.PrioDeadLine)
-                .OrderBy(x => x.Order)
-                .ThenBy(x => x.Date)
+            return _dbContext.FinwireNews
+                .Where(x => !x.IsBorsvarldenArticle)
+                .OrderByDescending(x => x.Date)
                 .Take(count);
         }
+
+
+        private IQueryable<FinwireNew> GetActualNews()
+        {
+            return _dbContext.FinwireNews
+                .Where(x => x.IsBorsvarldenArticle && x.IsPublished && DateTime.Now < x.ActualDeadLine)
+                .OrderByDescending(x => x.Date);
+        }
+
+        private IQueryable<FinwireNew> GetPrioNews()
+        {
+            return _dbContext.FinwireNews
+                .Where(x => x.IsBorsvarldenArticle && x.IsPublished && DateTime.Now < x.PrioDeadLine)
+                .OrderBy(x => x.Order)
+                .ThenBy(x => x.Date);
+        }
+
 
         private List<NewsViewModel> MapFinwireNewToViewModel(List<FinwireNew> news)
         {
