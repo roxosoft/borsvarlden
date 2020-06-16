@@ -203,10 +203,7 @@
         public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText)
         {
             var result = new PaggingSearchResponseViewModel<NewsViewModel>();
-            var query = _dbContext.FinwireNews
-                .Where(x => !x.IsBorsvarldenArticle)
-                .OrderByDescending(x => x.Date)
-                .AsQueryable();
+            var query = GetNonBorsvarldenArticles();
 
             if (!string.IsNullOrEmpty(searchText))
             {
@@ -350,11 +347,17 @@
             return res;
         }
 
-        private IQueryable<FinwireNew> GetNonBorsvarldenArticles(int count)
+        private IQueryable<FinwireNew> GetNonBorsvarldenArticles()
         {
             return _dbContext.FinwireNews
-                .Where(x => !x.IsBorsvarldenArticle)
-                .OrderByDescending(x => x.Date)
+                .Where(x => !x.IsBorsvarldenArticle && x.FinautoPassed)
+                .OrderByDescending(x => x.Date);
+        }
+
+
+        private IQueryable<FinwireNew> GetNonBorsvarldenArticles(int count)
+        {
+            return GetNonBorsvarldenArticles()
                 .Take(count);
         }
 
