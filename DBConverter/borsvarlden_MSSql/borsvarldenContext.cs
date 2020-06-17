@@ -137,6 +137,8 @@ namespace DBConverter.borsvarlden_MSSql
 
                 entity.HasIndex(e => e.FinwireXmlNewsId);
 
+                entity.Property(e => e.ActualDeadLine).HasDefaultValueSql("('0001-01-01T00:00:00.0000000')");
+
                 entity.Property(e => e.Date).HasDefaultValueSql("('0001-01-01T00:00:00.0000000')");
 
                 entity.Property(e => e.DateModified).HasDefaultValueSql("('0001-01-01T00:00:00.0000000')");
@@ -153,10 +155,24 @@ namespace DBConverter.borsvarlden_MSSql
                     .IsRequired()
                     .HasDefaultValueSql("(CONVERT([bit],(0)))");
 
+                entity.Property(e => e.IsBorsvarldenArticle)
+                    .IsRequired()
+                    .HasDefaultValueSql("(CONVERT([bit],(0)))");
+
                 entity.Property(e => e.IsConvertedFromMySql)
                     .IsRequired()
                     .HasColumnName("IsConvertedFromMySQL")
                     .HasDefaultValueSql("(CONVERT([bit],(0)))");
+
+                entity.Property(e => e.IsFinwireNews)
+                    .IsRequired()
+                    .HasDefaultValueSql("(CONVERT([bit],(0)))");
+
+                entity.Property(e => e.IsPublished)
+                    .IsRequired()
+                    .HasDefaultValueSql("(CONVERT([bit],(1)))");
+
+                entity.Property(e => e.PrioDeadLine).HasDefaultValueSql("('0001-01-01T00:00:00.0000000')");
 
                 entity.HasOne(d => d.FinwireAgency)
                     .WithMany(p => p.FinwireNews)

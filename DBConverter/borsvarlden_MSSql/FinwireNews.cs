@@ -30,6 +30,14 @@ namespace DBConverter.borsvarlden_MSSql
         public string Slug { get; set; }
         public bool? IsConvertedFromMySql { get; set; }
         public int? FinwireXmlNewsId { get; set; }
+        public int ReadCount { get; set; }
+        public bool? IsBorsvarldenArticle { get; set; }
+        public bool? IsFinwireNews { get; set; }
+        public string CompanyName { get; set; }
+        public bool? IsPublished { get; set; }
+        public string Label { get; set; }
+        public DateTime PrioDeadLine { get; set; }
+        public DateTime ActualDeadLine { get; set; }
 
         public virtual FinwireAgencies FinwireAgency { get; set; }
         public virtual FinwireXmlNews FinwireXmlNews { get; set; }

@@ -37,6 +37,11 @@ namespace DBConverter.borsvarlden
             {
                 db.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
 
+                var metaAuthorsArticle = db.WpPostmeta
+                    .Where(x => x.MetaKey == "article_sponsored_company" || x.MetaKey == "article_aktuellt_deadline" ||
+                                x.MetaKey == "article_prio_deadline" || x.MetaKey == "article_prio_position"||
+                                x.MetaKey == "article_sponsored").ToList();
+
                 var term = db.WpTermRelationships
                     .Join(db.WpTermTaxonomy.Where(p => p.Taxonomy == "article_socialtag" || p.Taxonomy == "article_company"),
                         x => x.TermTaxonomyId, y => y.TermTaxonomyId,
@@ -51,7 +56,7 @@ namespace DBConverter.borsvarlden
                     .AsNoTracking()
                     .ToList();
 
-                var r = db.WpPosts
+                var posts = db.WpPosts
                     .Where(x => !nullGmtIds.Contains(x.Id) && x.PostType == "article" && x.PostStatus == "publish")
                     .Join(db.WpPostmeta.Where(a => a.MetaKey == "_thumbnail_id"),
                         post => post.Id, meta => meta.PostId,
@@ -61,7 +66,7 @@ namespace DBConverter.borsvarlden
 
                 var files =   db.WpPostmeta.Where(b => b.MetaKey == "_wp_attached_file").AsNoTracking().ToList();
 
-                r.Join(files,
+                posts.Join(files,
                         x => Convert.ToInt32(x.Meta.MetaValue),
                         y => y.PostId,
                         (x, y) => new {Post = x, Meta = y})
@@ -72,7 +77,7 @@ namespace DBConverter.borsvarlden
                         var socialTagsAdded = new List<FinwireSocialTags>();
                         var companiesAdded = new List<FinwireCompanies>();
 
-                       r1.ForEach(x =>
+                        r1.ForEach(x =>
                        {
                            if (x.WpTermRelationships.WpTermTaxonomy.WpTermTaxonomy.Taxonomy == "article_socialtag")
                            {
@@ -86,12 +91,12 @@ namespace DBConverter.borsvarlden
                            }
                        });
 
-                      /* var finwireXmlNewsAdded =  dbMS.FinwireXmlNews.Add(new FinwireXmlNews
-                       {
-                           DateTime = DateTime.Now,
-                           //FileContent =  .RoughXml,
-                           FileName = p.Post.Post.Guid
-                       });*/
+                        /* var finwireXmlNewsAdded =  dbMS.FinwireXmlNews.Add(new FinwireXmlNews
+                         {
+                             DateTime = DateTime.Now,
+                             //FileContent =  .RoughXml,
+                             FileName = p.Post.Post.Guid
+                         });*/
 
 
                         var newsEntityAdded = new FinwireNews()
@@ -101,10 +106,23 @@ namespace DBConverter.borsvarlden
                            Title = p.Post.Post.PostTitle,
                            Date = p.Post.Post.PostDate,
                            ImageRelativeUrl = p.Meta.MetaValue.ToNewImageFilePath(),
-                           Slug = p.Post.Post.PostName
+                           Slug = p.Post.Post.PostName,
+                           FinautoPassed = true
                        };
 
-                       dbMS.FinwireNews.Add(newsEntityAdded);
+                        var authorArticlesData = metaAuthorsArticle.Where(x => x.PostId == p.Post.Post.Id).ToList();
+                        if (authorArticlesData.Count > 0)
+                        {
+                            newsEntityAdded.IsBorsvarldenArticle = true;
+                            
+                            newsEntityAdded.PrioDeadLine = Convert.ToDateTime(authorArticlesData.FirstOrDefault(x => x.MetaKey == "article_prio_deadline")?.MetaValue);
+                            newsEntityAdded.ActualDeadLine = Convert.ToDateTime(authorArticlesData.FirstOrDefault(x => x.MetaKey == "article_aktuellt_deadline")?.MetaValue);
+                            newsEntityAdded.Order = Convert.ToInt32(authorArticlesData.FirstOrDefault(x => x.MetaKey == "article_prio_position")?.MetaValue);
+                            
+                            newsEntityAdded.CompanyName = authorArticlesData.FirstOrDefault(x => x.MetaKey == "article_sponsored_company")?.MetaValue;
+                        }
+
+                        dbMS.FinwireNews.Add(newsEntityAdded);
                        //todo make generic method in helper etc, find better solution using EF Core
                        socialTagsAdded?.ForEach(x =>
                            {
@@ -118,7 +136,7 @@ namespace DBConverter.borsvarlden
                        );
 
                        companiesAdded?.ForEach(x =>
-                           dbMS.FinwireNew2FinwireCompany.Add(new FinwireNew2FinwireCompany
+                                dbMS.FinwireNew2FinwireCompany.Add(new FinwireNew2FinwireCompany
                                {
                                    FinwireNew = newsEntityAdded,
                                    FinwareCompany = dbMS.FinwireCompanies.FirstOrDefault(y => y.Company == x.Company)
