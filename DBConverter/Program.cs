@@ -31,10 +31,13 @@ namespace DBConverter.borsvarlden
             };
 
             //SaveUploadedImagesToDisk();
+          
 
             using (var db = new borsvarldenContext())
             using (var dbMS = new borsvarlden_MSSql.borsvarldenContext())
             {
+                SaveUploadedImagesNew(db);
+
                 db.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
 
                 var metaAuthorsArticle = db.WpPostmeta
@@ -155,6 +158,20 @@ namespace DBConverter.borsvarlden
             File.ReadAllLines(pathListFiles)
                 .ToList()
                 .ForEach(x => ImageSaver.Save(x, dirToDownload));
+        }
+
+        private static void SaveUploadedImagesNew(borsvarldenContext db)
+        {
+            var filesAlreadySaved =
+                File.ReadAllLines(Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\UploadedImages.txt"));
+                   
+            var attachesFromDb = db.WpPostmeta.Where(x => x.MetaKey == "_wp_attached_file").Select(x=>x.MetaValue).AsEnumerable();
+            var dbg1 = attachesFromDb.Count();
+            var dbg2 = filesAlreadySaved.Count();
+            var res = attachesFromDb.Except(filesAlreadySaved);
+            var dirToDownload = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\..\borsvarlden\wwwroot\assets\images\finauto\other\general");
+            res.ToList().ForEach(x => ImageSaver.Save(x, dirToDownload));
+
         }
     }
 }
