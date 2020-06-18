@@ -6,7 +6,7 @@ using DBConverter.borsvarlden_MSSql;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-//using Microsoft.EntityFrameworkCore.Rel
+using DBConverter.Extensions;
 
 namespace DBConverter.borsvarlden
 {
@@ -36,9 +36,11 @@ namespace DBConverter.borsvarlden
             using (var db = new borsvarldenContext())
             using (var dbMS = new borsvarlden_MSSql.borsvarldenContext())
             {
-                SaveUploadedImagesNew(db);
+              //  SaveUploadedImagesNew(db);
 
                 db.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
+
+                var uploadedImages = db.WpPosts.Where(x => x.PostType == "attachment").ToList();
 
                 var metaAuthorsArticle = db.WpPostmeta
                     .Where(x => x.MetaKey == "article_sponsored_company" || x.MetaKey == "article_aktuellt_deadline" ||
@@ -61,6 +63,7 @@ namespace DBConverter.borsvarlden
 
                 var posts = db.WpPosts
                     .Where(x => !nullGmtIds.Contains(x.Id) && x.PostType == "article" && x.PostStatus == "publish")
+                    //.Where(x=>x.Id ==66289) //FOR DIAGNOTICS
                     .Join(db.WpPostmeta.Where(a => a.MetaKey == "_thumbnail_id"),
                         post => post.Id, meta => meta.PostId,
                         (post, meta) => new {Post = post, Meta = meta})
@@ -68,6 +71,7 @@ namespace DBConverter.borsvarlden
                     .ToList();
 
                 var files =   db.WpPostmeta.Where(b => b.MetaKey == "_wp_attached_file").AsNoTracking().ToList();
+               
 
                 posts.Join(files,
                         x => Convert.ToInt32(x.Meta.MetaValue),
@@ -101,14 +105,16 @@ namespace DBConverter.borsvarlden
                              FileName = p.Post.Post.Guid
                          });*/
 
+                        var customMainImage = uploadedImages.FirstOrDefault(x => x.PostParent == p.Post.Post.Id);
 
                         var newsEntityAdded = new FinwireNews()
                        {
                            IsConvertedFromMySql = true,
-                           NewsText = p.Post.Post.PostContent,
+                           NewsText = p.Post.Post.PostContent.ChangeImagePathInPost(),
                            Title = p.Post.Post.PostTitle,
                            Date = p.Post.Post.PostDate,
-                           ImageRelativeUrl = p.Meta.MetaValue.ToNewImageFilePath(),
+                           ImageRelativeUrl =  customMainImage != null ?  customMainImage.Guid.ChangeImagePathForTitle() : 
+                               p.Meta.MetaValue.ToNewImageFilePath(),
                            Slug = p.Post.Post.PostName,
                            FinautoPassed = true
                        };
@@ -162,15 +168,33 @@ namespace DBConverter.borsvarlden
 
         private static void SaveUploadedImagesNew(borsvarldenContext db)
         {
-            var filesAlreadySaved =
-                File.ReadAllLines(Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\UploadedImages.txt"));
-                   
-            var attachesFromDb = db.WpPostmeta.Where(x => x.MetaKey == "_wp_attached_file").Select(x=>x.MetaValue).AsEnumerable();
-            var dbg1 = attachesFromDb.Count();
+            //var filesAlreadySaved =
+            //  File.ReadAllLines(Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\UploadedImages.txt"));
+            var dirRootToDownload = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\..\borsvarlden\wwwroot\assets\uploads");
+             db.WpPostmeta.Where(x => x.MetaKey == "_wp_attached_file")
+                .Select(x => x.MetaValue)
+                .ToList()
+                .ForEach(x =>
+                    {
+                        var subPath = x.Replace("/", "\\");
+                        var dir = $@"{dirRootToDownload}\{subPath.Substring(0, subPath.LastIndexOf('\\'))}";
+
+                        if (!Directory.Exists(dir))
+                            Directory.CreateDirectory(dir);
+
+                        var file = $@"{dirRootToDownload}\{subPath}";
+
+                        if (!File.Exists(file))
+                            ImageSaver.Save(x, dir);
+                    }
+
+                );
+
+            /*var dbg1 = attachesFromDb.Count();
             var dbg2 = filesAlreadySaved.Count();
             var res = attachesFromDb.Except(filesAlreadySaved);
             var dirToDownload = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\..\borsvarlden\wwwroot\assets\images\finauto\other\general");
-            res.ToList().ForEach(x => ImageSaver.Save(x, dirToDownload));
+            res.ToList().ForEach(x => ImageSaver.Save(x, dirToDownload));*/
 
         }
     }

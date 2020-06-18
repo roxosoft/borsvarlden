@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using borsvarlden.Tests.UnitTests.Config;
 using DBConverter;
+using DBConverter.Extensions;
 using NUnit.Framework;
 
 namespace borsvarlden.Tests.UnitTests.Tests.TestTools
@@ -20,6 +23,12 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestTools
         public void TestImageSaver(string urlFragment)
         {
             ImageSaver.Save(urlFragment, @".\");
+        }
+        [TestCase("66056.html")]
+        public void TestParseContent(string fileName)
+        {
+            var f = $@"{UnitTestConfig.TestDataPath}\ContentParse\{fileName}";
+            var content = File.ReadAllText(f).ChangeImagePathInPost();
         }
     }
 }

@@ -9,6 +9,9 @@ namespace DBConverter
     public static class ImageRetrieveExtensions
     {
         private static string _imagesPath = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\..\borsvarlden\wwwroot\assets\images\finauto");
+
+        private static string _uploadsPath =
+            Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\..\borsvarlden\wwwroot\assets\uploads");
         private static List<string> _imageFilesAvailable = new List<string>();
 
         static ImageRetrieveExtensions()
@@ -30,14 +33,25 @@ namespace DBConverter
 
         public static string ToNewImageFilePath(this string inputPath)
         {
-            var r = _imageFilesAvailable.FirstOrDefault(x=> x.Contains(inputPath.Substring(inputPath.LastIndexOf('/') + 1)));
+            var classificatedImage = _imageFilesAvailable.FirstOrDefault(x=> x.Contains(inputPath.Substring(inputPath.LastIndexOf('/') + 1)));
 
-            if (r == null)
+            if (classificatedImage == null)
                 Console.WriteLine(inputPath);
 
-            r = r?.Substring(r.IndexOf("wwwroot") + 8).Replace('\\', '/');
+            classificatedImage = classificatedImage?.Substring(classificatedImage.IndexOf("wwwroot") + 8).Replace('\\', '/');
 
-            return r;
+            if (classificatedImage == null)
+            {
+                var uploadedImage = $@"{_uploadsPath}\{inputPath.Replace("/","\\")}";
+
+                if (File.Exists(uploadedImage))
+                {
+                    var urlUse = $"assets/uploads/{inputPath}";
+                    return urlUse;
+                }
+            }
+
+            return classificatedImage;
         }
     }
 }
