@@ -189,13 +189,6 @@ namespace DBConverter.borsvarlden
                     }
 
                 );
-
-            /*var dbg1 = attachesFromDb.Count();
-            var dbg2 = filesAlreadySaved.Count();
-            var res = attachesFromDb.Except(filesAlreadySaved);
-            var dirToDownload = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\..\borsvarlden\wwwroot\assets\images\finauto\other\general");
-            res.ToList().ForEach(x => ImageSaver.Save(x, dirToDownload));*/
-
         }
     }
 }
