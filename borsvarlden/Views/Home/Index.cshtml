@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="~/css/bv-widget-subscribe.css" />
     <link rel="stylesheet" href="~/css/bv-top-level.css" />
     <link rel="stylesheet" href="~/css/bv-panel.css" />
+    <link rel="stylesheet" href="~/css/search-form.css" />
     <link rel="stylesheet" href="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/css/settings.css" type="text/css" media="all" />
 }
 
@@ -38,6 +39,7 @@
                 @await Component.InvokeAsync("SponsoredNews")
                 @await Component.InvokeAsync("MostReadNews")
                 @await Component.InvokeAsync("SubscribeForm")
+                @await Component.InvokeAsync("SearchForm")
                 @await Component.InvokeAsync("LatestNews")
             </div>
         </div>
