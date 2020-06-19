@@ -78,9 +78,7 @@ namespace DBConverter.borsvarlden
                     .Select(x => new FinwireCompanies{  Company = x });
 
                 dbMS.FinwireCompanies.AddRange(allCompanies);
-
                 dbMS.SaveChanges();
-                    
 
                 var posts = db.WpPosts
                     .Where(x => !nullGmtIds.Contains(x.Id) && x.PostType == "article" && x.PostStatus == "publish")
@@ -102,9 +100,6 @@ namespace DBConverter.borsvarlden
                         y => y.PostId,
                         (x, y) => new {Post = x, Meta = y})
                     .ToList();
-
-              
-
 
                var total = listPosts.Count;
                int i = 0;
@@ -179,15 +174,7 @@ namespace DBConverter.borsvarlden
                        //todo make generic method in helper etc, find better solution using EF Core
                        socialTagsAdded?.Distinct().ToList().ForEach(x =>
                            {
-                              /* var socialTag = dbMS.FinwireSocialTags.FirstOrDefault(y => y.Tag == x.Tag);
-                               if (socialTag == null)
-                               {
-                                   socialTag = dbMS.FinwireSocialTags.Add(new FinwireSocialTags { Tag = x.Tag}).Entity;
-                                   //socialTag = dbMS.Add(new FinwireSocialTags {Tag = x.Tag}).Entity;
-                                     db.SaveChanges();
-                               }
                              
-                               var socialTagID = dbMS.FinwireSocialTags.Where(y => y.Tag == x.Tag)?.FirstOrDefault().Id;*/
                                dbMS.FinwireNew2FirnwireSocialTag.Add(new FinwireNew2FirnwireSocialTag
                                {
                                    FinwireNew = newsEntityAdded,
@@ -198,15 +185,7 @@ namespace DBConverter.borsvarlden
 
                        companiesAdded?.Distinct().ToList().ForEach(x =>
                            {
-                               /* var company = dbMS.Add(new FinwireCompanies {Company = x.Company}).Entity;
-
-                              if (company == null)
-                               {
-                                   company = dbMS.Add(new FinwireCompanies {Company = x.Company}).Entity;
-                                   db.SaveChanges();
-
-                               }*/
-
+                               
                                dbMS.FinwireNew2FinwireCompany.Add(new FinwireNew2FinwireCompany
                                {
                                    FinwireNew = newsEntityAdded,
@@ -222,7 +201,7 @@ namespace DBConverter.borsvarlden
                     });
                 Console.WriteLine($"{DateTime.Now.ToString()} ================= Finish main transformation     ====================");
                 dbMS.SaveChanges();
-              //  Console.WriteLine($"{DateTime.Now.ToString()} ================= SAVED DATA. FINISHED     ====================");
+                Console.WriteLine($"{DateTime.Now.ToString()} ================= SAVED DATA. FINISHED     ====================");
             }
         }
 
