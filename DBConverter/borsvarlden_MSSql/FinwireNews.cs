@@ -38,6 +38,7 @@ namespace DBConverter.borsvarlden_MSSql
         public string Label { get; set; }
         public DateTime PrioDeadLine { get; set; }
         public DateTime ActualDeadLine { get; set; }
+        public string ImageSource { get; set; }
 
         public virtual FinwireAgencies FinwireAgency { get; set; }
         public virtual FinwireXmlNews FinwireXmlNews { get; set; }

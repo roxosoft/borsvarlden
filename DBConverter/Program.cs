@@ -43,6 +43,7 @@ namespace DBConverter.borsvarlden
 
                 var uploadedImages = db.WpPosts.Where(x => x.PostType == "attachment").ToList();
                 var guids = db.WpPostmeta.Where(x => x.MetaKey == "article_finwire_guid").ToList();
+                var imageSources = db.WpPostmeta.Where(x => x.MetaKey == "article_imagesrc").ToList();
 
                 var metaAuthorsArticle = db.WpPostmeta
                     .Where(x => x.MetaKey == "article_sponsored_company" || x.MetaKey == "article_aktuellt_deadline" ||
@@ -86,7 +87,7 @@ namespace DBConverter.borsvarlden
                     .Join(db.WpPostmeta.Where(a => a.MetaKey == "_thumbnail_id"),
                         post => post.Id, meta => meta.PostId,
                         (post, meta) => new {Post = post, Meta = meta})
-                   // .Take(1000) //FOR DIAGNOTICS
+                    //.Take(2000) //FOR DIAGNOTICS
                     .AsNoTracking()
                     .ToList();
 
@@ -144,7 +145,8 @@ namespace DBConverter.borsvarlden
                            Slug = p.Post.Post.PostName,
                            FinautoPassed = true,
                            ImageLabel = articleLabels.FirstOrDefault(x => x.PostId == p.Post.Post.Id)?.MetaValue,
-                           Guid = guids.FirstOrDefault(x => x.PostId == p.Post.Post.Id)?.MetaValue
+                           Guid = guids.FirstOrDefault(x => x.PostId == p.Post.Post.Id)?.MetaValue,
+                           ImageSource = imageSources.FirstOrDefault(x => x.PostId == p.Post.Post.Id)?.MetaValue
                         };
 
                         if (newsEntityAdded.Guid != null)

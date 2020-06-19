@@ -37,7 +37,8 @@ namespace borsvarlden.Helpers
             if (companiesInNews?.Count == 1 && AvailableCompanies.Intersect(companiesInNews).Any())
             {
                 var dirPath = $@"{CompaniesPath}\{companiesInNews?.First()}";
-                return new ImageData {ImageAbsoluteUrl = FileHelper.GetRandomImageFromDir(dirPath),  Label = ""};
+                var imageData = FileHelper.GetRandomImageFromDir(dirPath);
+                return imageData;
             }
 
             var needles =
@@ -134,20 +135,19 @@ namespace borsvarlden.Helpers
                             }
                         }
                     }
-                    return new ImageData
-                    {
-                        ImageAbsoluteUrl = FileHelper.GetRandomImageFromDir(matchedDir),
-                        Label = label
-                    };
+
+                    var imageDataMatched = FileHelper.GetRandomImageFromDir(matchedDir);
+                    imageDataMatched.Label = label;
+                    return imageDataMatched;
                 }
             }
 
             //If not found use blackfill
-            return new ImageData
-            {
-                ImageAbsoluteUrl = FileHelper.GetRandomImageFromDir($@"{_imagePath}\backfill"),
-                Label = label
-            };
+            var imageDataBlackFill = FileHelper.GetRandomImageFromDir($@"{_imagePath}\backfill");
+
+            imageDataBlackFill.Label = label;
+            return imageDataBlackFill;
+
         }
 
         public static string AbsoluteUrlToRelativeUrl(string absoluteUrl)
@@ -165,6 +165,7 @@ namespace borsvarlden.Helpers
     public class ImageData
     {
         public string ImageAbsoluteUrl { get; set; }
+        public string ImageSource { get; set; }
         public string Label { get; set; }
     }
 }

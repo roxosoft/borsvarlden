@@ -34,7 +34,8 @@ namespace borsvarlden.Extensions
                 CompanyName = newsItem.CompanyName,
                 IsAdvertising = newsItem.IsAdvertising,
                 CopyrightLabel = newsItem.IsBorsvarldenArticle ? "Börsvärlden" : "Finwire / Börsvärlden",
-                Label = newsItem.Label
+                Label = newsItem.Label,
+                ImageSource = newsItem.ImageSource
             };
         }
 

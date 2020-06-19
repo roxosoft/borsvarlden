@@ -30,18 +30,25 @@
                     @if (!string.IsNullOrEmpty(Model.ImageUrl))
                     {
                         @if (Model.IsAdvertising && !string.IsNullOrEmpty(Model.CompanyName))
-                        {
-                            <span class="border-sponsored">I SAMARBETE MED @Model.CompanyName.ToUpper()</span>
-                        }
+                         {
+                             <span class="border-sponsored">I SAMARBETE MED @Model.CompanyName.ToUpper()</span>
+                         }
                         <img class="col-12" src="~/@Model.ImageUrl">
                     }
                 </div>
                 <div class="image-text">
-                    <span>
+                        <span>
                         Bildkälla:
-                    </span>
-                    Stockfoto
-                </div>
+                        </span>
+                    @if (!String.IsNullOrEmpty(Model.ImageSource))
+                    {
+                        @Model.ImageSource
+                    }
+                    @if (String.IsNullOrEmpty(Model.ImageSource))
+                    {
+                         @Html.Raw("Stockfoto")
+                    }
+                    </div>
             </div>
             <h1>
                 @Model.Title

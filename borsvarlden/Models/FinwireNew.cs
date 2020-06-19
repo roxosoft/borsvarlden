@@ -31,6 +31,7 @@ namespace borsvarlden.Models
         public DateTime PrioDeadLine { get; set; }
         public DateTime ActualDeadLine { get; set; }
         public string Label { get; set; }
+        public string ImageSource { get; set; }
 
         public FinwireAgency FinwireAgency { get; set; }
         public FinwireXmlNews FinwireXmlNews { get; set; }

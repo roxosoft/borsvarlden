@@ -81,6 +81,7 @@ namespace borsvarlden.Extensions
                 Date = finwireData.Date,
                 NewsText = finwireData.HtmlText,
                 ImageRelativeUrl = ImageHelper.AbsoluteUrlToRelativeUrl(imgData.ImageAbsoluteUrl),
+                ImageSource = imgData.ImageSource,
                 ImageLabel = imgData.Label,
                 Slug = finwireData.TittleSlug,
                 IsFinwireNews = true

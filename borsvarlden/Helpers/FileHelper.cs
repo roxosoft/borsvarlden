@@ -17,16 +17,30 @@ namespace borsvarlden.Helpers
                 .ToList();
         }
 
-        public static string GetRandomImageFromDir(string directoryWithImages)
+        public static ImageData GetRandomImageFromDir(string directoryWithImages)
         {
-             return Directory
+            var image = Directory
                 .GetFiles(directoryWithImages)
                 .Select(x => x.ToLower())
                 .Where(x => x.Contains(".jpg") || x.Contains(".jpeg") || x.Contains(".png") || x.Contains(".gif"))
                 .ToList()
                 .GetRandomElement();
+
+            var ind = image.LastIndexOf(".");
+            var dlt = image.Length - ind;
+            var txtFile = image.Remove(ind, dlt);
+            txtFile = $"{txtFile}.txt";
+            var imageSource = "";
+
+            if (File.Exists(txtFile))
+                imageSource = File.ReadAllText(txtFile);
+
+            return new ImageData
+            {
+                ImageAbsoluteUrl = image,
+                ImageSource = imageSource
+            };
         }
 
-       
     }
 }

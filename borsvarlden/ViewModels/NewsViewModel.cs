@@ -42,5 +42,7 @@ namespace borsvarlden.ViewModels
         public string Label { get; set; }
 
         public bool IsBigBlock { get; set; }
+
+        public string ImageSource { get; set; }
     }
 }
