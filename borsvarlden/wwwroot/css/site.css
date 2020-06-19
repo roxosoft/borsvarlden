@@ -562,3 +562,8 @@ table.article-table p {
 
 #footer li {
     font-weight: 300; }
+
+.content-main .article-content img {
+    display: block;
+    max-width: 100%;
+    height: auto; }
