@@ -10,8 +10,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.WebEncoders;
 
 namespace borsvarlden
 {
@@ -37,6 +40,11 @@ namespace borsvarlden
                 {
                     options.LoginPath = new PathString("/Account/Login");
                 });
+
+            services.Configure<WebEncoderOptions>(options =>
+            {
+                options.TextEncoderSettings = new TextEncoderSettings(UnicodeRanges.All);
+            });
 
             services.AddMvc();
             services.AddScoped<IFinwireParserService, FinwireFileParserService>();
