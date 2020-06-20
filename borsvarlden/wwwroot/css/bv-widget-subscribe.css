@@ -147,3 +147,6 @@ a:not([href]):not([tabindex]) {
 
 .bv-widget-subscribe .panel-default a {
     font-size: 11pt; }
+
+.inline-signup .inline-button:hover {
+    color: white !important; }

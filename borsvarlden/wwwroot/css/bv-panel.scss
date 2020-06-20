@@ -62,7 +62,11 @@
 }
 
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
-    border-top: none;  
+    border-top: none;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fafafa;
 }
 
 .panel-title > a {
@@ -104,6 +108,10 @@ panel-title > a.collapsed:hover, .panel-title > a.collapsed:visited {
     color: #222;
 }
 
+.panel-title a.collapsed:hover {
+    background-color: #bebebe;
+}
+
 .panel-title > a {
     display: block;
     position: relative;
@@ -137,4 +145,3 @@ panel-title > a.collapsed:hover, .panel-title > a.collapsed:visited {
 .panel-body {
     padding: 15px;
 }
-

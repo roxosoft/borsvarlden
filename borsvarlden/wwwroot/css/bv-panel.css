@@ -50,7 +50,11 @@
     border-bottom-color: #dddddd; }
 
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
-    border-top: none; }
+    border-top: none;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fafafa; }
 
 .panel-title > a {
     display: block;
@@ -84,6 +88,9 @@ panel-title > a.collapsed:hover, .panel-title > a.collapsed:visited {
     background-color: #e0e0e0;
     color: #222; }
 
+.panel-title a.collapsed:hover {
+    background-color: #bebebe; }
+
 .panel-title > a {
     display: block;
     position: relative;
@@ -97,8 +104,15 @@ panel-title > a.collapsed:hover, .panel-title > a.collapsed:visited {
 .panel-title > a, .panel-title > small, .panel-title > .small, .panel-title > small > a, .panel-title > .small > a {
     color: inherit;
 }*/
-.panel-title > a:after {
+.panel-title > a.collapsed:after {
     content: "\f078";
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 10px;
+    right: 15px; }
+
+.panel-title > a:after {
+    content: "\f077";
     font-family: 'FontAwesome';
     position: absolute;
     top: 10px;
