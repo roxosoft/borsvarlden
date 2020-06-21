@@ -1,6 +1,5 @@
 ﻿(function ($) {
     $(document).ready(function () {
-        $('.body-wrapper').removeAttr('background-color').css('background-color', 'white');
         $('#subscribe-widget-form-5eb0132bd5c09 #signup-submit-1').click(function (e) {
             e.preventDefault();
             $("#subscribe-widget-form-5eb0132bd5c09 #signup-submit").click();
