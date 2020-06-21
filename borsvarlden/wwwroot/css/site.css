@@ -547,11 +547,12 @@ table.article-table p {
     margin-right: 0.5rem; }
 
 .image-sponsor-label {
-    color: #f8f9fa;
-    font-size: 12px;
+    font-size: 7pt;
     position: relative;
     bottom: 18px;
-    left: 2px; }
+    left: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.9); }
 
 .side-article-wrapper .side-article-content h3 {
     font-size: 11pt !important;
