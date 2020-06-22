@@ -11,19 +11,11 @@ namespace borsvarlden.Extensions
     {
         public static NewsViewModel ToNewsViewModel(this FinwireNew newsItem)
         {
-            var subtitle = newsItem.Subtitle;
-            var subtitleMaxLength = 140;
-
-            if (subtitle?.Length >= subtitleMaxLength)
-            {
-                var index = subtitle.LastIndexOf(' ', subtitleMaxLength - 1);
-                subtitle = subtitle.Substring(0, index) + "...";
-            }
             return new NewsViewModel 
             {
                 Id = newsItem.Id,
                 Title = newsItem.Title,
-                Subtitle = subtitle,
+                Subtitle = newsItem.Subtitle,
                 Date = newsItem.Date,
                 NewsText = newsItem.NewsText,
                 ImageUrl = newsItem.ImageRelativeUrl,
