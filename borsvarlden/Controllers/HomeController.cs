@@ -57,6 +57,7 @@ namespace borsvarlden.Controllers
         [Route("artiklar/{titleSlug}")]
         public async Task<IActionResult> DetailedArticle([FromRoute]string titleSlug)
         {
+            Stopwatch sw = Stopwatch.StartNew();
             var cookie = this.GetCookie(titleSlug);
 
             if (cookie == null)
@@ -66,7 +67,11 @@ namespace borsvarlden.Controllers
             }
 
             NewsViewModel model = await _finwireNewsService.GetDetailedArticle(titleSlug);
-            return View(model);
+            sw.Stop();
+            var sw2 = Stopwatch.StartNew();
+            var view = View(model);
+            sw2.Stop();
+            return view;
         }
 
         [Route("finwire/{guid}")]

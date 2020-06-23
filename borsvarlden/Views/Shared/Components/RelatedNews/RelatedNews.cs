@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace borsvarlden.Views.Shared.Components.RelatedNews
 {
@@ -24,9 +25,9 @@ namespace borsvarlden.Views.Shared.Components.RelatedNews
         {
             int newsCount = _configurationHelper.RelatedNewsCount;
             var callingViewModel = (NewsViewModel) this.ViewComponentContext.Arguments["News"];
-
+            var sw = Stopwatch.StartNew();
             List<NewsViewModel> model = await _finwireNewsService.GetRelatedNews(callingViewModel, newsCount);
-
+            sw.Stop();
             return View("RelatedNews", model);
         }
     }
