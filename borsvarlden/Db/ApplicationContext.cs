@@ -50,6 +50,12 @@ namespace borsvarlden.Db
                 .WithMany(p => p.FinwireNew2FirnwireSocialTags)
                 .HasForeignKey(p => p.FinwireNewId);
 
+            modelBuilder.Entity<FinwireNew>()
+                .HasIndex(x=>x.Slug);
+
+            modelBuilder.Entity<FinwireNew>()
+                .HasIndex(x => x.Guid);
+
             FiltersSeeding(modelBuilder);
 
             UsersSeeding(modelBuilder);
