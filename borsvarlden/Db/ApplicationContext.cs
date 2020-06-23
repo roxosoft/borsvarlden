@@ -56,6 +56,10 @@ namespace borsvarlden.Db
             modelBuilder.Entity<FinwireNew>()
                 .HasIndex(x => x.Guid);
 
+            modelBuilder.Entity<FinwireNew>()
+                .HasIndex(x => x.Date)
+                .HasName("IndexDate");
+
             FiltersSeeding(modelBuilder);
 
             UsersSeeding(modelBuilder);
