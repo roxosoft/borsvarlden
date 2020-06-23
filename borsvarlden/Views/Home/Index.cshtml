@@ -24,8 +24,8 @@
     <div class="col-10 index-content-wrapper">
         <div class="column-label">ANNONS</div>
         @await Component.InvokeAsync("BannerTop")
-        <div class="row index-content-row">
-            <div class="col-8 content-main">
+        <div class="row index-content-row bv-container-page">
+            <div class="col-xs-12 bv-content-left">
                 @await Component.InvokeAsync("IndexNewsFeed")
 
                 <a class="button button-red" href="~/artiklar">Läs fler artiklar</a>
@@ -35,7 +35,7 @@
                     @await Component.InvokeAsync("LatestNews")
                 </div>
             </div>
-            <div class="col-4 content-right">
+            <div class="col-xs-12 bv-content-right">
                 @await Component.InvokeAsync("SponsoredNews")
                 @await Component.InvokeAsync("MostReadNews")
                 @await Component.InvokeAsync("SubscribeForm")

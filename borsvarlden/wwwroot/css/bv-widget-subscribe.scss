@@ -33,6 +33,12 @@
     background-color: transparent;
     color: #fff;
     margin-bottom: 10px;
+
+    &.panel-default .panel-body {
+        border: none;
+        background-color: transparent;
+        padding-right: 0;
+    }
 }
 
 .bv-widget-subscribe.widget-sidebar .panel h4 {
@@ -148,7 +154,7 @@
     margin-bottom: 0;
 }
 
-bv-widget-subscribe input[type=checkbox] {
+.bv-widget-subscribe input[type=checkbox] {
     margin-top: 4px;
 }
 
@@ -175,9 +181,9 @@ a:not([href]):not([tabindex]) {
 }
 
 .bv-widget-subscribe .panel-default a {
-    font-size: 11pt;
+    font-size: 10pt;
 }
 
 .inline-signup .inline-button:hover {
-    color: white !important;
+    color: #f44336 !important;
 }
