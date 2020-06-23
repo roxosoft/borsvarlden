@@ -7,7 +7,11 @@
 }
 
 @section ScriptsHead {
-    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/assets/js/includes/jquery/jquery.js"></script>
+   <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/assets/js/includes/jquery/jquery.js"></script>
+   <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.tools.min.js"></script>
+   <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js"></script>
+   <script type="text/javascript" src="~/js/detailarticle.js"></script>
+   <script type="text/javascript" src="~/js/sassy-social-share.js"></script>
 }
 
 @section Styles{
@@ -17,6 +21,7 @@
     <link rel="stylesheet" href="~/css/bv-panel.css" />
     <link rel="stylesheet" href="~/css/related-news.css" />
     <link rel="stylesheet" href="~/css/read-more.css" />
+    <link rel="stylesheet" href="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/css/settings.css" type="text/css" media="all" />
 }
 
 <style>
@@ -24,10 +29,12 @@
         padding-left: 20px;
         padding-right: 25px;
     }
+
     .row {
         margin-right: 0px !important;
         margin-left: 0px !important;
     }
+
     .col-12 {
         padding-right: 0px !important;
         padding-left: 0px !important;
@@ -46,25 +53,25 @@
                     @if (!string.IsNullOrEmpty(Model.ImageUrl))
                     {
                         @if (Model.IsAdvertising && !string.IsNullOrEmpty(Model.CompanyName))
-                         {
-                             <span class="border-sponsored">I SAMARBETE MED @Model.CompanyName.ToUpper()</span>
-                         }
+                        {
+                            <span class="border-sponsored">I SAMARBETE MED @Model.CompanyName.ToUpper()</span>
+                        }
                         <img class="col-12" src="~/@Model.ImageUrl">
                     }
                 </div>
                 <div class="image-text">
-                        <span>
+                    <span>
                         Bildkälla:
-                        </span>
+                    </span>
                     @if (!String.IsNullOrEmpty(Model.ImageSource))
                     {
                         @Model.ImageSource
                     }
                     @if (String.IsNullOrEmpty(Model.ImageSource))
                     {
-                         @Html.Raw("Stockfoto")
+                        @Html.Raw("Stockfoto")
                     }
-                    </div>
+                </div>
             </div>
             <h1>
                 @Model.Title
@@ -82,9 +89,9 @@
                 </div>
             </div>
             <div class="banner-wrapper">
-                <div class="banner-container">
-                    <div class="column-label">ANNONS</div>
-                    <img src="~/assets/images/savr-panorama.jpg">
+                <div class="column-label">ANNONS</div>
+                <div>
+                    @await Component.InvokeAsync("BannerTop")
                 </div>
             </div>
             <div class="row">
@@ -137,7 +144,7 @@
             </div>
         </div>
         <div class="col-2 index-side-banner-wrapper visible-lg">
-            <div class="column-label">ANNONSER</div>
+            <div class="column-label" style="margin-top: -15px;margin-bottom:3px" >ANNONSER</div>
             <img src="~/assets/images/luxbright_skyscraper.jpg" width="200" height="400">
             <div class="stiky-side-banner">
                 <img src="~/assets/images/ani_synas.gif" width="200" height="200">
@@ -148,6 +155,6 @@
 </div>
 
 @section Scripts{
-    <script type="text/javascript" src="~/js/detailarticle.js"></script>
-    <script type="text/javascript" src="~/js/sassy-social-share.js"></script>
+     <script type="text/javascript" src="~/js/detailarticle.js"></script>
+     <script type="text/javascript" src="~/js/sassy-social-share.js"></script>
 }
