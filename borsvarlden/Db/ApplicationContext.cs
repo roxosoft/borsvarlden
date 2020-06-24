@@ -68,6 +68,10 @@ namespace borsvarlden.Db
                 .HasIndex(x => x.PrioDeadLine)
                 .HasName("IndexPrioDeadLine");
 
+            modelBuilder.Entity<FinwireNew>()
+                .HasIndex(x => new {x.FinautoPassed, x.IsBorsvarldenArticle})
+                .HasName("IndexFinautoPassedIsBorsvarldenArticle");
+
             FiltersSeeding(modelBuilder);
 
             UsersSeeding(modelBuilder);
