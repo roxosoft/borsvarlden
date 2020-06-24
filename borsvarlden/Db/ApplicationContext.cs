@@ -60,6 +60,14 @@ namespace borsvarlden.Db
                 .HasIndex(x => x.Date)
                 .HasName("IndexDate");
 
+            modelBuilder.Entity<FinwireNew>()
+                .HasIndex(x => x.ActualDeadLine)
+                .HasName("IndexActualDeadLine");
+
+            modelBuilder.Entity<FinwireNew>()
+                .HasIndex(x => x.PrioDeadLine)
+                .HasName("IndexPrioDeadLine");
+
             FiltersSeeding(modelBuilder);
 
             UsersSeeding(modelBuilder);
