@@ -120,3 +120,13 @@ panel-title > a.collapsed:hover, .panel-title > a.collapsed:visited {
 
 .panel-body {
     padding: 15px; }
+
+.panel-collapse .panel-body p {
+    margin-bottom: 16px; }
+
+.sticky-right {
+    position: sticky;
+    top: 100px; }
+
+.has-error .with-errors .list-unstyled {
+    margin-bottom: 0px; }

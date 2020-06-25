@@ -47,6 +47,7 @@
 
 .bv-widget-subscribe .panel-default h4 {
     font-size: 11pt;
+    font-weight: 700;
 }
 
 .bv-widget-subscribe.widget-sidebar .panel .panel-title > a.collapsed:hover, .bv-widget-subscribe.widget-sidebar .panel .panel-title > a.collapsed:visited {
@@ -186,4 +187,12 @@ a:not([href]):not([tabindex]) {
 
 .inline-signup .inline-button:hover {
     color: #f44336 !important;
+}
+
+.bv-widget-subscribe p {
+    margin-bottom: 16px;
+}
+
+.sticky-container-right .subscribe-form-description .bv-widget-subscribe {
+    margin-top: 26.667px;
 }

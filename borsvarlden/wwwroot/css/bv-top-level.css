@@ -141,6 +141,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .margin-top-20 {
     margin-top: 20px !important; }
 
+.margin-top-25 {
+    margin-top: 25px !important; }
+
+.margin-top-30 {
+    margin-top: 30px !important; }
+
+.margin-top-35 {
+    margin-top: 35px !important; }
+
 bv-sidebar-group a, .bv-sidebar-group a:active, .bv-sidebar-group a:hover, .bv-sidebar-group a:visited {
     text-decoration: none;
     color: #222; }
