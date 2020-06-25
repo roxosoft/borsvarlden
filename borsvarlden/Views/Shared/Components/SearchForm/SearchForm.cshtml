@@ -1,10 +1,10 @@
 ﻿@model borsvarlden.ViewModels.SearchFormViewModel
 
 <div class="search">
-    @using (Html.BeginForm("NewsList", "Home", new { page = 1 }, FormMethod.Post, false, new { placeholder = "Sök artiklar", @class = "search-form" }))
+    @using (Html.BeginForm("NewsList", "Home", new { page = 1 }, FormMethod.Post, false, new {  @class = "search-form" }))
     {
-        <div class="form-group">
-            <div class="input-group">@Html.TextBoxFor(m => m.SearchText, null, new {@class = "form-control search-text"})
+        <div class="search-form-group">
+            <div class="input-group">@Html.TextBoxFor(m => m.SearchText, null, new { placeholder = "Sök artiklar", @class = "form-control search-text"})
                 <span class="submit-search">
                     <button type="submit">
                         <span class="fa fa-search">

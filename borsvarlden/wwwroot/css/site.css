@@ -240,22 +240,19 @@ h3 {
     text-transform: uppercase;
     padding-bottom: 5px; }
 
-.form-control::placeholder {
-    color: #555; }
-
 .signup .panel {
     -webkit-box-shadow: none;
     box-shadow: none; }
     .signup .panel .panel-body {
         padding-right: 3px; }
 
-.inline-signup .form-control::placeholder {
+.form-control::placeholder {
     color: #999; }
 
-.inline-signup .form-control:-ms-input-placeholder {
+.form-control:-ms-input-placeholder {
     color: #999; }
 
-.inline-signup .form-control::-webkit-input-placeholder {
+.form-control::-webkit-input-placeholder {
     color: #999; }
 
 .index-side-banner-wrapper {
