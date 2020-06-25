@@ -1,8 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using borsvarlden.Models;
 using borsvarlden.Services.Entities;
 using DevExtreme.AspNet.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -65,5 +69,23 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
         {
             await _newsService.DeleteArticle(key);
         }
+
+        [HttpPost("UploadImage")]
+        public async Task<IActionResult> UploadImage()
+        {
+            var files = Request.Form.Files;
+            if (files.Count != 1)
+                return BadRequest();
+
+            var formFile = files[0];
+            if (formFile.Length <= 0)
+                return BadRequest();
+
+            var url = await _newsService.UploadImage(formFile);
+
+            return Ok(url);
+        }
+
+
     }
 }

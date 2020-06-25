@@ -14,8 +14,10 @@
  using Microsoft.AspNetCore.Hosting;
  using Microsoft.EntityFrameworkCore;
  using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
- namespace borsvarlden.Services.Entities
+namespace borsvarlden.Services.Entities
 {
     public interface IFinwireNewsService
     {
@@ -37,6 +39,7 @@
         Task UpdateReadCount(string slug);
         Task<List<NewsViewModel>> GetMostReadNews(int count, int id);
         Task<List<NewsViewModel>> GetAdvertiseNewsList(int newsCount);
+        Task<string> UploadImage(IFormFile formFile);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -45,6 +48,7 @@
         private IFinwireFilterService _finwireFilterService;
         private readonly string _webRootPath;
         private string _imagesRootPath => $@"{_webRootPath}\assets\images\finauto";
+        private string _imagesUploadRootPath => $@"{_webRootPath}\assets\uploads";
         private static Random rndGen = new Random();
 
         public FinwireNewsService(ApplicationContext dbContext, IFinwireFilterService finwireNewsService, IWebHostEnvironment hostEnvironment)
@@ -409,6 +413,24 @@
         private async Task<List<FinwireNew>> GetMainNewsListAsync(int newsCount)
         {
             return  await GetMainNews(newsCount).ToListAsync();
+        }
+
+        public async Task<string> UploadImage(IFormFile formFile)
+        {
+            var filename = $"{Guid.NewGuid()}{Path.GetExtension(formFile.FileName)}";
+
+            var dir = Path.Combine(this._imagesUploadRootPath, $@"{DateTime.Now.Year}\{DateTime.Now.Month:00}");
+            var path = Path.Combine(dir, filename);
+
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+
+            using (var stream = System.IO.File.Create(path))
+            {
+                await formFile.CopyToAsync(stream);
+            }
+
+            return ImageHelper.AbsoluteUrlToRelativeUrl(path); 
         }
     }
 }

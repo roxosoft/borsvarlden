@@ -31,7 +31,7 @@
                 },
                 {
                     dataField: "subtitle",
-                    visible: false  
+                    visible: false
                 },
                 {
                     dataField: "imageRelativeUrl",
@@ -40,6 +40,26 @@
                     alignment: "center",
                     cellTemplate: function(container, options) {
                         container.append("<img style='width: auto' src=\"" + options.text + "\" width=\"50\" height=\"50\" >");
+                    },
+                    editCellTemplate: (itemElement, cellInfo) => {
+
+                        let tb = $("<div />").dxTextBox({
+                            value: cellInfo.value,
+                            onValueChanged: (e) => {
+                                cellInfo.setValue(e.value);
+                            }
+                        })
+                        tb.appendTo(itemElement);
+
+                        $("<div />").dxFileUploader({
+                                        accept: "image/*",
+                                        uploadUrl: "@Url.Action("UploadImage", "Articles")",
+                                        onUploaded: (e) => {
+                                            cellInfo.setValue(e.request.response);
+                                            tb.dxTextBox('option', 'value', e.request.response);
+                                        }
+                        }).appendTo(itemElement);
+
                     }
                 },
                 {
@@ -160,10 +180,13 @@
                             //}
                         },
                         {
-                            dataField: "dateModified",
-                            dataType: "datetime"
+                            colSpan: 2,
+                            dataField:"imageRelativeUrl",
                         },
-                        "imageRelativeUrl",
+                        {
+                            dataField: "dateModified",
+                            dataType: "datetime",
+                        },
                         "slug",
                         "order",
                         "companyName",
