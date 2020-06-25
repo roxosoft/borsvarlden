@@ -51,5 +51,18 @@ namespace borsvarlden.Extensions
         {
             return Regex.Replace(input, regex, string.Empty);
         }
+
+        public static string ToTruncated(this string input)
+        {
+            var output = input;
+            var subtitleMaxLength = 140;
+
+            if (input?.Length >= subtitleMaxLength)
+            {
+                var index = input.LastIndexOf(' ', subtitleMaxLength - 1);
+                output = input.Substring(0, index) + "...";
+            }
+            return output;
+        }
     }
 }

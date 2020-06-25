@@ -1,4 +1,5 @@
 ﻿@using borsvarlden.ViewModels;
+@using borsvarlden.Extensions;
 @model NewsViewModel;
 
 <a href="~/artiklar/@Html.Raw(Model.TittleSlug)">
@@ -29,7 +30,7 @@
                     </span>
                 }
                 <span>
-                    @Model.Subtitle
+                    @Model.Subtitle.ToTruncated()
                 </span>
             </p>
         }
