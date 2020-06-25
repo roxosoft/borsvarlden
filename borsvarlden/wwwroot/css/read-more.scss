@@ -14,4 +14,13 @@
         font-size: 12pt;
         line-height: 1.4em;
     }
+
+    .read-more-link:hover {
+        .read-more-content {
+            text-decoration: underline;
+        }
+        .read-more-image {
+            opacity: 0.85;
+        }
+    }
 }
