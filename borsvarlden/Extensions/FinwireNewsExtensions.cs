@@ -19,7 +19,7 @@ namespace borsvarlden.Extensions
                 Date = newsItem.Date,
                 NewsText = newsItem.NewsText,
                 ImageUrl = newsItem.ImageRelativeUrl,
-                ImageLabel = PrepareImageLabel(newsItem.ImageLabel),
+                ImageLabel = newsItem.Label != null ? newsItem.Label : newsItem.ImageLabel,
                 TittleSlug = newsItem.Slug,
                 Guid = newsItem.Guid,
                 IsFinwireNews = newsItem.IsFinwireNews,
@@ -39,8 +39,5 @@ namespace borsvarlden.Extensions
             output.IsFromXml = true;
             return output;
         }
-
-        private static string PrepareImageLabel(string imageLabelInput)
-            => imageLabelInput?.Replace("macro", "makro");
     }
 }
