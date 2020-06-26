@@ -13,6 +13,7 @@ using System;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.WebEncoders;
 
@@ -22,9 +23,12 @@ namespace borsvarlden
     {
         private static readonly string _databaseConnectionStringName = "borsvarlden";
 
-        public Startup(IConfiguration configuration)
+        private readonly IWebHostEnvironment _environment;
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
             Configuration = configuration;
+            _environment = environment;
         }
 
         public IConfiguration Configuration { get; }
@@ -40,6 +44,17 @@ namespace borsvarlden
                 {
                     options.LoginPath = new PathString("/Account/Login");
                 });
+
+            //Skips authorization in development mode.
+            services.AddAuthorization(x =>
+            {
+                if (_environment.IsDevelopment())
+                {
+                    x.DefaultPolicy = new AuthorizationPolicyBuilder()
+                        .RequireAssertion(_ => true)
+                        .Build();
+                }
+            });
 
             services.Configure<WebEncoderOptions>(options =>
             {

@@ -8,9 +8,12 @@ using borsvarlden.Extensions;
 using borsvarlden.Services.Finwire;
 using borsvarlden.Services.Entities;
 using borsvarlden.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace borsvarlden.Controllers
 {
+    //TODO remove this when this site becomes main
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

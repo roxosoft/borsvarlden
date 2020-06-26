@@ -2,7 +2,9 @@
     border-top: 1px solid #e0e0e0; }
 
 .latest-article {
-    width: 100%; }
+    display: block;
+    width: 100%;
+    margin-top: 10px; }
 
 .latest-label {
     display: block;
