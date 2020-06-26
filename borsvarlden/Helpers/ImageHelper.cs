@@ -17,6 +17,65 @@ namespace borsvarlden.Helpers
 
         private static List<string> AvailableCompanies;
 
+        private static readonly Dictionary<string, string> DictSocialTag = new Dictionary<string, string>
+        {
+                { "agriculture"      , "Jordbruk"},
+                { "aktier"           , "Aktier" },
+                { "analytics"        , "Analytiker"},
+                { "automotive"       , "Fordon"},
+                { "aviation"         , "Flyg"},
+                { "basemetals"       , "Basmetaller"},
+                { "betting"          , "Betting"},
+                { "biometrics"       , "Biometri"},
+                { "bonds"            , "Räntor"},
+                { "commodities"      , "Råvaror"},
+                { "copper"           , "Koppar"},
+                { "crowdfunding"     , "Crowdfunding"},
+                { "cryptocurrency"   , "Kryptovalutor"},
+                { "currencies"       , "Valutor"},
+                { "defence"          , "Försvar"},
+                { "dividend"         , "Utdelning"},
+                { "ecommerce"        , "E-handel"},
+                { "energy"           , "Energi"},
+                { "equities"         , "Kapital"},
+                { "etp"              , "ETP"},
+                { "financials"       , "Finans"},
+                { "fintech"          , "Fintech"},
+                { "finwiretv"        , "Finwire TV"},
+                { "foods"            , "Livsmedel"},
+                { "funding"          , "Finansiering"},
+                { "gaming"           , "Gaming"},
+                { "gold"             , "Guld"},
+                { "healthcare"       , "Sjukvård"},
+                { "hedgefonder"      , "Hedgefonder"},
+                { "hedgefunds"       , "Hedgefonder"},
+                { "industrials"      , "Verkstad"},
+                { "insider"          , "Insider"},
+                { "ipo"              , "IPO"},
+                { "leisure"          , "Fritid"},
+                { "lifescience"      , "Lifescience"},
+                { "macro"            , "Makro"},
+                { "materials"        , "Material"},
+                { "media"            , "Media"},
+                { "mutualfunds"      , "Fonder"},
+                { "oil"              , "Olja"},
+                { "pharmaceuticals"  , "Läkemedel"},
+                { "podd"             , "Podcast"},
+                { "realestate"       , "Fastighet"},
+                { "renewable"        , "Förnybart"},
+                { "retail"           , "Handel"},
+                { "services"         , "Tjänster"},
+                { "share"            , "Börsen"},
+                { "space"            , "Rymden"},
+                { "stockholmbullets" , "Börsen"},
+                { "stocks"           , "Börsen"},
+                { "tech"             , "Teknik"},
+                { "telecom"          , "Telekom"},
+                { "transports"       , "Transport"},
+                { "vr"               , "VR"},
+                { "wind"             , "Vindkraft"}
+        };
+
         public static void Init(string imagePath)
         {
             _imagePath = imagePath;
@@ -29,6 +88,91 @@ namespace borsvarlden.Helpers
                     ,companiesInNews?.Select(x => x.ToLower()).ToList());
         }
 
+        private static string PostProcessImageLabel(string rawImageLabel, List<string> socialTagsInNews)
+        {
+            string labelOutput = null;
+
+            if (rawImageLabel != null)
+                if (DictSocialTag.TryGetValue(rawImageLabel,  out labelOutput))
+                    return labelOutput;
+
+            var needles = new List<object>()
+            {
+                // Specific cases socialtags
+                "stockholmbullets", // filter
+                "ipo", // filter
+                "cryptocurrency", // filter
+
+                // Company-describing socialtags based on importance
+                "space", // often grouped with telecom, space is more important
+                "healthcare", // more important than tech, vr
+                "betting", // more important than gaming/leisure
+
+                // Company-describing socialtags of equal value
+                new List<string>
+                {
+                    "aviation",
+                    "agriculture",
+                    "automotive", // filter
+                    "biometrics", // filter
+                    "gaming", // filter
+                    "ecommerce",
+                    "telecom",
+                    "vr",
+                    "realestate",
+                    "retail"
+                },
+
+                "tech", // filter
+
+                // Rest of the original filter socialtags
+                "analytics", // filter
+                "commodities", // filter
+                "crowdfunding", // filter
+                "dividend", // filter
+                "funding", // filter
+                "macro", // filter
+                "share" // filter
+            };
+
+            string thisNeedle = null;
+
+            foreach (var needle in needles)
+            {
+                if (needle is List<string>)
+                {
+                    var needleList = ((List<string>)needle);
+                    var intersect = needleList.Intersect(socialTagsInNews).ToList();
+                    if (intersect.Any())
+                        thisNeedle = intersect.GetRandomElement();
+                    else
+                        continue;
+                }
+                else if (needle is string)
+                {
+                    thisNeedle = (string)needle;
+                }
+                else
+                    throw new ApplicationException("GetImagePath wrong item type");
+
+                if (socialTagsInNews?.Contains(thisNeedle) ?? true)
+                {
+                    labelOutput = thisNeedle;
+                    break;
+                }
+            }
+
+            if (labelOutput != null)
+            {
+                if (DictSocialTag.TryGetValue(labelOutput, out var translatedLabelOutput))
+                    return translatedLabelOutput;
+
+                return labelOutput;
+            }
+
+            return "Nyhet";
+        }
+
         private static ImageData GetImageDataImplementation(List<string> socialTagsInNews, List<string> companiesInNews)
         {
             string matchedDir = "";
@@ -38,6 +182,7 @@ namespace borsvarlden.Helpers
             {
                 var dirPath = $@"{CompaniesPath}\{companiesInNews?.First()}";
                 var imageData = FileHelper.GetRandomImageFromDir(dirPath);
+                imageData.Label = PostProcessImageLabel(imageData.Label, socialTagsInNews);
                 return imageData;
             }
 
@@ -137,7 +282,7 @@ namespace borsvarlden.Helpers
                     }
 
                     var imageDataMatched = FileHelper.GetRandomImageFromDir(matchedDir);
-                    imageDataMatched.Label = label;
+                    imageDataMatched.Label = PostProcessImageLabel(label, socialTagsInNews);
                     return imageDataMatched;
                 }
             }
@@ -145,7 +290,7 @@ namespace borsvarlden.Helpers
             //If not found use blackfill
             var imageDataBlackFill = FileHelper.GetRandomImageFromDir($@"{_imagePath}\backfill");
 
-            imageDataBlackFill.Label = label;
+            imageDataBlackFill.Label = PostProcessImageLabel(label,socialTagsInNews);
             return imageDataBlackFill;
 
         }

@@ -47,15 +47,10 @@ namespace borsvarlden.Controllers.Api
 
             var pathBase = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\TestData\FinwireFiles");
 
-            for (int i = 1; i <= 8; i++)
+           
+            foreach(var dir in Directory.GetDirectories(pathBase).ToList())
             {
-                //there is no data
-                if (i == 4 || i == 5)
-                    continue;
-
-                var path = $@"{pathBase}\{i.ToString("D2")}";
-
-                foreach (var file in Directory.GetFiles(path))
+                foreach (var file in Directory.GetFiles(dir))
                 {
                     var finwireData = _finwireParserService.ParseFile(file);
                     await _finwireNewsService.AddSingleNews(finwireData.Result);

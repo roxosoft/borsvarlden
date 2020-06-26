@@ -37,7 +37,8 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestServices
                 }
             }
         }
-        
+
+        [TestCase("99", "FWM004E1B1.xml")]
         [TestCase("29", "FWS004CF9A.xml")]
         [TestCase("08", "FWM0042BB5.xml")]
         public void TestSpecificFile(string subfolder, string fileName)

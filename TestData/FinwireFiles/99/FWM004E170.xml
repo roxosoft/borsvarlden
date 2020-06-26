@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<version>12</version>
+	<type>ARTICLE</type>
+	<title>Tesla planerar batterianläggning i Fremont</title>
+	<guid>FWM004E170</guid>
+	<clientHash>e0e4c7b5d8a664d704788dbfea2d6e22eb7eea96269eebfbaf0b4bd041b7c1197a811838f8582b07681c6cde2f062a959c5be5e8cab96ca41c3cebc1ff652a2d</clientHash>
+	<pubDate>Thu, 25 Jun 2020 06:51:28 GMT</pubDate>
+	<isoDate>2020-06-25T06:51:28+00:00</isoDate>
+	<links>
+	</links>
+	<newstext><![CDATA[Tesla planerar att bygga en batterianläggning vid Fremont i Kalifornien där man har sin fordonsproduktion. Det framgår av inlämnade dokument, rapporterar Reuters.<br/><br/>Elbilsbolaget får idag sin batterier från Gigafactory i Nevada. Leverantör är japanska Panasonic. Därutöver har bolaget även leveransavtal med sydkoreanska LG Chem och kinesiska CATL.<br/><br/>Vid Fremont existerar i nuläget en batteritillverkning i ”mindre skala”, enligt Tesla. I ansökan till stadsnämnden skriver bolaget att det vill utöka tillverkningen, en process som kan ta cirka tre månader.<br/><br/>Tesla planerar att ha totalt 470 personer involverade kring batterierna, varav 400 skulle jobba i skift.<br/><br/>Tesla väntas ge mer uppdateringar kring batterisatsningen i samband med sin ”Battery Day” den 15 september.]]></newstext>
+	<htmltext><![CDATA[Tesla planerar att bygga en batterianläggning vid Fremont i Kalifornien där man har sin fordonsproduktion. Det framgår av inlämnade dokument, rapporterar Reuters.<br><br>Elbilsbolaget får idag sin batterier från Gigafactory i Nevada. Leverantör är japanska Panasonic. Därutöver har bolaget även leveransavtal med sydkoreanska LG Chem och kinesiska CATL.<br><br>Vid Fremont existerar i nuläget en batteritillverkning i ”mindre skala”, enligt Tesla. I ansökan till stadsnämnden skriver bolaget att det vill utöka tillverkningen, en process som kan ta cirka tre månader.<br><br>Tesla planerar att ha totalt 470 personer involverade kring batterierna, varav 400 skulle jobba i skift.<br><br>Tesla väntas ge mer uppdateringar kring batterisatsningen i samband med sin ”Battery Day” den 15 september.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<countries>
+		<country>SE</country>
+		<country>US</country>
+	</countries>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Tesla" fwid="1596">
+			<instrument isin="US88160R1014" market="NASDAQ">TSLA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>energy</socialtag>
+		<socialtag>industrials</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

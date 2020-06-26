@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<version>12</version>
+	<type>ARTICLE</type>
+	<title>Teslas pekskärmar utreds i USA</title>
+	<guid>FWM004E1E4</guid>
+	<clientHash>a2c9d822ff0c4891436eb10b25b4af411e18cee10e033d2a1508610f703f88cad254dd9df5a092778462e5ebe1255407badd1c1d49562c009637ccb79174f037</clientHash>
+	<pubDate>Thu, 25 Jun 2020 13:16:09 GMT</pubDate>
+	<isoDate>2020-06-25T13:16:09+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://nypost.com/2020/06/24/us-investigates-touchscreen-failures-in-tesla-model-s-cars/</link>
+	</links>
+	<newstext><![CDATA[USA:s trafiksäkerhetsmyndighet, NHTSA, har inlett en utredning kring defekter rörande pekskärmarna i Teslas Model S. Det skriver New York Post.<br/><br/>Utredningen avser 63 000 modeller tillverkade mellan 2012 och 2015. <br/><br/>Klagomålen som lämnats in relaterar bland annat till att mediakontrollen inte fungerat, och så även navigation och webbläsaren. Det har även inträffat att bakre kameran slutat fungera när bilen backat.<br/><br/>Enligt NHTSA saknar bristerna koppling till själva styrningen av fordonet.<br/><br/>Tesla har använt omnämnda mediakontrollen i sina Model S tillverkade 2012-2018 samt Model X tillverkade 2016-2018.]]></newstext>
+	<htmltext><![CDATA[USA:s trafiksäkerhetsmyndighet, NHTSA, har inlett en utredning kring defekter rörande pekskärmarna i Teslas Model S. Det skriver New York Post.<br><br>Utredningen avser 63 000 modeller tillverkade mellan 2012 och 2015. <br><br>Klagomålen som lämnats in relaterar bland annat till att mediakontrollen inte fungerat, och så även navigation och webbläsaren. Det har även inträffat att bakre kameran slutat fungera när bilen backat.<br><br>Enligt NHTSA saknar bristerna koppling till själva styrningen av fordonet.<br><br>Tesla har använt omnämnda mediakontrollen i sina Model S tillverkade 2012-2018 samt Model X tillverkade 2016-2018.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<countries>
+		<country>SE</country>
+		<country>US</country>
+	</countries>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Tesla" fwid="1596">
+			<instrument isin="US88160R1014" market="NASDAQ">TSLA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

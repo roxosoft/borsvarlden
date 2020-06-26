@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<version>12</version>
+	<type>ARTICLE</type>
+	<title>Teslas bilar brister i kvalitet enligt undersökning</title>
+	<guid>FWM004E1CF</guid>
+	<clientHash>ad29a535c9db9f00b7f9476071c67745b78cb61bdfd7264e8ec68dc7e085a26917a3355e0d0c6aed623592aa0efe03acba6552e15a6ddebd014e4be3c4b1774f</clientHash>
+	<pubDate>Thu, 25 Jun 2020 11:42:46 GMT</pubDate>
+	<isoDate>2020-06-25T11:42:46+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://www.cnbc.com/2020/06/24/tesla-lags-auto-industry-in-quality-finds-new-jd-power-study.html</link>
+	</links>
+	<newstext><![CDATA[Teslas nya bilar har betydligt större kvalitetsproblem än 31 andra bilmärken som undersökts i USA av JD Power. Det rapporterar CNBC.<br/><br/>Elbilsbolaget toppar listan bland ägare som rapporterar in flest problem efter 90 dagars ägande. Problemen relaterar bland annat till färgdefekter, infotainmentsystemet och bilens paneler.<br/><br/>JD Power, som använder 100 bilar av samma modell som mått, noterade att det förekommer 250 problem per 100 Tesla-bilar. Det kan jämföras med branschsnittet för 2020 års modeller med 166 problem per 100 bilar.<br/><br/>Bäst i klassen var Dodge och Kia med 136 problem per 100 bilar.<br/><br/>Att Tesla noteras med så många problem beror främst på produktionskvalitén, sade Doug Betts på JD Power till CNBC.]]></newstext>
+	<htmltext><![CDATA[Teslas nya bilar har betydligt större kvalitetsproblem än 31 andra bilmärken som undersökts i USA av JD Power. Det rapporterar CNBC.<br><br>Elbilsbolaget toppar listan bland ägare som rapporterar in flest problem efter 90 dagars ägande. Problemen relaterar bland annat till färgdefekter, infotainmentsystemet och bilens paneler.<br><br>JD Power, som använder 100 bilar av samma modell som mått, noterade att det förekommer 250 problem per 100 Tesla-bilar. Det kan jämföras med branschsnittet för 2020 års modeller med 166 problem per 100 bilar.<br><br>Bäst i klassen var Dodge och Kia med 136 problem per 100 bilar.<br><br>Att Tesla noteras med så många problem beror främst på produktionskvalitén, sade Doug Betts på JD Power till CNBC.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<countries>
+		<country>SE</country>
+		<country>US</country>
+	</countries>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Tesla" fwid="1596">
+			<instrument isin="US88160R1014" market="NASDAQ">TSLA</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>automotive</socialtag>
+		<socialtag>industrials</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>

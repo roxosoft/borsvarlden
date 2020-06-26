@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<item>
+	<version>12</version>
+	<type>ARTICLE</type>
+	<title>Apple köper startupen Fleetsmith</title>
+	<guid>FWM004E1B1</guid>
+	<clientHash>8a293935352047e3f2bd1715f1a05417b7e777a6f001928015b40a327fa8b5dad79454b6ffe2abedfe93a4530e53963d33d245258b07c2a4b63eee0b6a34511b</clientHash>
+	<pubDate>Thu, 25 Jun 2020 09:41:48 GMT</pubDate>
+	<isoDate>2020-06-25T09:41:48+00:00</isoDate>
+	<links>
+		<link type="html" mime="text/html">https://techcrunch.com/2020/06/24/apple-has-acquired-fleetsmith-a-startup-that-helps-it-manage-apple-devices-remotely/</link>
+	</links>
+	<newstext><![CDATA[Apple har förvärvat Fleetsmith, en startup som hanterar Apple-enheter via molnet och säljer detta som tjänst till olika företags IT-avdelningar. Det rapporterar Techcrunch. De finansiella detaljerna är hemliga.<br/><br/>Fleetsmith hade innan affären fått in 40 miljoner dollar i riskkapital, varav 30 miljoner förra året. Några av bolagets uppbackare är Menlo Ventures och Tiger Global.<br/><br/>I samband med senaste finansieringsrundan skrev samma tekniksajt att bolaget hade 30 anställda och 1 500 kunder.]]></newstext>
+	<htmltext><![CDATA[Apple har förvärvat Fleetsmith, en startup som hanterar Apple-enheter via molnet och säljer detta som tjänst till olika företags IT-avdelningar. Det rapporterar Techcrunch. De finansiella detaljerna är hemliga.<br><br>Fleetsmith hade innan affären fått in 40 miljoner dollar i riskkapital, varav 30 miljoner förra året. Några av bolagets uppbackare är Menlo Ventures och Tiger Global.<br><br>I samband med senaste finansieringsrundan skrev samma tekniksajt att bolaget hade 30 anställda och 1 500 kunder.]]></htmltext>
+	<signature><![CDATA[Reno Santic<br/>Nyhetsbyrån Finwire<br/>https://twitter.com/finwire]]></signature>
+	<language>sv</language>
+	<countries>
+		<country>SE</country>
+		<country>US</country>
+	</countries>
+	<agency>FWM</agency>
+	<companies>
+		<company name="Apple" fwid="1508">
+			<instrument isin="US0378331005" market="NASDAQ">AAPL</instrument>
+		</company>
+	</companies>
+	<socialtags>
+		<socialtag>ma</socialtag>
+		<socialtag>tech</socialtag>
+	</socialtags>
+</item>
