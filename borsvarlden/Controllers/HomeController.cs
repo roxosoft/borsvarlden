@@ -69,6 +69,9 @@ namespace borsvarlden.Controllers
             }
 
             NewsViewModel model = await _finwireNewsService.GetDetailedArticle(titleSlug);
+            if (model == null)
+                return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+
             return View(model);
         }
 
@@ -76,6 +79,10 @@ namespace borsvarlden.Controllers
         public async Task<IActionResult> FinwireArticleFromXmlByGuid(string guid)
         {
             NewsViewModel model = await _finwireNewsService.GetDetailedArticleByGuid(guid);
+
+            if (model == null)
+                 return View("Error",new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+
             var cookie = this.GetCookie(model.TittleSlug);
 
              if (cookie == null)
