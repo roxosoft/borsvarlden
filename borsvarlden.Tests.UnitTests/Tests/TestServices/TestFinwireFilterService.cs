@@ -53,6 +53,7 @@ namespace borsvarlden.Tests.UnitTests.Tests.TestServices
             Assert.AreEqual(expected, _finwireFilterService.IsContentFilterPassed(content));
         }
 
+        [TestCase(false, "99", "FWS004E2A0.xml")]
         [TestCase(false, "02", "FWM00427AA.xml")]
         [TestCase(true,  "02", "FWM00427AC.xml")]
         [TestCase(true,  "02", "FWM004284C.xml")] //Title="Stockholm Bullets" Companies="Stockholm Bullets" SocialTags="calendar"
