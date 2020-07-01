@@ -7,11 +7,13 @@
 }
 
 @section ScriptsHead {
-   <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/assets/js/includes/jquery/jquery.js"></script>
-   <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.tools.min.js"></script>
-   <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js"></script>
-   <script type="text/javascript" src="~/js/detailarticle.js"></script>
-   <script type="text/javascript" src="~/js/sassy-social-share.js"></script>
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/assets/js/includes/jquery/jquery.js"></script>
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="~/js/detailarticle.js"></script>
+    <script type="text/javascript" src="~/js/sassy-social-share.js"></script>
+    <script type="text/javascript" src="~/js/popup-subscribe.js"></script>
+    <script type="text/javascript" src="~/js/validator.js"></script>
 }
 
 @section Styles{
@@ -144,7 +146,7 @@
             </div>
         </div>
         <div class="col-2 index-side-banner-wrapper visible-lg">
-            <div class="column-label" style="margin-top: -15px;margin-bottom:3px" >ANNONSER</div>
+            <div class="column-label" style="margin-top: -15px;margin-bottom:3px">ANNONSER</div>
             <img src="~/assets/images/luxbright_skyscraper.jpg" width="200" height="400">
             <div class="stiky-side-banner">
                 <img src="~/assets/images/ani_synas.gif" width="200" height="200">
@@ -153,8 +155,10 @@
     </div>
     @await Component.InvokeAsync("ReadMore", new { News = Model })
 </div>
+@await Component.InvokeAsync("SubscribePopup")
+
 
 @section Scripts{
-     <script type="text/javascript" src="~/js/detailarticle.js"></script>
-     <script type="text/javascript" src="~/js/sassy-social-share.js"></script>
+    <script type="text/javascript" src="~/js/detailarticle.js"></script>
+    <script type="text/javascript" src="~/js/sassy-social-share.js"></script>
 }

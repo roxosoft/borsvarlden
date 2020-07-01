@@ -82,5 +82,9 @@
   {
     "outputFile": "wwwroot/css/search-form.css",
     "inputFile": "wwwroot/css/search-form.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/bv-popup.css",
+    "inputFile": "wwwroot/css/bv-popup.scss"
   }
 ]
