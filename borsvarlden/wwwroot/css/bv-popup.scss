@@ -112,8 +112,10 @@
     color: #fff;
 }
 
-a, a:hover, a:visited, a:active, a:focus {
+.popup-bottom-content {
+    a, a:hover, a:visited, a:active, a:focus {
     color: #0277bd;
+    }
 }
 
 form#bv-popup-subscribe-form {

@@ -90,7 +90,7 @@
 .form-flat-light a {
     color: #fff; }
 
-a, a:hover, a:visited, a:active, a:focus {
+.popup-bottom-content a, .popup-bottom-content a:hover, .popup-bottom-content a:visited, .popup-bottom-content a:active, .popup-bottom-content a:focus {
     color: #0277bd; }
 
 form#bv-popup-subscribe-form {
