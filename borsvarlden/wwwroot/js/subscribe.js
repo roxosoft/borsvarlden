@@ -21,4 +21,13 @@
             }
         })
     });// End of document ready
+
+    $(window).scroll(function () {
+        var top = $(document).scrollTop();
+        if (top > 0) {
+            $('.sticky-right').css('top', '70px');
+        } else {
+            $('.sticky-right').css('top', '100px');
+        }
+    });
 })(jQuery);

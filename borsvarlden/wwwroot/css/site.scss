@@ -486,6 +486,10 @@ h3 {
         font-size: 10pt;
     }
 
+    #subscribe-page-content {
+        width: calc(100% - 350px);
+    }
+
     .bv-container-page .bv-content-left {
         width: 50%;
         width: -webkit-calc(100% - 350px);

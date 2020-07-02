@@ -182,7 +182,7 @@ a:not([href]):not([tabindex]) {
 }
 
 .bv-widget-subscribe .panel-default a {
-    font-size: 10pt;
+    font-size: 11pt;
 }
 
 .inline-signup .inline-button:hover {
@@ -195,4 +195,8 @@ a:not([href]):not([tabindex]) {
 
 .sticky-container-right .subscribe-form-description .bv-widget-subscribe {
     margin-top: 26.667px;
+}
+
+#subscribe-widget-form-5eb0132bd5c09 .form-group a#signup-submit-1:hover {
+    color: white !important;
 }
