@@ -15,7 +15,9 @@
     height: 34px; }
 
 #popup-bottom-content {
-    background-color: #263238 !important; }
+    background-color: #263238 !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; }
 
 .fa-fw {
     width: 1.28571429em;
@@ -268,7 +270,9 @@ html.pum-open.pum-open-overlay.pum-open-scrollable body > [aria-hidden] {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 30px 30px 10px; }
+    padding: 30px 30px 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
 
 bv-popup-content-top p {
     text-align: center; }
