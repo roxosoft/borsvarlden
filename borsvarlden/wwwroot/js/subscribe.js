@@ -22,12 +22,25 @@
         })
     });// End of document ready
 
+    var prev_top = 0;
+
     $(window).scroll(function () {
         var top = $(document).scrollTop();
+        //console.log('top =' + top);
+      // console.log('prev_top =' + prev_top);
+
         if (top > 0) {
-            $('.sticky-right').css('top', '70px');
+            if (top < 430) {
+                    $('.sticky-right').css('top', '70px');
+                   // console.log('70px');
+                } else {
+                    var px = 430 - top;
+                   // console.log('px =' + px);
+                    $('.sticky-right').css('top', px + 'px');
+                }
         } else {
             $('.sticky-right').css('top', '100px');
         }
+        prev_top = top;
     });
 })(jQuery);

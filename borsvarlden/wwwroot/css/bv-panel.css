@@ -122,7 +122,7 @@ panel-title > a.collapsed:hover, .panel-title > a.collapsed:visited {
     padding: 15px; }
 
 .panel-collapse .panel-body p {
-    margin-bottom: 16px; }
+    margin-bottom: 14.667px; }
 
 .sticky-right {
     position: sticky;
