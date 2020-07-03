@@ -7,6 +7,8 @@ namespace borsvarlden.ViewModels
     {
         public List<NewsViewModel> News { get; set; }
 
+        public NewsViewModel FirstFinwireNews { get; set; }
+
         public int FirstBigBlockCount { get; set; }
 
         public int FirstSmallBlockCount { get; set; }

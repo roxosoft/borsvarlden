@@ -2,6 +2,15 @@
 @model IndexNewsViewModel;
 
 <div class="index-article-feed">
+    
+    @if (Model.News.Count > 0 && Model.News[0].IsTopFinwireNews)
+    {
+        <div class="top-finwire-news ">
+            @await Html.PartialAsync("_Article", Model.News[0])
+        </div>
+        Model.News.RemoveAt(0);
+    }
+
     @while (Model.News.Count > 0)
     {
         int indexInChunk = 0;

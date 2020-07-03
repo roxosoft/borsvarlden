@@ -110,6 +110,9 @@ namespace borsvarlden.Services.Entities
             var result = new IndexNewsViewModel();
             var newsList = await GetNewsForFeedingWithPrio(newsCount);
             result.News = MapFinwireNewToViewModel(newsList);
+            var first = result.News.FirstOrDefault();
+            if (first?.IsFinwireNews ?? false)
+                first.IsTopFinwireNews = true;
 
             return result;
         }
@@ -347,6 +350,14 @@ namespace borsvarlden.Services.Entities
             var nonBorsvarldenArticles = await GetNonBorsvarldenArticles(count).ToListAsync();
             prioNews.AddRange(nonBorsvarldenArticles);
             var res = prioNews.Take(count).ToList();
+            var firstFinwire = res.FirstOrDefault(x => !x.IsBorsvarldenArticle);
+
+            if (firstFinwire != null)
+            {
+                var ind = res.IndexOf(firstFinwire);
+                res.Insert(0, firstFinwire);
+                res.RemoveAt(ind + 1);
+            }
 
             return res;
         }

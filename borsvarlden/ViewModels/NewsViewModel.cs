@@ -44,5 +44,7 @@ namespace borsvarlden.ViewModels
         public bool IsBigBlock { get; set; }
 
         public string ImageSource { get; set; }
+
+        public bool IsTopFinwireNews { get; set; }
     }
 }

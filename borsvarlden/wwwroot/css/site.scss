@@ -879,3 +879,25 @@ div.heateor_sss_horizontal_sharing .heateorSssSharingSvg {
 .index-content-wrapper .banner-wrapper .banner-container .column-label {
     margin-top: -10px;
 }
+
+.top-finwire-news {
+    margin-left: 20px;
+    font-size: 16px;
+    margin-top: 14px;
+    margin-bottom: 7px;
+    a:before {
+        content: "";
+        background: #f44336;
+        display: block;
+        height: 6px;
+        width: 6px;
+        left: 0;
+        position: absolute;
+        top: .58em;
+        margin-left: 20px;
+        margin-top: 12px
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}

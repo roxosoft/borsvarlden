@@ -2,50 +2,57 @@
 @using borsvarlden.Extensions;
 @model NewsViewModel;
 
-<a href="~/artiklar/@Html.Raw(Model.TittleSlug)">
-    <div class="image-wrapper">
-        @if (string.IsNullOrEmpty(Model.ImageUrl))
+    <a href="~/artiklar/@Html.Raw(Model.TittleSlug)">
+        @if (Model.IsTopFinwireNews)
         {
-            <img src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
+            <div class="article-textlink-content"> <span class="article-textlink-title">@Model.Title</span></div>
         }
-        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        @if (!Model.IsTopFinwireNews)
         {
-            <img src="~/@Model.ImageUrl">
-        }
-    </div>
-    <div class="article-content-wrapper">
-        @if (Model.IsBigBlock)
-        {
-            <span class="visible-xs label article-label">@Model.ImageLabel</span>
-
-            <h3 class="big-block-article-title">
-                @Model.Title
-            </h3>
-
-            <p class="hidden-xs big-block-article-subtitle">
-                @if (!string.IsNullOrEmpty(Model.ImageLabel))
+            <div class="image-wrapper">
+                @if (string.IsNullOrEmpty(Model.ImageUrl))
                 {
-                    <span class="label article-label">
-                        @Model.ImageLabel
-                    </span>
+                    <img src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
                 }
-                <span>
-                    @Model.Subtitle.ToTruncated()
-                </span>
-            </p>
-        }
-        @if (!Model.IsBigBlock)
-        {
-            @if (!string.IsNullOrEmpty(Model.ImageLabel))
-             {
-              <span class="label article-label">
-                  @Model.ImageLabel
-              </span>
-             }
-            <h3 class="small-block-article-title">
-            @Model.Title
-            </h3>
-        }
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="~/@Model.ImageUrl">
+                }
+            </div>
+            <div class="article-content-wrapper">
+                @if (Model.IsBigBlock)
+                {
+                    <span class="visible-xs label article-label">@Model.ImageLabel</span>
 
-    </div>
-</a>
+                    <h3 class="big-block-article-title">
+                        @Model.Title
+                    </h3>
+
+                    <p class="hidden-xs big-block-article-subtitle">
+                        @if (!string.IsNullOrEmpty(Model.ImageLabel))
+                        {
+                            <span class="label article-label">
+                                @Model.ImageLabel
+                            </span>
+                        }
+                        <span>
+                            @Model.Subtitle.ToTruncated()
+                        </span>
+                    </p>
+                }
+                @if (!Model.IsBigBlock)
+                {
+                    @if (!string.IsNullOrEmpty(Model.ImageLabel))
+                    {
+                        <span class="label article-label">
+                            @Model.ImageLabel
+                        </span>
+                    }
+                    <h3 class="small-block-article-title">
+                        @Model.Title
+                    </h3>
+                }
+
+            </div>
+        }
+    </a>
