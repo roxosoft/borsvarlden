@@ -403,8 +403,8 @@ h3 {
 
     .content-right {
         width: 350px;
-        max-width: 36.333333%;
-        flex: 0 0 36.333333%;
+        max-width: 350px;
+        flex: 0 0 35.333333%;
     }
 }
 
@@ -493,7 +493,7 @@ h3 {
     .bv-container-page .bv-content-left {
         width: 50%;
         width: -webkit-calc(100% - 350px);
-        width: calc(100% - 360px);
+        width: calc(100% - 350px);
     }
 
     .bv-container-page .bv-content-right {
@@ -899,5 +899,13 @@ div.heateor_sss_horizontal_sharing .heateorSssSharingSvg {
     }
     a:hover {
         text-decoration: underline;
+    }
+}
+
+.article-content {
+    br {
+        display: block;
+        content: "";
+        margin: 15px;
     }
 }

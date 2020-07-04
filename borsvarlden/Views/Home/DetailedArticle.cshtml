@@ -41,7 +41,7 @@
 </style>
 
 <div class="detailed-article">
-    <div class="row index-row">
+    <div class="row index-row" style="margin-left: 0px !important">
         <div class="col-10 index-content-wrapper">
             <div class="image-wrapper">
                 <div class="image-container row">
@@ -75,7 +75,7 @@
             <h1>
                 @Model.Title
             </h1>
-            <div class="lead-wrapper">
+            <div class="lead-wrapper" style="margin-bottom: 0px">
                 <p class="lead">
                     @if (!string.IsNullOrEmpty(Model.Label))
                     {
@@ -87,13 +87,13 @@
                     @await Html.PartialAsync("_SocialButtons")
                 </div>
             </div>
-            <div class="banner-wrapper">
+            <div class="banner-wrapper" style="margin-top: 10px">
                 <div class="column-label">ANNONS</div>
                 <div>
                     @await Component.InvokeAsync("BannerTop")
                 </div>
             </div>
-            <div class="row bv-container-page">
+            <div class="row bv-container-page" style="margin-right: -15px !important">
                 <div class="col-xs-12 bv-content-left content-main">
                     <span class="article-content">
                         @Html.Raw(Model.NewsText)
@@ -134,7 +134,7 @@
                         @await Component.InvokeAsync("LatestNews")
                     </div>
                 </div>
-                <div class="col-xs-12 bv-content-right content-right">
+                <div class="col-xs-12 bv-content-right content-right" style="padding-right: 15px !important">
                     @await Component.InvokeAsync("SponsoredNews")
                     @await Component.InvokeAsync("MostReadNews", new { News = Model })
                     @await Component.InvokeAsync("SubscribeForm")
