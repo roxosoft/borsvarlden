@@ -16,7 +16,7 @@ namespace borsvarlden.Extensions
                 Id = newsItem.Id,
                 Title = newsItem.Title,
                 Subtitle = newsItem.Subtitle,
-                Date = newsItem.Date,
+                Date = newsItem.Date.ToDisplayTime(),
                 NewsText = newsItem.NewsText,
                 ImageUrl = newsItem.ImageRelativeUrl,
                 ImageLabel = newsItem.Label != null ? newsItem.Label : newsItem.ImageLabel,
