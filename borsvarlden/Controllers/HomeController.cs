@@ -12,8 +12,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace borsvarlden.Controllers
 {
-    //TODO remove this when this site becomes main
-    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
