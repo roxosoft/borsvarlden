@@ -142,13 +142,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-2 index-side-banner-wrapper visible-lg">
-            <div class="column-label" style="margin-top: -15px;margin-bottom:3px">ANNONSER</div>
-            <img src="~/assets/images/luxbright_skyscraper.jpg" width="200" height="400">
-            <div class="stiky-side-banner">
-                <img src="~/assets/images/ani_synas.gif" width="200" height="200">
-            </div>
-        </div>
+        @await Component.InvokeAsync("BannerRight")
     </div>
     @await Component.InvokeAsync("ReadMore", new { News = Model })
 </div>

@@ -44,13 +44,7 @@
             </div>
         </div>
     </div>
-    <div class="col-2 visible-lg index-side-banner-wrapper">
-        <div class="column-label">ANNONSER</div>
-        <img src="~/assets/images/luxbright_skyscraper.jpg" width="200" height="400">
-        <div class="stiky-side-banner">
-            <img src="~/assets/images/ani_synas.gif" width="200" height="200">
-        </div>
-    </div>
+    @await Component.InvokeAsync("BannerRight")
 </div>
 
 @section Scripts{ }
