@@ -133,9 +133,25 @@ namespace DBConverter.borsvarlden_MSSql
 
             modelBuilder.Entity<FinwireNews>(entity =>
             {
+                entity.HasIndex(e => e.ActualDeadLine)
+                    .HasName("IndexActualDeadLine");
+
+                entity.HasIndex(e => e.Date)
+                    .HasName("IndexDate");
+
                 entity.HasIndex(e => e.FinwireAgencyId);
 
                 entity.HasIndex(e => e.FinwireXmlNewsId);
+
+                entity.HasIndex(e => e.Guid);
+
+                entity.HasIndex(e => e.PrioDeadLine)
+                    .HasName("IndexPrioDeadLine");
+
+                entity.HasIndex(e => e.Slug);
+
+                entity.HasIndex(e => new { e.FinautoPassed, e.IsBorsvarldenArticle })
+                    .HasName("IndexFinautoPassedIsBorsvarldenArticle");
 
                 entity.Property(e => e.ActualDeadLine).HasDefaultValueSql("('0001-01-01T00:00:00.0000000')");
 

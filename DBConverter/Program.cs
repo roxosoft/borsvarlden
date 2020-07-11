@@ -29,13 +29,14 @@ namespace DBConverter.borsvarlden
                 60251,
                 64150
             };
-
+            
             //SaveUploadedImagesToDisk();
             var dtStarted = DateTime.Now;
 
             using (var db = new borsvarldenContext())
             using (var dbMS = new borsvarlden_MSSql.borsvarldenContext())
             {
+                db.Database.SetCommandTimeout(30 * 60);//30 minutes
                 //  SaveUploadedImagesNew(db);
                 Console.WriteLine($"{DateTime.Now.ToString()} ================= Begin     ====================");
                 //db.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
@@ -57,7 +58,7 @@ namespace DBConverter.borsvarlden
                     .Join(db.WpTerms,
                         x => x.WpTermTaxonomy.TermId, y => y.TermId,
                         (x, y) => new {WpTermTaxonomy = x, WpTerms = y})
-                    .Join(db.WpPosts.Where(u => !nullGmtIds.Contains(u.Id)), 
+                    .Join(db.WpPosts.Where(u => !nullGmtIds.Contains(u.Id)),
                         x => x.WpTermTaxonomy.WpTermRelationships.ObjectId,
                         y => y.Id,
                         (x, y) => new {WpTermRelationships = x, WpPosts=y})
