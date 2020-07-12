@@ -35,6 +35,9 @@ namespace borsvarlden
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession();
+            services.AddDistributedMemoryCache();
+
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString(_databaseConnectionStringName)));
@@ -73,6 +76,8 @@ namespace borsvarlden
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSession();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

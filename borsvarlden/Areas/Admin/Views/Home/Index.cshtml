@@ -69,7 +69,11 @@
 
                         ($("<textarea>", { "id": "ckpeditor", "val": cellInfo.value })).appendTo(itemElement);
 
-                        $("<script>").append(CKEDITOR.replace("ckpeditor")).appendTo(itemElement);
+                        $("<script>").append(CKEDITOR.replace("ckpeditor", {
+                            filebrowserBrowseUrl: '/lib/fileman/index.html',
+                            filebrowserImageBrowseUrl: '/lib/fileman/index.html' + '?type=image',
+                            removeDialogTabs: 'link:upload;image:upload'
+                        })).appendTo(itemElement);
 
                         $("<script>").append(CKEDITOR.instances.ckpeditor.on("change", function () { cellInfo.setValue(CKEDITOR.instances.ckpeditor.getData()) })).appendTo(itemElement);
 
