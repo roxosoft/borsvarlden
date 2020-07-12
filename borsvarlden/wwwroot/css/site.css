@@ -525,7 +525,8 @@ table.article-table p {
     font-size: 10pt;
     line-height: 1.3em;
     letter-spacing: .5px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-left: 15px; }
 
 .content-main p.disclaimer {
     font-weight: 300;
