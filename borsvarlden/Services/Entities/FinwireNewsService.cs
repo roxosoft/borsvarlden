@@ -242,6 +242,7 @@ namespace borsvarlden.Services.Entities
         {
             List<FinwireNew> article = await _dbContext.FinwireNews
                 .Where(x => x.Slug == titleSlug)
+                .OrderByDescending(x => x.Date)
                 .ToListAsync();
             var result = MapFinwireNewToViewModel(article).FirstOrDefault();
             return result;
