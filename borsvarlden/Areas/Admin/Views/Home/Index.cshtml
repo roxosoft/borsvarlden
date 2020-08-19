@@ -8,7 +8,7 @@
 <div id="articles-grid">
 
 </div>
-<script src="//cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.14.1/standard-all/ckeditor.js"></script>
 <script>
     $(function() {
         $("#articles-grid").dxDataGrid({
@@ -70,6 +70,8 @@
                         ($("<textarea>", { "id": "ckpeditor", "val": cellInfo.value })).appendTo(itemElement);
 
                         $("<script>").append(CKEDITOR.replace("ckpeditor", {
+                            extraPlugins: 'embed',
+                            embed_provider: '//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}&api_key=90d4029ed5529f8b49bbdc',
                             filebrowserBrowseUrl: '/lib/fileman/index.html',
                             filebrowserImageBrowseUrl: '/lib/fileman/index.html' + '?type=image',
                             removeDialogTabs: 'link:upload;image:upload'

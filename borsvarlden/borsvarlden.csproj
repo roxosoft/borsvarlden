@@ -48,6 +48,7 @@
     <_ContentIncludedByDefault Remove="wwwroot\css\article.min.css" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="wwwroot\assets\images\logo-filestar_star-dark-blue.png" />
     <Content Include="wwwroot\assets\uploads\2015\09\01_28.jpg" />
     <Content Include="wwwroot\assets\uploads\2015\09\164054948.jpg" />
     <Content Include="wwwroot\assets\uploads\2015\09\80167444_o.jpg" />
@@ -3455,10 +3456,13 @@
     <Content Include="wwwroot\assets\uploads\2020\07\Lars-Malmgren-235x300.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\07\Lars-Malmgren.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\07\Lennart-juni-20.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\0597c313-2dd0-4a81-929b-eee1440e6398.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\1a81bdd6-e731-46e4-963d-3ff910305870.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\37c7e4bd-603d-4d38-9972-d7647fc3652c.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\546625e8-3e20-4666-a257-770e464ab455.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\adbf1c25-6493-468b-9bf8-6919fcd2eac8.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\aegribio bild.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\aegribo dosering.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\Aktiegraf %28002%29.png" />
     <Content Include="wwwroot\assets\uploads\2020\08\c1efe0f1-66fa-40c4-a2d6-c9111f6fdbc3.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\embracer 2.jpg" />
