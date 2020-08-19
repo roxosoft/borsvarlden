@@ -21,3 +21,9 @@
 .form-flat .has-error .help-block, .form-flat .has-error .control-label, .form-flat .has-error .radio, .form-flat .has-error .checkbox, .form-flat .has-error .radio-inline, .form-flat .has-error .checkbox-inline, .form-flat .has-error.radio label, .form-flat .has-error.checkbox label, .form-flat .has-error.radio-inline label, .form-flat .has-error.checkbox-inline label {
     color: #222;
 }
+
+input#SearchText {
+    height: 34px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
