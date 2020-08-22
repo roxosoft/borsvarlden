@@ -28,7 +28,7 @@ namespace borsvarlden.Services.Entities
         Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText);
         Task<NewsViewModel> GetDetailedArticle(string titleSlug);
         Task<NewsViewModel> GetDetailedArticleByGuid(string guid);
-
+        Task<List<FinwireNew>> GetNewsForFeedingWithPrio(int count);
         Task<LoadResult> GetNewsList(DataSourceLoadOptions options);
         Task<FinwireNew> GetArticle(int id);
         Task AddArticle(FinwireNew article);
@@ -345,7 +345,7 @@ namespace borsvarlden.Services.Entities
             return MapFinwireNewToViewModel(lstFinwirewNews);
         }
         
-        private async Task<List<FinwireNew>> GetNewsForFeedingWithPrio(int count)
+        public async Task<List<FinwireNew>> GetNewsForFeedingWithPrio(int count)
         {
             var prioNews = await GetPrioNews().ToListAsync();
             var nonBorsvarldenArticles = await GetNonBorsvarldenArticles(count).ToListAsync();
