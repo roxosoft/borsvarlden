@@ -25,7 +25,7 @@ namespace borsvarlden.Services.Entities
         Task<IndexNewsViewModel> GetMainNewsForFeeding(int newsCount);
         Task<List<NewsViewModel>> GetNews(int newsCount);
         Task<NewsViewModel> GetDetailedArticle(int articleId);
-        Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText);
+        Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText, bool only15MinutesVideo);
         Task<NewsViewModel> GetDetailedArticle(string titleSlug);
         Task<NewsViewModel> GetDetailedArticleByGuid(string guid);
         Task<List<FinwireNew>> GetNewsForFeedingWithPrio(int count);
@@ -207,7 +207,7 @@ namespace borsvarlden.Services.Entities
             );
         }
 
-        public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText)
+        public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText, bool only15MinutesVideo)
         {
             var result = new PaggingSearchResponseViewModel<NewsViewModel>();
             var query = GetNonBorsvarldenArticles();
@@ -216,6 +216,10 @@ namespace borsvarlden.Services.Entities
             {
                 query = query.Where(x => x.Title.Contains(searchText));
             }
+
+            if (only15MinutesVideo)
+                query = query.Where(x => x.Is15MinutesVideo);
+
 
             List<FinwireNew> newsList = await query.Skip(newsOnPageCount * (nextPage - 1)).Take(newsOnPageCount).ToListAsync();
 

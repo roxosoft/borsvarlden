@@ -46,11 +46,14 @@ namespace borsvarlden.Controllers
         [Route("artiklar")]
         [Route("artiklar/sida/{page}")]
         [Route("artiklar/sida/{page}/{searchText}")]
-        public async Task<IActionResult> NewsList(int page = 1, string searchText = null)
+        [Route("artiklar/endast15MinuterVideo/{only15MinutesVideo}")]
+        [Route("artiklar/endast15MinuterVideo/{only15MinutesVideo}/sida/{page}")]
+        [Route("artiklar/endast15MinuterVideo/{only15MinutesVideo}/sida/{page}/{searchText}")]
+        public async Task<IActionResult> NewsList(int page = 1, string searchText = null, bool only15MinutesVideo = false)
         {
             int newsOnPageCount = _configurationHelper.ListedNewsCount;
 
-            PaggingSearchResponseViewModel<NewsViewModel> model = await _finwireNewsService.GetNewsSearchPaging(newsOnPageCount, page, searchText);
+            PaggingSearchResponseViewModel<NewsViewModel> model = await _finwireNewsService.GetNewsSearchPaging(newsOnPageCount, page, searchText, only15MinutesVideo);
 
             return View(model);
         }
