@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <!--
@@ -56,7 +56,7 @@
       <input type="button" id="btnAddFile" value="Add file" title="Upload files" onclick="addFileClick()" data-lang-v="AddFile" data-lang-t="T_AddFile" />
       <input type="button" id="btnPreviewFile" value="Preview" title="Preview selected file" onclick="previewFile()" data-lang-v="Preview" data-lang-t="T_Preview" />
       <input type="button" id="btnRenameFile" value="Rename" title="Rename selected file" onclick="renameFile()" data-lang-v="RenameFile" data-lang-t="T_RenameFile" />
-      <input type="button" id="btnDownloadFile" value="Download" title="Download selected file" onclick="downloadFile()" data-lang-v="DownloadFile" data-lang-t="T_DownloadFile" />
+      <!--<input type="button" id="btnDownloadFile" value="Download" title="Download selected file" onclick="downloadFile()" data-lang-v="DownloadFile" data-lang-t="T_DownloadFile" />-->
       <input type="button" id="btnDeleteFile" value="Delete" title="Delete selected file" onclick="deleteFile()" data-lang-v="DeleteFile" data-lang-t="T_DeleteFile" />
       <input type="button" id="btnSelectFile" value="Select" title="Select highlighted file" onclick="setFile()" data-lang-v="SelectFile" data-lang-t="T_SelectFile" />
       <br>
@@ -117,7 +117,7 @@
 <div id="menuFile" class="contextMenu">
   <a href="#" onclick="setFile()" data-lang="SelectFile" id="mnuSelectFile">Select</a><hr>
   <a href="#" onclick="previewFile()" data-lang="Preview" id="mnuPreview">Preview</a><hr>
-  <a href="#" onclick="downloadFile()" data-lang="DownloadFile" id="mnuDownload">Download</a><hr>
+  <!--<a href="#" onclick="downloadFile()" data-lang="DownloadFile" id="mnuDownload">Download</a><hr>-->
   <a href="#" onclick="return pasteToFiles(event, this)" data-lang="Paste" class="paste pale" id="mnuFilePaste">Paste</a><hr>
   <a href="#" onclick="cutFile()" data-lang="Cut" id="mnuFileCut">Cut</a><hr>
   <a href="#" onclick="copyFile()" data-lang="Copy" id="mnuFileCopy">Copy</a><hr>
@@ -126,7 +126,7 @@
   <a href="#" onclick="fileProperties()" id="mnuProp">Properties</a -->
 </div>
 <div id="menuDir" class="contextMenu">
-  <a href="#" onclick="downloadDir()" data-lang="Download" id="mnuDownloadDir">Download</a><hr>
+  <!--<a href="#" onclick="downloadDir()" data-lang="Download" id="mnuDownloadDir">Download</a><hr>-->
   <a href="#" onclick="addDir()" data-lang="T_CreateDir" id="mnuCreateDir">Create new</a><hr>
   <a href="#" onclick="return pasteToDirs(event, this)" data-lang="Paste" class="paste pale" id="mnuDirPaste">Paste</a><hr>
   <a href="#" onclick="cutDir()" data-lang="Cut" id="mnuDirCut">Cut</a><hr>
