@@ -6,6 +6,7 @@ using System.ServiceModel.Syndication;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using borsvarlden.Models;
@@ -131,52 +132,11 @@ namespace borsvarlden.Controllers
             return View();
         }
 
-
         [Route("information-om-cookies")]
         public async Task<IActionResult> InformationCookies()
         {
             return View();
         }
-
-        [ResponseCache(Duration = 1200)]
-        [HttpGet]
-        public async Task<IActionResult> Rss()
-        {
-            var url = $"{Request.Scheme}://{Request.Host}";
-            var feed = new SyndicationFeed("Börsvärlden - Maximera din digitala synlighet",
-                "Modern distributionskonsult inom börs, finans och trading med fokus på digital kommunikation, paketering och spridning av finansiella nyheter och koncept", 
-                new Uri(url),
-                "Börsvärlden", 
-                DateTime.Now);
-            
-            feed.Copyright = new TextSyndicationContent($"{DateTime.Now.Year} Börsvärlden");
-            var items = new List<SyndicationItem>();
-
-
-            (await _finwireNewsService.GetNewsForFeedingWithPrio(20)).ForEach(x =>
-                items.Add(
-                    new SyndicationItem(x.Title, x.Subtitle, new Uri($@"{url}/artiklar/{x.Slug}"), x.Id.ToString(), x.Date)));
-
-            feed.Items = items;
-            var settings = new XmlWriterSettings
-            {
-                Encoding = Encoding.UTF8,
-                NewLineHandling = NewLineHandling.Entitize,
-                NewLineOnAttributes = true,
-                Indent = true
-            };
-            using (var stream = new MemoryStream())
-            {
-                using (var xmlWriter = XmlWriter.Create(stream, settings))
-                {
-                    var rssFormatter = new Rss20FeedFormatter(feed, false);
-                    rssFormatter.WriteTo(xmlWriter);
-                    xmlWriter.Flush();
-                }
-                return File(stream.ToArray(), "application/rss+xml; charset=utf-8");
-            }
-        }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
