@@ -33,6 +33,7 @@ namespace borsvarlden.Models
         public string Label { get; set; }
         public string ImageSource { get; set; }
         public bool Is15MinutesVideo { get; set; }
+        public bool IsUseAzureStorage { get; set; }
 
         public FinwireAgency FinwireAgency { get; set; }
         public FinwireXmlNews FinwireXmlNews { get; set; }
