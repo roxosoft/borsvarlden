@@ -108,6 +108,16 @@ namespace borsvarlden.Controllers
             return View();
         }
 
+        public async Task<IActionResult> SignUpForIPOs()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> ProInvestors()
+        {
+            return View();
+        }
+
         [Route("traders-club")]
         public async Task<IActionResult> TradersClub()
         {
