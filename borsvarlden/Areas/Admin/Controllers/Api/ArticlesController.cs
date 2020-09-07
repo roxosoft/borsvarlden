@@ -28,11 +28,10 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
         public async Task<IActionResult> Get(DataSourceLoadOptions loadOptions)
         {
             var result = await _newsService.GetNewsList(loadOptions);
-
             return new JsonResult(result);
         }
 
-        [HttpPost]
+        [Route("Insert")]
         public async Task<IActionResult> Insert([FromForm] string values)
         {
             var article = new FinwireNew();
@@ -48,7 +47,7 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
             return Ok(article);
         }
 
-        [HttpPut]
+        [Route("Update")]
         public async Task<IActionResult> Update([FromForm] int key, [FromForm] string values)
         {
             var article = await _newsService.GetArticle(key);
@@ -64,7 +63,7 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
             return Ok(article);
         }
 
-        [HttpDelete]
+        [Route("Delete")]
         public async Task Delete([FromForm] int key)
         {
             await _newsService.DeleteArticle(key);
@@ -85,7 +84,5 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
 
             return Ok(url);
         }
-
-
     }
 }

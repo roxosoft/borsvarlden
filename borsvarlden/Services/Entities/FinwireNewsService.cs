@@ -264,7 +264,7 @@ namespace borsvarlden.Services.Entities
         public async Task<LoadResult> GetNewsList(DataSourceLoadOptions options)
         {
             var result = await DataSourceLoader.LoadAsync(_dbContext.FinwireNews, options);
-            
+
             return result;
         }
 

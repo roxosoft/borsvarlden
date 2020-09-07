@@ -86,5 +86,9 @@
   {
     "outputFile": "wwwroot/css/bv-popup.css",
     "inputFile": "wwwroot/css/bv-popup.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/admin.css",
+    "inputFile": "wwwroot/css/admin.scss"
   }
 ]
