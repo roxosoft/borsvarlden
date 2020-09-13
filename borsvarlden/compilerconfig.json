@@ -90,5 +90,9 @@
   {
     "outputFile": "wwwroot/css/admin.css",
     "inputFile": "wwwroot/css/admin.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/companies.css",
+    "inputFile": "wwwroot/css/companies.scss"
   }
 ]
