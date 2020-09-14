@@ -3457,9 +3457,13 @@
     <Content Include="wwwroot\assets\uploads\2020\07\Lars-Malmgren.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\07\Lennart-juni-20.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\0597c313-2dd0-4a81-929b-eee1440e6398.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\0cb2a7e4-bec0-4e50-99b8-3e7ef46677ab %281%29.png" />
     <Content Include="wwwroot\assets\uploads\2020\08\1a81bdd6-e731-46e4-963d-3ff910305870.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\29251932-672b-4b6a-b41c-dc3b186af12b.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\37c7e4bd-603d-4d38-9972-d7647fc3652c.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\546625e8-3e20-4666-a257-770e464ab455.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\76ef50ce-d720-457a-a4b8-5c2b7ca447dc.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\8a827791-1d32-49e6-bf42-f3df4831743f.png" />
     <Content Include="wwwroot\assets\uploads\2020\08\adbf1c25-6493-468b-9bf8-6919fcd2eac8.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\aegribio bild.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\aegribo dosering.jpg" />
@@ -3477,10 +3481,25 @@
     <Content Include="wwwroot\assets\uploads\2020\08\embracer8.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\embracer9.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\f461e80b-d726-4020-97cc-f5ff07ba5545.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\FB_Borsvarlden_960x200 2 %28002%29.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\Kejsarsnitt ökar %28002%29.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\logga.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\mattias-fredriksson-greenstar-2.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\Medarca bild video.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\Neodynamic.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\obstecare.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\soltech vd.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\08\soltech.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\0cb2a7e4-bec0-4e50-99b8-3e7ef46677ab.png" />
+    <Content Include="wwwroot\assets\uploads\2020\09\5bc6e3f5-8d33-4957-b635-f1b5db65e69e.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\71a546b0-9db0-44c1-aefc-9d02bd705dde.png" />
+    <Content Include="wwwroot\assets\uploads\2020\09\Aktiegraf  Chemotech.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\Banner_Börsvärlden_2.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\Bild chemotech.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\fdbbf8a3-2b68-4966-8847-57b1fcd77bc0.png" />
+    <Content Include="wwwroot\assets\uploads\2020\09\knapp.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\lifeclear person.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\scandinavian Chemotech.jpg" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />

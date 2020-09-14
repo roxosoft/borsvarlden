@@ -213,6 +213,10 @@ namespace borsvarlden.Controllers
         void RemoveDirectory(string key)
         {
             CloudBlobDirectory dir = Container.GetDirectoryReference(key);
+           
+            if (dir.Parent.Prefix.Equals(String.Empty))
+                return;
+
             RemoveDirectory(dir);
         }
 
@@ -227,14 +231,6 @@ namespace borsvarlden.Controllers
                 continuationToken = segmentResult.ContinuationToken;
                 children.AddRange(segmentResult.Results);
             } while (continuationToken != null);
-
-            foreach (IListBlobItem blob in dir.ListBlobs(true))
-            {
-                if (blob.GetType() == typeof(CloudBlob) || blob.GetType().BaseType == typeof(CloudBlob))
-                {
-                    ((CloudBlob)blob).DeleteIfExists();
-                }
-            }
 
             foreach (IListBlobItem blob in children)
             {
