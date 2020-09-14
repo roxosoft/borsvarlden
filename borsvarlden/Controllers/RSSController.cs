@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using borsvarlden.Services.Entities;
+using borsvarlden.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -89,7 +90,7 @@ namespace borsvarlden.Controllers
                     item.ElementExtensions.Add(new XElement("enclosure", 
                                            new XAttribute("url", $"{urlSiteRoot}/{x.ImageRelativeUrl}"), 
                                            new XAttribute("type","image/jpg")));
-                    item.ElementExtensions.Add("pubDate", String.Empty, x.Date.ToString());
+                    item.ElementExtensions.Add("pubDate", String.Empty, x.Date.ToDisplayTime().ToString("ddd, dd MMM yyyy HH:mm:ss zzz"));
                     item.ElementExtensions.Add("creator", dcNs, "<![CDATA[Börsvärlden]]>");
                     item.ElementExtensions.Add("encoded", contentNs, $"<![CDATA[{x.NewsText}]]>");
                     item.ElementExtensions.Add("commentRss", wfwNs, $"{urlSiteRoot}/artiklar/{x.Slug}");
