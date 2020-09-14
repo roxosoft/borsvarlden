@@ -40,6 +40,7 @@ namespace borsvarlden.Services.Entities
         Task<List<NewsViewModel>> GetMostReadNews(int count, int id);
         Task<List<NewsViewModel>> GetAdvertiseNewsList(int newsCount);
         Task<string> UploadImage(IFormFile formFile);
+        Task<List<FinwireNew>> GetFinwireNewWithCompany(int id);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -411,13 +412,11 @@ namespace borsvarlden.Services.Entities
             return result;
         }
 
-
         private IQueryable<FinwireNew> GetMainNews()
         {
             return _dbContext.FinwireNews
                 .Where(x => x.FinautoPassed || x.IsBorsvarldenArticle && x.IsPublished)
                 .OrderByDescending(x => x.Date);
-
         }
 
         private IQueryable<FinwireNew> GetMainNews(int newsCount)
@@ -447,6 +446,16 @@ namespace borsvarlden.Services.Entities
             }
 
             return ImageHelper.AbsoluteUrlToRelativeUrl(path); 
+        }
+
+        public async Task<List<FinwireNew>> GetFinwireNewWithCompany(int id)
+        {
+            return await _dbContext.FinwireNews
+                .Include(x => x.FinwireNew2FinwireCompanies)
+                .ThenInclude(x => x.FinwireCompany)
+                .Where(x => x.FinwireNew2FinwireCompanies.Any(y => y.FinwareCompanyId == id))
+                .OrderByDescending(x=>x.Date)
+                .ToListAsync();
         }
     }
 }

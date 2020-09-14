@@ -6,6 +6,7 @@ using borsvarlden.Services.Entities;
 using DevExtreme.AspNet.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -31,6 +32,15 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
             return r;
         }
 
+        [Route("List")]
+        [HttpGet]
+        public async Task<IActionResult> List(DataSourceLoadOptions loadOptions)
+        {
+            var result = await _finwireCompaniesService.GetListFinwireCompanies(loadOptions);
+            var r = new JsonResult(result);
+            return r;
+        }
+
         [HttpPost]
         public async Task<IActionResult> Insert([FromForm] string values)
         {
@@ -41,6 +51,22 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
         public async Task<IActionResult> Update([FromForm] int key, [FromForm] string values)
         {
             throw new NotImplementedException();
+        }
+
+        [Route("UpdateCompanyInfo")]
+        public async Task<IActionResult> UpdateCompanyInfo([FromForm] int key, [FromForm] string values)
+        {
+            var company = await _finwireCompaniesService.GetFinwireCompany(key);
+            JsonConvert.PopulateObject(values, company);
+
+            if (!TryValidateModel(company))
+            {
+                return BadRequest();
+            }
+
+            await _finwireCompaniesService.UpdateCompany(company);
+
+            return Ok(company);
         }
 
         [Route("GetCompaniesByNews/{id}")]

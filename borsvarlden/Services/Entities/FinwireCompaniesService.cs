@@ -18,6 +18,10 @@ namespace borsvarlden.Services.Entities
         Task<List<string>> GetCompaniesByFinwireNewsId(int id);
         Task AddCompanyToNews(int newsId, string company);
         Task DeleteCompaniesForeNews(int newsId, string companiesList);
+        Task<List<FinwireCompany>> GetListFinwireCompaniesByLetter(string letter);
+        Task<LoadResult> GetListFinwireCompanies(DataSourceLoadOptions options);
+        Task UpdateCompany(FinwireCompany company);
+        Task<FinwireCompany> GetFinwireCompany(int id);
     }
 
     public class FinwireCompaniesService : IFinwireCompaniesService
@@ -28,6 +32,12 @@ namespace borsvarlden.Services.Entities
         {
             _dbContext = dbContext;
         }
+
+        public async Task <FinwireCompany> GetFinwireCompany(int id)
+        {
+            return await _dbContext.FinwireCompanies.FirstOrDefaultAsync(x => x.Id == id);
+        }
+
 
         public FinwireNew JoinCompanies(FinwireNew finwireNew, List<string> companies)
         {
@@ -49,6 +59,19 @@ namespace borsvarlden.Services.Entities
         public async Task<LoadResult> GetCompanies(DataSourceLoadOptions loadOptions)
         {
             return await DataSourceLoader.LoadAsync(_dbContext.FinwireCompanies.OrderBy(x=>x.Company).Select(x=>x.Company), loadOptions);
+        }
+
+        public async Task<List<FinwireCompany>> GetListFinwireCompaniesByLetter(string letter)
+        {
+            return await _dbContext.FinwireCompanies
+                .Where(x => x.Company.Substring(0,1) == letter)
+                .OrderBy(x=>x.Company)
+                .ToListAsync();
+        }
+
+        public async Task<LoadResult> GetListFinwireCompanies(DataSourceLoadOptions options)
+        {
+            return await DataSourceLoader.LoadAsync(_dbContext.FinwireCompanies, options);
         }
 
         public async Task<List<string>> GetCompaniesByFinwireNewsId(int id)
@@ -85,6 +108,12 @@ namespace borsvarlden.Services.Entities
 
             _dbContext.FinwireNew2FinwireCompany.RemoveRange(entitiesToRemove);
 
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task UpdateCompany(FinwireCompany company)
+        {
+            _dbContext.Entry(company).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
         }
     }
