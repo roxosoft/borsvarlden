@@ -18,7 +18,7 @@ namespace borsvarlden.Extensions
                 Subtitle = newsItem.Subtitle,
                 Date = newsItem.Date.ToDisplayTime(),
                 NewsText = newsItem.NewsText,
-                ImageUrl = newsItem.ImageRelativeUrl,
+                ImageUrl = (newsItem.IsUseAzureStorage ? newsItem.ImageRelativeUrl : String.Format("/{0}", newsItem.ImageRelativeUrl)),
                 ImageLabel = newsItem.Label != null ? newsItem.Label : newsItem.ImageLabel,
                 TittleSlug = newsItem.Slug,
                 Guid = newsItem.Guid,

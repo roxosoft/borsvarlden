@@ -54,9 +54,9 @@
                     {
                         @if (Model.IsAdvertising && !string.IsNullOrEmpty(Model.CompanyName))
                         {
-                <span class="border-sponsored">I SAMARBETE MED @Html.Raw(Model.CompanyName.ToUpper())</span>
+                            <span class="border-sponsored">I SAMARBETE MED @Html.Raw(Model.CompanyName.ToUpper())</span>
                         }
-                        <img class="col-12" src="~/@Model.ImageUrl">
+                        <img class="col-12" src="@Model.ImageUrl">
                     }
                 </div>
                 <div class="image-text">

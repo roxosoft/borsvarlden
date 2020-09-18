@@ -16,6 +16,8 @@
  using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using Microsoft.Azure.Storage;
+using Microsoft.Azure.Storage.Blob;
 
 namespace borsvarlden.Services.Entities
 {
@@ -50,6 +52,7 @@ namespace borsvarlden.Services.Entities
         private readonly string _webRootPath;
         private string _imagesRootPath => $@"{_webRootPath}\assets\images\finauto";
         private string _imagesUploadRootPath => $@"{_webRootPath}\assets\uploads";
+        private string _imagesAzureUploadRootPath => $@"uploads/";
         private static Random rndGen = new Random();
 
         public FinwireNewsService(ApplicationContext dbContext, IFinwireFilterService finwireNewsService, IWebHostEnvironment hostEnvironment)
@@ -281,6 +284,8 @@ namespace borsvarlden.Services.Entities
         public async Task AddArticle(FinwireNew article)
         {
             article.DateModified = DateTime.UtcNow;
+            if (article.ImageRelativeUrl.Contains("blob.core", StringComparison.OrdinalIgnoreCase))
+                article.IsUseAzureStorage = true;
 
             _dbContext.Entry(article).State = EntityState.Added;
             await _dbContext.SaveChangesAsync();
@@ -290,7 +295,9 @@ namespace borsvarlden.Services.Entities
         public async Task UpdateArticle(FinwireNew article)
         {
             article.DateModified = DateTime.UtcNow;
-            
+            if (article.ImageRelativeUrl.Contains("blob.core", StringComparison.OrdinalIgnoreCase))
+                article.IsUseAzureStorage = true;
+
             _dbContext.Entry(article).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
         }
@@ -433,19 +440,26 @@ namespace borsvarlden.Services.Entities
         public async Task<string> UploadImage(IFormFile formFile)
         {
             var filename = $"{Guid.NewGuid()}{Path.GetExtension(formFile.FileName)}";
+            CloudStorageAccount account = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=borsvarlden;AccountKey=hhso0OgNXmxyj3L9UhXhQJwXsZraq6IFGm5n+d+6ENrpBWyX6WQgVeyLhWvBXSS0OXo9igQZ6Ydx7tCsDdAWRA==;EndpointSuffix=core.windows.net");
+            var client = account.CreateCloudBlobClient();
+            var container = client.GetContainerReference("uploads");
 
-            var dir = Path.Combine(this._imagesUploadRootPath, $@"{DateTime.Now.Year}\{DateTime.Now.Month:00}");
-            var path = Path.Combine(dir, filename);
+            string destinationKey = $"{_imagesAzureUploadRootPath}{DateTime.Now.Year}/{DateTime.Now.Month:00}/{filename}";
+            CloudBlockBlob newBlob = container.GetBlockBlobReference(destinationKey);
+            newBlob.UploadFromStream(formFile.OpenReadStream());
 
-            if (!Directory.Exists(dir))
-                Directory.CreateDirectory(dir);
+            //var dir = Path.Combine(this._imagesUploadRootPath, $@"{DateTime.Now.Year}\{DateTime.Now.Month:00}");
+            //var path = Path.Combine(dir, filename);
 
-            using (var stream = System.IO.File.Create(path))
-            {
-                await formFile.CopyToAsync(stream);
-            }
+            //if (!Directory.Exists(dir))
+            //    Directory.CreateDirectory(dir);
 
-            return ImageHelper.AbsoluteUrlToRelativeUrl(path); 
+            //using (var stream = System.IO.File.Create(path))
+            //{
+            //    await formFile.CopyToAsync(stream);
+            //}
+
+            return newBlob.Uri.AbsoluteUri; 
         }
 
         public async Task<List<FinwireNew>> GetFinwireNewWithCompany(int id)

@@ -13,6 +13,8 @@ namespace borsvarlden.ViewModels
 
         public string ImageUrl { get; set; }
 
+        public bool IsUseAzureStorage { get; set; }
+
         public DateTime Date { get; set; }
 
         public string ImageLabel { get; set; }
