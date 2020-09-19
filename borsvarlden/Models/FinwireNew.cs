@@ -35,6 +35,8 @@ namespace borsvarlden.Models
         public bool Is15MinutesVideo { get; set; }
         public bool IsUseAzureStorage { get; set; }
 
+        public DateTime DateStartVisible { get; set; }
+
         public FinwireAgency FinwireAgency { get; set; }
         public FinwireXmlNews FinwireXmlNews { get; set; }
 

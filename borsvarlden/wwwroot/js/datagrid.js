@@ -216,6 +216,12 @@ $(function () {
                     elementButtonAdd.appendTo(rootElement);
                     rootElement.appendTo(itemElement);
                 }
+            },
+            {
+                dataField: "dateStartVisible",
+                caption: "Start visible from",
+                dataType: "datetime",
+                visible: true
             }
         ],
         editing: {
@@ -299,6 +305,13 @@ $(function () {
                         visible: true
                     },
                     {
+                        width: 50,
+                        dataField: "dateStartVisible",
+                        dataType: "datetime",
+                        visible: true
+                    },
+                    {
+                        colSpan: 2,
                         dataField: "is15MinutesVideo",
                         dataType: "boolean",
                         visible: true
