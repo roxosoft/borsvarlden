@@ -12,16 +12,20 @@ using Newtonsoft.Json;
 
 namespace borsvarlden.Areas.Admin.Controllers.Api
 {
+    using Services.Azure;
+
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
     public class CompaniesController : Controller
     {
         private readonly IFinwireCompaniesService _finwireCompaniesService;
+        private readonly IAzureStorageImageService _azureStorageImageService;
 
-        public CompaniesController(IFinwireCompaniesService finwireCompaniesService)
+        public CompaniesController(IFinwireCompaniesService finwireCompaniesService, IAzureStorageImageService azureStorageImageService)
         {
             _finwireCompaniesService = finwireCompaniesService;
+            _azureStorageImageService = azureStorageImageService;
         }
 
         [HttpGet]
@@ -90,6 +94,5 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
             await _finwireCompaniesService.DeleteCompaniesForeNews(newsId, companiesList);
             return Ok();
         }
-
     }
 }

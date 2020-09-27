@@ -116,5 +116,6 @@ namespace borsvarlden.Services.Entities
             _dbContext.Entry(company).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
         }
+
     }
 }

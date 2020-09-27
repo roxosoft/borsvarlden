@@ -1,8 +1,6 @@
 using borsvarlden.Db;
 using borsvarlden.Finwire;
 using borsvarlden.Helpers;
-using borsvarlden.Services.Entities;
-using borsvarlden.Services.Finwire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +18,9 @@ using Microsoft.Extensions.WebEncoders;
 namespace borsvarlden
 {
     using Services.Facebook;
+    using Services.Entities;
+    using Services.Finwire;
+    using Services.Azure;
 
     public class Startup
     {
@@ -75,6 +76,7 @@ namespace borsvarlden
             services.AddScoped<IFinwireXmlNewsService, FinwireXmlNewsService>();
             services.AddScoped<IFinwireCompaniesService, FinwireCompaniesService>();
             services.AddScoped<IFacebookService, FacebookService>();
+            services.AddScoped<IAzureStorageImageService, AzureStorageImageService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -38,6 +38,10 @@
     <Compile Remove="Migrations\20200608124051_ArticleAddNewFields.Designer.cs" />
     <Compile Remove="Migrations\20200612114604_AddActualDeadline.cs" />
     <Compile Remove="Migrations\20200612114604_AddActualDeadline.Designer.cs" />
+    <Compile Remove="Migrations\20200927124609_AddedImageToCompanies.cs" />
+    <Compile Remove="Migrations\20200927124609_AddedImageToCompanies.Designer.cs" />
+    <Compile Remove="Migrations\20200927130438_AddImageLogoToCompanies.cs" />
+    <Compile Remove="Migrations\20200927130438_AddImageLogoToCompanies.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="compilerconfig.json" />

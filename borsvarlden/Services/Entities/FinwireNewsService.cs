@@ -41,7 +41,6 @@ namespace borsvarlden.Services.Entities
         Task UpdateReadCount(string slug);
         Task<List<NewsViewModel>> GetMostReadNews(int count, int id);
         Task<List<NewsViewModel>> GetAdvertiseNewsList(int newsCount);
-        Task<string> UploadImage(IFormFile formFile);
         Task<List<FinwireNew>> GetFinwireNewWithCompany(int id);
     }
 
@@ -438,31 +437,6 @@ namespace borsvarlden.Services.Entities
         private async Task<List<FinwireNew>> GetMainNewsListAsync(int newsCount)
         {
             return  await GetMainNews(newsCount).ToListAsync();
-        }
-
-        public async Task<string> UploadImage(IFormFile formFile)
-        {
-            var filename = $"{Guid.NewGuid()}{Path.GetExtension(formFile.FileName)}";
-            CloudStorageAccount account = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=borsvarlden;AccountKey=hhso0OgNXmxyj3L9UhXhQJwXsZraq6IFGm5n+d+6ENrpBWyX6WQgVeyLhWvBXSS0OXo9igQZ6Ydx7tCsDdAWRA==;EndpointSuffix=core.windows.net");
-            var client = account.CreateCloudBlobClient();
-            var container = client.GetContainerReference("uploads");
-
-            string destinationKey = $"{_imagesAzureUploadRootPath}{DateTime.Now.Year}/{DateTime.Now.Month:00}/{filename}";
-            CloudBlockBlob newBlob = container.GetBlockBlobReference(destinationKey);
-            newBlob.UploadFromStream(formFile.OpenReadStream());
-
-            //var dir = Path.Combine(this._imagesUploadRootPath, $@"{DateTime.Now.Year}\{DateTime.Now.Month:00}");
-            //var path = Path.Combine(dir, filename);
-
-            //if (!Directory.Exists(dir))
-            //    Directory.CreateDirectory(dir);
-
-            //using (var stream = System.IO.File.Create(path))
-            //{
-            //    await formFile.CopyToAsync(stream);
-            //}
-
-            return newBlob.Uri.AbsoluteUri; 
         }
 
         public async Task<List<FinwireNew>> GetFinwireNewWithCompany(int id)

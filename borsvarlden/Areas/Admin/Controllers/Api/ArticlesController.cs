@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 namespace borsvarlden.Areas.Admin.Controllers.Api
 {
     using Services.Facebook;
+    using Services.Azure;
     using Extensions;
 
     [Route("api/[controller]")]
@@ -26,10 +27,13 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
 
         private readonly IFacebookService _facebookService;
 
-        public ArticlesController(IFinwireNewsService newsService, IFacebookService facebookService)
+        private readonly IAzureStorageImageService _azureStorageImageService;
+
+        public ArticlesController(IFinwireNewsService newsService, IFacebookService facebookService, IAzureStorageImageService azureStorageImageService)
         {
             _newsService = newsService;
             _facebookService = facebookService;
+            _azureStorageImageService = azureStorageImageService;
         }
 
         [HttpGet]
@@ -80,22 +84,6 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
         public async Task Delete([FromForm] int key)
         {
             await _newsService.DeleteArticle(key);
-        }
-
-        [HttpPost("UploadImage")]
-        public async Task<IActionResult> UploadImage()
-        {
-            var files = Request.Form.Files;
-            if (files.Count != 1)
-                return BadRequest();
-
-            var formFile = files[0];
-            if (formFile.Length <= 0)
-                return BadRequest();
-
-            var url = await _newsService.UploadImage(formFile);
-
-            return Ok(url);
         }
     }
 }

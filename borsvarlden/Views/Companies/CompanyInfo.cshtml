@@ -25,25 +25,36 @@
         @await Component.InvokeAsync("BannerTop")
         <div class="row bv-container-page" style="margin-top: 15px">
             <div class="col-xs-12 bv-content-left">
-                <h2> @Model.Item1.Company</h2>
-                
-                @if (Model.Item1.Description != null)
-                {
-                    <div class="label">Company description</div>
-                    <div>@Html.Raw(@Model.Item1.Description)</div>
-                 }
-                 @if (Model.Item2.Count > 0) { <div class="label" style="margin-bottom: 10px">
-                        Related articles:
+                <div>
+                    @if (Model.Item1.Image != null)
+                    {
+                        <div class="company-image-wraper">
+                            <img class="company-image" src="@Model.Item1.Image">
+                        </div>
+                    }
+                    <h2> @Model.Item1.Company</h2>
+                    <div>
+                        @if (Model.Item1.Description != null)
+                        {
+                            <div class="label">Company description</div>
+                            <div>@Html.Raw(@Model.Item1.Description)</div>
+                        }
+                        @if (Model.Item2.Count > 0)
+                        {
+                            <div class="label" style="margin-bottom: 10px">
+                                Related articles:
+                            </div>
+                            @foreach (var news in Model.Item2)
+                            {
+                                <div class="related-news-link-wraper">
+                                    <a class="related-news-link" href="/artiklar/@news.Title">
+                                        <span style="font-weight: 500"> @news.Date - @news.Title</span> - @news.Subtitle
+                                    </a>
+                                </div>
+                            }
+                        }
                     </div>
-                    @foreach (var news in Model.Item2)
-                     {
-                         <div class="related-news-link-wraper">
-                             <a class="related-news-link" href="/artiklar/@news.Title">
-                                 <span style="font-weight:500"> @news.Date - @news.Title</span> - @news.Subtitle
-                             </a>
-                         </div>
-                     }
-                }
+                </div>
 
                 <div class="content-botom-hidden">
                     @await Component.InvokeAsync("SponsoredNews")

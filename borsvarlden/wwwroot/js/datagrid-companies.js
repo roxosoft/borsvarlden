@@ -19,6 +19,42 @@ $(function () {
                 allowSorting: true,
                 sortOrder: "asc"
             },
+            ,
+            {
+                dataField: "image",
+                caption: "Image",
+                width: 110,
+                alignment: "center",
+                cellTemplate: function (container, options) {
+                    container.append("<img style='width: auto' src=\"" + options.text + "\" width=\"50\" height=\"50\" >");
+                },
+                editCellTemplate: (itemElement, cellInfo) => {
+
+                    let tb = $("<div />").dxTextBox({
+                        value: cellInfo.value,
+                        onValueChanged: (e) => {
+                            cellInfo.setValue(e.value);
+                        }
+                    })
+                    tb.appendTo(itemElement);
+
+                    $("<div />").dxFileUploader({
+                        accept: "image/*",
+                        uploadUrl: "../api/Image/UploadImage",
+                        onUploaded: (e) => {
+                            cellInfo.setValue(e.request.response);
+                            tb.dxTextBox('option', 'value', e.request.response);
+                        },
+                        onUploadError: function (e) {
+                            var xhttp = e.request;
+                            if (xhttp.readyState == 4 && xhttp.status == 0) {
+                                console.log("Connection refused.");
+                            }
+                        }
+                    }).appendTo(itemElement);
+
+                }
+            },
             {
                 dataField: "description",
                 visible: false,
@@ -38,10 +74,7 @@ $(function () {
 
                 }
             }
-            /*{
-                dataField: "description",
-                caption: "description"
-            }*/
+            
         ],
         editing: {
             mode: "popup",
@@ -57,10 +90,18 @@ $(function () {
             },
             form: {
                 colCount: 2,
-                items: [//"company",
+                items: [
+                    {
+                        dataField: "company",
+                        colSpan: 2
+                    },
                     {
                         colSpan: 2,
                         dataField: "description"
+                    },
+                    {
+                        colSpan: 2,
+                        dataField: "image"
                     }
                 ]
             }

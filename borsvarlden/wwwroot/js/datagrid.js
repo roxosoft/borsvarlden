@@ -44,7 +44,7 @@ $(function () {
 
                     $("<div />").dxFileUploader({
                         accept: "image/*",
-                        uploadUrl: "api/Articles/UploadImage",
+                        uploadUrl: "api/Image/UploadImage",
                         onUploaded: (e) => {
                             cellInfo.setValue(e.request.response);
                             tb.dxTextBox('option', 'value', e.request.response);
