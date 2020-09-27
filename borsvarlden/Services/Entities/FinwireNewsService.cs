@@ -100,7 +100,7 @@ namespace borsvarlden.Services.Entities
                         {
                             FinwireNew = newsEntityAdded,
                             FinwireCompany = _dbContext.FinwireCompanies.FirstOrDefault(y => y.Company == x)
-                                             ?? (await _dbContext.AddAsync(new FinwireCompany {Company = x})).Entity
+                                             ?? (await _dbContext.AddAsync(new FinwireCompany {Company = x, Slug = x.ToSlug()})).Entity
                         });
                     });
                 }

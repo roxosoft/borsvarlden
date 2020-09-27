@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 namespace borsvarlden.Areas.Admin.Controllers.Api
 {
     using Services.Azure;
+    using Extensions;
 
     [Route("api/[controller]")]
     [ApiController]
@@ -62,6 +63,7 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
         {
             var company = await _finwireCompaniesService.GetFinwireCompany(key);
             JsonConvert.PopulateObject(values, company);
+            company.Slug = company.Company.ToSlug();
 
             if (!TryValidateModel(company))
             {
