@@ -26,6 +26,7 @@ namespace borsvarlden.Services.Entities
         Task<FinwireCompany> GetFinwireCompany(int id);
         Task<FinwireCompany> GetFinwireCompany(string slug);
         Task GenCompaniesSlug();
+        Task Create(FinwireCompany finwireCompany);
     }
 
     public class FinwireCompaniesService : IFinwireCompaniesService
@@ -61,6 +62,13 @@ namespace borsvarlden.Services.Entities
                 //?.Join(_dbContext.FinwireCompanies, x=>x.Id, x=>x.
 
         }
+
+        public async Task Create(FinwireCompany finwireCompany)
+        {
+            await _dbContext.FinwireCompanies.AddAsync(finwireCompany);
+            await _dbContext.SaveChangesAsync();
+        }
+
 
         public async Task<LoadResult> GetCompanies(DataSourceLoadOptions loadOptions)
         {

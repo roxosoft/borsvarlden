@@ -7,8 +7,8 @@ $(function () {
             key: "id",
             
             loadUrl: "../api/Companies/List",
-           // insertUrl: "api/Articles/Insert",
-            updateUrl: "../api/Companies/UpdateCompanyInfo"//,
+            insertUrl: "../api/Companies/Insert",
+            updateUrl: "../api/Companies/UpdateCompanyInfo"
            // deleteUrl: "api/Articles/Delete"
         }),
         columns: [

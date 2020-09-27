@@ -14,6 +14,7 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
 {
     using Services.Azure;
     using Extensions;
+    using Models;
 
     [Route("api/[controller]")]
     [ApiController]
@@ -46,10 +47,20 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
             return r;
         }
 
-        [HttpPost]
+        [Route("Insert")]
         public async Task<IActionResult> Insert([FromForm] string values)
         {
-            throw new NotImplementedException();
+            var company = new FinwireCompany();
+            JsonConvert.PopulateObject(values, company);
+            company.Slug = company.Company.ToSlug();
+
+            if (!TryValidateModel(company))
+            {
+                return BadRequest();
+            }
+
+            await _finwireCompaniesService.Create(company);
+            return Ok();
         }
 
         [HttpPut]
