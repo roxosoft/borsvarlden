@@ -57,9 +57,9 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
             await _newsService.AddArticle(article);
 
             //Facebook stuff disabled for a while
-            var textForFaceBook = (HttpUtility.HtmlDecode(article.NewsText.ToPlainText()));
-            _facebookService.PublishToFacebook(textForFaceBook,
-                article.ImageRelativeUrl);
+            //var textForFaceBook = (HttpUtility.HtmlDecode(article.NewsText.ToPlainText()));
+            //_facebookService.PublishToFacebook(textForFaceBook,
+              //  article.ImageRelativeUrl);
 
             return Ok(article);
         }
