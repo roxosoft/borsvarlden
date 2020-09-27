@@ -3462,7 +3462,7 @@
     <Content Include="wwwroot\assets\uploads\2020\07\Lars-Malmgren.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\07\Lennart-juni-20.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\0597c313-2dd0-4a81-929b-eee1440e6398.jpg" />
-    <Content Include="wwwroot\assets\uploads\2020\08\0cb2a7e4-bec0-4e50-99b8-3e7ef46677ab %281%29.png" />
+    <Content Include="wwwroot\assets\uploads\2020\08\0cb2a7e4-bec0-4e50-99b8-3e7ef46677ab.png" />
     <Content Include="wwwroot\assets\uploads\2020\08\1a81bdd6-e731-46e4-963d-3ff910305870.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\29251932-672b-4b6a-b41c-dc3b186af12b.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\37c7e4bd-603d-4d38-9972-d7647fc3652c.jpg" />
@@ -3495,15 +3495,25 @@
     <Content Include="wwwroot\assets\uploads\2020\08\obstecare.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\soltech vd.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\08\soltech.jpg" />
-    <Content Include="wwwroot\assets\uploads\2020\09\0cb2a7e4-bec0-4e50-99b8-3e7ef46677ab.png" />
+    <Content Include="wwwroot\assets\uploads\2020\09\0000c3a0-8b15-4f54-a202-ff320da94fcc.png" />
+    <Content Include="wwwroot\assets\uploads\2020\09\224f4712-6846-4e27-b98a-200d6163e398.png" />
+    <Content Include="wwwroot\assets\uploads\2020\09\2IM9kp1m.jpeg" />
     <Content Include="wwwroot\assets\uploads\2020\09\5bc6e3f5-8d33-4957-b635-f1b5db65e69e.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\5fd80883-65dd-47e9-b822-d66c5d60b3ab.png" />
     <Content Include="wwwroot\assets\uploads\2020\09\71a546b0-9db0-44c1-aefc-9d02bd705dde.png" />
+    <Content Include="wwwroot\assets\uploads\2020\09\90ea28a6-5c1f-46e1-aa66-e50f4e2af221.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\a06fb052-baa4-43b0-be63-072ae40690be.png" />
     <Content Include="wwwroot\assets\uploads\2020\09\Aktiegraf  Chemotech.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\09\Banner_Börsvärlden_2.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\09\Bild chemotech.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\bild tabeller.png" />
+    <Content Include="wwwroot\assets\uploads\2020\09\Erbjudandet.png" />
     <Content Include="wwwroot\assets\uploads\2020\09\fdbbf8a3-2b68-4966-8847-57b1fcd77bc0.png" />
+    <Content Include="wwwroot\assets\uploads\2020\09\Hubster diagram.png" />
     <Content Include="wwwroot\assets\uploads\2020\09\knapp.jpg" />
     <Content Include="wwwroot\assets\uploads\2020\09\lifeclear person.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\liten.jpg" />
+    <Content Include="wwwroot\assets\uploads\2020\09\Namnlös - Copy 1.png" />
     <Content Include="wwwroot\assets\uploads\2020\09\scandinavian Chemotech.jpg" />
   </ItemGroup>
   <ItemGroup>

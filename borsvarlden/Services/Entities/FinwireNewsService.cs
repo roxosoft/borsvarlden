@@ -395,14 +395,14 @@ namespace borsvarlden.Services.Entities
         private IQueryable<FinwireNew> GetActualNews()
         {
             return _dbContext.FinwireNews
-                .Where(x => x.IsBorsvarldenArticle && x.IsPublished && DateTime.Now < x.ActualDeadLine && x.DateStartVisible.Date <= DateTime.Now.Date && x.DateStartVisible.Date > default(DateTime))
+                .Where(x => x.IsBorsvarldenArticle && x.IsPublished && DateTime.Now < x.ActualDeadLine && x.DateStartVisible.Date <= DateTime.Now.Date && x.DateStartVisible.Date >= default(DateTime))
                 .OrderByDescending(x => x.Date);
         }
 
         private IQueryable<FinwireNew> GetPrioNews()
         {
             return _dbContext.FinwireNews
-                .Where(x => x.IsBorsvarldenArticle && x.IsPublished && DateTime.Now < x.PrioDeadLine && x.DateStartVisible.Date <= DateTime.Now.Date && x.DateStartVisible.Date > default(DateTime))
+                .Where(x => x.IsBorsvarldenArticle && x.IsPublished && DateTime.Now < x.PrioDeadLine && x.DateStartVisible.Date <= DateTime.Now.Date && x.DateStartVisible.Date >= default(DateTime))
                 .OrderBy(x => x.Order)
                 .ThenBy(x => x.Date);
         }
