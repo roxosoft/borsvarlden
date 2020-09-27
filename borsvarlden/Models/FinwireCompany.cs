@@ -11,6 +11,7 @@ namespace borsvarlden.Models
         public string Company { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
+        public string Slug { get; set; }
         public List<FinwireNew2FinwireCompany> FinwireNew2FinwireCompanies { get; set; }
     }
 }

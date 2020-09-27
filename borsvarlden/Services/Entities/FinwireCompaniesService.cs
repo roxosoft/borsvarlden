@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using borsvarlden.Db;
-using borsvarlden.Models;
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Data.ResponseModel;
 using DevExtreme.AspNet.Mvc;
 
 namespace borsvarlden.Services.Entities
 {
+    using Db;
+    using Models;
+    using Extensions;
+
     public interface IFinwireCompaniesService
     {
         FinwireNew JoinCompanies(FinwireNew finwireNew, List<string> companies);
@@ -22,6 +24,8 @@ namespace borsvarlden.Services.Entities
         Task<LoadResult> GetListFinwireCompanies(DataSourceLoadOptions options);
         Task UpdateCompany(FinwireCompany company);
         Task<FinwireCompany> GetFinwireCompany(int id);
+        Task<FinwireCompany> GetFinwireCompany(string slug);
+        Task GenCompaniesSlug();
     }
 
     public class FinwireCompaniesService : IFinwireCompaniesService
@@ -38,7 +42,9 @@ namespace borsvarlden.Services.Entities
             return await _dbContext.FinwireCompanies.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-
+        public async Task<FinwireCompany> GetFinwireCompany(string slug)
+            => await _dbContext.FinwireCompanies.FirstOrDefaultAsync(x => x.Slug == slug);
+        
         public FinwireNew JoinCompanies(FinwireNew finwireNew, List<string> companies)
         {
             //todo check companies null case !!!!!
@@ -59,6 +65,12 @@ namespace borsvarlden.Services.Entities
         public async Task<LoadResult> GetCompanies(DataSourceLoadOptions loadOptions)
         {
             return await DataSourceLoader.LoadAsync(_dbContext.FinwireCompanies.OrderBy(x=>x.Company).Select(x=>x.Company), loadOptions);
+        }
+
+        public async Task GenCompaniesSlug()
+        {
+            await _dbContext.FinwireCompanies.ForEachAsync(x => x.Slug = x.Company.ToSlug());
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<List<FinwireCompany>> GetListFinwireCompaniesByLetter(string letter)

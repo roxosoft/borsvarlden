@@ -27,11 +27,19 @@ namespace borsvarlden.Controllers
             return View(listCompanies);
         }
 
-        [Route("Foretagsinfo/{id}")]
+        [Route("Foretagsinfo/id/{id}")]
         public async Task<IActionResult> CompanyInfo(int id)
         {
             var company = await _finwireCompaniesService.GetFinwireCompany(id);
             var res = await _finwireNewsService.GetFinwireNewWithCompany(id);
+            return View(new Tuple<FinwireCompany, List<FinwireNew>>(company, res));
+        }
+
+        [Route("Foretagsinfo/{slug}")]
+        public async Task<IActionResult> CompanyInfo(string slug)
+        {
+            var company = await _finwireCompaniesService.GetFinwireCompany(slug);
+            var res = await _finwireNewsService.GetFinwireNewWithCompany(company.Id);
             return View(new Tuple<FinwireCompany, List<FinwireNew>>(company, res));
         }
     }
