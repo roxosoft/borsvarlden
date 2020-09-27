@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using borsvarlden.Extensions;
@@ -13,6 +14,14 @@ namespace borsvarlden.Extensions
         {
             var res = input.Split("<br/><br/>")[0];
             return res;
+        }
+
+        public static string ToPlainText(this string input)
+        {
+            var builder = new StringBuilder();
+            input.Split("</p>").ToList()
+                .ForEach(x => builder.Append(Regex.Replace(Regex.Replace(x, "</br>", "\n"), "<.*?>", String.Empty)).AppendLine().AppendLine());
+            return builder.ToString();
         }
 
         public static string ParseHtmlText(this string input)

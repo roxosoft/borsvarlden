@@ -19,6 +19,8 @@ using Microsoft.Extensions.WebEncoders;
 
 namespace borsvarlden
 {
+    using Services.Facebook;
+
     public class Startup
     {
         private static readonly string _databaseConnectionStringName = "borsvarlden";
@@ -72,6 +74,7 @@ namespace borsvarlden
             services.AddScoped<IApplicationUserService, ApplicationUserService>();
             services.AddScoped<IFinwireXmlNewsService, FinwireXmlNewsService>();
             services.AddScoped<IFinwireCompaniesService, FinwireCompaniesService>();
+            services.AddScoped<IFacebookService, FacebookService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
