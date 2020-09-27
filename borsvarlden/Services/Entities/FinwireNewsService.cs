@@ -214,8 +214,7 @@ namespace borsvarlden.Services.Entities
         public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText, bool only15MinutesVideo)
         {
             var result = new PaggingSearchResponseViewModel<NewsViewModel>();
-            var query = GetNonBorsvarldenArticles();
-
+            var query = string.IsNullOrEmpty(searchText) ? GetNonBorsvarldenArticles() : GetAllArticles();
             if (!string.IsNullOrEmpty(searchText))
             {
                 query = query.Where(x => x.Title.Contains(searchText));
@@ -382,6 +381,10 @@ namespace borsvarlden.Services.Entities
                 .OrderByDescending(x => x.Date);
         }
 
+        private IQueryable<FinwireNew> GetAllArticles()
+            => _dbContext.FinwireNews
+                .Where(x => x.FinautoPassed)
+                .OrderByDescending(x => x.Date);
 
         private IQueryable<FinwireNew> GetNonBorsvarldenArticles(int count)
         {
