@@ -54,6 +54,9 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
                 return BadRequest();
             }
 
+            if (article.DateStartVisible == default(DateTime))
+                article.DateStartVisible = DateTime.Now;
+
             await _newsService.AddArticle(article);
 
             //Facebook stuff disabled for a while
