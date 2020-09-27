@@ -30,6 +30,10 @@ namespace borsvarlden.Helpers
 
         public int ReadMoreCount { get; private set; }
 
+        public string FaceBookAccessToken { get; private set; }
+
+        public string FaceBookPageId { get; private set; }
+
         public ConfigurationHelper(IConfiguration configuration)
         {
             FirstBigBlockCount = configuration.GetValue<int>("ApplicationSettings:FirstBigBlockCount");
@@ -44,6 +48,8 @@ namespace borsvarlden.Helpers
             SponsoredNewsCount = configuration.GetValue<int>("ApplicationSettings:SponsoredNewsCount");
             RelatedNewsCount = configuration.GetValue<int>("ApplicationSettings:RelatedNewsCount");
             ReadMoreCount = configuration.GetValue<int>("ApplicationSettings:ReadMoreCount");
+            FaceBookAccessToken = configuration.GetValue<string>("ApplicationSettings:FacebookAccessToken");
+            FaceBookPageId = configuration.GetValue<string>("ApplicationSettings:FaceBookPageId");
         }
     }
 }

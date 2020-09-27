@@ -12,18 +12,22 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace borsvarlden.Controllers.Api
 {
+    using Services.Facebook;
+
     public class FinwireController
     {
         private IFinwireNewsService _finwireNewsService;
         private IFinwireParserService _finwireParserService;
+        private IFacebookService _facebookService;
         private ILogger _logger;
         private IWebHostEnvironment _webHostEnvironment;
 
-        public FinwireController(IFinwireNewsService finwireNewsService, IFinwireParserService finwireParserService,  
+        public FinwireController(IFinwireNewsService finwireNewsService, IFinwireParserService finwireParserService, IFacebookService facebookService, 
                                 ILogger<FinwireController> logger, IWebHostEnvironment webHostEnvironment)
         {
             _finwireNewsService = finwireNewsService;
             _finwireParserService = finwireParserService;
+            _facebookService = facebookService;
             _logger = logger;
             _webHostEnvironment = webHostEnvironment;
         }
@@ -36,6 +40,14 @@ namespace borsvarlden.Controllers.Api
             var data = await _finwireParserService.ParseXmlContent(xml);
             await _finwireNewsService.AddSingleNews(data);
             return "OK";
+        }
+
+        [HttpGet]
+        [Route("api/facebook")]
+        public async Task<string> PublishToFacebok()
+        {
+            _facebookService.PublishToFacebook("<h1>Test html</h1> and some text", "https://borsvarlden.com/assets/images/finauto/socialtag/tech/bvfa-s-tech-0016.jpg");
+            return "Ok";
         }
 
         [HttpGet]

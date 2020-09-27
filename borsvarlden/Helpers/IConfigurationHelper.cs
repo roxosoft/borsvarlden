@@ -28,5 +28,9 @@ namespace borsvarlden.Helpers
         public int RelatedNewsCount { get; }
 
         public int ReadMoreCount { get; }
+
+        public string FaceBookAccessToken { get; }
+
+        public string FaceBookPageId { get; }
     }
 }

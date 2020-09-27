@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using System.Web;
 using borsvarlden.Models;
 using borsvarlden.Services.Entities;
 using DevExtreme.AspNet.Mvc;
@@ -10,8 +11,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
+
 namespace borsvarlden.Areas.Admin.Controllers.Api
 {
+    using Services.Facebook;
+    using Extensions;
+
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
@@ -19,9 +24,12 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
     {
         private readonly IFinwireNewsService _newsService;
 
-        public ArticlesController(IFinwireNewsService newsService)
+        private readonly IFacebookService _facebookService;
+
+        public ArticlesController(IFinwireNewsService newsService, IFacebookService facebookService)
         {
             _newsService = newsService;
+            _facebookService = facebookService;
         }
 
         [HttpGet]
@@ -43,7 +51,12 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
             }
 
             await _newsService.AddArticle(article);
-            
+
+            //Facebook stuff disabled for a while
+            var textForFaceBook = (HttpUtility.HtmlDecode(article.NewsText.ToPlainText()));
+            _facebookService.PublishToFacebook(textForFaceBook,
+                article.ImageRelativeUrl);
+
             return Ok(article);
         }
 
