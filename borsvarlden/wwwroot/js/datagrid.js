@@ -324,6 +324,11 @@ $(function () {
                 ]
             }
         },
+        onInitNewRow: function (e) {
+            var today = new Date();
+            var dateStartVisibleDefault = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
+            e.data.dateStartVisible = dateStartVisibleDefault;
+        },
         remoteOperations: true,
         searchPanel: {
             visible: true
