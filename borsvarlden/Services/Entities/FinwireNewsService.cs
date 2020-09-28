@@ -282,7 +282,7 @@ namespace borsvarlden.Services.Entities
         public async Task AddArticle(FinwireNew article)
         {
             article.DateModified = DateTime.UtcNow;
-            if (article.ImageRelativeUrl.Contains("blob.core", StringComparison.OrdinalIgnoreCase))
+            if (article.ImageRelativeUrl != null && article.ImageRelativeUrl.Contains("blob.core", StringComparison.OrdinalIgnoreCase))
                 article.IsUseAzureStorage = true;
 
             _dbContext.Entry(article).State = EntityState.Added;
