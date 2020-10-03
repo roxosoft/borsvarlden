@@ -42,6 +42,7 @@ namespace borsvarlden.Services.Entities
         Task<List<NewsViewModel>> GetMostReadNews(int count, int id);
         Task<List<NewsViewModel>> GetAdvertiseNewsList(int newsCount);
         Task<List<FinwireNew>> GetFinwireNewWithCompany(int id);
+        Task<IndexNewsViewModel> GetHotStocksForFeeding(int newsCount);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -116,6 +117,15 @@ namespace borsvarlden.Services.Entities
             var first = result.News.FirstOrDefault();
             if (first?.IsFinwireNews ?? false)
                 first.IsTopFinwireNews = true;
+
+            return result;
+        }
+
+        public async Task<IndexNewsViewModel> GetHotStocksForFeeding(int newsCount)
+        {
+            var result = new IndexNewsViewModel();
+            var newsList = await GetHotStocks(newsCount).ToListAsync();
+            result.News = MapFinwireNewToViewModel(newsList);
 
             return result;
         }
@@ -380,6 +390,11 @@ namespace borsvarlden.Services.Entities
                 .OrderByDescending(x => x.Date);
         }
 
+        private IQueryable<FinwireNew> GetHotStocks()
+            =>  _dbContext.FinwireNews
+                .Where(x => x.IsHotStocks && x.IsPublished)
+                .OrderByDescending(x => x.Date);
+
         private IQueryable<FinwireNew> GetAllArticles()
             => _dbContext.FinwireNews
                 .Where(x => x.FinautoPassed)
@@ -391,6 +406,8 @@ namespace borsvarlden.Services.Entities
                 .Take(count);
         }
 
+        private IQueryable<FinwireNew> GetHotStocks(int count)
+            => GetHotStocks().Take(count);
 
         private IQueryable<FinwireNew> GetActualNews()
         {

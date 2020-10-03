@@ -34,6 +34,7 @@ namespace borsvarlden.Models
         public string ImageSource { get; set; }
         public bool Is15MinutesVideo { get; set; }
         public bool IsUseAzureStorage { get; set; }
+        public bool IsHotStocks { get; set; }
 
         public DateTime DateStartVisible { get; set; }
 

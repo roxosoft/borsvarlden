@@ -1,0 +1,7 @@
+﻿@using borsvarlden.ViewModels;
+@using borsvarlden.Extensions;
+@model NewsViewModel;
+
+    <a href="~/artiklar/@Html.Raw(Model.TittleSlug)">
+       <span style="font-weight:500"> @Model.Date.ToString("yyyy MMM d") </span> - @Model.ImageLabel -  @Model.Title
+    </a>

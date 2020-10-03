@@ -94,5 +94,9 @@
   {
     "outputFile": "wwwroot/css/companies.css",
     "inputFile": "wwwroot/css/companies.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/hot-stocks.css",
+    "inputFile": "wwwroot/css/hot-stocks.scss"
   }
 ]

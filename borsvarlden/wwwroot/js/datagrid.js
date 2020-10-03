@@ -130,6 +130,11 @@ $(function () {
                 visible: true
             },
             {
+                dataField: "isHotStocks",
+                dataType: "boolean",
+                visible: true
+            },
+            {
                 dataField: "FinwireNew2FinwireCompanies",
                 caption: "Companies related",
                 visible: true,
@@ -311,7 +316,11 @@ $(function () {
                         visible: true
                     },
                     {
-                        colSpan: 2,
+                        dataField: "isHotStocks",
+                        dataType: "boolean",
+                        visible: true
+                    },
+                    {
                         dataField: "is15MinutesVideo",
                         dataType: "boolean",
                         visible: true

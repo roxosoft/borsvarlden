@@ -44,6 +44,12 @@ namespace borsvarlden.Controllers
             return View();
         }
 
+        [Route("heta-aktier")]
+        public async Task<IActionResult> HotStocks()
+        { 
+            return View();
+        }
+
         [Route("artiklar")]
         [Route("artiklar/sida/{page}")]
         [Route("artiklar/sida/{page}/{searchText}")]
