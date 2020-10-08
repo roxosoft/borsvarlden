@@ -46,6 +46,30 @@ namespace borsvarlden.Helpers
             return "";
         }
 
+        public static string GetMetaPropertyOgImage(string path, NewsViewModel newsViewModel)
+        {
+            if (IsArticle(path))
+                return GetMetaProperty("og:image", $"https://borsvarlden.com{newsViewModel.ImageUrl}");
+            else
+                return GetMetaProperty("og:image", $"https://borsvarlden.com/assets/images/meta/borsvarlden-facebook-share-image.jpg");
+        }
+
+        public static string GetMetaPropertyOgImageSecure(string path, NewsViewModel newsViewModel)
+        {
+            if (IsArticle(path))
+                return GetMetaProperty("og:image:secure_url", $"https://borsvarlden.com{newsViewModel.ImageUrl}");
+            else
+                return GetMetaProperty("og:image:secure_url", $"https://borsvarlden.com/assets/images/meta/borsvarlden-facebook-share-image.jpg");
+        }
+
+        public static string GetMetaPropertyOgUrl(string path, NewsViewModel newsViewModel)
+        {
+            if (IsArticle(path))
+                return GetMetaProperty("og:url", $"https://borsvarlden.com/artiklar/{newsViewModel.TittleSlug}");
+            else
+                return GetMetaProperty("og:url", $"https://borsvarlden.com");
+        }
+
         public static string GetMetaNameTwitterDescription(string path, NewsViewModel newsViewModel)
         {
             if (IsRootPage(path))
