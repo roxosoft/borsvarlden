@@ -46,28 +46,38 @@ namespace borsvarlden.Helpers
             return "";
         }
 
-        public static string GetMetaPropertyOgImage(string path, NewsViewModel newsViewModel)
+        public static string GetMetaPropertyOgImage(string hostName, string path, NewsViewModel newsViewModel)
         {
             if (IsArticle(path))
-                return GetMetaProperty("og:image", $"https://borsvarlden.com{newsViewModel.ImageUrl}");
+            {
+                if (newsViewModel.IsUseAzureStorage)
+                    return GetMetaProperty("og:image", $"{newsViewModel.ImageUrl}");
+                else
+                    return GetMetaProperty("og:image", $"https://{hostName}{newsViewModel.ImageUrl}");
+            }
             else
-                return GetMetaProperty("og:image", $"https://borsvarlden.com/assets/images/meta/borsvarlden-facebook-share-image.jpg");
+                return GetMetaProperty("og:image", $"https://{hostName}/assets/images/meta/borsvarlden-facebook-share-image.jpg");
         }
 
-        public static string GetMetaPropertyOgImageSecure(string path, NewsViewModel newsViewModel)
+        public static string GetMetaPropertyOgImageSecure(string hostName, string path, NewsViewModel newsViewModel)
         {
             if (IsArticle(path))
-                return GetMetaProperty("og:image:secure_url", $"https://borsvarlden.com{newsViewModel.ImageUrl}");
+            {
+                if (newsViewModel.IsUseAzureStorage)
+                    return GetMetaProperty("og:image", $"{newsViewModel.ImageUrl}");
+                else
+                    return GetMetaProperty("og:image:secure_url", $"https://{hostName}{newsViewModel.ImageUrl}");
+            }
             else
-                return GetMetaProperty("og:image:secure_url", $"https://borsvarlden.com/assets/images/meta/borsvarlden-facebook-share-image.jpg");
+                return GetMetaProperty("og:image:secure_url", $"https://{hostName}/assets/images/meta/borsvarlden-facebook-share-image.jpg");
         }
 
-        public static string GetMetaPropertyOgUrl(string path, NewsViewModel newsViewModel)
+        public static string GetMetaPropertyOgUrl(string hostName, string path, NewsViewModel newsViewModel)
         {
             if (IsArticle(path))
-                return GetMetaProperty("og:url", $"https://borsvarlden.com/artiklar/{newsViewModel.TittleSlug}");
+                return GetMetaProperty("og:url", $"https://{hostName}/artiklar/{newsViewModel.TittleSlug}");
             else
-                return GetMetaProperty("og:url", $"https://borsvarlden.com");
+                return GetMetaProperty("og:url", $"https://{hostName}");
         }
 
         public static string GetMetaNameTwitterDescription(string path, NewsViewModel newsViewModel)
