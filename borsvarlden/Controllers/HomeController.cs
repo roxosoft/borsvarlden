@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.ServiceModel.Syndication;
 using System.Text;
 using System.Threading.Tasks;
@@ -159,5 +160,8 @@ namespace borsvarlden.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [Route("uploads/uploads/{year}/{month}/{id}")]
+        public IActionResult Images(string year, string month, string id) => Redirect($"https://borsvarlden.blob.core.windows.net/uploads/uploads/{year}/{month}/{id}");
     }
 }
