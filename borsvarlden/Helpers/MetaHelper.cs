@@ -64,7 +64,7 @@ namespace borsvarlden.Helpers
             if (IsArticle(path))
             {
                 if (newsViewModel.IsUseAzureStorage)
-                    return GetMetaProperty("og:image", $"{newsViewModel.ImageUrl}");
+                    return GetMetaProperty("og:image:secure_url", $"{newsViewModel.ImageUrl}");
                 else
                     return GetMetaProperty("og:image:secure_url", $"https://{hostName}{newsViewModel.ImageUrl}");
             }
