@@ -46,6 +46,40 @@ namespace borsvarlden.Helpers
             return "";
         }
 
+        public static string GetMetaPropertyOgImage(string hostName, string path, NewsViewModel newsViewModel)
+        {
+            if (IsArticle(path))
+            {
+                if (newsViewModel.IsUseAzureStorage)
+                    return GetMetaProperty("og:image", $"{newsViewModel.ImageUrl}".Replace("borsvarlden.blob.core.windows.net", hostName));
+                else
+                    return GetMetaProperty("og:image", $"https://{hostName}{newsViewModel.ImageUrl}");
+            }
+            else
+                return GetMetaProperty("og:image", $"https://{hostName}/assets/images/meta/borsvarlden-facebook-share-image.jpg");
+        }
+
+        public static string GetMetaPropertyOgImageSecure(string hostName, string path, NewsViewModel newsViewModel)
+        {
+            if (IsArticle(path))
+            {
+                if (newsViewModel.IsUseAzureStorage)
+                    return GetMetaProperty("og:image:secure_url", $"{newsViewModel.ImageUrl}".Replace("borsvarlden.blob.core.windows.net", hostName));
+                else
+                    return GetMetaProperty("og:image:secure_url", $"https://{hostName}{newsViewModel.ImageUrl}");
+            }
+            else
+                return GetMetaProperty("og:image:secure_url", $"https://{hostName}/assets/images/meta/borsvarlden-facebook-share-image.jpg");
+        }
+
+        public static string GetMetaPropertyOgUrl(string hostName, string path, NewsViewModel newsViewModel)
+        {
+            if (IsArticle(path))
+                return GetMetaProperty("og:url", $"https://{hostName}/artiklar/{newsViewModel.TittleSlug}");
+            else
+                return GetMetaProperty("og:url", $"https://{hostName}");
+        }
+
         public static string GetMetaNameTwitterDescription(string path, NewsViewModel newsViewModel)
         {
             if (IsRootPage(path))

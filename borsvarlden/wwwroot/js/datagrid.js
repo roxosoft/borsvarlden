@@ -14,7 +14,8 @@ $(function () {
             {
                 dataField: "date",
                 caption: "Date created",
-                dataType: "datetime"
+                dataType: "datetime",
+                format: "MM/dd/yyyy HH:mm"
             },
             {
                 dataField: "title",
@@ -80,6 +81,7 @@ $(function () {
             {
                 dataField: "dateModified",
                 dataType: "datetime",
+                format: "MM/dd/yyyy HH:mm",
                 visible: false
             },
             {
@@ -101,6 +103,7 @@ $(function () {
                 dataField: "prioDeadLine",
                 caption: "Prio deadline",
                 dataType: "datetime",
+                format: "MM/dd/yyyy HH:mm",
                 visible: true
             },
             {
@@ -117,6 +120,7 @@ $(function () {
                 dataField: "actualDeadLine",
                 caption: "Actual deadline",
                 dataType: "datetime",
+                format: "MM/dd/yyyy HH:mm",
                 visible: true
             },
             {
@@ -226,6 +230,7 @@ $(function () {
                 dataField: "dateStartVisible",
                 caption: "Start visible from",
                 dataType: "datetime",
+                format: "MM/dd/yyyy HH:mm",
                 visible: true
             }
         ],

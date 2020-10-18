@@ -75,19 +75,19 @@
     var self = this
 
     this.runValidators($el).done(function (errors) {
-      $el.data('bs.validator.errors', errors)
+        $el.data('bs.validator.errors', errors)
 
-      errors.length ? self.showErrors($el) : self.clearErrors($el)
+        errors.length ? self.showErrors($el) : self.clearErrors($el)
 
-      if (!prevErrors || errors.toString() !== prevErrors.toString()) {
-        e = errors.length
+        if (!prevErrors || errors.toString() !== prevErrors.toString()) {
+            e = errors.length
           ? $.Event('invalid.bs.validator', {relatedTarget: $el[0], detail: errors})
           : $.Event('valid.bs.validator', {relatedTarget: $el[0], detail: prevErrors})
 
         self.$element.trigger(e)
       }
 
-      self.toggleSubmit()
+        self.toggleSubmit()
 
       self.$element.trigger($.Event('validated.bs.validator', {relatedTarget: $el[0]}))
     })
@@ -118,8 +118,8 @@
     }, this))
 
     if (!errors.length && $el.val() && $el.data('remote')) {
-      this.defer($el, function () {
-        var data = {}
+        this.defer($el, function () {
+            var data = {}
         data[$el.attr('name')] = $el.val()
         $.get($el.data('remote'), data)
           .fail(function (jqXHR, textStatus, error) { errors.push(getErrorMessage('remote') || error) })
@@ -162,13 +162,12 @@
     })
   }
 
-  Validator.prototype.clearErrors = function ($el) {
-    var $group = $el.closest('.form-group')
-    var $block = $group.find('.help-block.with-errors')
+    Validator.prototype.clearErrors = function ($el) {
+        var $group = $el.closest('.form-group')
+        var $block = $group.find('.help-block.with-errors')
 
-    $block.html($block.data('bs.validator.originalContent'))
-    $group.removeClass('has-error')
-  }
+        $group.removeClass('has-error')
+    }
 
   Validator.prototype.hasErrors = function () {
     function fieldErrors() {
@@ -188,10 +187,15 @@
     return !!this.$element.find(':input[required]:enabled').filter(fieldIncomplete).length
   }
 
-  Validator.prototype.onSubmit = function (e) {
-    this.validate()
-    if (this.isIncomplete() || this.hasErrors()) e.preventDefault()
-  }
+    Validator.prototype.onSubmit = function (e) {
+        this.validate()
+
+        if (this.isIncomplete() || this.hasErrors()) {
+            e.preventDefault()
+        } else {
+            $('.with-errors').html('')
+        }
+    }
 
   Validator.prototype.toggleSubmit = function () {
     if(!this.options.disable) return
