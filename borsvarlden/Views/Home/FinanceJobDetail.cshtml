@@ -1,0 +1,59 @@
+﻿@model JobAdvert
+
+@using borsvarlden.Helpers
+@{
+    ViewData["Title"] = "Börsvärlden - Maximera din digitala synlighet";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/index.min.css" />
+    <link rel="stylesheet" href="~/css/article.min.css" />
+    <link rel="stylesheet" href="~/css/bv-form.min.css" />
+    <link rel="stylesheet" href="~/css/bv-widget-subscribe.min.css" />
+    <link rel="stylesheet" href="~/css/bv-top-level.min.css" />
+    <link rel="stylesheet" href="~/css/bv-panel.min.css" />
+    <link rel="stylesheet" href="~/css/search-form.min.css" />
+    <link rel="stylesheet" href="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/css/settings.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/css/finjob.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+}
+
+@section ScriptsHead {
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/assets/js/includes/jquery/jquery.js"></script>
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js"></script>
+}
+
+<div class="row index-row">
+    <div class="col-10 index-content-wrapper index-page-banner-parent">
+        <div class="column-label annons-label">ANNONS</div>
+        @await Component.InvokeAsync("BannerTop")
+        <div class="row index-content-row bv-container-page">
+            <div style="display:flex;justify-content:start">
+                <div>
+                    <img src="@Model.Image" class="finjob-detail-image" />
+                </div>
+                <div style="padding-left: 5px; padding-top:5px;">
+                    <div style="margin-bottom:20px">
+                        <img src="@Model.Logo" class="finjob-detail-image-logo"/>
+                    </div>
+                    <div>
+                        <h4> @Model.Label</h4>
+                        <p>Företag: @Model.CompanyName</p>
+                        <p>Ort: @Model.Location</p>
+                        <p>Utgår: @Model.EndingDateOfApplication</p>
+
+                        <a href="mailto:@Model.Email" class="cd-button cd-primary-button" data-js-type="external" target="_blank" data-hover="forward"><span>Sök Jobbet! </span></a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                @Html.Raw(@Model.Description)
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("BannerRight")
+</div>
+
+@section Scripts{ }

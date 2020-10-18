@@ -55,10 +55,10 @@ namespace borsvarlden.Services.Entities
         private string _imagesAzureUploadRootPath => $@"uploads/";
         private static Random rndGen = new Random();
 
-        public FinwireNewsService(ApplicationContext dbContext, IFinwireFilterService finwireNewsService, IWebHostEnvironment hostEnvironment)
+        public FinwireNewsService(ApplicationContext dbContext, IFinwireFilterService finwireNewsFilterService, IWebHostEnvironment hostEnvironment)
         {
             _dbContext = dbContext;
-            _finwireFilterService = finwireNewsService;
+            _finwireFilterService = finwireNewsFilterService;
             _webRootPath = hostEnvironment.WebRootPath;
             ImageHelper.Init(_imagesRootPath);
         }

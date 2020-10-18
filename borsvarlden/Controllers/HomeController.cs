@@ -27,9 +27,11 @@ namespace borsvarlden.Controllers
         private readonly IFinwireParserService _finwireParserService;
         private readonly IFinwireXmlNewsService _finwireXmlService;
         private readonly IFinwireCompaniesService _finwireCompaniesService;
+        private readonly IJobAdvertsService _jobadvertService;
 
         public HomeController(ILogger<HomeController> logger, IFinwireNewsService finwireNewsService, IFinwireParserService finwireParserService,
-                              IFinwireXmlNewsService finwireXmlService,  IFinwireCompaniesService finwireCompaniesService, IConfigurationHelper configurationHelper)
+                              IFinwireXmlNewsService finwireXmlService,  IFinwireCompaniesService finwireCompaniesService, IJobAdvertsService jobAdvertService,
+                              IConfigurationHelper configurationHelper)
         {
             _logger = logger;
             _finwireNewsService = finwireNewsService;
@@ -37,6 +39,7 @@ namespace borsvarlden.Controllers
             _finwireParserService = finwireParserService;
             _finwireXmlService = finwireXmlService;
             _finwireCompaniesService = finwireCompaniesService;
+            _jobadvertService = jobAdvertService;
         }
 
         public async Task<IActionResult> Index()
@@ -112,6 +115,20 @@ namespace borsvarlden.Controllers
         public async Task<IActionResult> SubscribeNews()
         {
             return View();
+        }
+
+        [Route("Finansjobb")]
+        public async Task<IActionResult> FinanceJob()
+        {
+            
+            return View();
+        }
+
+        [Route("FinansjobbDetaljer/{id}")]
+        public async Task<IActionResult> FinanceJobDetail(int id)
+        {
+            var vm = await _jobadvertService.GetAsync(id);
+            return View(vm);
         }
 
         public async Task<IActionResult> SignUpForIPOs()

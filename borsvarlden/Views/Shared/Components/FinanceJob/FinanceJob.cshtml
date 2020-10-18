@@ -1,0 +1,38 @@
+﻿@using borsvarlden.ViewModels;
+@model List<JobAdvert>;
+
+
+<div class="index-article-feed" style="margin-top:10px;margin-left:5px;">
+    
+    @foreach (var jobAdvert in Model)
+    {
+        <a href="~/FinansjobbDetaljer/@Html.Raw(jobAdvert.Id)" class="finjob-link">
+            <div class="findjob-wraper">
+                <div class="finjob-item">
+                    <div class="finjob-item-data">
+                        <div class="finjob-label">
+                            @Html.Raw(jobAdvert.Label)
+                        </div>
+                        <div class="finjob-preamble">
+                            @Html.Raw(jobAdvert.Preamble)
+                        </div>
+                        <div class="finjob-location-date">
+                            <div class="finjob-location">
+                                <i class="material-icons">location_on</i>
+                                @Html.Raw(jobAdvert.Location)
+                            </div>
+                            <div class="finjob-date" style="margin-left: 20px">
+                                <i class="material-icons">access_time</i>
+                                @Html.Raw(Math.Max(0, (int)jobAdvert.EndingDateOfApplication.Subtract(DateTime.Now).TotalDays)) dagar kvar
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="img-logo" src="@jobAdvert.Logo" style="margin-top: 10px; margin-left: 10px" />
+                    </div>
+                </div>
+            </div>
+        </a>
+    }
+
+</div>

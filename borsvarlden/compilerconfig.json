@@ -98,5 +98,9 @@
   {
     "outputFile": "wwwroot/css/hot-stocks.css",
     "inputFile": "wwwroot/css/hot-stocks.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/finjob.css",
+    "inputFile": "wwwroot/css/finjob.scss"
   }
 ]
