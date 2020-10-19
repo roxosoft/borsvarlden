@@ -1,0 +1,51 @@
+﻿@using borsvarlden.Helpers
+@{
+    ViewData["Title"] = "Börsvärlden - Maximera din digitala synlighet";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/index.min.css" />
+    <link rel="stylesheet" href="~/css/article.min.css" />
+    <link rel="stylesheet" href="~/css/bv-form.min.css" />
+    <link rel="stylesheet" href="~/css/bv-widget-subscribe.min.css" />
+    <link rel="stylesheet" href="~/css/bv-top-level.min.css" />
+    <link rel="stylesheet" href="~/css/bv-panel.min.css" />
+    <link rel="stylesheet" href="~/css/search-form.min.css" />
+    <link rel="stylesheet" href="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/css/settings.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/css/finjob.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+}
+
+@section ScriptsHead {
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/assets/js/includes/jquery/jquery.js"></script>
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js"></script>
+}
+
+<div class="row index-row">
+    <div class="col-10 index-content-wrapper index-page-banner-parent">
+        <div class="column-label annons-label">ANNONS</div>
+        @await Component.InvokeAsync("BannerTop")
+        <div class="row index-content-row bv-container-page">
+            <div class="col-xs-12 bv-content-left">
+                @await Component.InvokeAsync("FinanceJob")
+                <div class="content-botom-hidden">
+                    @await Component.InvokeAsync("SponsoredNews")
+
+                    @await Component.InvokeAsync("LatestNews")
+                </div>
+            </div>
+            <div class="col-xs-12 bv-content-right">
+                @await Component.InvokeAsync("SponsoredNews")
+                @await Component.InvokeAsync("MostReadNews")
+                @await Component.InvokeAsync("SubscribeForm")
+                @await Component.InvokeAsync("SearchForm")
+                @await Component.InvokeAsync("LatestNews")
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("BannerRight")
+</div>
+
+@section Scripts{ }

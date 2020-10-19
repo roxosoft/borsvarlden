@@ -1,0 +1,73 @@
+﻿.findjob-wraper:hover {
+    background: #f8f9fa;
+}
+
+.finjob-item {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: inset 0 1px 0 0 #e8e8e9;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.finjob-label {
+    font-weight: 600;
+}
+
+.finjob-item-data {
+    min-width: 350px;
+    font-size: 11.4pt;
+    line-height: 180%
+}
+
+.finjob-location-date {
+    display: flex;
+    justify-content: start;
+    margin-top: 20px;
+}
+
+.finjob-date, .finjob-location {
+    display: flex;
+    justify-content: start;
+    color: #95989a;
+}
+
+.finjob-location-date i{
+    font-size: 20px;
+}
+
+.finjob-preamble {
+    color: #95989a;
+}
+
+.img-logo {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.finjob-detail-image {
+    max-width: 600px;
+    max-height: 600px;
+}
+
+.finjob-detail-image-logo {
+    max-width: 250px;
+    max-height: 250px     
+}
+
+.cd-primary-button {
+    border-radius: 5px;
+    background-color: #c23f36;
+    color: #fff;
+    font-family: proxima-nova,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    padding: 18px;
+    text-transform: uppercase;
+    border: 1px solid #ff5621;
+    margin-top: 10px;
+}
