@@ -16,17 +16,17 @@
 <meta property="og:type" content="website" />
 @Html.Raw(@MetaHelper.GetMetaPropertyOgTitle(@Context.Request.Path, Model, ViewData))
 @Html.Raw(@MetaHelper.GetMetaPropertyOgDescription(@Context.Request.Path, Model))
-@Html.Raw(@MetaHelper.GetMetaPropertyOgUrl(@Context.Request.Host.Value,@Context.Request.Path, Model))
+@Html.Raw(@MetaHelper.GetMetaPropertyOgUrl(@Context.Request.Host.Value, @Context.Request.Path, Model))
 <meta property="og:site_name" content="Börsvärlden" />
 <meta property="fb:app_id" content="848321055353262" />
 @Html.Raw(@MetaHelper.GetMetaPropertyOgImage(Context.Request.Host.Value, @Context.Request.Path, Model))
 @Html.Raw(@MetaHelper.GetMetaPropertyOgImageSecure(Context.Request.Host.Value, @Context.Request.Path, Model))
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
 @Html.Raw(@MetaHelper.GetMetaNameTwitterDescription(@Context.Request.Path, Model))
-@Html.Raw(@MetaHelper.GetMetaNameTwitterTitle(@Context.Request.Path, Model,ViewData))
-<meta name="twitter:image" content="https://borsvarlden.com/assets/images/meta/borsvarlden-facebook-share-image.jpg" />
+@Html.Raw(@MetaHelper.GetMetaNameTwitterTitle(@Context.Request.Path, Model, ViewData))
+@Html.Raw(@MetaHelper.GetMetaTwitterImage(Context.Request.Host.Value, @Context.Request.Path, Model))
 <meta name="apple-mobile-web-app-title" content="Börsvärlden">
 <meta name="application-name" content="Börsvärlden">
 <meta name="msapplication-TileColor" content="#455a64">

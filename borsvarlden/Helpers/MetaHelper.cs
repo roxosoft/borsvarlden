@@ -94,6 +94,19 @@ namespace borsvarlden.Helpers
             return "";
         }
 
+        public static string GetMetaTwitterImage(string hostName, string path, NewsViewModel newsViewModel)
+        {
+            if (IsArticle(path))
+            {
+                if (newsViewModel.IsUseAzureStorage)
+                    return GetMetaName("twitter:image", $"{newsViewModel.ImageUrl}".Replace("borsvarlden.blob.core.windows.net", hostName));
+                else
+                    return GetMetaName("twitter:image", $"https://{hostName}{newsViewModel.ImageUrl}");
+            }
+            else
+                return GetMetaName("twitter:image", $"https://{hostName}//assets/images/meta/borsvarlden-facebook-share-image.jpg");
+        }
+
         public static string GetMetaNameTwitterTitle(string path, NewsViewModel newsViewModel, dynamic viewData)
         {
             if (IsRootPage(path))

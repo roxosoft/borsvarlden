@@ -14,7 +14,9 @@
                 </i>
             </li>
             <li class="heateorSssSharingRound">
-                <i style="width: 100px; height: 30px;" alt="Twitter" title="Twitter" class="heateorSssSharing heateorSssTwitterBackground" onclick="heateorSssPopup(&quot;http://twitter.com/intent/tweet?text=Vodafone%20och%20Square%20Enix%20gynnade%20DNB%20Teknologi%20som%20steg%202%2C7%20procent%20i%20maj&amp;url=https%3A%2F%2Fborsvarlden.com%2Fartiklar%2Fvodafone-och-square-enix-gynnade-dnb-teknologi-som-steg-27-procent-i-maj%2F&quot;)"><ss style="display: block;" class="heateorSssSharingSvg heateorSssTwitterSvg"></ss></i>
+                <i style="width: 100px; height: 30px;" alt="Twitter" title="Twitter" class="heateorSssSharing heateorSssTwitterBackground" @Html.Raw("onclick=heateorSssPopup('http://twitter.com/intent/tweet?text=" + System.Web.HttpUtility.UrlEncode(@Model.Title) +  "&amp;url=" + System.Web.HttpUtility.UrlEncode("https://"+@Context.Request.Host+"/artiklar/" + (@Model.TittleSlug)) + "')")>
+                    <ss style="display: block;" class="heateorSssSharingSvg heateorSssTwitterSvg"></ss>
+                </i>
             </li>
             <li class="heateorSssSharingRound">
                 <i style="width:100px;height:30px;" alt="Email" title="Email" class="heateorSssSharing heateorSssEmailBackground" onclick="window.location.href = 'mailto:?subject=' + decodeURIComponent('Vodafone%20och%20Square%20Enix%20gynnade%20DNB%20Teknologi%20som%20steg%202%2C7%20procent%20i%20maj' ).replace('&amp;', '%26') + '&amp;body=' + decodeURIComponent('https%3A%2F%2Fborsvarlden.com%2Fartiklar%2Fvodafone-och-square-enix-gynnade-dnb-teknologi-som-steg-27-procent-i-maj%2F' )">
