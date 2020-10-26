@@ -33,7 +33,7 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
         [HttpGet]
         public async Task<IActionResult> Get(DataSourceLoadOptions loadOptions)
         {
-            var result = await _finwireCompaniesService.GetCompanies(loadOptions);
+            var result = await _finwireCompaniesService.GetCompanies();
             var r = new JsonResult(result);
             return r;
         }
