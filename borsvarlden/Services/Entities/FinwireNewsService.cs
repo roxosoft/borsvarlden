@@ -33,8 +33,8 @@ namespace borsvarlden.Services.Entities
         Task<List<FinwireNew>> GetNewsForFeedingWithPrio(int count);
         Task<LoadResult> GetNewsList(DataSourceLoadOptions options);
         Task<FinwireNew> GetArticle(int id);
-        Task AddArticle(FinwireNew article);
-        Task UpdateArticle(FinwireNew article);
+        Task AddArticle(FinwireNew article, List<CompanyCommon> lstCompanies);
+        Task UpdateArticle(FinwireNew article, List<CompanyCommon> lstCompanies);
         Task DeleteArticle(int id);
         Task<List<NewsViewModel>> GetRelatedNews(NewsViewModel newsView, int newsCount);
         Task<List<NewsViewModel>> GetMoreNews(int id);
@@ -289,25 +289,56 @@ namespace borsvarlden.Services.Entities
         }
 
         /// <inheritdoc />
-        public async Task AddArticle(FinwireNew article)
+        public async Task AddArticle(FinwireNew article, List<CompanyCommon> lstCompanies)
         {
             article.DateModified = DateTime.UtcNow;
             if (article.ImageRelativeUrl != null && article.ImageRelativeUrl.Contains("blob.core", StringComparison.OrdinalIgnoreCase))
                 article.IsUseAzureStorage = true;
 
             _dbContext.Entry(article).State = EntityState.Added;
+            lstCompanies.ForEach(x =>
+            {
+                _dbContext.FinwireNew2FinwireCompany
+                    .Add(new FinwireNew2FinwireCompany
+                    {
+                        FinwireNew = article, 
+                        FinwireCompany = _dbContext.FinwireCompanies.Where(y=>y.Id == x.Id).FirstOrDefault()
+                    });
+            });
+
+
             await _dbContext.SaveChangesAsync();
         }
 
         /// <inheritdoc />
-        public async Task UpdateArticle(FinwireNew article)
+        public async Task UpdateArticle(FinwireNew article, List<CompanyCommon> lstCompanies)
         {
             article.DateModified = DateTime.UtcNow;
             if (article.ImageRelativeUrl.Contains("blob.core", StringComparison.OrdinalIgnoreCase))
                 article.IsUseAzureStorage = true;
 
             _dbContext.Entry(article).State = EntityState.Modified;
-            await _dbContext.SaveChangesAsync();
+
+            var companiesDB = _dbContext.FinwireNew2FinwireCompany
+                .Where(x => x.FinwireNewId == article.Id)
+                .Select(x => new CompanyCommon
+                {
+                    Id = x.FinwareCompanyId,
+                    Company = x.FinwireCompany.Company
+                }); 
+
+            (await companiesDB.ToListAsync()).Except(lstCompanies, new CompanyCommonComparer()).ToList().ForEach(x =>
+                _dbContext.FinwireNew2FinwireCompany
+                    .Remove(_dbContext.FinwireNew2FinwireCompany.Where(y => y.FinwareCompanyId == x.Id).FirstOrDefault())); 
+
+            lstCompanies.Except(companiesDB, new CompanyCommonComparer()).ToList().ForEach(x =>
+            {
+                var finwireCompany = _dbContext.FinwireCompanies.Where(y => x.Id == y.Id).FirstOrDefault();
+                _dbContext.FinwireNew2FinwireCompany.Add(new FinwireNew2FinwireCompany
+                    {FinwireCompany = finwireCompany, FinwireNew = article});
+            });
+
+          await _dbContext.SaveChangesAsync();
         }
 
         /// <inheritdoc />
@@ -466,4 +497,7 @@ namespace borsvarlden.Services.Entities
                 .ToListAsync();
         }
     }
+
+   
+
 }

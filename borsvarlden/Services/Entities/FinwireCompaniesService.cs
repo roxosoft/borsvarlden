@@ -16,8 +16,8 @@ namespace borsvarlden.Services.Entities
     public interface IFinwireCompaniesService
     {
         FinwireNew JoinCompanies(FinwireNew finwireNew, List<string> companies);
-        Task<LoadResult> GetCompanies(DataSourceLoadOptions loadOptions);
-        Task<List<string>> GetCompaniesByFinwireNewsId(int id);
+        Task<List<CompanyCommon>> GetCompanies();
+        Task<List<CompanyCommon>> GetCompaniesByFinwireNewsId(int id);
         Task AddCompanyToNews(int newsId, string company);
         Task DeleteCompaniesForeNews(int newsId, string companiesList);
         Task<List<FinwireCompany>> GetListFinwireCompaniesByLetter(string letter);
@@ -70,9 +70,9 @@ namespace borsvarlden.Services.Entities
         }
 
 
-        public async Task<LoadResult> GetCompanies(DataSourceLoadOptions loadOptions)
+        public async Task<List<CompanyCommon>> GetCompanies()
         {
-            return await DataSourceLoader.LoadAsync(_dbContext.FinwireCompanies.OrderBy(x=>x.Company).Select(x=>x.Company), loadOptions);
+            return await _dbContext.FinwireCompanies.OrderBy(x => x.Company).Select(x=> new CompanyCommon { Id = x.Id, Company =x.Company}).ToListAsync();
         }
 
         public async Task GenCompaniesSlug()
@@ -94,13 +94,14 @@ namespace borsvarlden.Services.Entities
             return await DataSourceLoader.LoadAsync(_dbContext.FinwireCompanies, options);
         }
 
-        public async Task<List<string>> GetCompaniesByFinwireNewsId(int id)
+        public async Task<List<CompanyCommon>> GetCompaniesByFinwireNewsId(int id)
         {
             return await _dbContext.FinwireNew2FinwireCompany
                 .Where(x=>x.FinwireNewId == id)
                 .Include(x=>x.FinwireCompany)
                 .OrderBy(x=>x.FinwireCompany.Company)
-                .Select(x=>x.FinwireCompany.Company)
+                //.Select(x=>x.FinwireCompany.Company)
+                .Select(x => new CompanyCommon {Id = x.FinwireCompany.Id, Company = x.FinwireCompany.Company})
                 .ToListAsync();
         }
 

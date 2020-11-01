@@ -1,5 +1,21 @@
 ﻿var selectedNewCompany;
 
+function compare(a, b) {
+    // Use toUpperCase() to ignore character casing
+    var bandA = a.company.toUpperCase();
+    var bandB = b.company.toUpperCase();
+
+    var comparison = 0;
+    if (bandA > bandB) {
+        comparison = 1;
+    } else if (bandA < bandB) {
+        comparison = -1;
+    }
+    return comparison;
+}
+
+
+
 $(function () {
 
     $("#articles-grid").dxDataGrid({
@@ -146,84 +162,116 @@ $(function () {
 
                     var rootElement = $("<div style='display:flex'>");
 
-                    var ds =
-                        new DevExpress.data.DataSource({
-                            store:
-                                DevExpress.data.AspNet.createStore({
-                                    loadUrl: "api/Companies/GetCompaniesByNews/" + cellInfo.key 
-                                })
+                    var dataCompaniesOfNews;
+                    var dataCompanies;
+                    var dataSourceCompaniesOfNews;
+
+                    var urlUse = '/api/Companies/GetCompaniesByNews/';
+
+                    if (typeof (cellInfo.key) === 'number') {
+                        urlUse += cellInfo.key;
+                    }
+
+                    $.get(urlUse,
+                        function (data, status) {
+                            dataCompaniesOfNews = data;
+                            cellInfo.setValue(data);
+                            dataSourceCompaniesOfNews = new DevExpress.data.DataSource(data);
+                            var elementList = $("<div style='height:300px; width:300px;margin-left:60px; margin-top:20px' />").dxList({
+                                                dataSource: dataSourceCompaniesOfNews ,
+                                                height: 200,
+                                                width: 300,
+                                                //showSelectionControls: true,
+                                                selectionMode: "multiple",
+                                                displayExpr: "company",
+                                                searchExpr: "company",
+                                                searchMode: "contains",
+                                                //searchEnabled: true,
+                        
+                                                onValueChanged: function (data) {
+                                                    selectedNewCompany = data.value;
+                                                },
+
+                            onSelectionChanged: function (e) {
+                                    var addedItems = e.addedItems;
+                                    var removedItems = e.removedItems;
+                            // Handler of the "selectionChanged" event
+                                }
+
+                            });
+
+                          
+                           
+                          var dataComp;
+                          $.get('/api/Companies',
+                              function (data, status) {
+
+                                  dataComp = data;
+                                  var elementSelectBox = $("<div style='height:300px; width:300px; margin-top:20px' />").dxList({
+                                        dataSource: dataComp,
+                                        selecItemsByDefault: true,
+                                        showSelectionControls: true,
+                                        selectionMode: "multiple",
+                                        selectionEnabled: true,
+                                        editEnabled: true,
+                                        selectionType: 'control',
+                                        displayExpr: "company",
+                                        searchEnabled: true,
+                                        searchExpr: "company", 
+                                        
+                                        onSelectionChanged: function(e) {
+                                            var addedItems = e.addedItems;
+                                            var removedItems = e.removedItems;
+                                            addedItems.forEach(function (item, i, arr) {
+                                                if (!dataCompaniesOfNews.some(e => e.company === item.company)) {
+                                                    dataCompaniesOfNews.push({
+                                                        id: item.id,
+                                                        company: item.company
+                                                    });
+
+                                                    dataCompaniesOfNews.sort(compare);
+                                                    dataSourceCompaniesOfNews.load();
+                                                };
+                                            });
+                                            
+                                            dataCompaniesOfNews.forEach(function (item, i, arr) {
+                                                if (removedItems.some(e => e.company === item.company)) {
+                                                     dataCompaniesOfNews.splice(i, 1);
+
+                                                    dataCompaniesOfNews.sort(compare);
+                                                    dataSourceCompaniesOfNews.load();
+                                                };
+                                            });
+                                        },
+
+                                        onContentReady: function (e) {
+                                             var component = e.component;
+                                          
+                                            var sItems = [];
+                                            dataCompaniesOfNews.forEach(function (item, i, arr) {
+                                                dataComp.forEach(function (item2, i2, arr2) {
+                                                    if (item2.company === item.company) {
+                                                        sItems.push(item2);
+                                                    }
+                                                });
+                                               
+                                            });
+                                           
+                                          
+                                            component.option('selectedItems', sItems);
+                                        }
+                                   });
+
+                                    elementSelectBox.appendTo(rootElement);
+                                   
+
+                                  rootElement.appendTo(itemElement);
+                                  elementList.appendTo(rootElement);
+                                  var listInstance = elementList.dxList("instance");
+                              })
+                        }).fail(function () {
+                        alert('error')
                         });
-
-                    var elementList = $("<div height=200 width=300 />").dxList({
-                        dataSource: ds,
-                        height: 200,
-                        width: 300,
-                        showSelectionControls: true,
-                        selectionMode: "multiple"
-                    });
-
-                    elementList.appendTo(rootElement);
-                    var listInstance = elementList.dxList("instance");
-
-                    var elementButtonDelete = $("<div style='margin-left:10px' />").dxButton({
-                        stylingMode: "contained",
-                        text: "Delete",
-                        type: "normal",
-                        width: 120,
-                        height: 40,
-                        onClick: function () {
-                            var arrSelectedItems = listInstance.option("selectedItems");
-                            if (arrSelectedItems.length > 0) {
-                                const Http = new XMLHttpRequest();
-                                const url = 'api/Companies/DeleteCompanyForNews/' + cellInfo.key + '/' + arrSelectedItems;
-                                Http.open("GET", url);
-                                Http.send();
-
-                                Http.onreadystatechange = (e) => {
-                                    ds.reload();
-                                    DevExpress.ui.notify("Companies deleted from article: " + arrSelectedItems);
-                                    console.log(Http.responseText);
-                                }
-                            }
-                        }
-                    });
-
-                    elementButtonDelete.appendTo(rootElement);
-
-                    var elementSelectBox = $("<div style='height:40px; width:300px;margin-left:200px' />").dxSelectBox({
-                        dataSource: DevExpress.data.AspNet.createStore({
-                            key: "Id",
-                            loadUrl: "api/Companies"
-                        }),
-                        onValueChanged: function (data) {
-                            selectedNewCompany = data.value;
-                        }
-                    });
-                    elementSelectBox.appendTo(rootElement);
-
-                    var elementButtonAdd = $("<div style='margin-left: 10px' />").dxButton({
-                        stylingMode: "contained",
-                        text: "Add",
-                        type: "normal",
-                        width: 120,
-                        height: 40,
-                        onClick: function () {
-                            if (selectedNewCompany) {
-                                const Http = new XMLHttpRequest();
-                                const url = 'api/Companies/AddCompanyToNews/' + cellInfo.key + '/' + selectedNewCompany;
-                                Http.open("GET", url);
-                                Http.send();
-
-                                Http.onreadystatechange = (e) => {
-                                    ds.reload();
-                                    DevExpress.ui.notify("New company \"" + selectedNewCompany + " \" added to article.");
-                                    console.log(Http.responseText);
-                                }
-                            }
-                        }
-                    });
-                    elementButtonAdd.appendTo(rootElement);
-                    rootElement.appendTo(itemElement);
                 }
             },
             {
