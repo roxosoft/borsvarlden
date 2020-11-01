@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using DBConverter.borsvarlden_MSSql;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -29,8 +30,9 @@ namespace DBConverter.borsvarlden
                 60251,
                 64150
             };
-            
+
             //SaveUploadedImagesToDisk();
+            RenameImageFiles();
             var dtStarted = DateTime.Now;
 
             using (var db = new borsvarldenContext())
@@ -206,6 +208,31 @@ namespace DBConverter.borsvarlden
                 dbMS.SaveChanges();
                 Console.WriteLine($"{DateTime.Now.ToString()} ================= SAVED DATA. FINISHED     ====================");
             }
+        }
+
+        private static void RenameImageFiles()
+        {
+            
+            var dirRoot = Path.GetFullPath($@"{Directory.GetCurrentDirectory()}\..\..\..\..\borsvarlden\wwwroot\assets\uploads");
+            var dirsYears = Directory.GetDirectories(dirRoot).Where(x => !x.Contains("revslider")).ToList();
+            var dbg = new List<string>();
+            dirsYears.ForEach(year =>
+            {
+                Directory.GetDirectories(year).ToList().ForEach(month =>
+                    {
+                        Directory.GetFiles(month).ToList().ForEach(file =>
+                        {
+                            var sourceFn = Path.GetFileName(file);
+                            var newFn = Regex.Replace(sourceFn, "-e[0-9]{13}", String.Empty);
+                            if (sourceFn != newFn)
+                            {
+                                var newPath = $@"{Path.GetDirectoryName(file)}\{newFn}";
+                                dbg.Add(sourceFn);
+                                File.Move(file, newPath);
+                            }
+                        });
+                    });
+            });
         }
 
         private static void SaveUploadedImagesToDisk()
