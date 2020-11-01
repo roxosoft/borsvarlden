@@ -86,10 +86,11 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
             return Ok(company);
         }
 
+        [Route("GetCompaniesByNews")]
         [Route("GetCompaniesByNews/{id}")]
-        public async Task<IActionResult> GetCompaniesByNews([FromRoute]int id)
+        public async Task<IActionResult> GetCompaniesByNews([FromRoute]int? id=null)
         {
-            var result = await _finwireCompaniesService.GetCompaniesByFinwireNewsId(id);
+            var result = id==null ? new List<CompanyCommon>() : await _finwireCompaniesService.GetCompaniesByFinwireNewsId(id.Value);
             var r = new JsonResult(result);
             return r;
         }

@@ -165,22 +165,28 @@ $(function () {
                     var dataCompaniesOfNews;
                     var dataCompanies;
                     var dataSourceCompaniesOfNews;
-                    
-                    $.get('/api/Companies/GetCompaniesByNews/' + cellInfo.key,
+
+                    var urlUse = '/api/Companies/GetCompaniesByNews/';
+
+                    if (typeof (cellInfo.key) === 'number') {
+                        urlUse += cellInfo.key;
+                    }
+
+                    $.get(urlUse,
                         function (data, status) {
                             dataCompaniesOfNews = data;
                             cellInfo.setValue(data);
                             dataSourceCompaniesOfNews = new DevExpress.data.DataSource(data);
-                            var elementList = $("<div height=200 width=300 />").dxList({
+                            var elementList = $("<div style='height:300px; width:300px;margin-left:60px; margin-top:20px' />").dxList({
                                                 dataSource: dataSourceCompaniesOfNews ,
                                                 height: 200,
                                                 width: 300,
-                                                showSelectionControls: true,
+                                                //showSelectionControls: true,
                                                 selectionMode: "multiple",
                                                 displayExpr: "company",
                                                 searchExpr: "company",
                                                 searchMode: "contains",
-                                                searchEnabled: true,
+                                                //searchEnabled: true,
                         
                                                 onValueChanged: function (data) {
                                                     selectedNewCompany = data.value;
@@ -194,41 +200,14 @@ $(function () {
 
                             });
 
-                            elementList.appendTo(rootElement);
-                            var listInstance = elementList.dxList("instance");
-                            //TODO may be remove if don't need
-                            var elementButtonDelete = $("<div style='margin-left:10px' />").dxButton({
-                                stylingMode: "contained",
-                                text: "Delete",
-                                type: "normal",
-                                width: 120,
-                                height: 40,
-                                onClick: function () {
-                                    var arrSelectedItems = listInstance.option("selectedItems");
-                                    if (arrSelectedItems.length > 0) {
-                                        const Http = new XMLHttpRequest();
-                                        const url = 'api/Companies/DeleteCompanyForNews/' + cellInfo.key + '/' + arrSelectedItems;
-                                        Http.open("GET", url);
-                                        Http.send();
-
-                                        Http.onreadystatechange = (e) => {
-                                            ds.reload();
-                                            DevExpress.ui.notify("Companies deleted from article: " + arrSelectedItems);
-                                            console.log(Http.responseText);
-                                        }
-                                    }
-                                }
-                            });
-
-
-                          elementButtonDelete.appendTo(rootElement);
-
+                          
+                           
                           var dataComp;
                           $.get('/api/Companies',
                               function (data, status) {
 
                                   dataComp = data;
-                                   var  elementSelectBox = $("<div style='height:300px; width:300px;' />").dxList({
+                                  var elementSelectBox = $("<div style='height:300px; width:300px; margin-top:20px' />").dxList({
                                         dataSource: dataComp,
                                         selecItemsByDefault: true,
                                         showSelectionControls: true,
@@ -254,17 +233,31 @@ $(function () {
                                                     dataSourceCompaniesOfNews.load();
                                                 };
                                             });
-                                            //TODO similar way remove items using removedItems array
-                                            //TODO send data to backend: cellInfo.setValue(dataCompaniesOfNews);
+                                            
+                                            dataCompaniesOfNews.forEach(function (item, i, arr) {
+                                                if (removedItems.some(e => e.company === item.company)) {
+                                                     dataCompaniesOfNews.splice(i, 1);
+
+                                                    dataCompaniesOfNews.sort(compare);
+                                                    dataSourceCompaniesOfNews.load();
+                                                };
+                                            });
                                         },
 
                                         onContentReady: function (e) {
                                              var component = e.component;
                                           
                                             var sItems = [];
-                                            //TODO. That is initial selection on load page. For now we select the first element.
-                                            //We need select elements that is already bind in Finwirenews (using dataCompaniesOfNews array).
-                                            sItems.push(dataComp[0]);
+                                            dataCompaniesOfNews.forEach(function (item, i, arr) {
+                                                dataComp.forEach(function (item2, i2, arr2) {
+                                                    if (item2.company === item.company) {
+                                                        sItems.push(item2);
+                                                    }
+                                                });
+                                               
+                                            });
+                                           
+                                          
                                             component.option('selectedItems', sItems);
                                         }
                                    });
@@ -272,35 +265,9 @@ $(function () {
                                     elementSelectBox.appendTo(rootElement);
                                    
 
-                                    //TODO remove
-                                    var elementButtonAdd = $("<div style='margin-left: 10px' />").dxButton({
-                                        stylingMode: "contained",
-                                        text: "Add",
-                                        type: "normal",
-                                        width: 120,
-                                        height: 40,
-                                        onClick: function() {
-                                            if (selectedNewCompany) {
-                                                const Http = new XMLHttpRequest();
-                                                const url = 'api/Companies/AddCompanyToNews/' +
-                                                    cellInfo.key +
-                                                    '/' +
-                                                    selectedNewCompany;
-                                                Http.open("GET", url);
-                                                Http.send();
-
-                                                Http.onreadystatechange = (e) => {
-                                                    ds.reload();
-                                                    DevExpress.ui.notify("New company \"" +
-                                                        selectedNewCompany +
-                                                        " \" added to article.");
-                                                    console.log(Http.responseText);
-                                                }
-                                            }
-                                        }
-                                    });
-                                    elementButtonAdd.appendTo(rootElement);
-                                    rootElement.appendTo(itemElement);
+                                  rootElement.appendTo(itemElement);
+                                  elementList.appendTo(rootElement);
+                                  var listInstance = elementList.dxList("instance");
                               })
                         }).fail(function () {
                         alert('error')
