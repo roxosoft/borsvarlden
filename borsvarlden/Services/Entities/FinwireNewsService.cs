@@ -428,7 +428,7 @@ namespace borsvarlden.Services.Entities
 
         private IQueryable<FinwireNew> GetAllArticles()
             => _dbContext.FinwireNews
-                .Where(x => x.FinautoPassed)
+                .Where(x => x.FinautoPassed || (x.IsBorsvarldenArticle && x.IsPublished))
                 .OrderByDescending(x => x.Date);
 
         private IQueryable<FinwireNew> GetNonBorsvarldenArticles(int count)

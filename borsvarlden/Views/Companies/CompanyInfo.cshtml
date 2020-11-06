@@ -47,7 +47,7 @@
                             @foreach (var news in Model.Item2)
                             {
                                 <div class="related-news-link-wraper">
-                                    <a class="related-news-link" href="/artiklar/@news.Title">
+                                    <a class="related-news-link" href="/artiklar/@news.Slug">
                                         <span style="font-weight: 500"> @news.Date - @news.Title</span> - @news.Subtitle
                                     </a>
                                 </div>
