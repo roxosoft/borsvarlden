@@ -31,7 +31,8 @@ $(function () {
                 dataField: "date",
                 caption: "Date created",
                 dataType: "datetime",
-                format: "MM/dd/yyyy HH:mm"
+                format: "MM/dd/yyyy HH:mm",
+                sortOrder: 'desc'
             },
             {
                 dataField: "title",
