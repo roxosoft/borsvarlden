@@ -223,7 +223,7 @@ namespace borsvarlden.Services.Entities
         public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText, bool only15MinutesVideo)
         {
             var result = new PaggingSearchResponseViewModel<NewsViewModel>();
-            var query = string.IsNullOrEmpty(searchText) ? GetNonBorsvarldenArticles() : GetAllArticles();
+            var query = string.IsNullOrEmpty(searchText) && !only15MinutesVideo ? GetNonBorsvarldenArticles() : GetAllArticles();
             if (!string.IsNullOrEmpty(searchText))
             {
                 query = query.Where(x => x.Title.Contains(searchText));

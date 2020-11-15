@@ -127,7 +127,7 @@ namespace borsvarlden.Helpers
 
         private static bool IsRootPage(string path) => path == "/";
 
-        private static bool IsArticle(string path) => Regex.IsMatch(path,"artiklar/.+") && !path.Contains("artiklar/sida/") || path.Contains("/finwire/");
+        private static bool IsArticle(string path) => Regex.IsMatch(path,"artiklar/.+") && !path.Contains("artiklar/sida/") && !path.Contains("/artiklar/endast15MinuterVideo")   || path.Contains(" / finwire/");
 
         private static bool IsArticlesList(string path) => path == "artiklar/" || path.Contains("artiklar/sida/");
     }
