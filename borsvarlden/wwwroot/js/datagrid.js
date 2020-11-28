@@ -281,7 +281,15 @@ $(function () {
                 dataType: "datetime",
                 format: "MM/dd/yyyy HH:mm",
                 visible: true
+            },
+            {
+                dataField: "videoVisibleDeadLine",
+                caption: "Video visible deadline",
+                dataType: "datetime",
+                format: "MM/dd/yyyy HH:mm",
+                visible: true
             }
+
         ],
         editing: {
             mode: "popup",
@@ -377,6 +385,14 @@ $(function () {
                     {
                         dataField: "is15MinutesVideo",
                         dataType: "boolean",
+                        visible: true
+                    },
+                    {
+                        colSpan: 2,
+                        dataField: "videoVisibleDeadLine",
+                        caption: "Video visible deadline",
+                        dataType: "datetime",
+                        format: "MM/dd/yyyy HH:mm",
                         visible: true
                     },
                     {

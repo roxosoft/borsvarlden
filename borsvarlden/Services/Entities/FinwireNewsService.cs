@@ -230,7 +230,13 @@ namespace borsvarlden.Services.Entities
             }
 
             if (only15MinutesVideo)
-                query = query.Where(x => x.Is15MinutesVideo);
+            {
+                query = query.Where(x => x.Is15MinutesVideo); 
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    query = query.Where(x => TimeHelper.Time < x.VideoVisibleDeadLine);
+                }
+            }
 
 
             List<FinwireNew> newsList = await query.Skip(newsOnPageCount * (nextPage - 1)).Take(newsOnPageCount).ToListAsync();
