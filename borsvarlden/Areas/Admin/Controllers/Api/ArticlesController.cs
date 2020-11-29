@@ -86,7 +86,6 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
 
             await _newsService.UpdateArticle(article,companies);
 
-            //return Ok(article);
             return Ok();
         }
 

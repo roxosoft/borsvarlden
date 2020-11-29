@@ -288,6 +288,11 @@ $(function () {
                 dataType: "datetime",
                 format: "MM/dd/yyyy HH:mm",
                 visible: true
+            },
+            {
+                dataField: "imageSource",
+                caption: "ImageSource",
+                visible: true
             }
 
         ],
@@ -388,11 +393,16 @@ $(function () {
                         visible: true
                     },
                     {
-                        colSpan: 2,
+                        colSpan: 1,
                         dataField: "videoVisibleDeadLine",
                         caption: "Video visible deadline",
                         dataType: "datetime",
                         format: "MM/dd/yyyy HH:mm",
+                        visible: true
+                    },
+                    {
+                        dataField: "imageSource",
+                        caption: "Image Source",
                         visible: true
                     },
                     {
