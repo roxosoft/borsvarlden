@@ -1,5 +1,6 @@
 ﻿﻿using System;
  using System.Collections.Generic;
+ using System.Globalization;
  using System.Linq;
  using System.Threading.Tasks;
  using borsvarlden.Db;
@@ -226,7 +227,7 @@ namespace borsvarlden.Services.Entities
             var query = string.IsNullOrEmpty(searchText) && !only15MinutesVideo ? GetNonBorsvarldenArticles() : GetAllArticles();
             if (!string.IsNullOrEmpty(searchText))
             {
-                query = query.Where(x => x.Title.Contains(searchText));
+                query = query.Where(x => x.Title.Contains(searchText) || x.CompanyName.Contains(searchText));
             }
 
             if (only15MinutesVideo)
