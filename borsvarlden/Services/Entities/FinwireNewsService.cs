@@ -321,7 +321,7 @@ namespace borsvarlden.Services.Entities
         public async Task UpdateArticle(FinwireNew article, List<CompanyCommon> lstCompanies)
         {
             article.DateModified = DateTime.UtcNow;
-            if (article.ImageRelativeUrl.Contains("blob.core", StringComparison.OrdinalIgnoreCase))
+            if (article.ImageRelativeUrl != null && article.ImageRelativeUrl.Contains("blob.core", StringComparison.OrdinalIgnoreCase))
                 article.IsUseAzureStorage = true;
 
             _dbContext.Entry(article).State = EntityState.Modified;
