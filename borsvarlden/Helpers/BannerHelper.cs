@@ -14,11 +14,24 @@ namespace borsvarlden.Helpers
 
         public static async Task<string> GetHtmlAsync()
         {
-            using (var response = new StreamReader(((HttpWebResponse)await WebRequest.Create(_url).GetResponseAsync())?.GetResponseStream()))
+            var res = string.Empty;
+
+            try
             {
-                var res = response.ReadToEnd();
-                return res;
+                using (var response =
+                    new StreamReader(((HttpWebResponse) await WebRequest.Create(_url).GetResponseAsync())
+                        ?.GetResponseStream()))
+                {
+                    res = response.ReadToEnd();
+                    return res;
+                }
             }
+            catch (Exception e)
+            {
+                //When error just output empty string (show nothing)
+            }
+
+            return res;
         }
 
         public static async Task<string> GetHtmlAsync(string slider)
