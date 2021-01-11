@@ -40,6 +40,8 @@ namespace borsvarlden.Models
 
         public DateTime VideoVisibleDeadLine { get; set; }
 
+        public bool GreenTag { get; set; }
+
         public FinwireAgency FinwireAgency { get; set; }
         public FinwireXmlNews FinwireXmlNews { get; set; }
 

@@ -1,0 +1,22 @@
+﻿@using borsvarlden.ViewModels;
+@model List<FinwireCompany>
+
+<div class="side-article-body">
+    <span class="label side-article-label">
+        Läs på om de hållbara börsbolagen:
+        (länkade Ä-Ö)
+    </span>
+    <div class="most-read-articles-container">
+        @foreach (var article in Model)
+        {
+            <div class="company-link-greentag-wraper">
+                <a href="~/Foretagsinfo/@Html.Raw(article.Slug)" class="side-article">
+                    <div>
+                        @article.Company
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+

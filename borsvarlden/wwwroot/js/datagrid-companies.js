@@ -73,6 +73,10 @@ $(function () {
                     $("<script>").append(CKEDITOR.instances.ckpeditor.on("change", function () { cellInfo.setValue(CKEDITOR.instances.ckpeditor.getData()) })).appendTo(itemElement);
 
                 }
+            },
+            {
+                dataField: "greenTag",
+             
             }
             
         ],
@@ -102,7 +106,12 @@ $(function () {
                     {
                         colSpan: 2,
                         dataField: "image"
+                    },
+                    {
+                        colSpan: 2,
+                        dataField: "greenTag"
                     }
+
                 ]
             }
         },

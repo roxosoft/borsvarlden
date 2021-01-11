@@ -156,6 +156,11 @@ $(function () {
                 visible: true
             },
             {
+                dataField: "greenTag",
+                dataType: "boolean",
+                visible: true
+            },
+            {
                 dataField: "FinwireNew2FinwireCompanies",
                 caption: "Companies related",
                 visible: true,
@@ -389,6 +394,12 @@ $(function () {
                     },
                     {
                         dataField: "is15MinutesVideo",
+                        dataType: "boolean",
+                        visible: true
+                    },
+                    {
+                        colSpan: 2,
+                        dataField: "greenTag",
                         dataType: "boolean",
                         visible: true
                     },

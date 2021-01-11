@@ -27,6 +27,7 @@ namespace borsvarlden.Services.Entities
         Task<FinwireCompany> GetFinwireCompany(string slug);
         Task GenCompaniesSlug();
         Task Create(FinwireCompany finwireCompany);
+        Task<List<FinwireCompany>> GetGreenTagCompanies();
     }
 
     public class FinwireCompaniesService : IFinwireCompaniesService
@@ -102,6 +103,14 @@ namespace borsvarlden.Services.Entities
                 .OrderBy(x=>x.FinwireCompany.Company)
                 //.Select(x=>x.FinwireCompany.Company)
                 .Select(x => new CompanyCommon {Id = x.FinwireCompany.Id, Company = x.FinwireCompany.Company})
+                .ToListAsync();
+        }
+
+        public async Task<List<FinwireCompany>> GetGreenTagCompanies()
+        {
+            return await _dbContext.FinwireCompanies
+                .Where(x => x.GreenTag)
+                .OrderBy(x=>x.Company)
                 .ToListAsync();
         }
 

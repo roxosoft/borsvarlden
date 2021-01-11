@@ -4,6 +4,13 @@
     .company-link-wraper a:hover {
         text-decoration: underline; }
 
+.company-link-greentag-wraper {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding: 0 0 0 10px; }
+    .company-link-greentag-wraper a:hover {
+        text-decoration: underline; }
+
 .letter-link {
     font-size: 26px;
     color: #f44336;

@@ -48,6 +48,12 @@ namespace borsvarlden.Controllers
             return View();
         }
 
+        [Route("artiklar/hallbaraInvesteringar")]
+        public async Task<IActionResult> IndexGreenTag()
+        {
+            return View();
+        }
+
         [Route("heta-aktier")]
         public async Task<IActionResult> HotStocks()
         { 
@@ -65,6 +71,18 @@ namespace borsvarlden.Controllers
             int newsOnPageCount = _configurationHelper.ListedNewsCount;
 
             PaggingSearchResponseViewModel<NewsViewModel> model = await _finwireNewsService.GetNewsSearchPaging(newsOnPageCount, page, searchText, only15MinutesVideo);
+
+            return View(model);
+        }
+
+        [Route("artiklar/hallbaraInvesteringar/{greenTag}")]
+        [Route("artiklar/hallbaraInvesteringar/{greenTag}/sida/{page}")]
+        [Route("artiklar/hallbaraInvesteringar/{greenTag}/sida/{page}/{searchText}")]
+        public async Task<IActionResult> NewsListGreenTag(int page = 1, string searchText = null)
+        {
+            int newsOnPageCount = _configurationHelper.ListedNewsCount;
+
+            PaggingSearchResponseViewModel<NewsViewModel> model = await _finwireNewsService.GetNewsSearchPaging(newsOnPageCount, page, searchText, false, true);
 
             return View(model);
         }

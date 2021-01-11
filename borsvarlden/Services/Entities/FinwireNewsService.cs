@@ -28,7 +28,7 @@ namespace borsvarlden.Services.Entities
         Task<IndexNewsViewModel> GetMainNewsForFeeding(int newsCount);
         Task<List<NewsViewModel>> GetNews(int newsCount);
         Task<NewsViewModel> GetDetailedArticle(int articleId);
-        Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText, bool only15MinutesVideo);
+        Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText, bool only15MinutesVideo = false, bool greenTag = false);
         Task<NewsViewModel> GetDetailedArticle(string titleSlug);
         Task<NewsViewModel> GetDetailedArticleByGuid(string guid);
         Task<List<FinwireNew>> GetNewsForFeedingWithPrio(int count);
@@ -44,6 +44,7 @@ namespace borsvarlden.Services.Entities
         Task<List<NewsViewModel>> GetAdvertiseNewsList(int newsCount);
         Task<List<FinwireNew>> GetFinwireNewWithCompany(int id);
         Task<IndexNewsViewModel> GetHotStocksForFeeding(int newsCount);
+        Task<IndexNewsViewModel> GetGreenTagNewsForFeeding(int newsCount);
     }
 
     public class FinwireNewsService : IFinwireNewsService
@@ -121,6 +122,19 @@ namespace borsvarlden.Services.Entities
 
             return result;
         }
+
+        public async Task<IndexNewsViewModel> GetGreenTagNewsForFeeding(int newsCount)
+        {
+            var result = new IndexNewsViewModel();
+
+            var newsList = await GetGreenTagNews().Take(newsCount).ToListAsync();
+
+            
+            result.News = MapFinwireNewToViewModel(newsList);
+
+            return result;
+        }
+
 
         public async Task<IndexNewsViewModel> GetHotStocksForFeeding(int newsCount)
         {
@@ -221,16 +235,19 @@ namespace borsvarlden.Services.Entities
             );
         }
 
-        public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText, bool only15MinutesVideo)
+        public async Task<PaggingSearchResponseViewModel<NewsViewModel>> GetNewsSearchPaging(int newsOnPageCount, int nextPage, string searchText, bool only15MinutesVideo = false, bool greenTag = false)
         {
             var result = new PaggingSearchResponseViewModel<NewsViewModel>();
-            var query = string.IsNullOrEmpty(searchText) && !only15MinutesVideo ? GetNonBorsvarldenArticles() : GetAllArticles();
+            //IF search text is not set and only15MinutesVideo is also not set (case when we make page-by page from main page without any filtering)
+            //THEN output only non-Borsvarlden articles (only finwire)
+            //ELSE output all articles (finwire + Authors articles)
+            var query = string.IsNullOrEmpty(searchText) && !(only15MinutesVideo || greenTag) ? GetNonBorsvarldenArticles() : GetAllArticles();
             if (!string.IsNullOrEmpty(searchText))
             {
                 query = query.Where(x => x.Title.Contains(searchText) || x.CompanyName.Contains(searchText));
             }
 
-            if (only15MinutesVideo)
+            if (only15MinutesVideo )
             {
                 query = query.Where(x => x.Is15MinutesVideo); 
                 if (string.IsNullOrEmpty(searchText))
@@ -239,6 +256,10 @@ namespace borsvarlden.Services.Entities
                 }
             }
 
+            if (greenTag)
+            {
+                query = query.Where(x => x.GreenTag == true);
+            }
 
             List<FinwireNew> newsList = await query.Skip(newsOnPageCount * (nextPage - 1)).Take(newsOnPageCount).ToListAsync();
 
@@ -462,6 +483,13 @@ namespace borsvarlden.Services.Entities
                 .ThenBy(x => x.Date);
         }
 
+        private IQueryable<FinwireNew> GetGreenTagNews()
+        {
+            return _dbContext.FinwireNews
+                .Where(x => x.GreenTag)
+                .OrderBy(x => x.Order)
+                .ThenByDescending(x => x.Date);
+        }
 
         private List<NewsViewModel> MapFinwireNewToViewModel(List<FinwireNew> news)
         {
