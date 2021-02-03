@@ -51,60 +51,70 @@
                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <header>
-        <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-dark bg-red-main box-shadow">
-            <div class="container nav-container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img class="navbar-logo" src="~/assets/images/header-logo-white.png" />
-                </a>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icon-bar top-bar"></span>
-                    <span class="icon-bar middle-bar"></span>
-                    <span class="icon-bar bottom-bar"></span>
-                </button>
-                <div class="navbar-collapse collapse d-md-inline-flex flex-md-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <span class="nav-sep-blink">/</span>
-                            <a class="nav-link text-white text-large" href="~/nyhetsbrev">Nyhetsbrev</a>
-                            <span class="nav-sep-blink">/</span>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="~/heta-aktier">Heta aktier</a>
-                            <span class="nav-sep">/</span>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="~/Foretag/A">A-Ö handlade bolag</a>
-                            <span class="nav-sep">/</span>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="~/Finansjobb">Finansjobb</a>
-                            <span class="nav-sep">/</span>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="~/artiklar/endast15MinuterVideo/true">15 Minuter video</a>
-                            <span class="nav-sep">/</span>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="~/Home/ProInvestors">PRO Investors</a>
-                            <span class="nav-sep">/</span>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="~/Home/SignUpForIPOs">New IPO:s</a>
-                            <span class="nav-sep">/</span>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="~/artiklar/hallbaraInvesteringar">Hållbara Investeringar</a>
-                        </li>
-                    </ul>
-                    <div>
-                        <a class="nav-link text-white" href="~/traders-club"><img class="navbar-tradersclub" src="~/assets/images/Traderslogoweb.png" /></a>
-                    </div>
+<header>
+    <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-dark bg-red-main box-shadow">
+        <div class="container nav-container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img class="navbar-logo" src="~/assets/images/header-logo-white.png" />
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+            <div class="navbar-collapse collapse d-md-inline-flex flex-md-row-reverse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <span class="nav-sep-blink">/</span>
+                        <a class="nav-link text-white text-large" href="~/nyhetsbrev">Nyhetsbrev</a>
+                        <span class="nav-sep-blink">/</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="~/heta-aktier">Heta aktier</a>
+                        <span class="nav-sep">/</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="~/Foretag/A">A-Ö handlade bolag</a>
+                        <span class="nav-sep">/</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="~/Finansjobb">Finansjobb</a>
+                        <span class="nav-sep">/</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="~/artiklar/endast15MinuterVideo/true">15 Minuter video</a>
+                        <span class="nav-sep">/</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="~/Home/ProInvestors">PRO Investors</a>
+                        <span class="nav-sep">/</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="~/Home/SignUpForIPOs">New IPO:s</a>
+                        <span class="nav-sep">/</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="~/artiklar/hallbaraInvesteringar">Hållbara Investeringar</a>
+                    </li>
+                </ul>
+                <div>
+                    <a class="nav-link text-white" href="~/traders-club"><img class="navbar-tradersclub" src="~/assets/images/Traderslogoweb.png" /></a>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
+
+    <div class="splashscreen-overlay">
+        <div class="splashscreen-content">
+            <img src="/assets/images/header-logo-white.png">
+            <p>&nbsp;</p>
+            <p>Content of the splashscreen goes here.</p>
+            <p>Should be injected from the back-end.</p>
+            <p>Logic to display it once / 24 hours should also be added.</p>
+        </div>
+    </div>
     <div class="body-wrapper">
         <div class="container container-default">
             @RenderBody()
