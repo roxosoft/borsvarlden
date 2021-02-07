@@ -15,6 +15,7 @@ namespace borsvarlden.Db
         public DbSet <FinwireXmlNews> FinwireXmlNews { get; set; }
         public DbSet <JobAdvert> JobAdverts { get; set; }
         public DbSet <JobCandidateApply> JobCandidateApplies { get; set; }
+        public DbSet <StaticPage> StaticPages { get; set; }
         public virtual DbSet<FinwireNew2FinwireCompany> FinwireNew2FinwireCompany { get; set; }
         public virtual DbSet<FinwireNew2FirnwireSocialTag> FinwireNew2FirnwireSocialTag { get; set; }
 
@@ -74,9 +75,19 @@ namespace borsvarlden.Db
                 .HasIndex(x => new {x.FinautoPassed, x.IsBorsvarldenArticle})
                 .HasName("IndexFinautoPassedIsBorsvarldenArticle");
 
+            StaticPagesSeeding(modelBuilder);
             FiltersSeeding(modelBuilder);
 
             UsersSeeding(modelBuilder);
+        }
+
+        private void StaticPagesSeeding(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<StaticPage>().HasData(new StaticPage
+            {
+                Id =1,
+                StaticPageType = StaticPageType._001_SplashAd, Text = "Put Your text here"
+            });
         }
 
         private void FiltersSeeding(ModelBuilder modelBuilder)

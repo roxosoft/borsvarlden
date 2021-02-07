@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using borsvarlden.Db;
 
 namespace borsvarlden.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20210206195604_AddedStaticPageTable")]
+    partial class AddedStaticPageTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -597,14 +599,6 @@ namespace borsvarlden.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("StaticPages");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            StaticPageType = 1,
-                            Text = "Put Your text here"
-                        });
                 });
 
             modelBuilder.Entity("borsvarlden.Models.FinwireCompany", b =>
