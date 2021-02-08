@@ -1,0 +1,11 @@
+﻿@using borsvarlden.Models;
+@model StaticPage
+
+<div class="top-banner-wraper">
+    <div class="splashscreen-overlay" id="splashscreen-overlay" style="display:none">
+        <div class="splashscreen-content">
+            <img src="/assets/images/header-logo-white.png">
+            @Html.Raw(Model.Text) 
+        </div>
+    </div>
+</div>

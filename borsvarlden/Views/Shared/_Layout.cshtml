@@ -105,16 +105,8 @@
         </div>
     </nav>
 </header>
-
-    <div class="splashscreen-overlay">
-        <div class="splashscreen-content">
-            <img src="/assets/images/header-logo-white.png">
-            <p>&nbsp;</p>
-            <p>Content of the splashscreen goes here.</p>
-            <p>Should be injected from the back-end.</p>
-            <p>Logic to display it once / 24 hours should also be added.</p>
-        </div>
-    </div>
+    @await Component.InvokeAsync("SplashAd")
+   
     <div class="body-wrapper">
         <div class="container container-default">
             @RenderBody()

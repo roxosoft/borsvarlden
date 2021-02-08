@@ -16,6 +16,7 @@ namespace borsvarlden.Services.Entities
         Task<List<StaticPageViewModel>> GetListAsync();
         Task<StaticPage> GetAsync(int id);
         Task UpdateAsync(StaticPage staticPage);
+        Task<StaticPage> GetSplashAdPage();
     }
 
   
@@ -40,6 +41,13 @@ namespace borsvarlden.Services.Entities
         public async Task<StaticPage> GetAsync(int id)
         {
             return await _dbContext.StaticPages.Where(x => x.Id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task<StaticPage> GetSplashAdPage()
+        {
+            return await _dbContext.StaticPages
+                .Where(x => x.StaticPageType == StaticPageType._001_SplashAd)
+                .FirstOrDefaultAsync();
         }
 
         public async Task UpdateAsync(StaticPage staticPage)
