@@ -78,6 +78,7 @@ namespace borsvarlden
             services.AddScoped<IFacebookService, FacebookService>();
             services.AddScoped<IAzureStorageImageService, AzureStorageImageService>();
             services.AddScoped<IJobAdvertsService, JobAdvertsService>();
+            services.AddScoped<IStaticPagesService, StaticPageService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
