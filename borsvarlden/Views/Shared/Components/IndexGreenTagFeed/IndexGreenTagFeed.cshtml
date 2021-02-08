@@ -33,9 +33,9 @@
         </div>
             indexInChunk++;
         }
-        <div class="small-block article">
+        @*<div class="small-block article">
             @Html.Raw(@BannerHelper.GetHtmlAsync(String.Format("inlinebanner-{0}", (bannerIndex+1))).ConfigureAwait(false).GetAwaiter().GetResult())
-        </div>
+        </div>*@
         foreach (var news in Model.News.Skip(Model.FirstBigBlockCount + Model.FirstSmallBlockCount).Take(Model.SecondBigBlockCount))
         {
             news.IsBigBlock = true;
@@ -54,9 +54,9 @@
         }
         if (bannerIndex == 0)
         {
-        <div class="small-block article">
+        @*<div class="small-block article">
             @Html.Raw(@BannerHelper.GetHtmlAsync(String.Format("inlinebanner-{0}", (bannerIndex+2))).ConfigureAwait(false).GetAwaiter().GetResult())
-        </div>
+        </div>*@
         }
 
         Model.News.RemoveRange(0, indexInChunk);

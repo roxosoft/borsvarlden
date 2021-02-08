@@ -3547,8 +3547,6 @@
     <PackageReference Include="DevExtreme.AspNet.Core" Version="20.1.3" />
   </ItemGroup>
   <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties DismissedDevExtremeVersion="20.1.3" />
-    </VisualStudio>
+    <VisualStudio><UserProperties DismissedDevExtremeVersion="" /></VisualStudio>
   </ProjectExtensions>
 </Project>
