@@ -1,13 +1,15 @@
 ﻿@using borsvarlden.Helpers
+@using Microsoft.Extensions.Caching.Memory;
+@inject IMemoryCache memoryCache
 
-    <div class="col-2 index-side-banner-wrapper visible-lg">
-        <div class="column-label" style="margin-top: -15px;margin-bottom:3px">ANNONSER</div>
-        @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner1").ConfigureAwait(false).GetAwaiter().GetResult())
-        <br />
-        @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner2").ConfigureAwait(false).GetAwaiter().GetResult())
-        @*<br />
-        @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner3").ConfigureAwait(false).GetAwaiter().GetResult())
-        <br />
-        @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner4").ConfigureAwait(false).GetAwaiter().GetResult())*@
+<div class="col-2 index-side-banner-wrapper visible-lg">
+    <div class="column-label" style="margin-top: -15px;margin-bottom:3px">ANNONSER</div>
+    @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner1", memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
+    <br />
+    @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner2", memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
+    <br />
+    @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner3", memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
+    <br />
+    @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner4", memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
 
-    </div>
+</div>

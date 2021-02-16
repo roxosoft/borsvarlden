@@ -1,8 +1,10 @@
 ﻿@using borsvarlden.ViewModels;
 @using borsvarlden.Helpers
+@using Microsoft.Extensions.Caching.Memory;
+@inject IMemoryCache memoryCache
 @model IndexNewsViewModel;
 
-    <div class="index-article-feed">
+<div class="index-article-feed">
 
     @if (Model.News.Count > 0 && Model.News[0].IsTopFinwireNews)
     {
@@ -20,46 +22,48 @@
         foreach (var news in Model.News.Take(Model.FirstBigBlockCount))
         {
             news.IsBigBlock = true;
-        <div class="big-block article">
-            @await Html.PartialAsync("_Article", news)
-        </div>
+            <div class="big-block article">
+                @await Html.PartialAsync("_Article", news)
+            </div>
             indexInChunk++;
         }
 
         foreach (var news in Model.News.Skip(Model.FirstBigBlockCount).Take(Model.FirstSmallBlockCount))
         {
-        <div class="small-block article">
-            @await Html.PartialAsync("_Article", news)
-        </div>
+            <div class="small-block article">
+                @await Html.PartialAsync("_Article", news)
+            </div>
             indexInChunk++;
         }
-        if (bannerIndex == 0)
+        if (bannerIndex <= 2)
         {
-        <div class="small-block article">
-            @Html.Raw(@BannerHelper.GetHtmlAsync(String.Format("inlinebanner-{0}", (bannerIndex + 1))).ConfigureAwait(false).GetAwaiter().GetResult())
-        </div>
+            <div class="small-block article">
+                @Html.Raw(@BannerHelper.GetHtmlAsync(String.Format("inlinebanner-{0}", (bannerIndex + 1)), memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
+            </div>
         }
         foreach (var news in Model.News.Skip(Model.FirstBigBlockCount + Model.FirstSmallBlockCount).Take(Model.SecondBigBlockCount))
         {
             news.IsBigBlock = true;
-        <div class="big-block article">
-            @await Html.PartialAsync("_Article", news)
-        </div>
+            <div class="big-block article">
+                @await Html.PartialAsync("_Article", news)
+            </div>
             indexInChunk++;
         }
 
         foreach (var news in Model.News.Skip(Model.FirstBigBlockCount + Model.FirstSmallBlockCount + Model.SecondBigBlockCount).Take(Model.SecondSmallBlockCount))
         {
-        <div class="small-block article">
-            @await Html.PartialAsync("_Article", news)
-        </div>
+            <div class="small-block article">
+                @await Html.PartialAsync("_Article", news)
+            </div>
             indexInChunk++;
         }
-        @*<div class="small-block article">
-            @Html.Raw(@BannerHelper.GetHtmlAsync(String.Format("inlinebanner-{0}", (bannerIndex+2))).ConfigureAwait(false).GetAwaiter().GetResult())
-        </div>*@
-
+        if (bannerIndex <= 2)
+        {
+        <div class="small-block article">
+                @Html.Raw(@BannerHelper.GetHtmlAsync(String.Format("inlinebanner-{0}", (bannerIndex + 2)), memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
+            </div>
+        }
         Model.News.RemoveRange(0, indexInChunk);
         index++;
     }
-    </div>
+</div>

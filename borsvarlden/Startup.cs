@@ -62,6 +62,8 @@ namespace borsvarlden
                 }
             });
 
+            services.AddMemoryCache();
+
             services.Configure<WebEncoderOptions>(options =>
             {
                 options.TextEncoderSettings = new TextEncoderSettings(UnicodeRanges.All);

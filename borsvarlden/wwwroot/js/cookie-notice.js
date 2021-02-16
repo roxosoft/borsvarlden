@@ -18,7 +18,7 @@
 			cnDomNode.removeCookieNotice();
         }
 
-        setInterval(
+        setTimeout(
             function () {
                 $(this).setSplashScreenNotice($(this).data('splashScreen-set'));
             },
@@ -75,6 +75,13 @@
     $.fn.setSplashScreenNotice = function (cookie_value) {
 
         if (document.cookie.indexOf('cookie_notice_accepted') === -1) {
+
+            setTimeout(
+                function () {
+                    $(this).setSplashScreenNotice($(this).data('splashScreen-set'));
+                },
+                10000
+            );
             return;
         }
 
@@ -93,9 +100,10 @@
             $('#splashscreen-overlay').show();
             setTimeout(
                 function () {
+                    alert('!');
                     $('#splashscreen-overlay').hide();
                 },
-                10000
+                100000
             );
         }
     };

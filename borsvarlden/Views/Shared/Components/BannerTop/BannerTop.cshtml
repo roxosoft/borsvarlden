@@ -1,5 +1,7 @@
 ﻿@using borsvarlden.Helpers
+@using Microsoft.Extensions.Caching.Memory;
+@inject IMemoryCache memoryCache
 
 <div class="top-banner-wraper">
-    @Html.Raw(@BannerHelper.GetHtmlAsync().ConfigureAwait(false).GetAwaiter().GetResult())
+    @Html.Raw(@BannerHelper.GetHtmlAsync("test1", memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
 </div>
