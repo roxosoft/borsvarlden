@@ -48,7 +48,7 @@ namespace borsvarlden.Helpers
 
         public static string GetMetaPropertyOgImage(string hostName, string path, NewsViewModel newsViewModel)
         {
-            if (IsArticle(path))
+            if (newsViewModel != null && IsArticle(path))
             {
                 if (newsViewModel.IsUseAzureStorage)
                     return GetMetaProperty("og:image", $"{newsViewModel.ImageUrl}".Replace("borsvarlden.blob.core.windows.net", hostName));
@@ -61,7 +61,7 @@ namespace borsvarlden.Helpers
 
         public static string GetMetaPropertyOgImageSecure(string hostName, string path, NewsViewModel newsViewModel)
         {
-            if (IsArticle(path))
+            if (newsViewModel != null && IsArticle(path))
             {
                 if (newsViewModel.IsUseAzureStorage)
                     return GetMetaProperty("og:image:secure_url", $"{newsViewModel.ImageUrl}".Replace("borsvarlden.blob.core.windows.net", hostName));
@@ -74,7 +74,7 @@ namespace borsvarlden.Helpers
 
         public static string GetMetaPropertyOgUrl(string hostName, string path, NewsViewModel newsViewModel)
         {
-            if (IsArticle(path))
+            if (newsViewModel !=null &&  IsArticle(path))
                 return GetMetaProperty("og:url", $"https://{hostName}/artiklar/{newsViewModel.TittleSlug}");
             else
                 return GetMetaProperty("og:url", $"https://{hostName}");
@@ -96,7 +96,7 @@ namespace borsvarlden.Helpers
 
         public static string GetMetaTwitterImage(string hostName, string path, NewsViewModel newsViewModel)
         {
-            if (IsArticle(path))
+            if (newsViewModel != null && IsArticle(path))
             {
                 if (newsViewModel.IsUseAzureStorage)
                     return GetMetaName("twitter:image", $"{newsViewModel.ImageUrl}".Replace("borsvarlden.blob.core.windows.net", hostName));

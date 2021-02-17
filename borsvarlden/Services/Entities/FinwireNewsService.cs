@@ -277,6 +277,7 @@ namespace borsvarlden.Services.Entities
         {
             List<FinwireNew> article = await _dbContext.FinwireNews
                 .Where(x => x.Id == articleId)
+                .GetPublic()
                 .ToListAsync();
             var result = MapFinwireNewToViewModel(article).FirstOrDefault();
             return result;
@@ -286,6 +287,7 @@ namespace borsvarlden.Services.Entities
         {
             List<FinwireNew> article = await _dbContext.FinwireNews
                 .Where(x => x.Slug == titleSlug)
+                .GetPublic()
                 .OrderByDescending(x => x.Date)
                 .ToListAsync();
             var result = MapFinwireNewToViewModel(article).FirstOrDefault();
@@ -464,6 +466,8 @@ namespace borsvarlden.Services.Entities
             return GetNonBorsvarldenArticles()
                 .Take(count);
         }
+
+
 
         private IQueryable<FinwireNew> GetHotStocks(int count)
             => GetHotStocks().Take(count);

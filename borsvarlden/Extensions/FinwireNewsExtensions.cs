@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using borsvarlden.Helpers;
 using borsvarlden.ViewModels;
 using borsvarlden.Models;
 
@@ -39,6 +40,17 @@ namespace borsvarlden.Extensions
             output.Companies = companies;
             output.IsFromXml = true;
             return output;
+        }
+
+        public static IQueryable<FinwireNew> GetPublic(this IQueryable<FinwireNew> inp)
+        {
+            return inp.Where(x => !x.IsBorsvarldenArticle ||
+                                  (
+                                    x.IsBorsvarldenArticle && x.IsPublished && 
+                                    (x.DateStartVisible == default(DateTime) ||  TimeHelper.Time >= x.DateStartVisible) &&
+                                    (!x.Is15MinutesVideo || (x.Is15MinutesVideo && TimeHelper.Time < x.VideoVisibleDeadLine))
+                                  )
+                            );
         }
     }
 }
