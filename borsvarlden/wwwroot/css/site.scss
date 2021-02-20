@@ -960,12 +960,24 @@ div.heateor_sss_horizontal_sharing .heateorSssSharingSvg {
 }
 
 .splashscreen-overlay {
-    height:100vh;
-    width:100vw;
-    color:#fff;
+    height: 100vh;
+    width: 100vw;
+    color: #fff;
     position: absolute;
     background: rgba(0, 0, 0, 0.93);
     z-index: 10000 !important;
+
+    .ad-splash-cross {
+        font-size: 30px;
+        float: right;
+        padding-right: 50px;
+        padding-top: 20px;
+
+        i.fas.fa-times:hover {
+            cursor: pointer;
+            font-size: 33px;
+        }
+    }
 }
 
 .splashscreen-content {

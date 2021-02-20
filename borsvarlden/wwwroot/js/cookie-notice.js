@@ -10,6 +10,10 @@
             $(this).setCookieNotice($(this).data('cookie-set'));
         });
 
+        $("#ad-splash-cross").click(function () {
+            $('#splashscreen-overlay').hide();
+        });
+
         // display cookie notice
         if (document.cookie.indexOf('cookie_notice_accepted') === -1) {
             cnDomNode.fadeIn(300);
