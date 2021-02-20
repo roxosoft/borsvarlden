@@ -85,7 +85,7 @@
         var nextSplashShow = getCookie('next_splash_show');
 
        // var offset = 1 * 60 * 1000; //use for for debug  1 minute
-       var offset = 24 * 60 * 60 * 1000; //prod 24h
+        var offset = 24 * 60 * 60 * 1000; //prod 24h
 
         if (!nextSplashShow || new Date() > new Date(nextSplashShow)) {
             var dtNextSplashShow = new Date();
@@ -94,7 +94,11 @@
             expireTime.setTime(parseInt(expireTime.getTime()) + 64281600 * 1000);
             var expireTimeSt = expireTime.toGMTString();
             document.cookie = 'next_splash_show=' + encodeURIComponent(dtNextSplashShow) + ';expires=' + expireTimeSt + ';';
-            $('#splashscreen-overlay').show();
+
+            if ($('#ad-banner-text').text().trim().length > 0) {
+                $('#splashscreen-overlay').show();
+            }
+
             setTimeout(
                 function () {
                    
