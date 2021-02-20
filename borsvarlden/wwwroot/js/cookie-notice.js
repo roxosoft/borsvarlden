@@ -80,8 +80,8 @@
 
         var nextSplashShow = getCookie('next_splash_show');
 
-        var offset = 1 * 60 * 1000; //use for for debug  1 minute
-       //var offset = 24 * 60 * 60 * 1000; //prod 24h
+       // var offset = 1 * 60 * 1000; //use for for debug  1 minute
+       var offset = 24 * 60 * 60 * 1000; //prod 24h
 
         if (!nextSplashShow || new Date() > new Date(nextSplashShow)) {
             var dtNextSplashShow = new Date();
