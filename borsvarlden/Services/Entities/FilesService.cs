@@ -15,11 +15,13 @@ namespace borsvarlden.Services.Entities
 
     public interface IFilesService
     {
+        Task <List<File>> Get();
         Task<LoadResult> Get(DataSourceLoadOptions options);
         Task<File> Get(int id);
         Task Add(File file);
         Task Update(File file);
         Task Delete(int id);
+        Task IncCountOfDownloads(int id);
     }
 
     public class FilesService : IFilesService
@@ -38,6 +40,13 @@ namespace borsvarlden.Services.Entities
         {
             return await DataSourceLoader.LoadAsync(_dbContext.Files, options);
         }
+
+        public async Task<List<File>> Get()
+            => await _dbContext
+                .Files
+                .OrderByDescending(x=>x.Id)
+                .ToListAsync();
+
         public async Task Add(File file)
         {
             await _dbContext.AddAsync(file);
@@ -53,6 +62,14 @@ namespace borsvarlden.Services.Entities
         {
             _dbContext.Entry(await Get(id)).State = EntityState.Deleted;
             await _dbContext.SaveChangesAsync();
-        }  
+        }
+
+        public async Task IncCountOfDownloads(int id)
+        {
+            var file = await Get(id);
+            file.CountOfDownloads++;
+            _dbContext.Entry(file).State = EntityState.Modified;
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }

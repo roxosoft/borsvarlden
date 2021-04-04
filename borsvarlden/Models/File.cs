@@ -12,5 +12,6 @@ namespace borsvarlden.Models
         public string FileDescription { get; set; }
         public string FilePassword { get; set; }
         public string FileLink { get; set; }
+        public int CountOfDownloads { get; set; }
     }
 }

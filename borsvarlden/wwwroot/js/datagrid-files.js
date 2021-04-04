@@ -24,9 +24,14 @@ $(function () {
                 caption: "FileHeader"
             },
             {
+                dataField: "countOfDownloads",
+                caption: "Downloads",
+                width: 100,
+            },
+            {
                 dataField: "fileLink",
                 caption: "File Link",
-                visible: false,
+                visible: true,
                 editCellTemplate: (itemElement, cellInfo) => {
 
                     let tb = $("<div />").dxTextBox({
