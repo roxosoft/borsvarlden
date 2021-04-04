@@ -184,36 +184,36 @@ $(function () {
                             cellInfo.setValue(data);
                             dataSourceCompaniesOfNews = new DevExpress.data.DataSource(data);
                             var elementList = $("<div style='height:300px; width:300px;margin-left:60px; margin-top:20px' />").dxList({
-                                dataSource: dataSourceCompaniesOfNews,
-                                height: 200,
-                                width: 300,
-                                //showSelectionControls: true,
-                                selectionMode: "multiple",
-                                displayExpr: "company",
-                                searchExpr: "company",
-                                searchMode: "contains",
-                                //searchEnabled: true,
+                                                dataSource: dataSourceCompaniesOfNews ,
+                                                height: 200,
+                                                width: 300,
+                                                //showSelectionControls: true,
+                                                selectionMode: "multiple",
+                                                displayExpr: "company",
+                                                searchExpr: "company",
+                                                searchMode: "contains",
+                                                //searchEnabled: true,
+                        
+                                                onValueChanged: function (data) {
+                                                    selectedNewCompany = data.value;
+                                                },
 
-                                onValueChanged: function (data) {
-                                    selectedNewCompany = data.value;
-                                },
-
-                                onSelectionChanged: function (e) {
+                            onSelectionChanged: function (e) {
                                     var addedItems = e.addedItems;
                                     var removedItems = e.removedItems;
-                                    // Handler of the "selectionChanged" event
+                            // Handler of the "selectionChanged" event
                                 }
 
                             });
 
+                          
+                           
+                          var dataComp;
+                          $.get('/api/Companies',
+                              function (data, status) {
 
-
-                            var dataComp;
-                            $.get('/api/Companies',
-                                function (data, status) {
-
-                                    dataComp = data;
-                                    var elementSelectBox = $("<div style='height:300px; width:300px; margin-top:20px' />").dxList({
+                                  dataComp = data;
+                                  var elementSelectBox = $("<div style='height:300px; width:300px; margin-top:20px' />").dxList({
                                         dataSource: dataComp,
                                         selecItemsByDefault: true,
                                         showSelectionControls: true,
@@ -223,8 +223,8 @@ $(function () {
                                         selectionType: 'control',
                                         displayExpr: "company",
                                         searchEnabled: true,
-                                        searchExpr: "company",
-
+                                        searchExpr: "company", 
+                                        
                                         onSelectionChanged: function(e) {
                                             var addedItems = e.addedItems;
                                             var removedItems = e.removedItems;
@@ -239,10 +239,10 @@ $(function () {
                                                     dataSourceCompaniesOfNews.load();
                                                 };
                                             });
-
+                                            
                                             dataCompaniesOfNews.forEach(function (item, i, arr) {
                                                 if (removedItems.some(e => e.company === item.company)) {
-                                                    dataCompaniesOfNews.splice(i, 1);
+                                                     dataCompaniesOfNews.splice(i, 1);
 
                                                     dataCompaniesOfNews.sort(compare);
                                                     dataSourceCompaniesOfNews.load();
@@ -251,8 +251,8 @@ $(function () {
                                         },
 
                                         onContentReady: function (e) {
-                                            var component = e.component;
-
+                                             var component = e.component;
+                                          
                                             var sItems = [];
                                             dataCompaniesOfNews.forEach(function (item, i, arr) {
                                                 dataComp.forEach(function (item2, i2, arr2) {
@@ -260,23 +260,23 @@ $(function () {
                                                         sItems.push(item2);
                                                     }
                                                 });
-
+                                               
                                             });
-
-
+                                           
+                                          
                                             component.option('selectedItems', sItems);
                                         }
-                                    });
+                                   });
 
                                     elementSelectBox.appendTo(rootElement);
+                                   
 
-
-                                    rootElement.appendTo(itemElement);
-                                    elementList.appendTo(rootElement);
-                                    var listInstance = elementList.dxList("instance");
-                                })
+                                  rootElement.appendTo(itemElement);
+                                  elementList.appendTo(rootElement);
+                                  var listInstance = elementList.dxList("instance");
+                              })
                         }).fail(function () {
-                            alert('error')
+                        alert('error')
                         });
                 }
             },
@@ -298,46 +298,7 @@ $(function () {
                 dataField: "imageSource",
                 caption: "ImageSource",
                 visible: true
-            },
-            {
-                dataField: "fileLink",
-                caption: "File Link",
-                visible: false,
-                editCellTemplate: (itemElement, cellInfo) => {
-
-                    let tb = $("<div />").dxTextBox({
-                        value: cellInfo.value,
-                        onValueChanged: (e) => {
-                            cellInfo.setValue(e.value);
-                        }
-                    })
-                    tb.appendTo(itemElement);
-
-                    $("<div />").dxFileUploader({
-                        accept: "image/*",
-                        uploadUrl: "api/Image/UploadImage",
-                        onUploaded: (e) => {
-                            cellInfo.setValue(e.request.response);
-                            tb.dxTextBox('option', 'value', e.request.response);
-                        }
-                    }).appendTo(itemElement);
-                }
-            },
-            {
-                dataField: "fileHeader",
-                dataType: "string",
-                visible: false
-            },
-            {
-                dataField: "fileDescription",
-                dataType: "string",
-                visible: false
-            },
-            {
-                dataField: "filePassword",
-                dataType: "string",
-                visible: false
-            },
+            }
 
         ],
         editing: {
@@ -453,30 +414,6 @@ $(function () {
                     {
                         dataField: "imageSource",
                         caption: "Image Source",
-                        visible: true
-                    },
-                    {
-                        colSpan: 2,
-                        dataField: "fileLink",
-                        caption: "File link",
-                        visible: true
-                    },
-                    {
-                        colSpan: 1,
-                        dataField: "fileHeader",
-                        caption: "FileHeader",
-                        visible: true
-                    },
-                    {
-                        colSpan: 1,
-                        dataField: "filePassword",
-                        caption: "FileHeader",
-                        visible: true
-                    },
-                    {
-                        colSpan: 2,
-                        dataField: "fileDescription",
-                        caption: "FileDescription",
                         visible: true
                     },
                     {

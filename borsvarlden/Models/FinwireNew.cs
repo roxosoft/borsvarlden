@@ -35,10 +35,7 @@ namespace borsvarlden.Models
         public bool Is15MinutesVideo { get; set; }
         public bool IsUseAzureStorage { get; set; }
         public bool IsHotStocks { get; set; }
-        public string FileHeader { get; set; }
-        public string FileDescription { get; set;}
-        public string FilePassword { get; set;}
-        public string FileLink { get; set; }
+
         public DateTime DateStartVisible { get; set; }
 
         public DateTime VideoVisibleDeadLine { get; set; }

@@ -327,18 +327,6 @@ namespace borsvarlden.Migrations
                     b.Property<DateTime>("DateStartVisible")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FileDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileHeader")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileLink")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FilePassword")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("FinautoPassed")
                         .HasColumnType("bit");
 
