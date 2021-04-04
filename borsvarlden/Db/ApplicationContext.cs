@@ -16,6 +16,7 @@ namespace borsvarlden.Db
         public DbSet <JobAdvert> JobAdverts { get; set; }
         public DbSet <JobCandidateApply> JobCandidateApplies { get; set; }
         public DbSet <StaticPage> StaticPages { get; set; }
+        public DbSet <File> Files { get; set; }
         public virtual DbSet<FinwireNew2FinwireCompany> FinwireNew2FinwireCompany { get; set; }
         public virtual DbSet<FinwireNew2FirnwireSocialTag> FinwireNew2FirnwireSocialTag { get; set; }
 
