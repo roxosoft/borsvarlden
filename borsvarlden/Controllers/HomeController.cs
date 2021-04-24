@@ -198,5 +198,11 @@ namespace borsvarlden.Controllers
 
         [Route("uploads/uploads/{year}/{month}/{id}")]
         public IActionResult Images(string year, string month, string id) => Redirect($"https://borsvarlden.blob.core.windows.net/uploads/uploads/{year}/{month}/{id}");
+
+        public async Task<IActionResult> SubscribePopupPreview()
+        {
+            return View();
+        }
+
     }
 }
