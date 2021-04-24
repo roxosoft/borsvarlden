@@ -44,6 +44,8 @@
     <Compile Remove="Migrations\20200927130438_AddImageLogoToCompanies.Designer.cs" />
     <Compile Remove="Migrations\20210206183446_AddedStaticPageTable.cs" />
     <Compile Remove="Migrations\20210206183446_AddedStaticPageTable.Designer.cs" />
+    <Compile Remove="Migrations\20210424135631_ChangeOrderTypeToDecimal.cs" />
+    <Compile Remove="Migrations\20210424135631_ChangeOrderTypeToDecimal.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="compilerconfig.json" />

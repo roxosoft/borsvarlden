@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace borsvarlden.Models
 {
@@ -15,7 +16,9 @@ namespace borsvarlden.Models
         public string NewsText { get; set; }
         public string ImageRelativeUrl { get; set; }
         public string ImageLabel { get; set; }
-        public int Order { get; set; }
+        
+        [Column(TypeName = "decimal(11,4)")]
+        public decimal Order { get; set; }
         //todo with flags
         public bool IsAdvertising { get; set; } 
         public bool FinautoPassed { get; set;}
