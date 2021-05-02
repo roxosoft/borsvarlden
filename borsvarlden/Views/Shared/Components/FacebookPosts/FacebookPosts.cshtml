@@ -1,0 +1,18 @@
+﻿
+@using borsvarlden.ViewModels;
+@model List<FacebookViewModel>;
+
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=263264171454634&autoLogAppEvents=1" nonce="9L1xyWOE">
+
+</script>
+
+
+@foreach (var post in Model)
+{
+    @Html.Raw($"<div class=\"fb-post\" data-href=\"https://www.facebook.com/borsvarlden/posts/{post.PostId}\" data-width=\"500\" data-show-text=\"true\"><blockquote cite=\"https://www.facebook.com/borsvarlden/posts/{post.PostId}\" class=\"fb-xfbml-parse-ignore\"><p>https://borsvarlden.com/artiklar/Finansprofil-och-F%C3%B6retagarnas-VD-investerar-stort-i-TopRight</p>Posted by <a href=\"https://www.facebook.com/borsvarlden/\">Börsvärlden</a></blockquote></div>")
+}
+
+
+

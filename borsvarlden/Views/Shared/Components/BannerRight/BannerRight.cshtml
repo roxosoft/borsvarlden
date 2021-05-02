@@ -11,5 +11,7 @@
     @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner3", memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
     <br />
     @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner4", memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
+    
+    @await Component.InvokeAsync("FacebookPosts")
 
 </div>

@@ -82,6 +82,7 @@ namespace borsvarlden
             services.AddScoped<IJobAdvertsService, JobAdvertsService>();
             services.AddScoped<IStaticPagesService, StaticPageService>();
             services.AddScoped<IFilesService, FilesService>();
+            services.AddHttpClient();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
