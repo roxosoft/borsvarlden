@@ -15,6 +15,7 @@
 }
 
 @section ScriptsHead {
+    <script src="~/js/adk.js"></script>
     <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/assets/js/includes/jquery/jquery.js"></script>
     <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js"></script>
@@ -44,8 +45,8 @@
             </div>
         </div>
     </div>
- 
-        @await Component.InvokeAsync("BannerRight")
+
+    @await Component.InvokeAsync("BannerRight")
 
 </div>
 
