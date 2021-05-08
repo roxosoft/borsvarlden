@@ -37,8 +37,8 @@
                         100);
                 }
             });
-
-        $('iframe[name="f16aa1e321034e4"]').each(function () {
+        //Facebook injection proto  TODO remove
+      /*  $('iframe[name="f16aa1e321034e4"]').each(function () {
             function injectCSS() {
                 $iframe.contents().find('head').append(
                     $('<link/>', { rel: 'stylesheet', href: 'iframe.css', type: 'text/css' })
@@ -51,9 +51,11 @@
         });
 
         $('table.article-table').stacktable();
-    });// End of document ready
+    });// End of document ready*/
 })(jQuery);
 
+//Facebook injection proto  TODO remove
+/*
 (function ($) {
     $('iframe[name = "f16aa1e321034e4"]').ready(function() {
         function injectCSS() {
@@ -66,4 +68,4 @@
         $iframe.on('load', injectCSS);
         injectCSS();
     });
-})(jQuery);
+})(jQuery);*/
