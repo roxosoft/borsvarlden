@@ -21,6 +21,7 @@ namespace borsvarlden
     using Services.Entities;
     using Services.Finwire;
     using Services.Azure;
+    using Services.AdProfitService;
 
     public class Startup
     {
@@ -82,6 +83,7 @@ namespace borsvarlden
             services.AddScoped<IJobAdvertsService, JobAdvertsService>();
             services.AddScoped<IStaticPagesService, StaticPageService>();
             services.AddScoped<IFilesService, FilesService>();
+            services.AddScoped<IAdProfitService, AdProfitService>();
             services.AddHttpClient();
         }
 

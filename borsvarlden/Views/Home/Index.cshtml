@@ -1,4 +1,5 @@
-﻿@using borsvarlden.Helpers
+﻿@inject borsvarlden.Services.AdProfitService.IAdProfitService adProfitService;
+@using borsvarlden.Helpers
 @{
     ViewData["Title"] = "Börsvärlden - Maximera din digitala synlighet";
 }
@@ -15,11 +16,16 @@
 }
 
 @section ScriptsHead {
-    <script src="~/js/adk.js"></script>
     <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/assets/js/includes/jquery/jquery.js"></script>
     <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js"></script>
 }
+
+<script>
+    if (window.location.search === '')
+        window.location.search = 'adk_preview=@Html.Raw(@adProfitService.GetTeaserId())';
+</script>
+<script src="~/js/adk.js"></script>
 
 <div class="row index-row">
     <div class="col-10 index-content-wrapper index-page-banner-parent">

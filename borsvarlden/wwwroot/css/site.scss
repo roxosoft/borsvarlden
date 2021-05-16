@@ -999,3 +999,159 @@ div.heateor_sss_horizontal_sharing .heateorSssSharingSvg {
 .fb-post.fb_iframe_widget {
     width:200px;
 }
+
+.native-teaser-marking {
+    color: #000;
+    background: #ffcd00;
+    width: 100%;
+    font-size: 11px;
+    font-weight: 500;
+    padding-left: 7px;
+    vertical-align: middle;
+    line-height: 24px;
+    letter-spacing: 0.8px;
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+.native-teaser--index {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #fffced;
+    color: #000;
+    text-decoration: none !important;
+    border-bottom: 4px solid #ffcd00;
+}
+
+.native-teaser--index .native-teaser-text {
+    padding: 10px;
+}
+
+.native-teaser--standard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    text-decoration: none !important;
+    border-bottom: 4px solid #ffcd00;
+    background: #fffced;
+}
+
+.native-teaser--standard:hover {
+    color: #000;
+}
+
+.native-teaser--standard .native-teaser-advertiser {
+    margin-right: 10px;
+    text-transform: uppercase;
+    color: #c33;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+}
+
+.native-teaser--standard .native-teaser-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.native-teaser--standard .native-teaser-image {
+    overflow: hidden;
+    max-height: 323px;
+}
+
+.native-teaser--standard .native-teaser-image > img {
+    display: block;
+    width: 100%;
+}
+
+.native-teaser--standard .native-teaser-text {
+    padding: 12px;
+    font-size: 16px;
+}
+
+.native-teaser--standard .native-teaser-headline {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.native-article {
+    background: #fffced;
+    border-bottom: 3px solid #ffcd00;
+    padding: 0 15px;
+    margin: 0 -15px;
+}
+
+.native-article-advertiser {
+    text-transform: uppercase;
+    color: #c33;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+}
+
+.native-article-marking {
+    background: #ffcd00;
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    font-size: 11px;
+    vertical-align: middle;
+    line-height: 30px;
+    letter-spacing: 0.8px;
+    font-family: "Helvetica Neue", sans-serif;
+    text-align: center;
+}
+
+.native-article-body h2 {
+    font-size: 16pt;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .native-teaser--index .native-teaser-text {
+        padding: 20px;
+    }
+
+    .native-article {
+        margin: 0;
+    }
+}
+
+@media (min-width: 576px) {
+    .native-teaser--standard {
+        overflow: hidden;
+        border: 1px solid #ffcd00;
+        max-width: 700px;
+    }
+
+    .native-teaser--standard:hover img {
+        opacity: 0.85;
+    }
+
+    .native-teaser--standard:hover .native-teaser-headline {
+        text-decoration: underline;
+    }
+
+    .native-teaser--standard .native-teaser-content {
+        flex-direction: row;
+        padding: 15px;
+    }
+
+    .native-teaser--standard .native-teaser-text {
+        margin-left: 15px;
+        padding: 0;
+    }
+
+    .native-teaser--standard .native-teaser-image {
+        min-width: 245px;
+        max-width: 245px;
+        max-height: none;
+    }
+
+    .native-teaser--standard > img {
+        transition: opacity .4s;
+    }
+}

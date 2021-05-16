@@ -40,7 +40,7 @@
                 <div class="small-block article">
                     @Html.Raw(@BannerHelper.GetHtmlAsync(String.Format("inlinebanner-{0}", (bannerIndex + 1)), memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
                 </div>
-                <div data-adk-container="native-teaser-desktop"></div>
+                <div data-adk-container="native-teaser"></div>
             }
             foreach (var news in Model.News.Skip(Model.FirstBigBlockCount + Model.FirstSmallBlockCount).Take(Model.SecondBigBlockCount))
             {

@@ -1,4 +1,7 @@
 ﻿(function () {
+    //if (document.cookie.indexOf('adktest=1') < 0) return
+    if (window.location.search === '')
+    window.location.search = 'adk_preview=eyJjIjoid3MyZmVESWZMUiIsImEiOiJjb20uYWR2aXNpYmxlLm5hdGl2ZS50ZWFzZXIiLCJpIjoiZmE1ODRkN2YtM2UzNC00NzhiLWJjNDEtMTk2OWVmYTE0YjljIn0%3D';
 
     function loadScript(src) {
         var scriptElem = document.createElement('SCRIPT');

@@ -1,0 +1,65 @@
+﻿@{
+    <!-- ViewData["Title"] = Model?.Title;-->
+    <!--ViewData["Model"] = Model;-->
+}
+
+@inject borsvarlden.Services.AdProfitService.IAdProfitService adProfitService
+
+@section ScriptsHead {
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/assets/js/includes/jquery/jquery.js"></script>
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="~/js/detailarticle.js"></script>
+    <script type="text/javascript" src="~/js/sassy-social-share.js"></script>
+    <script type="text/javascript" src="~/js/popup-subscribe.js"></script>
+    <script type="text/javascript" src="~/js/validator.js"></script>
+    <script type="text/javascript" src="~/js/adk.js"></script>
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/bv-form.min.css" />
+    <link rel="stylesheet" href="~/css/bv-widget-subscribe.min.css" />
+    <link rel="stylesheet" href="~/css/bv-top-level.min.css" />
+    <link rel="stylesheet" href="~/css/bv-panel.min.css" />
+    <link rel="stylesheet" href="~/css/related-news.min.css" />
+    <link rel="stylesheet" href="~/css/read-more.min.css" />
+    <link rel="stylesheet" href="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/css/settings.css" type="text/css" media="all" />
+}
+
+<style>
+    .row {
+        margin-right: 0px !important;
+    }
+
+    .col-12 {
+        padding-right: 0px !important;
+        height: 100% !important;
+    }
+
+    .row .content-right {
+        padding-right: 0px !important;
+    }
+</style>
+
+<script>
+    if (window.location.search === '')
+        window.location.search = 'adk_preview=@Html.Raw(@adProfitService.GetTeaserId()))';
+</script>
+<script src="~/js/adk.js"></script>
+
+<div class="detailed-article">
+    <div class="row index-row" style="margin-left: 0px !important">
+        <div class="col-10 index-content-wrapper">
+            <div data-adk-container="native-article"></div>
+        </div>
+        @await Component.InvokeAsync("BannerRight")
+    </div>
+    <!-- await Component.InvokeAsync("ReadMore", new { News = Model })-->
+</div>
+@await Component.InvokeAsync("SubscribePopup")
+
+
+@section Scripts{
+    <script type="text/javascript" src="~/js/detailarticle.js"></script>
+    <script type="text/javascript" src="~/js/sassy-social-share.js"></script>
+}
