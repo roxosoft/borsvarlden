@@ -12,7 +12,6 @@
     <br />
     @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner4", memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
     
-    <!-- Suspend Facebook -->
-    <!-- await Component.InvokeAsync("FacebookPosts") -->
+    @await Component.InvokeAsync("FacebookPosts")
 
 </div>
