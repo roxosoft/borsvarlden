@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Net.Http;
 using System.ServiceModel.Syndication;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
@@ -19,7 +17,6 @@ using borsvarlden.Services.Finwire;
 using borsvarlden.Services.Entities;
 using borsvarlden.Helpers;
 using Microsoft.AspNetCore.Authorization;
-using HtmlAgilityPack;
 
 namespace borsvarlden.Controllers
 {
@@ -32,11 +29,10 @@ namespace borsvarlden.Controllers
         private readonly IFinwireXmlNewsService _finwireXmlService;
         private readonly IFinwireCompaniesService _finwireCompaniesService;
         private readonly IJobAdvertsService _jobadvertService;
-        private readonly IHttpClientFactory _clientFactory;
 
         public HomeController(ILogger<HomeController> logger, IFinwireNewsService finwireNewsService, IFinwireParserService finwireParserService,
                               IFinwireXmlNewsService finwireXmlService,  IFinwireCompaniesService finwireCompaniesService, IJobAdvertsService jobAdvertService,
-                              IConfigurationHelper configurationHelper, IHttpClientFactory clientFactory)
+                              IConfigurationHelper configurationHelper)
         {
             _logger = logger;
             _finwireNewsService = finwireNewsService;
@@ -45,68 +41,10 @@ namespace borsvarlden.Controllers
             _finwireXmlService = finwireXmlService;
             _finwireCompaniesService = finwireCompaniesService;
             _jobadvertService = jobAdvertService;
-            _clientFactory = clientFactory;
         }
 
         public async Task<IActionResult> Index()
         {
-
-            /*   var request = new HttpRequestMessage(HttpMethod.Get,
-                   "https://api.github.com/repos/aspnet/AspNetCore.Docs/branches");
-               request.Headers.Add("Accept", "application/vnd.github.v3+json");
-               request.Headers.Add("User-Agent", "HttpClientFactory-Sample");
-
-               var client = _clientFactory.CreateClient();
-
-               var response = await client.SendAsync(request);
-
-               if (response.IsSuccessStatusCode)
-               {
-                   using var responseStream = await response.Content.ReadAsStreamAsync();
-                   string responseBody = await response.Content.ReadAsStringAsync();
-
-               }
-               */
-
-            var request = new HttpRequestMessage(HttpMethod.Get,
-                "https://www.facebook.com/borsvarlden/posts");
-          //  request.Headers.Add("Accept", "application/vnd.github.v3+json");
-            request.Headers.Add("User-Agent", "HttpClientFactory-Sample");
-
-            var client = _clientFactory.CreateClient();
-
-            var response = await client.SendAsync(request);
-
-            if (response.IsSuccessStatusCode)
-            {
-                using var responseStream = await response.Content.ReadAsStreamAsync();
-                string responseBody = await response.Content.ReadAsStringAsync();
-
-                HtmlDocument pageDocument = new HtmlDocument();
-                pageDocument.LoadHtml(responseBody);
-
-                //var headlineText = pageDocument.DocumentNode.SelectSingleNode("(//div[contains(@class,'userContentWrapper')]//div)[1]");//.InnerText;
-
-                var headlineText = pageDocument.DocumentNode.SelectNodes("(//div[contains(@class,'userContentWrapper')])");
-
-                //var b = Regex.Matches(responseBody, "(borsvarlden/posts/[0-9]+\")");
-                // var b = Regex.Matches(responseBody, "(<div class=\"_5pcr userContentWrapper\".*</div>)");
-
-                var b = Regex.Matches(responseBody, "(<div class=\"_5pcr userContentWrapper\".*</div></form></div></div></div></div>)<div>");
-
-
-                //responseBody
-
-            }
-
-
-            HttpClient http = new HttpClient();
-           //http.DefaultRequestHeaders.Add(schemename, header);
-         //  var r = http.GetAsync("https://www.facebook.com/borsvarlden/").Result;
-
-
-            var data = http.GetAsync("https://www.facebook.com/borsvarlden/").Result.Content.ReadAsStringAsync().Result;
-
             return View();
         }
 
