@@ -204,5 +204,10 @@ namespace borsvarlden.Controllers
             return View();
         }
 
+        public async Task<IActionResult> SplashAdPreview()
+        {
+            return View();
+        }
+
     }
 }

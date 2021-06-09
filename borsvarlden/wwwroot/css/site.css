@@ -754,3 +754,6 @@ div.heateor_sss_horizontal_sharing .heateorSssSharingSvg {
 
 .fb-post.fb_iframe_widget {
     width: 200px; }
+
+.splashscreen-overlay {
+    display: none; }
