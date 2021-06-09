@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/css/settings.css" type="text/css" media="all" />
 }
 
+<script async src="https://source.advisible.com/10124263/main.js"></script>
+
 <style>
     .row {
         margin-right: 0px !important;
@@ -48,15 +50,15 @@
                 <div class="image-container row">
                     @if (string.IsNullOrEmpty(Model.ImageUrl))
                     {
-                        <img class="col-12" src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
+                    <img class="col-12" src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
                     }
                     @if (!string.IsNullOrEmpty(Model.ImageUrl))
                     {
-                        @if (Model.IsAdvertising && !string.IsNullOrEmpty(Model.CompanyName))
+                    @if (Model.IsAdvertising && !string.IsNullOrEmpty(Model.CompanyName))
                         {
-                            <span class="border-sponsored">I SAMARBETE MED @Html.Raw(Model.CompanyName.ToUpper())</span>
+                    <span class="border-sponsored">I SAMARBETE MED @Html.Raw(Model.CompanyName.ToUpper())</span>
                         }
-                        <img class="col-12" src="@Model.ImageUrl">
+                    <img class="col-12" src="@Model.ImageUrl">
                     }
                 </div>
                 <div class="image-text">
@@ -65,11 +67,11 @@
                     </span>
                     @if (!String.IsNullOrEmpty(Model.ImageSource))
                     {
-                        @Model.ImageSource
+                    @Model.ImageSource
                     }
                     @if (String.IsNullOrEmpty(Model.ImageSource))
                     {
-                        @Html.Raw("Stockfoto")
+                    @Html.Raw("Stockfoto")
                     }
                 </div>
             </div>
@@ -102,9 +104,9 @@
 
                     @if (Model.IsAdvertising && !string.IsNullOrEmpty(Model.CompanyName))
                     {
-                        <p class="disclaimer">
-                            <i>Det här är en sponsrad artikel framtagen i samarbete med @Model.CompanyName. Sponsrade inlägg är en del av Börsvärldens annonserbjudande. Om du med anledning av våra sponsrade inlägg önskar att komma i kontakt med oss, vänligen skriv till <a href="mailto:ir@borsvarlden.com">IR@borsvarlden.com</a>.</i>
-                        </p>
+                    <p class="disclaimer">
+                        <i>Det här är en sponsrad artikel framtagen i samarbete med @Model.CompanyName. Sponsrade inlägg är en del av Börsvärldens annonserbjudande. Om du med anledning av våra sponsrade inlägg önskar att komma i kontakt med oss, vänligen skriv till <a href="mailto:ir@borsvarlden.com">IR@borsvarlden.com</a>.</i>
+                    </p>
                     }
 
                     <div class="post-author">
@@ -127,6 +129,7 @@
                             </div>
                         </div>
                     </div>
+                    <div data-adk-container="native-scroll"></div>
                     @await Component.InvokeAsync("RelatedNews", new { News = Model })
 
                     <div class="content-botom-hidden">
