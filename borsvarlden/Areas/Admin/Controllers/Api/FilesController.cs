@@ -30,19 +30,11 @@ namespace borsvarlden.Areas.Admin.Controllers.Api
             _azureStorageImageService = azureStorageImageService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get(DataSourceLoadOptions loadOptions)
-        {
-            var result = await _fileService.Get(loadOptions);
-            var r = new JsonResult(result);
-            return r;
-        }
-
         [Route("List")]
         [HttpGet]
         public async Task<IActionResult> List(DataSourceLoadOptions loadOptions)
         {
-            var result = await _fileService.Get(loadOptions);
+            var result = await _fileService.Get(loadOptions, $"{Request.Scheme}://{Request.Host}/Files/RequestFile");
             var r = new JsonResult(result);
             return r;
         }

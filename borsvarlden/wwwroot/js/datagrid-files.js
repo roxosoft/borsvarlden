@@ -20,6 +20,11 @@ $(function () {
                 orderIndex: 0
             },
             {
+                dataField: "linkForAdmin",
+                caption: "Link for admin",
+                width: 400
+            },
+            {
                 dataField: "fileHeader",
                 caption: "FileHeader"
             },

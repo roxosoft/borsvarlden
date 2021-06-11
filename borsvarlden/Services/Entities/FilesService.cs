@@ -16,7 +16,7 @@ namespace borsvarlden.Services.Entities
     public interface IFilesService
     {
         Task <List<File>> Get();
-        Task<LoadResult> Get(DataSourceLoadOptions options);
+        Task<LoadResult> Get(DataSourceLoadOptions options, string url);
         Task<File> Get(int id);
         Task Add(File file);
         Task Update(File file);
@@ -36,9 +36,20 @@ namespace borsvarlden.Services.Entities
         public async Task <File>Get(int id)
             => await _dbContext.Files.FirstOrDefaultAsync(x => x.Id == id);
             
-        public async Task<LoadResult> Get(DataSourceLoadOptions options)
+        public async Task<LoadResult> Get(DataSourceLoadOptions options, string url)
         {
-            return await DataSourceLoader.LoadAsync(_dbContext.Files, options);
+
+            var r = _dbContext.Files.Select(x => new {
+                x.Id,
+                x.CountOfDownloads,
+                x.FileDescription,
+                x.FileHeader,
+                x.FileLink,
+                x.FilePassword,
+                LinkForAdmin = $"{url}/{x.Id}"
+            });
+
+            return await DataSourceLoader.LoadAsync(r, options);
         }
 
         public async Task<List<File>> Get()
