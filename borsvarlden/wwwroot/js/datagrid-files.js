@@ -22,6 +22,9 @@ $(function () {
             {
                 dataField: "linkForAdmin",
                 caption: "Link for admin",
+                cellTemplate: function (container, options) {
+                    container.append("<a href=\"" + options.text + "\">Link</a>");
+                },
                 width: 400
             },
             {
