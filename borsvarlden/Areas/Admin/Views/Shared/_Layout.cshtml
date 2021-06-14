@@ -84,6 +84,52 @@
     </header>
     <div class="body-wrapper">
         <div class="container container-default">
+            <script type='text/javascript'>
+                function AreYouSureFunction() {
+                    //Prompt for confirmation
+                    if (confirm("Are you sure?")) {
+                        //Your AJAX call that corresponds with the href attribute of your link
+                        $.ajax({
+                            type: "POST",
+                            url: '/Admin/Home/ClearCache/',
+                            success: function (resultData) {
+                                alert('Done!');
+                            }
+                        });
+                        //This prevents the default behavior of the actual link (it will hit your controller action)
+                        return false;
+                    }
+                    else {
+                        //Unconfirmed - cancel any further actions
+                        return false;
+                    }
+                }
+            </script>
+            
+            <div style="margin-top:7px;margin-bottom:5px">
+                <a href='/Admin'>Articles</a>
+                &nbsp;&nbsp;
+
+                <a href='/Admin/Companies'>Companies</a>
+                &nbsp;&nbsp;
+                <a href='/Admin/JobAdverts'>Job Adverts</a>
+
+                &nbsp;&nbsp;
+                <a href='/Admin/StaticPages'>Static Pages</a>
+
+                &nbsp;&nbsp;
+                <a href='/Admin/Files'>Files</a>
+
+                &nbsp;&nbsp;
+                <a href="#" onclick="return AreYouSureFunction();">Clear Cache</a>
+
+                &nbsp;&nbsp;
+                <a href='~/Home/SubscribePopupPreview'>Subscribe preview popup</a>
+
+                &nbsp;&nbsp;
+                <a href='~/Home/SplashAdPreview'>Splash ad preview popup</a>
+            </div>
+
             @RenderBody()
         </div>
     </div>
