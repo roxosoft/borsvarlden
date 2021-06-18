@@ -114,6 +114,7 @@
         </nav>
     </header>
     @await Component.InvokeAsync("SplashAd")
+    @await Component.InvokeAsync("SubscribePopup")
 
     <div class="body-wrapper">
         <div class="container container-default">
@@ -224,5 +225,6 @@
     @RenderSection("StylesTail", false)
     @RenderSection("Scripts", required: false)
     <script type="text/javascript" src="~/js/cookie-notice.js"></script>
+    <script type="text/javascript" src="~/js/popup-subscribe.js"></script>
 </body>
 </html>
