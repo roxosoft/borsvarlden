@@ -32,6 +32,8 @@
         padding: 20px; }
     .article.small-block .article-content-wrapper {
         padding-left: 188px; }
+    .article .article-content-wrapper-greentag {
+        padding-left: 104px; }
 
 .big-block.article h3 {
     font-size: 18pt;

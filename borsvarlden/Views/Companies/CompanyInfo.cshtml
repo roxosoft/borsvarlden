@@ -45,13 +45,13 @@
                                 Related articles:
                             </div>
                             @foreach (var news in Model.Item2)
-                            {
-                                <div class="related-news-link-wraper">
-                                    <a class="related-news-link" href="/artiklar/@news.Slug">
-                                        <span style="font-weight: 500"> @news.Date - @news.Title</span> - @news.Subtitle
-                                    </a>
-                                </div>
-                            }
+                             {
+                                 <div class="related-news-link-wraper">
+                                     <a class="related-news-link" href="/artiklar/@news.Slug">
+                                         <span style="font-weight: 500"> @news.Date - @news.Title</span> - @news.Subtitle
+                                     </a>
+                                 </div>
+                             }
                         }
                     </div>
                 </div>
@@ -68,7 +68,9 @@
             </div>
         </div>
     </div>
-    @await Component.InvokeAsync("BannerRight")
+    <div class="col-2 index-side-banner-wrapper visible-lg">
+        @await Component.InvokeAsync("BannerRight")
+    </div>
 </div>
 
 @section Scripts{ }

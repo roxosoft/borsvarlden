@@ -50,10 +50,14 @@
 
     .index-article-feed .big-block .article-content-wrapper {
         padding: 20px;
-    }       
-    
+    }
+
     &.small-block .article-content-wrapper {
         padding-left: 188px;
+    }
+
+    .article-content-wrapper-greentag {
+        padding-left: 104px;
     }
 }
 

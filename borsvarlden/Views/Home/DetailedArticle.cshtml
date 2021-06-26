@@ -50,15 +50,15 @@
                 <div class="image-container row">
                     @if (string.IsNullOrEmpty(Model.ImageUrl))
                     {
-                    <img class="col-12" src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
+                        <img class="col-12" src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
                     }
                     @if (!string.IsNullOrEmpty(Model.ImageUrl))
                     {
-                    @if (Model.IsAdvertising && !string.IsNullOrEmpty(Model.CompanyName))
-                        {
-                    <span class="border-sponsored">I SAMARBETE MED @Html.Raw(Model.CompanyName.ToUpper())</span>
-                        }
-                    <img class="col-12" src="@Model.ImageUrl">
+                        @if (Model.IsAdvertising && !string.IsNullOrEmpty(Model.CompanyName))
+                         {
+                             <span class="border-sponsored">I SAMARBETE MED @Html.Raw(Model.CompanyName.ToUpper())</span>
+                         }
+                        <img class="col-12" src="@Model.ImageUrl">
                     }
                 </div>
                 <div class="image-text">
@@ -67,11 +67,11 @@
                     </span>
                     @if (!String.IsNullOrEmpty(Model.ImageSource))
                     {
-                    @Model.ImageSource
+                        @Model.ImageSource
                     }
                     @if (String.IsNullOrEmpty(Model.ImageSource))
                     {
-                    @Html.Raw("Stockfoto")
+                        @Html.Raw("Stockfoto")
                     }
                 </div>
             </div>
@@ -82,7 +82,7 @@
                 <p class="lead">
                     @if (!string.IsNullOrEmpty(Model.Label))
                     {
-                    <span class="label-subtitle"> @Html.Raw(Model.Label)</span>
+                        <span class="label-subtitle"> @Html.Raw(Model.Label)</span>
                     }
                     @Html.Raw(Model?.Subtitle)
                 </p>
@@ -104,9 +104,9 @@
 
                     @if (Model.IsAdvertising && !string.IsNullOrEmpty(Model.CompanyName))
                     {
-                    <p class="disclaimer">
-                        <i>Det här är en sponsrad artikel framtagen i samarbete med @Model.CompanyName. Sponsrade inlägg är en del av Börsvärldens annonserbjudande. Om du med anledning av våra sponsrade inlägg önskar att komma i kontakt med oss, vänligen skriv till <a href="mailto:ir@borsvarlden.com">IR@borsvarlden.com</a>.</i>
-                    </p>
+                        <p class="disclaimer">
+                            <i>Det här är en sponsrad artikel framtagen i samarbete med @Model.CompanyName. Sponsrade inlägg är en del av Börsvärldens annonserbjudande. Om du med anledning av våra sponsrade inlägg önskar att komma i kontakt med oss, vänligen skriv till <a href="mailto:ir@borsvarlden.com">IR@borsvarlden.com</a>.</i>
+                        </p>
                     }
 
                     <div class="post-author">
@@ -146,7 +146,9 @@
                 </div>
             </div>
         </div>
-        @await Component.InvokeAsync("BannerRight")
+        <div class="col-2 index-side-banner-wrapper visible-lg">
+            @await Component.InvokeAsync("BannerRight")
+        </div>
     </div>
     @await Component.InvokeAsync("ReadMore", new { News = Model })
 </div>

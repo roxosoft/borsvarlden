@@ -2,7 +2,7 @@
 @using Microsoft.Extensions.Caching.Memory;
 @inject IMemoryCache memoryCache
 
-<div class="col-2 index-side-banner-wrapper visible-lg">
+
     <div class="column-label" style="margin-top: -15px;margin-bottom:3px">ANNONSER</div>
     @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner1", memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
     <br />
@@ -12,4 +12,3 @@
     <br />
     @Html.Raw(@BannerHelper.GetHtmlAsync("sidebanner4", memoryCache).ConfigureAwait(false).GetAwaiter().GetResult())
 
-</div>

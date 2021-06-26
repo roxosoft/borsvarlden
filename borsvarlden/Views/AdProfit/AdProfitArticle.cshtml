@@ -48,7 +48,9 @@
         <div class="col-10 index-content-wrapper">
             <div data-adk-container="native-article"></div>
         </div>
-        @await Component.InvokeAsync("BannerRight")
+        <div class="col-2 index-side-banner-wrapper visible-lg">
+            @await Component.InvokeAsync("BannerRight")
+        </div>
     </div>
     <!-- await Component.InvokeAsync("ReadMore", new { News = Model })-->
 </div>

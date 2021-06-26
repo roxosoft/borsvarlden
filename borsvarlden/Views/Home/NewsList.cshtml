@@ -61,10 +61,10 @@
                                 for (int index = pagerFirstPageNumber; index <= pagerLastPageNumber; index++)
                                 {
                                     @if (index == Model.CurrentPage)
-                                    {
-                                        <span class="page current">@index</span>
-                                        continue;
-                                    }
+                                     {
+                                         <span class="page current">@index</span>
+                                         continue;
+                                     }
 
                                     <a class="page" href="~/artiklar/sida/@Html.Raw(@index)">@index</a>
                                 }
@@ -94,7 +94,9 @@
             </div>
         </div>
     </div>
-    @await Component.InvokeAsync("BannerRight")
+    <div class="col-2 index-side-banner-wrapper visible-lg">
+        @await Component.InvokeAsync("BannerRight")
+    </div>
 </div>
 
 @section Scripts{ }

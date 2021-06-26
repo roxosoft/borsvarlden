@@ -106,5 +106,9 @@
   {
     "outputFile": "wwwroot/css/files.css",
     "inputFile": "wwwroot/css/files.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/green-tag-index.css",
+    "inputFile": "wwwroot/css/green-tag-index.scss"
   }
 ]

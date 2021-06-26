@@ -1,0 +1,35 @@
+﻿@using borsvarlden.ViewModels;
+@using borsvarlden.Extensions;
+@model NewsViewModel;
+
+    <a href="~/artiklar/@Html.Raw(Model.TittleSlug)">
+        @if (Model.IsTopFinwireNews)
+        {
+            <div class="article-textlink-content"> <span class="article-textlink-title">@Model.Title</span></div>
+        }
+        @if (!Model.IsTopFinwireNews)
+        {
+            <div class="image-wrapper" style="width:91px;height:50px">
+                @if (string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="~/assets/images/borsvarlden_logo_alternative_510x510.png">
+                }
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Model.ImageUrl">
+                }
+            </div>
+            <div class="article-content-wrapper-greentag">
+             @if (!string.IsNullOrEmpty(Model.ImageLabel))
+                {
+                    <span class="label article-label">
+                            @Model.ImageLabel
+                    </span>
+                 }
+             <div class="small-block-article-title-greentag">
+                 @Model.Title
+             </div>
+            
+            </div>
+        }
+    </a>

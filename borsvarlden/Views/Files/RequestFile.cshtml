@@ -48,7 +48,9 @@
             </div>
         </div>
     </div>
-    @await Component.InvokeAsync("BannerRight")
+    <div class="col-2 index-side-banner-wrapper visible-lg">
+        @await Component.InvokeAsync("BannerRight")
+    </div>
 </div>
 
 @section Scripts{ }
