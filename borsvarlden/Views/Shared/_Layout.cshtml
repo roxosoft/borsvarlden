@@ -116,11 +116,47 @@
     @await Component.InvokeAsync("SplashAd")
     @await Component.InvokeAsync("SubscribePopup")
 
-    <div class="body-wrapper">
-        <div class="container container-default">
-            @RenderBody()
+<div class="body-wrapper">
+    <div class="container container-default">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://se.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Prisinformation</span></a> från TradingView</div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+                {
+                    "symbols": [
+                        {
+                            "proName": "BITSTAMP:BTCUSD",
+                            "title": "BTC/USD"
+                        },
+                        {
+                            "description": "USD/SEK",
+                            "proName": "FX_IDC:USDSEK"
+                        },
+                        {
+                            "description": "EUR/SEK",
+                            "proName": "FX_IDC:EURSEK"
+                        },
+                        {
+                            "description": "GBP/SEK",
+                            "proName": "FX_IDC:GBPSEK"
+                        },
+                        {
+                            "description": "Guld",
+                            "proName": "OANDA:XAUUSD"
+                        }
+                    ],
+                        "colorTheme": "light",
+                            "isTransparent": false,
+                                "showSymbolLogo": true,
+                                    "locale": "sv_SE"
+                }
+            </script>
         </div>
+        <!-- TradingView Widget END -->
+        @RenderBody()
     </div>
+</div>
 
     <footer id="footer" class="border-top footer bg-gray-main">
         <!--<div class="foo"> Vi använder enhetsidentifierare för att anpassa innehållet och annonserna till användarna, tillhandahålla funktioner för sociala medier och analysera vår trafik, utgivna av tredje parter. Dessa kan i sin tur kombinera informationen med annan information som de har på dig som de har samlat in när du använt deras tjänster eller besökt andra sidor.</div>-->
