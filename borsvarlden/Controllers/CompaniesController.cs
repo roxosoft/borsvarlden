@@ -23,7 +23,7 @@ namespace borsvarlden.Controllers
         [Route("Foretag/{letter}")]
         public async Task<IActionResult> CompaniesList(string letter)
         {
-            var listCompanies = await _finwireCompaniesService.GetListFinwireCompaniesByLetter(letter);
+            var listCompanies = await _finwireCompaniesService.GetListCompaniesByLetter(letter);
             return View(listCompanies);
         }
 

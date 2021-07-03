@@ -20,7 +20,7 @@ namespace borsvarlden.Services.Entities
         Task<List<CompanyCommon>> GetCompaniesByFinwireNewsId(int id);
         Task AddCompanyToNews(int newsId, string company);
         Task DeleteCompaniesForeNews(int newsId, string companiesList);
-        Task<List<FinwireCompany>> GetListFinwireCompaniesByLetter(string letter);
+        Task<List<FinwireCompany>> GetListCompaniesByLetter(string letter);
         Task<LoadResult> GetListFinwireCompanies(DataSourceLoadOptions options);
         Task UpdateCompany(FinwireCompany company);
         Task<FinwireCompany> GetFinwireCompany(int id);
@@ -82,13 +82,18 @@ namespace borsvarlden.Services.Entities
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<List<FinwireCompany>> GetListFinwireCompaniesByLetter(string letter)
+        public async Task<List<FinwireCompany>> GetListCompaniesByLetter(string letter)
         {
-            return await _dbContext.FinwireCompanies
+            return await GetVisibleCompaniesList()
                 .Where(x => x.Company.Substring(0,1) == letter)
                 .OrderBy(x=>x.Company)
                 .ToListAsync();
         }
+
+        public IQueryable<FinwireCompany> GetVisibleCompaniesList()
+            => _dbContext
+                .FinwireCompanies
+                .Where(x => x.IsVisibleFromCompanyList);
 
         public async Task<LoadResult> GetListFinwireCompanies(DataSourceLoadOptions options)
         {

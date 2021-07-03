@@ -46,6 +46,8 @@
     <Compile Remove="Migrations\20210206183446_AddedStaticPageTable.Designer.cs" />
     <Compile Remove="Migrations\20210424135631_ChangeOrderTypeToDecimal.cs" />
     <Compile Remove="Migrations\20210424135631_ChangeOrderTypeToDecimal.Designer.cs" />
+    <Compile Remove="Migrations\20210703092220_IsVisibleFromCompanyList.cs" />
+    <Compile Remove="Migrations\20210703092220_IsVisibleFromCompanyList.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="compilerconfig.json" />

@@ -76,9 +76,14 @@ $(function () {
             },
             {
                 dataField: "greenTag",
+                caption: "Green Tag"
              
+            },
+            {
+                dataField: "isVisibleFromCompanyList",
+                caption: "In company list"
             }
-            
+
         ],
         editing: {
             mode: "popup",
@@ -110,6 +115,10 @@ $(function () {
                     {
                         colSpan: 2,
                         dataField: "greenTag"
+                    },
+                    {
+                        colSpan: 2,
+                        dataField: "isVisibleFromCompanyList"
                     }
 
                 ]
