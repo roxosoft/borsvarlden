@@ -569,6 +569,14 @@ h3 {
         width: 260px;
     }
 
+    .bv-container-page .bv-content-3-rightbanner-left {
+        width: calc(100% - 400px - 173px - 40px);
+    }
+
+    .bv-container-page .bv-content-3-rightbanner-right {
+        width: 400px;
+    }
+
     .text-left-sm {
         text-align: left !important;
     }

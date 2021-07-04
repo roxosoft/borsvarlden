@@ -8,6 +8,7 @@ using borsvarlden.Models;
 
 namespace borsvarlden.Controllers
 {
+    using ViewModels;
     public class CompaniesController : Controller
     {
         private IFinwireCompaniesService _finwireCompaniesService;
@@ -22,10 +23,13 @@ namespace borsvarlden.Controllers
         [Route("CompaniesList/{letter}")]
         [Route("Foretag/{letter}")]
         public async Task<IActionResult> CompaniesList(string letter)
-        {
-            var listCompanies = await _finwireCompaniesService.GetListCompaniesByLetter(letter);
-            return View(listCompanies);
-        }
+            => View(new CompaniesListViewModel
+            {
+                CompaniesList = await _finwireCompaniesService.GetListCompaniesByLetter(letter),
+                CompanyInFocus = await _finwireCompaniesService.GetCompanyInFocus(),
+                Letter = letter
+            });
+     
 
         [Route("Foretagsinfo/id/{id}")]
         public async Task<IActionResult> CompanyInfo(int id)

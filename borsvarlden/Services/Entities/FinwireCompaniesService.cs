@@ -28,6 +28,7 @@ namespace borsvarlden.Services.Entities
         Task GenCompaniesSlug();
         Task Create(FinwireCompany finwireCompany);
         Task<List<FinwireCompany>> GetGreenTagCompanies();
+        Task<FinwireCompany> GetCompanyInFocus();
     }
 
     public class FinwireCompaniesService : IFinwireCompaniesService
@@ -119,6 +120,10 @@ namespace borsvarlden.Services.Entities
                 .ToListAsync();
         }
 
+        public async Task <FinwireCompany> GetCompanyInFocus()
+            => await _dbContext.FinwireCompanies.Where(x => x.IsCompanyInFocus).FirstOrDefaultAsync();
+
+        
         public async Task AddCompanyToNews(int newsId, string company)
         {
             var finwireCompany = _dbContext.FinwireCompanies.FirstOrDefault(x => x.Company == company);

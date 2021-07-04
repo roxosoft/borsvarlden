@@ -1,7 +1,7 @@
 ﻿@using borsvarlden.ViewModels;
 @using borsvarlden.Helpers;
 @using NUnit.Framework
-@model List<FinwireCompany>;
+@model CompaniesListViewModel;
 @{
     ViewData["Title"] = $"Företag";
 }
@@ -39,8 +39,27 @@
                     }
                 </div>
                 
+                @if (Model.CompanyInFocus != null)
+                {
+                    <h1>Företag i fokus: @Model.CompanyInFocus.Company</h1>
 
-                @foreach (var company in Model)
+                    @if (Model.CompanyInFocus.Image != null)
+                     {
+                         <div class="company-image-wraper">
+                             <img class="company-image" src="@Model.CompanyInFocus.Image">
+                         </div>
+                     }
+                    <div>
+                        @if (Model.CompanyInFocus.Description != null)
+                        {
+                            <div>@Html.Raw(@Model.CompanyInFocus.Description)</div>
+                        }
+                    </div>
+                }
+
+                <h1 style="padding-top: 20px; padding-bottom: 20px;">@Model.Letter</h1>
+
+                @foreach (var company in Model.CompaniesList)
                 {
                     <div class="company-link-wraper">
                         <a href='/Foretagsinfo/@company.Slug'>

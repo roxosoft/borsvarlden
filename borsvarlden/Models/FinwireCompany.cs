@@ -12,8 +12,11 @@ namespace borsvarlden.Models
         public int Id { get; set; }
 
         public string Company { get; set; }
+        public string Brief { get; set; }
 
         public string Description { get; set; }
+
+        public string Logo { get; set; }
 
         public string Image { get; set; }
 
@@ -23,6 +26,8 @@ namespace borsvarlden.Models
 
         [DefaultValue(true)]
         public bool IsVisibleFromCompanyList { get; set; }
+
+        public bool IsCompanyInFocus { get; set; }
 
         public List<FinwireNew2FinwireCompany> FinwireNew2FinwireCompanies { get; set; }
     }

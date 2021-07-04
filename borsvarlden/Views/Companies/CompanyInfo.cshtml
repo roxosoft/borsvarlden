@@ -19,58 +19,65 @@
     <script type="text/javascript" src="https://borsvarlden-banners.azurewebsites.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js"></script>
 }
 
-<div class="row index-row">
-    <div class="col-10 index-content-wrapper news-list-banner-parent">
-        <div class="column-label annons-label">ANNONS</div>
-        @await Component.InvokeAsync("BannerTop")
-        <div class="row bv-container-page" style="margin-top: 15px">
-            <div class="col-xs-12 bv-content-left">
+<div class="index-row comapy-info-page">
+    <div class="row index-content-row bv-container-page">
+        <div class="col-xs-12 bv-companyinfo-col-1">
+            @if (Model.Item1.Logo != null)
+            {
+                <img  src="@Model.Item1.Logo" class="company-logo" />
+            }
+            @if (Model.Item1.Brief != null)
+            {
                 <div>
-                    @if (Model.Item1.Image != null)
-                    {
-                        <div class="company-image-wraper">
-                            <img class="company-image" src="@Model.Item1.Image">
-                        </div>
-                    }
-                    <h2> @Model.Item1.Company</h2>
-                    <div>
-                        @if (Model.Item1.Description != null)
-                        {
-                            <div class="label">Company description</div>
-                            <div>@Html.Raw(@Model.Item1.Description)</div>
-                        }
-                        @if (Model.Item2.Count > 0)
-                        {
-                            <div class="label" style="margin-bottom: 10px">
-                                Related articles:
-                            </div>
-                            @foreach (var news in Model.Item2)
-                             {
-                                 <div class="related-news-link-wraper">
-                                     <a class="related-news-link" href="/artiklar/@news.Slug">
-                                         <span style="font-weight: 500"> @news.Date - @news.Title</span> - @news.Subtitle
-                                     </a>
-                                 </div>
-                             }
-                        }
-                    </div>
+                    @Html.Raw(@Model.Item1.Brief)
                 </div>
+            }
+        </div>
 
-                <div class="content-botom-hidden">
-                    @await Component.InvokeAsync("SponsoredNews")
-                    @await Component.InvokeAsync("LatestNews")
+        <div class="col-xs-12 bv-companyinfo-col-2">
+            <div>
+                <h2 class="comapy-news-title">
+                    Bolagspresentation:
+                </h2>
+
+                @if (Model.Item1.Image != null)
+                {
+                    <div class="company-image-wraper">
+                        <img class="company-image" src="@Model.Item1.Image">
+                    </div>
+                }
+                <div>
+                    @if (Model.Item1.Description != null)
+                    {
+                        <div>@Html.Raw(@Model.Item1.Description)</div>
+                    }
                 </div>
-            </div>
-            <div class="col-xs-12 bv-content-right">
-                @await Component.InvokeAsync("SponsoredNews")
-                @await Component.InvokeAsync("MostReadNews")
-                @await Component.InvokeAsync("LatestNews")
             </div>
         </div>
-    </div>
-    <div class="col-2 index-side-banner-wrapper visible-lg">
-        @await Component.InvokeAsync("BannerRight")
-    </div>
+
+        <div class="col-xs-12 bv-companyinfo-col-3">
+            @if (Model.Item2.Count > 0)
+            {
+                <h2 class="comapy-news-title">
+                    Nyhetslöde @Model.Item1.Company
+                </h2>
+                <div class="label" style="margin-bottom: 10px">
+                    Related articles:
+                </div>
+                @foreach (var news in Model.Item2)
+                 {
+                     <div class="related-news-link-wraper">
+                         <a class="related-news-link" href="/artiklar/@news.Slug">
+                             <span style="font-weight: 500"> @news.Date - @news.Title</span> - @news.Subtitle
+                         </a>
+                     </div>
+                 }
+            }
+        </div>
+
+
+    </div>  
+   
 </div>
 
 @section Scripts{ }

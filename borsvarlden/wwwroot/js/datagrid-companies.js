@@ -15,6 +15,7 @@ $(function () {
             {
                 dataField: "company",
                 caption: "company",
+                width: 600,
                 sortIndex: 0,
                 allowSorting: true,
                 sortOrder: "asc"
@@ -23,7 +24,7 @@ $(function () {
             {
                 dataField: "image",
                 caption: "Image",
-                width: 110,
+                width: 160,
                 alignment: "center",
                 cellTemplate: function (container, options) {
                     container.append("<img style='width: auto' src=\"" + options.text + "\" width=\"50\" height=\"50\" >");
@@ -56,6 +57,60 @@ $(function () {
                 }
             },
             {
+                dataField: "logo",
+                caption: "Logo",
+                width: 160,
+                alignment: "center",
+                cellTemplate: function (container, options) {
+                    container.append("<img style='width: auto' src=\"" + options.text + "\" width=\"50\" height=\"50\" >");
+                },
+                editCellTemplate: (itemElement, cellInfo) => {
+
+                    let tb = $("<div />").dxTextBox({
+                        value: cellInfo.value,
+                        onValueChanged: (e) => {
+                            cellInfo.setValue(e.value);
+                        }
+                    })
+                    tb.appendTo(itemElement);
+
+                    $("<div />").dxFileUploader({
+                        accept: "image/*",
+                        uploadUrl: "../api/Image/UploadImage",
+                        onUploaded: (e) => {
+                            cellInfo.setValue(e.request.response);
+                            tb.dxTextBox('option', 'value', e.request.response);
+                        },
+                        onUploadError: function (e) {
+                            var xhttp = e.request;
+                            if (xhttp.readyState == 4 && xhttp.status == 0) {
+                                console.log("Connection refused.");
+                            }
+                        }
+                    }).appendTo(itemElement);
+
+                }
+            },
+            {
+                dataField: "brief",
+                visible: false,
+                editCellTemplate: (itemElement, cellInfo) => {
+
+                    ($("<textarea>", { "id": "ckpeditorBrief", "val": cellInfo.value })).appendTo(itemElement);
+
+                    $("<script>").append(CKEDITOR.replace("ckpeditorBrief", {
+                        extraPlugins: 'embed',
+                        embed_provider: '//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}&api_key=90d4029ed5529f8b49bbdc',
+                        filebrowserBrowseUrl: '/lib/fileman/index.html',
+                        filebrowserImageBrowseUrl: '/lib/fileman/index.html' + '?type=image',
+                        removeDialogTabs: 'link:upload;image:upload'
+                    })).appendTo(itemElement);
+
+                    $("<script>").append(CKEDITOR.instances.ckpeditorBrief.on("change", function () { cellInfo.setValue(CKEDITOR.instances.ckpeditorBrief.getData()) })).appendTo(itemElement);
+
+                }
+            },
+            {
                 dataField: "description",
                 visible: false,
                 editCellTemplate: (itemElement, cellInfo) => {
@@ -82,6 +137,11 @@ $(function () {
             {
                 dataField: "isVisibleFromCompanyList",
                 caption: "In company list"
+            },
+            ,
+            {
+                dataField: "isCompanyInFocus",
+                caption: "Company in focus"
             }
 
         ],
@@ -101,8 +161,22 @@ $(function () {
                 colCount: 2,
                 items: [
                     {
+                        dataField: "isVisibleFromCompanyList"
+                    },
+                    {
+                        dataField: "isCompanyInFocus"
+                    },
+                    {
                         dataField: "company",
                         colSpan: 2
+                    },
+                    {
+                        colSpan: 2,
+                        dataField: "logo"
+                    },
+                    {
+                        colSpan: 2,
+                        dataField: "brief"
                     },
                     {
                         colSpan: 2,
@@ -115,10 +189,6 @@ $(function () {
                     {
                         colSpan: 2,
                         dataField: "greenTag"
-                    },
-                    {
-                        colSpan: 2,
-                        dataField: "isVisibleFromCompanyList"
                     }
 
                 ]

@@ -25,11 +25,33 @@ a.related-news-link:hover {
     text-decoration: underline; }
 
 .related-news-link-wraper {
-    margin-bottom: 10px; }
+    margin-bottom: 20px; }
 
 .company-image {
-    max-width: 500px; }
+    max-width: 500px;
+    padding-bottom: 20px; }
 
 .company-image-wraper {
     margin-bottom: 20px;
     margin-top: 20px; }
+
+.comapy-info-page {
+    padding-top: 20px; }
+
+.comapy-news-title {
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 20px; }
+
+.bv-container-page .bv-companyinfo-col-1 {
+    width: calc(100% - 550px - 300px - 10px); }
+
+.bv-container-page .bv-companyinfo-col-2 {
+    width: 550px; }
+
+.bv-container-page .bv-companyinfo-col-3 {
+    width: 300px; }
+
+.company-logo {
+    max-width: 300px;
+    padding-bottom: 50px; }
