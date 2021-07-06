@@ -24,19 +24,19 @@
 
 <div class="index-row">
     <div class="greentag-index-title">
-        <span class="hallbara-invesingar">Hållbara investingar - </span><span class="kilmatom">Börsvärlden bevakar börsbolagen som bidrar i kilmatomställnigen.</span>
+        <img class="greentag-logo" src="~/assets/images/greentag-logo.jpg">
     </div>
     <div class="row index-content-row bv-container-page">
         <div class="col-xs-12 bv-content-left-4">
-            <div class="column-header">NYTT & INTRESSANT</div>
+            <div class="column-header-1">NYTT & INTRESSANT</div>
             @await Component.InvokeAsync("IndexGreenTagFeed")
         </div>
         <div class="col-xs-12 bv-content-greentag-col-2">
-            <div class="column-header">I FOKUS</div>
+            <div class="column-header-2">I FOKUS</div>
             @await Component.InvokeAsync("IndexNewsFeed")
         </div>
         <div class="col-xs-12 bv-content-greentag-col-3">
-            <div class="column-header">UR NYHETSFLÖDET</div>
+            <div class="column-header-3">UR NYHETSFLÖDET</div>
             @await Component.InvokeAsync("IndexGreentagRight")
         </div>
         <div class="col-2 index-side-banner-wrapper visible-lg">
