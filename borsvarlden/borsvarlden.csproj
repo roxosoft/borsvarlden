@@ -60,6 +60,7 @@
     <_ContentIncludedByDefault Remove="wwwroot\css\article.min.css" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="wwwroot\assets\images\greentag-logo.jpg" />
     <Content Include="wwwroot\assets\images\logo-filestar_star-dark-blue.png" />
     <Content Include="wwwroot\assets\images\Traderslogoweb.png" />
     <Content Include="wwwroot\assets\uploads\2015\09\01_28.jpg" />
